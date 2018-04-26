@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -20,8 +19,8 @@ options = defaultOptions { unwrapSingleConstructors = true }
 
 -- | <p>Describes an agent version.</p>
 newtype AgentVersion = AgentVersion 
-  { "Version" :: NullOrUndefined (String)
-  , "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager)
+  { "Version" :: Maybe (String)
+  , "ConfigurationManager" :: Maybe (StackConfigurationManager)
   }
 derive instance newtypeAgentVersion :: Newtype AgentVersion _
 derive instance repGenericAgentVersion :: Generic AgentVersion _
@@ -31,12 +30,12 @@ instance encodeAgentVersion :: Encode AgentVersion where encode = genericEncode 
 
 -- | Constructs AgentVersion from required parameters
 newAgentVersion :: AgentVersion
-newAgentVersion  = AgentVersion { "ConfigurationManager": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newAgentVersion  = AgentVersion { "ConfigurationManager": Nothing, "Version": Nothing }
 
 -- | Constructs AgentVersion's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAgentVersion' :: ( { "Version" :: NullOrUndefined (String) , "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager) } -> {"Version" :: NullOrUndefined (String) , "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager) } ) -> AgentVersion
-newAgentVersion'  customize = (AgentVersion <<< customize) { "ConfigurationManager": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newAgentVersion' :: ( { "Version" :: Maybe (String) , "ConfigurationManager" :: Maybe (StackConfigurationManager) } -> {"Version" :: Maybe (String) , "ConfigurationManager" :: Maybe (StackConfigurationManager) } ) -> AgentVersion
+newAgentVersion'  customize = (AgentVersion <<< customize) { "ConfigurationManager": Nothing, "Version": Nothing }
 
 
 
@@ -51,20 +50,20 @@ instance encodeAgentVersions :: Encode AgentVersions where encode = genericEncod
 
 -- | <p>A description of the app.</p>
 newtype App = App 
-  { "AppId" :: NullOrUndefined (String)
-  , "StackId" :: NullOrUndefined (String)
-  , "Shortname" :: NullOrUndefined (String)
-  , "Name" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
-  , "DataSources" :: NullOrUndefined (DataSources)
-  , "Type" :: NullOrUndefined (AppType)
-  , "AppSource" :: NullOrUndefined (Source)
-  , "Domains" :: NullOrUndefined (Strings)
-  , "EnableSsl" :: NullOrUndefined (Boolean)
-  , "SslConfiguration" :: NullOrUndefined (SslConfiguration)
-  , "Attributes" :: NullOrUndefined (AppAttributes)
-  , "CreatedAt" :: NullOrUndefined (String)
-  , "Environment" :: NullOrUndefined (EnvironmentVariables)
+  { "AppId" :: Maybe (String)
+  , "StackId" :: Maybe (String)
+  , "Shortname" :: Maybe (String)
+  , "Name" :: Maybe (String)
+  , "Description" :: Maybe (String)
+  , "DataSources" :: Maybe (DataSources)
+  , "Type" :: Maybe (AppType)
+  , "AppSource" :: Maybe (Source)
+  , "Domains" :: Maybe (Strings)
+  , "EnableSsl" :: Maybe (Boolean)
+  , "SslConfiguration" :: Maybe (SslConfiguration)
+  , "Attributes" :: Maybe (AppAttributes)
+  , "CreatedAt" :: Maybe (String)
+  , "Environment" :: Maybe (EnvironmentVariables)
   }
 derive instance newtypeApp :: Newtype App _
 derive instance repGenericApp :: Generic App _
@@ -74,12 +73,12 @@ instance encodeApp :: Encode App where encode = genericEncode options
 
 -- | Constructs App from required parameters
 newApp :: App
-newApp  = App { "AppId": (NullOrUndefined Nothing), "AppSource": (NullOrUndefined Nothing), "Attributes": (NullOrUndefined Nothing), "CreatedAt": (NullOrUndefined Nothing), "DataSources": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Domains": (NullOrUndefined Nothing), "EnableSsl": (NullOrUndefined Nothing), "Environment": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Shortname": (NullOrUndefined Nothing), "SslConfiguration": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newApp  = App { "AppId": Nothing, "AppSource": Nothing, "Attributes": Nothing, "CreatedAt": Nothing, "DataSources": Nothing, "Description": Nothing, "Domains": Nothing, "EnableSsl": Nothing, "Environment": Nothing, "Name": Nothing, "Shortname": Nothing, "SslConfiguration": Nothing, "StackId": Nothing, "Type": Nothing }
 
 -- | Constructs App's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newApp' :: ( { "AppId" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "Shortname" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "DataSources" :: NullOrUndefined (DataSources) , "Type" :: NullOrUndefined (AppType) , "AppSource" :: NullOrUndefined (Source) , "Domains" :: NullOrUndefined (Strings) , "EnableSsl" :: NullOrUndefined (Boolean) , "SslConfiguration" :: NullOrUndefined (SslConfiguration) , "Attributes" :: NullOrUndefined (AppAttributes) , "CreatedAt" :: NullOrUndefined (String) , "Environment" :: NullOrUndefined (EnvironmentVariables) } -> {"AppId" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "Shortname" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "DataSources" :: NullOrUndefined (DataSources) , "Type" :: NullOrUndefined (AppType) , "AppSource" :: NullOrUndefined (Source) , "Domains" :: NullOrUndefined (Strings) , "EnableSsl" :: NullOrUndefined (Boolean) , "SslConfiguration" :: NullOrUndefined (SslConfiguration) , "Attributes" :: NullOrUndefined (AppAttributes) , "CreatedAt" :: NullOrUndefined (String) , "Environment" :: NullOrUndefined (EnvironmentVariables) } ) -> App
-newApp'  customize = (App <<< customize) { "AppId": (NullOrUndefined Nothing), "AppSource": (NullOrUndefined Nothing), "Attributes": (NullOrUndefined Nothing), "CreatedAt": (NullOrUndefined Nothing), "DataSources": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Domains": (NullOrUndefined Nothing), "EnableSsl": (NullOrUndefined Nothing), "Environment": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Shortname": (NullOrUndefined Nothing), "SslConfiguration": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newApp' :: ( { "AppId" :: Maybe (String) , "StackId" :: Maybe (String) , "Shortname" :: Maybe (String) , "Name" :: Maybe (String) , "Description" :: Maybe (String) , "DataSources" :: Maybe (DataSources) , "Type" :: Maybe (AppType) , "AppSource" :: Maybe (Source) , "Domains" :: Maybe (Strings) , "EnableSsl" :: Maybe (Boolean) , "SslConfiguration" :: Maybe (SslConfiguration) , "Attributes" :: Maybe (AppAttributes) , "CreatedAt" :: Maybe (String) , "Environment" :: Maybe (EnvironmentVariables) } -> {"AppId" :: Maybe (String) , "StackId" :: Maybe (String) , "Shortname" :: Maybe (String) , "Name" :: Maybe (String) , "Description" :: Maybe (String) , "DataSources" :: Maybe (DataSources) , "Type" :: Maybe (AppType) , "AppSource" :: Maybe (Source) , "Domains" :: Maybe (Strings) , "EnableSsl" :: Maybe (Boolean) , "SslConfiguration" :: Maybe (SslConfiguration) , "Attributes" :: Maybe (AppAttributes) , "CreatedAt" :: Maybe (String) , "Environment" :: Maybe (EnvironmentVariables) } ) -> App
+newApp'  customize = (App <<< customize) { "AppId": Nothing, "AppSource": Nothing, "Attributes": Nothing, "CreatedAt": Nothing, "DataSources": Nothing, "Description": Nothing, "Domains": Nothing, "EnableSsl": Nothing, "Environment": Nothing, "Name": Nothing, "Shortname": Nothing, "SslConfiguration": Nothing, "StackId": Nothing, "Type": Nothing }
 
 
 
@@ -151,7 +150,7 @@ newAssignInstanceRequest' _InstanceId _LayerIds customize = (AssignInstanceReque
 
 newtype AssignVolumeRequest = AssignVolumeRequest 
   { "VolumeId" :: (String)
-  , "InstanceId" :: NullOrUndefined (String)
+  , "InstanceId" :: Maybe (String)
   }
 derive instance newtypeAssignVolumeRequest :: Newtype AssignVolumeRequest _
 derive instance repGenericAssignVolumeRequest :: Generic AssignVolumeRequest _
@@ -161,18 +160,18 @@ instance encodeAssignVolumeRequest :: Encode AssignVolumeRequest where encode = 
 
 -- | Constructs AssignVolumeRequest from required parameters
 newAssignVolumeRequest :: String -> AssignVolumeRequest
-newAssignVolumeRequest _VolumeId = AssignVolumeRequest { "VolumeId": _VolumeId, "InstanceId": (NullOrUndefined Nothing) }
+newAssignVolumeRequest _VolumeId = AssignVolumeRequest { "VolumeId": _VolumeId, "InstanceId": Nothing }
 
 -- | Constructs AssignVolumeRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAssignVolumeRequest' :: String -> ( { "VolumeId" :: (String) , "InstanceId" :: NullOrUndefined (String) } -> {"VolumeId" :: (String) , "InstanceId" :: NullOrUndefined (String) } ) -> AssignVolumeRequest
-newAssignVolumeRequest' _VolumeId customize = (AssignVolumeRequest <<< customize) { "VolumeId": _VolumeId, "InstanceId": (NullOrUndefined Nothing) }
+newAssignVolumeRequest' :: String -> ( { "VolumeId" :: (String) , "InstanceId" :: Maybe (String) } -> {"VolumeId" :: (String) , "InstanceId" :: Maybe (String) } ) -> AssignVolumeRequest
+newAssignVolumeRequest' _VolumeId customize = (AssignVolumeRequest <<< customize) { "VolumeId": _VolumeId, "InstanceId": Nothing }
 
 
 
 newtype AssociateElasticIpRequest = AssociateElasticIpRequest 
   { "ElasticIp" :: (String)
-  , "InstanceId" :: NullOrUndefined (String)
+  , "InstanceId" :: Maybe (String)
   }
 derive instance newtypeAssociateElasticIpRequest :: Newtype AssociateElasticIpRequest _
 derive instance repGenericAssociateElasticIpRequest :: Generic AssociateElasticIpRequest _
@@ -182,12 +181,12 @@ instance encodeAssociateElasticIpRequest :: Encode AssociateElasticIpRequest whe
 
 -- | Constructs AssociateElasticIpRequest from required parameters
 newAssociateElasticIpRequest :: String -> AssociateElasticIpRequest
-newAssociateElasticIpRequest _ElasticIp = AssociateElasticIpRequest { "ElasticIp": _ElasticIp, "InstanceId": (NullOrUndefined Nothing) }
+newAssociateElasticIpRequest _ElasticIp = AssociateElasticIpRequest { "ElasticIp": _ElasticIp, "InstanceId": Nothing }
 
 -- | Constructs AssociateElasticIpRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAssociateElasticIpRequest' :: String -> ( { "ElasticIp" :: (String) , "InstanceId" :: NullOrUndefined (String) } -> {"ElasticIp" :: (String) , "InstanceId" :: NullOrUndefined (String) } ) -> AssociateElasticIpRequest
-newAssociateElasticIpRequest' _ElasticIp customize = (AssociateElasticIpRequest <<< customize) { "ElasticIp": _ElasticIp, "InstanceId": (NullOrUndefined Nothing) }
+newAssociateElasticIpRequest' :: String -> ( { "ElasticIp" :: (String) , "InstanceId" :: Maybe (String) } -> {"ElasticIp" :: (String) , "InstanceId" :: Maybe (String) } ) -> AssociateElasticIpRequest
+newAssociateElasticIpRequest' _ElasticIp customize = (AssociateElasticIpRequest <<< customize) { "ElasticIp": _ElasticIp, "InstanceId": Nothing }
 
 
 
@@ -214,13 +213,13 @@ newAttachElasticLoadBalancerRequest' _ElasticLoadBalancerName _LayerId customize
 
 -- | <p>Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when AWS OpsWorks Stacks starts or stops load-based instances.</p>
 newtype AutoScalingThresholds = AutoScalingThresholds 
-  { "InstanceCount" :: NullOrUndefined (Int)
-  , "ThresholdsWaitTime" :: NullOrUndefined (Minute)
-  , "IgnoreMetricsTime" :: NullOrUndefined (Minute)
-  , "CpuThreshold" :: NullOrUndefined (Number)
-  , "MemoryThreshold" :: NullOrUndefined (Number)
-  , "LoadThreshold" :: NullOrUndefined (Number)
-  , "Alarms" :: NullOrUndefined (Strings)
+  { "InstanceCount" :: Maybe (Int)
+  , "ThresholdsWaitTime" :: Maybe (Minute)
+  , "IgnoreMetricsTime" :: Maybe (Minute)
+  , "CpuThreshold" :: Maybe (Number)
+  , "MemoryThreshold" :: Maybe (Number)
+  , "LoadThreshold" :: Maybe (Number)
+  , "Alarms" :: Maybe (Strings)
   }
 derive instance newtypeAutoScalingThresholds :: Newtype AutoScalingThresholds _
 derive instance repGenericAutoScalingThresholds :: Generic AutoScalingThresholds _
@@ -230,12 +229,12 @@ instance encodeAutoScalingThresholds :: Encode AutoScalingThresholds where encod
 
 -- | Constructs AutoScalingThresholds from required parameters
 newAutoScalingThresholds :: AutoScalingThresholds
-newAutoScalingThresholds  = AutoScalingThresholds { "Alarms": (NullOrUndefined Nothing), "CpuThreshold": (NullOrUndefined Nothing), "IgnoreMetricsTime": (NullOrUndefined Nothing), "InstanceCount": (NullOrUndefined Nothing), "LoadThreshold": (NullOrUndefined Nothing), "MemoryThreshold": (NullOrUndefined Nothing), "ThresholdsWaitTime": (NullOrUndefined Nothing) }
+newAutoScalingThresholds  = AutoScalingThresholds { "Alarms": Nothing, "CpuThreshold": Nothing, "IgnoreMetricsTime": Nothing, "InstanceCount": Nothing, "LoadThreshold": Nothing, "MemoryThreshold": Nothing, "ThresholdsWaitTime": Nothing }
 
 -- | Constructs AutoScalingThresholds's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAutoScalingThresholds' :: ( { "InstanceCount" :: NullOrUndefined (Int) , "ThresholdsWaitTime" :: NullOrUndefined (Minute) , "IgnoreMetricsTime" :: NullOrUndefined (Minute) , "CpuThreshold" :: NullOrUndefined (Number) , "MemoryThreshold" :: NullOrUndefined (Number) , "LoadThreshold" :: NullOrUndefined (Number) , "Alarms" :: NullOrUndefined (Strings) } -> {"InstanceCount" :: NullOrUndefined (Int) , "ThresholdsWaitTime" :: NullOrUndefined (Minute) , "IgnoreMetricsTime" :: NullOrUndefined (Minute) , "CpuThreshold" :: NullOrUndefined (Number) , "MemoryThreshold" :: NullOrUndefined (Number) , "LoadThreshold" :: NullOrUndefined (Number) , "Alarms" :: NullOrUndefined (Strings) } ) -> AutoScalingThresholds
-newAutoScalingThresholds'  customize = (AutoScalingThresholds <<< customize) { "Alarms": (NullOrUndefined Nothing), "CpuThreshold": (NullOrUndefined Nothing), "IgnoreMetricsTime": (NullOrUndefined Nothing), "InstanceCount": (NullOrUndefined Nothing), "LoadThreshold": (NullOrUndefined Nothing), "MemoryThreshold": (NullOrUndefined Nothing), "ThresholdsWaitTime": (NullOrUndefined Nothing) }
+newAutoScalingThresholds' :: ( { "InstanceCount" :: Maybe (Int) , "ThresholdsWaitTime" :: Maybe (Minute) , "IgnoreMetricsTime" :: Maybe (Minute) , "CpuThreshold" :: Maybe (Number) , "MemoryThreshold" :: Maybe (Number) , "LoadThreshold" :: Maybe (Number) , "Alarms" :: Maybe (Strings) } -> {"InstanceCount" :: Maybe (Int) , "ThresholdsWaitTime" :: Maybe (Minute) , "IgnoreMetricsTime" :: Maybe (Minute) , "CpuThreshold" :: Maybe (Number) , "MemoryThreshold" :: Maybe (Number) , "LoadThreshold" :: Maybe (Number) , "Alarms" :: Maybe (Strings) } ) -> AutoScalingThresholds
+newAutoScalingThresholds'  customize = (AutoScalingThresholds <<< customize) { "Alarms": Nothing, "CpuThreshold": Nothing, "IgnoreMetricsTime": Nothing, "InstanceCount": Nothing, "LoadThreshold": Nothing, "MemoryThreshold": Nothing, "ThresholdsWaitTime": Nothing }
 
 
 
@@ -250,10 +249,10 @@ instance encodeAutoScalingType :: Encode AutoScalingType where encode = genericE
 
 -- | <p>Describes a block device mapping. This data type maps directly to the Amazon EC2 <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a> data type. </p>
 newtype BlockDeviceMapping = BlockDeviceMapping 
-  { "DeviceName" :: NullOrUndefined (String)
-  , "NoDevice" :: NullOrUndefined (String)
-  , "VirtualName" :: NullOrUndefined (String)
-  , "Ebs" :: NullOrUndefined (EbsBlockDevice)
+  { "DeviceName" :: Maybe (String)
+  , "NoDevice" :: Maybe (String)
+  , "VirtualName" :: Maybe (String)
+  , "Ebs" :: Maybe (EbsBlockDevice)
   }
 derive instance newtypeBlockDeviceMapping :: Newtype BlockDeviceMapping _
 derive instance repGenericBlockDeviceMapping :: Generic BlockDeviceMapping _
@@ -263,12 +262,12 @@ instance encodeBlockDeviceMapping :: Encode BlockDeviceMapping where encode = ge
 
 -- | Constructs BlockDeviceMapping from required parameters
 newBlockDeviceMapping :: BlockDeviceMapping
-newBlockDeviceMapping  = BlockDeviceMapping { "DeviceName": (NullOrUndefined Nothing), "Ebs": (NullOrUndefined Nothing), "NoDevice": (NullOrUndefined Nothing), "VirtualName": (NullOrUndefined Nothing) }
+newBlockDeviceMapping  = BlockDeviceMapping { "DeviceName": Nothing, "Ebs": Nothing, "NoDevice": Nothing, "VirtualName": Nothing }
 
 -- | Constructs BlockDeviceMapping's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBlockDeviceMapping' :: ( { "DeviceName" :: NullOrUndefined (String) , "NoDevice" :: NullOrUndefined (String) , "VirtualName" :: NullOrUndefined (String) , "Ebs" :: NullOrUndefined (EbsBlockDevice) } -> {"DeviceName" :: NullOrUndefined (String) , "NoDevice" :: NullOrUndefined (String) , "VirtualName" :: NullOrUndefined (String) , "Ebs" :: NullOrUndefined (EbsBlockDevice) } ) -> BlockDeviceMapping
-newBlockDeviceMapping'  customize = (BlockDeviceMapping <<< customize) { "DeviceName": (NullOrUndefined Nothing), "Ebs": (NullOrUndefined Nothing), "NoDevice": (NullOrUndefined Nothing), "VirtualName": (NullOrUndefined Nothing) }
+newBlockDeviceMapping' :: ( { "DeviceName" :: Maybe (String) , "NoDevice" :: Maybe (String) , "VirtualName" :: Maybe (String) , "Ebs" :: Maybe (EbsBlockDevice) } -> {"DeviceName" :: Maybe (String) , "NoDevice" :: Maybe (String) , "VirtualName" :: Maybe (String) , "Ebs" :: Maybe (EbsBlockDevice) } ) -> BlockDeviceMapping
+newBlockDeviceMapping'  customize = (BlockDeviceMapping <<< customize) { "DeviceName": Nothing, "Ebs": Nothing, "NoDevice": Nothing, "VirtualName": Nothing }
 
 
 
@@ -283,8 +282,8 @@ instance encodeBlockDeviceMappings :: Encode BlockDeviceMappings where encode = 
 
 -- | <p>Describes the Chef configuration.</p>
 newtype ChefConfiguration = ChefConfiguration 
-  { "ManageBerkshelf" :: NullOrUndefined (Boolean)
-  , "BerkshelfVersion" :: NullOrUndefined (String)
+  { "ManageBerkshelf" :: Maybe (Boolean)
+  , "BerkshelfVersion" :: Maybe (String)
   }
 derive instance newtypeChefConfiguration :: Newtype ChefConfiguration _
 derive instance repGenericChefConfiguration :: Generic ChefConfiguration _
@@ -294,38 +293,38 @@ instance encodeChefConfiguration :: Encode ChefConfiguration where encode = gene
 
 -- | Constructs ChefConfiguration from required parameters
 newChefConfiguration :: ChefConfiguration
-newChefConfiguration  = ChefConfiguration { "BerkshelfVersion": (NullOrUndefined Nothing), "ManageBerkshelf": (NullOrUndefined Nothing) }
+newChefConfiguration  = ChefConfiguration { "BerkshelfVersion": Nothing, "ManageBerkshelf": Nothing }
 
 -- | Constructs ChefConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newChefConfiguration' :: ( { "ManageBerkshelf" :: NullOrUndefined (Boolean) , "BerkshelfVersion" :: NullOrUndefined (String) } -> {"ManageBerkshelf" :: NullOrUndefined (Boolean) , "BerkshelfVersion" :: NullOrUndefined (String) } ) -> ChefConfiguration
-newChefConfiguration'  customize = (ChefConfiguration <<< customize) { "BerkshelfVersion": (NullOrUndefined Nothing), "ManageBerkshelf": (NullOrUndefined Nothing) }
+newChefConfiguration' :: ( { "ManageBerkshelf" :: Maybe (Boolean) , "BerkshelfVersion" :: Maybe (String) } -> {"ManageBerkshelf" :: Maybe (Boolean) , "BerkshelfVersion" :: Maybe (String) } ) -> ChefConfiguration
+newChefConfiguration'  customize = (ChefConfiguration <<< customize) { "BerkshelfVersion": Nothing, "ManageBerkshelf": Nothing }
 
 
 
 newtype CloneStackRequest = CloneStackRequest 
   { "SourceStackId" :: (String)
-  , "Name" :: NullOrUndefined (String)
-  , "Region" :: NullOrUndefined (String)
-  , "VpcId" :: NullOrUndefined (String)
-  , "Attributes" :: NullOrUndefined (StackAttributes)
+  , "Name" :: Maybe (String)
+  , "Region" :: Maybe (String)
+  , "VpcId" :: Maybe (String)
+  , "Attributes" :: Maybe (StackAttributes)
   , "ServiceRoleArn" :: (String)
-  , "DefaultInstanceProfileArn" :: NullOrUndefined (String)
-  , "DefaultOs" :: NullOrUndefined (String)
-  , "HostnameTheme" :: NullOrUndefined (String)
-  , "DefaultAvailabilityZone" :: NullOrUndefined (String)
-  , "DefaultSubnetId" :: NullOrUndefined (String)
-  , "CustomJson" :: NullOrUndefined (String)
-  , "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager)
-  , "ChefConfiguration" :: NullOrUndefined (ChefConfiguration)
-  , "UseCustomCookbooks" :: NullOrUndefined (Boolean)
-  , "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean)
-  , "CustomCookbooksSource" :: NullOrUndefined (Source)
-  , "DefaultSshKeyName" :: NullOrUndefined (String)
-  , "ClonePermissions" :: NullOrUndefined (Boolean)
-  , "CloneAppIds" :: NullOrUndefined (Strings)
-  , "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType)
-  , "AgentVersion" :: NullOrUndefined (String)
+  , "DefaultInstanceProfileArn" :: Maybe (String)
+  , "DefaultOs" :: Maybe (String)
+  , "HostnameTheme" :: Maybe (String)
+  , "DefaultAvailabilityZone" :: Maybe (String)
+  , "DefaultSubnetId" :: Maybe (String)
+  , "CustomJson" :: Maybe (String)
+  , "ConfigurationManager" :: Maybe (StackConfigurationManager)
+  , "ChefConfiguration" :: Maybe (ChefConfiguration)
+  , "UseCustomCookbooks" :: Maybe (Boolean)
+  , "UseOpsworksSecurityGroups" :: Maybe (Boolean)
+  , "CustomCookbooksSource" :: Maybe (Source)
+  , "DefaultSshKeyName" :: Maybe (String)
+  , "ClonePermissions" :: Maybe (Boolean)
+  , "CloneAppIds" :: Maybe (Strings)
+  , "DefaultRootDeviceType" :: Maybe (RootDeviceType)
+  , "AgentVersion" :: Maybe (String)
   }
 derive instance newtypeCloneStackRequest :: Newtype CloneStackRequest _
 derive instance repGenericCloneStackRequest :: Generic CloneStackRequest _
@@ -335,18 +334,18 @@ instance encodeCloneStackRequest :: Encode CloneStackRequest where encode = gene
 
 -- | Constructs CloneStackRequest from required parameters
 newCloneStackRequest :: String -> String -> CloneStackRequest
-newCloneStackRequest _ServiceRoleArn _SourceStackId = CloneStackRequest { "ServiceRoleArn": _ServiceRoleArn, "SourceStackId": _SourceStackId, "AgentVersion": (NullOrUndefined Nothing), "Attributes": (NullOrUndefined Nothing), "ChefConfiguration": (NullOrUndefined Nothing), "CloneAppIds": (NullOrUndefined Nothing), "ClonePermissions": (NullOrUndefined Nothing), "ConfigurationManager": (NullOrUndefined Nothing), "CustomCookbooksSource": (NullOrUndefined Nothing), "CustomJson": (NullOrUndefined Nothing), "DefaultAvailabilityZone": (NullOrUndefined Nothing), "DefaultInstanceProfileArn": (NullOrUndefined Nothing), "DefaultOs": (NullOrUndefined Nothing), "DefaultRootDeviceType": (NullOrUndefined Nothing), "DefaultSshKeyName": (NullOrUndefined Nothing), "DefaultSubnetId": (NullOrUndefined Nothing), "HostnameTheme": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Region": (NullOrUndefined Nothing), "UseCustomCookbooks": (NullOrUndefined Nothing), "UseOpsworksSecurityGroups": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newCloneStackRequest _ServiceRoleArn _SourceStackId = CloneStackRequest { "ServiceRoleArn": _ServiceRoleArn, "SourceStackId": _SourceStackId, "AgentVersion": Nothing, "Attributes": Nothing, "ChefConfiguration": Nothing, "CloneAppIds": Nothing, "ClonePermissions": Nothing, "ConfigurationManager": Nothing, "CustomCookbooksSource": Nothing, "CustomJson": Nothing, "DefaultAvailabilityZone": Nothing, "DefaultInstanceProfileArn": Nothing, "DefaultOs": Nothing, "DefaultRootDeviceType": Nothing, "DefaultSshKeyName": Nothing, "DefaultSubnetId": Nothing, "HostnameTheme": Nothing, "Name": Nothing, "Region": Nothing, "UseCustomCookbooks": Nothing, "UseOpsworksSecurityGroups": Nothing, "VpcId": Nothing }
 
 -- | Constructs CloneStackRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCloneStackRequest' :: String -> String -> ( { "SourceStackId" :: (String) , "Name" :: NullOrUndefined (String) , "Region" :: NullOrUndefined (String) , "VpcId" :: NullOrUndefined (String) , "Attributes" :: NullOrUndefined (StackAttributes) , "ServiceRoleArn" :: (String) , "DefaultInstanceProfileArn" :: NullOrUndefined (String) , "DefaultOs" :: NullOrUndefined (String) , "HostnameTheme" :: NullOrUndefined (String) , "DefaultAvailabilityZone" :: NullOrUndefined (String) , "DefaultSubnetId" :: NullOrUndefined (String) , "CustomJson" :: NullOrUndefined (String) , "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager) , "ChefConfiguration" :: NullOrUndefined (ChefConfiguration) , "UseCustomCookbooks" :: NullOrUndefined (Boolean) , "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean) , "CustomCookbooksSource" :: NullOrUndefined (Source) , "DefaultSshKeyName" :: NullOrUndefined (String) , "ClonePermissions" :: NullOrUndefined (Boolean) , "CloneAppIds" :: NullOrUndefined (Strings) , "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType) , "AgentVersion" :: NullOrUndefined (String) } -> {"SourceStackId" :: (String) , "Name" :: NullOrUndefined (String) , "Region" :: NullOrUndefined (String) , "VpcId" :: NullOrUndefined (String) , "Attributes" :: NullOrUndefined (StackAttributes) , "ServiceRoleArn" :: (String) , "DefaultInstanceProfileArn" :: NullOrUndefined (String) , "DefaultOs" :: NullOrUndefined (String) , "HostnameTheme" :: NullOrUndefined (String) , "DefaultAvailabilityZone" :: NullOrUndefined (String) , "DefaultSubnetId" :: NullOrUndefined (String) , "CustomJson" :: NullOrUndefined (String) , "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager) , "ChefConfiguration" :: NullOrUndefined (ChefConfiguration) , "UseCustomCookbooks" :: NullOrUndefined (Boolean) , "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean) , "CustomCookbooksSource" :: NullOrUndefined (Source) , "DefaultSshKeyName" :: NullOrUndefined (String) , "ClonePermissions" :: NullOrUndefined (Boolean) , "CloneAppIds" :: NullOrUndefined (Strings) , "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType) , "AgentVersion" :: NullOrUndefined (String) } ) -> CloneStackRequest
-newCloneStackRequest' _ServiceRoleArn _SourceStackId customize = (CloneStackRequest <<< customize) { "ServiceRoleArn": _ServiceRoleArn, "SourceStackId": _SourceStackId, "AgentVersion": (NullOrUndefined Nothing), "Attributes": (NullOrUndefined Nothing), "ChefConfiguration": (NullOrUndefined Nothing), "CloneAppIds": (NullOrUndefined Nothing), "ClonePermissions": (NullOrUndefined Nothing), "ConfigurationManager": (NullOrUndefined Nothing), "CustomCookbooksSource": (NullOrUndefined Nothing), "CustomJson": (NullOrUndefined Nothing), "DefaultAvailabilityZone": (NullOrUndefined Nothing), "DefaultInstanceProfileArn": (NullOrUndefined Nothing), "DefaultOs": (NullOrUndefined Nothing), "DefaultRootDeviceType": (NullOrUndefined Nothing), "DefaultSshKeyName": (NullOrUndefined Nothing), "DefaultSubnetId": (NullOrUndefined Nothing), "HostnameTheme": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Region": (NullOrUndefined Nothing), "UseCustomCookbooks": (NullOrUndefined Nothing), "UseOpsworksSecurityGroups": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newCloneStackRequest' :: String -> String -> ( { "SourceStackId" :: (String) , "Name" :: Maybe (String) , "Region" :: Maybe (String) , "VpcId" :: Maybe (String) , "Attributes" :: Maybe (StackAttributes) , "ServiceRoleArn" :: (String) , "DefaultInstanceProfileArn" :: Maybe (String) , "DefaultOs" :: Maybe (String) , "HostnameTheme" :: Maybe (String) , "DefaultAvailabilityZone" :: Maybe (String) , "DefaultSubnetId" :: Maybe (String) , "CustomJson" :: Maybe (String) , "ConfigurationManager" :: Maybe (StackConfigurationManager) , "ChefConfiguration" :: Maybe (ChefConfiguration) , "UseCustomCookbooks" :: Maybe (Boolean) , "UseOpsworksSecurityGroups" :: Maybe (Boolean) , "CustomCookbooksSource" :: Maybe (Source) , "DefaultSshKeyName" :: Maybe (String) , "ClonePermissions" :: Maybe (Boolean) , "CloneAppIds" :: Maybe (Strings) , "DefaultRootDeviceType" :: Maybe (RootDeviceType) , "AgentVersion" :: Maybe (String) } -> {"SourceStackId" :: (String) , "Name" :: Maybe (String) , "Region" :: Maybe (String) , "VpcId" :: Maybe (String) , "Attributes" :: Maybe (StackAttributes) , "ServiceRoleArn" :: (String) , "DefaultInstanceProfileArn" :: Maybe (String) , "DefaultOs" :: Maybe (String) , "HostnameTheme" :: Maybe (String) , "DefaultAvailabilityZone" :: Maybe (String) , "DefaultSubnetId" :: Maybe (String) , "CustomJson" :: Maybe (String) , "ConfigurationManager" :: Maybe (StackConfigurationManager) , "ChefConfiguration" :: Maybe (ChefConfiguration) , "UseCustomCookbooks" :: Maybe (Boolean) , "UseOpsworksSecurityGroups" :: Maybe (Boolean) , "CustomCookbooksSource" :: Maybe (Source) , "DefaultSshKeyName" :: Maybe (String) , "ClonePermissions" :: Maybe (Boolean) , "CloneAppIds" :: Maybe (Strings) , "DefaultRootDeviceType" :: Maybe (RootDeviceType) , "AgentVersion" :: Maybe (String) } ) -> CloneStackRequest
+newCloneStackRequest' _ServiceRoleArn _SourceStackId customize = (CloneStackRequest <<< customize) { "ServiceRoleArn": _ServiceRoleArn, "SourceStackId": _SourceStackId, "AgentVersion": Nothing, "Attributes": Nothing, "ChefConfiguration": Nothing, "CloneAppIds": Nothing, "ClonePermissions": Nothing, "ConfigurationManager": Nothing, "CustomCookbooksSource": Nothing, "CustomJson": Nothing, "DefaultAvailabilityZone": Nothing, "DefaultInstanceProfileArn": Nothing, "DefaultOs": Nothing, "DefaultRootDeviceType": Nothing, "DefaultSshKeyName": Nothing, "DefaultSubnetId": Nothing, "HostnameTheme": Nothing, "Name": Nothing, "Region": Nothing, "UseCustomCookbooks": Nothing, "UseOpsworksSecurityGroups": Nothing, "VpcId": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>CloneStack</code> request.</p>
 newtype CloneStackResult = CloneStackResult 
-  { "StackId" :: NullOrUndefined (String)
+  { "StackId" :: Maybe (String)
   }
 derive instance newtypeCloneStackResult :: Newtype CloneStackResult _
 derive instance repGenericCloneStackResult :: Generic CloneStackResult _
@@ -356,19 +355,19 @@ instance encodeCloneStackResult :: Encode CloneStackResult where encode = generi
 
 -- | Constructs CloneStackResult from required parameters
 newCloneStackResult :: CloneStackResult
-newCloneStackResult  = CloneStackResult { "StackId": (NullOrUndefined Nothing) }
+newCloneStackResult  = CloneStackResult { "StackId": Nothing }
 
 -- | Constructs CloneStackResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCloneStackResult' :: ( { "StackId" :: NullOrUndefined (String) } -> {"StackId" :: NullOrUndefined (String) } ) -> CloneStackResult
-newCloneStackResult'  customize = (CloneStackResult <<< customize) { "StackId": (NullOrUndefined Nothing) }
+newCloneStackResult' :: ( { "StackId" :: Maybe (String) } -> {"StackId" :: Maybe (String) } ) -> CloneStackResult
+newCloneStackResult'  customize = (CloneStackResult <<< customize) { "StackId": Nothing }
 
 
 
 -- | <p>Describes the Amazon CloudWatch logs configuration for a layer.</p>
 newtype CloudWatchLogsConfiguration = CloudWatchLogsConfiguration 
-  { "Enabled" :: NullOrUndefined (Boolean)
-  , "LogStreams" :: NullOrUndefined (CloudWatchLogsLogStreams)
+  { "Enabled" :: Maybe (Boolean)
+  , "LogStreams" :: Maybe (CloudWatchLogsLogStreams)
   }
 derive instance newtypeCloudWatchLogsConfiguration :: Newtype CloudWatchLogsConfiguration _
 derive instance repGenericCloudWatchLogsConfiguration :: Generic CloudWatchLogsConfiguration _
@@ -378,12 +377,12 @@ instance encodeCloudWatchLogsConfiguration :: Encode CloudWatchLogsConfiguration
 
 -- | Constructs CloudWatchLogsConfiguration from required parameters
 newCloudWatchLogsConfiguration :: CloudWatchLogsConfiguration
-newCloudWatchLogsConfiguration  = CloudWatchLogsConfiguration { "Enabled": (NullOrUndefined Nothing), "LogStreams": (NullOrUndefined Nothing) }
+newCloudWatchLogsConfiguration  = CloudWatchLogsConfiguration { "Enabled": Nothing, "LogStreams": Nothing }
 
 -- | Constructs CloudWatchLogsConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCloudWatchLogsConfiguration' :: ( { "Enabled" :: NullOrUndefined (Boolean) , "LogStreams" :: NullOrUndefined (CloudWatchLogsLogStreams) } -> {"Enabled" :: NullOrUndefined (Boolean) , "LogStreams" :: NullOrUndefined (CloudWatchLogsLogStreams) } ) -> CloudWatchLogsConfiguration
-newCloudWatchLogsConfiguration'  customize = (CloudWatchLogsConfiguration <<< customize) { "Enabled": (NullOrUndefined Nothing), "LogStreams": (NullOrUndefined Nothing) }
+newCloudWatchLogsConfiguration' :: ( { "Enabled" :: Maybe (Boolean) , "LogStreams" :: Maybe (CloudWatchLogsLogStreams) } -> {"Enabled" :: Maybe (Boolean) , "LogStreams" :: Maybe (CloudWatchLogsLogStreams) } ) -> CloudWatchLogsConfiguration
+newCloudWatchLogsConfiguration'  customize = (CloudWatchLogsConfiguration <<< customize) { "Enabled": Nothing, "LogStreams": Nothing }
 
 
 
@@ -409,17 +408,17 @@ instance encodeCloudWatchLogsInitialPosition :: Encode CloudWatchLogsInitialPosi
 
 -- | <p>Describes the Amazon CloudWatch logs configuration for a layer. For detailed information about members of this data type, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
 newtype CloudWatchLogsLogStream = CloudWatchLogsLogStream 
-  { "LogGroupName" :: NullOrUndefined (String)
-  , "DatetimeFormat" :: NullOrUndefined (String)
-  , "TimeZone" :: NullOrUndefined (CloudWatchLogsTimeZone)
-  , "File" :: NullOrUndefined (String)
-  , "FileFingerprintLines" :: NullOrUndefined (String)
-  , "MultiLineStartPattern" :: NullOrUndefined (String)
-  , "InitialPosition" :: NullOrUndefined (CloudWatchLogsInitialPosition)
-  , "Encoding" :: NullOrUndefined (CloudWatchLogsEncoding)
-  , "BufferDuration" :: NullOrUndefined (Int)
-  , "BatchCount" :: NullOrUndefined (Int)
-  , "BatchSize" :: NullOrUndefined (Int)
+  { "LogGroupName" :: Maybe (String)
+  , "DatetimeFormat" :: Maybe (String)
+  , "TimeZone" :: Maybe (CloudWatchLogsTimeZone)
+  , "File" :: Maybe (String)
+  , "FileFingerprintLines" :: Maybe (String)
+  , "MultiLineStartPattern" :: Maybe (String)
+  , "InitialPosition" :: Maybe (CloudWatchLogsInitialPosition)
+  , "Encoding" :: Maybe (CloudWatchLogsEncoding)
+  , "BufferDuration" :: Maybe (Int)
+  , "BatchCount" :: Maybe (Int)
+  , "BatchSize" :: Maybe (Int)
   }
 derive instance newtypeCloudWatchLogsLogStream :: Newtype CloudWatchLogsLogStream _
 derive instance repGenericCloudWatchLogsLogStream :: Generic CloudWatchLogsLogStream _
@@ -429,12 +428,12 @@ instance encodeCloudWatchLogsLogStream :: Encode CloudWatchLogsLogStream where e
 
 -- | Constructs CloudWatchLogsLogStream from required parameters
 newCloudWatchLogsLogStream :: CloudWatchLogsLogStream
-newCloudWatchLogsLogStream  = CloudWatchLogsLogStream { "BatchCount": (NullOrUndefined Nothing), "BatchSize": (NullOrUndefined Nothing), "BufferDuration": (NullOrUndefined Nothing), "DatetimeFormat": (NullOrUndefined Nothing), "Encoding": (NullOrUndefined Nothing), "File": (NullOrUndefined Nothing), "FileFingerprintLines": (NullOrUndefined Nothing), "InitialPosition": (NullOrUndefined Nothing), "LogGroupName": (NullOrUndefined Nothing), "MultiLineStartPattern": (NullOrUndefined Nothing), "TimeZone": (NullOrUndefined Nothing) }
+newCloudWatchLogsLogStream  = CloudWatchLogsLogStream { "BatchCount": Nothing, "BatchSize": Nothing, "BufferDuration": Nothing, "DatetimeFormat": Nothing, "Encoding": Nothing, "File": Nothing, "FileFingerprintLines": Nothing, "InitialPosition": Nothing, "LogGroupName": Nothing, "MultiLineStartPattern": Nothing, "TimeZone": Nothing }
 
 -- | Constructs CloudWatchLogsLogStream's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCloudWatchLogsLogStream' :: ( { "LogGroupName" :: NullOrUndefined (String) , "DatetimeFormat" :: NullOrUndefined (String) , "TimeZone" :: NullOrUndefined (CloudWatchLogsTimeZone) , "File" :: NullOrUndefined (String) , "FileFingerprintLines" :: NullOrUndefined (String) , "MultiLineStartPattern" :: NullOrUndefined (String) , "InitialPosition" :: NullOrUndefined (CloudWatchLogsInitialPosition) , "Encoding" :: NullOrUndefined (CloudWatchLogsEncoding) , "BufferDuration" :: NullOrUndefined (Int) , "BatchCount" :: NullOrUndefined (Int) , "BatchSize" :: NullOrUndefined (Int) } -> {"LogGroupName" :: NullOrUndefined (String) , "DatetimeFormat" :: NullOrUndefined (String) , "TimeZone" :: NullOrUndefined (CloudWatchLogsTimeZone) , "File" :: NullOrUndefined (String) , "FileFingerprintLines" :: NullOrUndefined (String) , "MultiLineStartPattern" :: NullOrUndefined (String) , "InitialPosition" :: NullOrUndefined (CloudWatchLogsInitialPosition) , "Encoding" :: NullOrUndefined (CloudWatchLogsEncoding) , "BufferDuration" :: NullOrUndefined (Int) , "BatchCount" :: NullOrUndefined (Int) , "BatchSize" :: NullOrUndefined (Int) } ) -> CloudWatchLogsLogStream
-newCloudWatchLogsLogStream'  customize = (CloudWatchLogsLogStream <<< customize) { "BatchCount": (NullOrUndefined Nothing), "BatchSize": (NullOrUndefined Nothing), "BufferDuration": (NullOrUndefined Nothing), "DatetimeFormat": (NullOrUndefined Nothing), "Encoding": (NullOrUndefined Nothing), "File": (NullOrUndefined Nothing), "FileFingerprintLines": (NullOrUndefined Nothing), "InitialPosition": (NullOrUndefined Nothing), "LogGroupName": (NullOrUndefined Nothing), "MultiLineStartPattern": (NullOrUndefined Nothing), "TimeZone": (NullOrUndefined Nothing) }
+newCloudWatchLogsLogStream' :: ( { "LogGroupName" :: Maybe (String) , "DatetimeFormat" :: Maybe (String) , "TimeZone" :: Maybe (CloudWatchLogsTimeZone) , "File" :: Maybe (String) , "FileFingerprintLines" :: Maybe (String) , "MultiLineStartPattern" :: Maybe (String) , "InitialPosition" :: Maybe (CloudWatchLogsInitialPosition) , "Encoding" :: Maybe (CloudWatchLogsEncoding) , "BufferDuration" :: Maybe (Int) , "BatchCount" :: Maybe (Int) , "BatchSize" :: Maybe (Int) } -> {"LogGroupName" :: Maybe (String) , "DatetimeFormat" :: Maybe (String) , "TimeZone" :: Maybe (CloudWatchLogsTimeZone) , "File" :: Maybe (String) , "FileFingerprintLines" :: Maybe (String) , "MultiLineStartPattern" :: Maybe (String) , "InitialPosition" :: Maybe (CloudWatchLogsInitialPosition) , "Encoding" :: Maybe (CloudWatchLogsEncoding) , "BufferDuration" :: Maybe (Int) , "BatchCount" :: Maybe (Int) , "BatchSize" :: Maybe (Int) } ) -> CloudWatchLogsLogStream
+newCloudWatchLogsLogStream'  customize = (CloudWatchLogsLogStream <<< customize) { "BatchCount": Nothing, "BatchSize": Nothing, "BufferDuration": Nothing, "DatetimeFormat": Nothing, "Encoding": Nothing, "File": Nothing, "FileFingerprintLines": Nothing, "InitialPosition": Nothing, "LogGroupName": Nothing, "MultiLineStartPattern": Nothing, "TimeZone": Nothing }
 
 
 
@@ -460,16 +459,16 @@ instance encodeCloudWatchLogsTimeZone :: Encode CloudWatchLogsTimeZone where enc
 
 -- | <p>Describes a command.</p>
 newtype Command = Command 
-  { "CommandId" :: NullOrUndefined (String)
-  , "InstanceId" :: NullOrUndefined (String)
-  , "DeploymentId" :: NullOrUndefined (String)
-  , "CreatedAt" :: NullOrUndefined (DateTime)
-  , "AcknowledgedAt" :: NullOrUndefined (DateTime)
-  , "CompletedAt" :: NullOrUndefined (DateTime)
-  , "Status" :: NullOrUndefined (String)
-  , "ExitCode" :: NullOrUndefined (Int)
-  , "LogUrl" :: NullOrUndefined (String)
-  , "Type" :: NullOrUndefined (String)
+  { "CommandId" :: Maybe (String)
+  , "InstanceId" :: Maybe (String)
+  , "DeploymentId" :: Maybe (String)
+  , "CreatedAt" :: Maybe (DateTime)
+  , "AcknowledgedAt" :: Maybe (DateTime)
+  , "CompletedAt" :: Maybe (DateTime)
+  , "Status" :: Maybe (String)
+  , "ExitCode" :: Maybe (Int)
+  , "LogUrl" :: Maybe (String)
+  , "Type" :: Maybe (String)
   }
 derive instance newtypeCommand :: Newtype Command _
 derive instance repGenericCommand :: Generic Command _
@@ -479,12 +478,12 @@ instance encodeCommand :: Encode Command where encode = genericEncode options
 
 -- | Constructs Command from required parameters
 newCommand :: Command
-newCommand  = Command { "AcknowledgedAt": (NullOrUndefined Nothing), "CommandId": (NullOrUndefined Nothing), "CompletedAt": (NullOrUndefined Nothing), "CreatedAt": (NullOrUndefined Nothing), "DeploymentId": (NullOrUndefined Nothing), "ExitCode": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "LogUrl": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newCommand  = Command { "AcknowledgedAt": Nothing, "CommandId": Nothing, "CompletedAt": Nothing, "CreatedAt": Nothing, "DeploymentId": Nothing, "ExitCode": Nothing, "InstanceId": Nothing, "LogUrl": Nothing, "Status": Nothing, "Type": Nothing }
 
 -- | Constructs Command's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCommand' :: ( { "CommandId" :: NullOrUndefined (String) , "InstanceId" :: NullOrUndefined (String) , "DeploymentId" :: NullOrUndefined (String) , "CreatedAt" :: NullOrUndefined (DateTime) , "AcknowledgedAt" :: NullOrUndefined (DateTime) , "CompletedAt" :: NullOrUndefined (DateTime) , "Status" :: NullOrUndefined (String) , "ExitCode" :: NullOrUndefined (Int) , "LogUrl" :: NullOrUndefined (String) , "Type" :: NullOrUndefined (String) } -> {"CommandId" :: NullOrUndefined (String) , "InstanceId" :: NullOrUndefined (String) , "DeploymentId" :: NullOrUndefined (String) , "CreatedAt" :: NullOrUndefined (DateTime) , "AcknowledgedAt" :: NullOrUndefined (DateTime) , "CompletedAt" :: NullOrUndefined (DateTime) , "Status" :: NullOrUndefined (String) , "ExitCode" :: NullOrUndefined (Int) , "LogUrl" :: NullOrUndefined (String) , "Type" :: NullOrUndefined (String) } ) -> Command
-newCommand'  customize = (Command <<< customize) { "AcknowledgedAt": (NullOrUndefined Nothing), "CommandId": (NullOrUndefined Nothing), "CompletedAt": (NullOrUndefined Nothing), "CreatedAt": (NullOrUndefined Nothing), "DeploymentId": (NullOrUndefined Nothing), "ExitCode": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "LogUrl": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newCommand' :: ( { "CommandId" :: Maybe (String) , "InstanceId" :: Maybe (String) , "DeploymentId" :: Maybe (String) , "CreatedAt" :: Maybe (DateTime) , "AcknowledgedAt" :: Maybe (DateTime) , "CompletedAt" :: Maybe (DateTime) , "Status" :: Maybe (String) , "ExitCode" :: Maybe (Int) , "LogUrl" :: Maybe (String) , "Type" :: Maybe (String) } -> {"CommandId" :: Maybe (String) , "InstanceId" :: Maybe (String) , "DeploymentId" :: Maybe (String) , "CreatedAt" :: Maybe (DateTime) , "AcknowledgedAt" :: Maybe (DateTime) , "CompletedAt" :: Maybe (DateTime) , "Status" :: Maybe (String) , "ExitCode" :: Maybe (Int) , "LogUrl" :: Maybe (String) , "Type" :: Maybe (String) } ) -> Command
+newCommand'  customize = (Command <<< customize) { "AcknowledgedAt": Nothing, "CommandId": Nothing, "CompletedAt": Nothing, "CreatedAt": Nothing, "DeploymentId": Nothing, "ExitCode": Nothing, "InstanceId": Nothing, "LogUrl": Nothing, "Status": Nothing, "Type": Nothing }
 
 
 
@@ -499,17 +498,17 @@ instance encodeCommands :: Encode Commands where encode = genericEncode options
 
 newtype CreateAppRequest = CreateAppRequest 
   { "StackId" :: (String)
-  , "Shortname" :: NullOrUndefined (String)
+  , "Shortname" :: Maybe (String)
   , "Name" :: (String)
-  , "Description" :: NullOrUndefined (String)
-  , "DataSources" :: NullOrUndefined (DataSources)
+  , "Description" :: Maybe (String)
+  , "DataSources" :: Maybe (DataSources)
   , "Type" :: (AppType)
-  , "AppSource" :: NullOrUndefined (Source)
-  , "Domains" :: NullOrUndefined (Strings)
-  , "EnableSsl" :: NullOrUndefined (Boolean)
-  , "SslConfiguration" :: NullOrUndefined (SslConfiguration)
-  , "Attributes" :: NullOrUndefined (AppAttributes)
-  , "Environment" :: NullOrUndefined (EnvironmentVariables)
+  , "AppSource" :: Maybe (Source)
+  , "Domains" :: Maybe (Strings)
+  , "EnableSsl" :: Maybe (Boolean)
+  , "SslConfiguration" :: Maybe (SslConfiguration)
+  , "Attributes" :: Maybe (AppAttributes)
+  , "Environment" :: Maybe (EnvironmentVariables)
   }
 derive instance newtypeCreateAppRequest :: Newtype CreateAppRequest _
 derive instance repGenericCreateAppRequest :: Generic CreateAppRequest _
@@ -519,18 +518,18 @@ instance encodeCreateAppRequest :: Encode CreateAppRequest where encode = generi
 
 -- | Constructs CreateAppRequest from required parameters
 newCreateAppRequest :: String -> String -> AppType -> CreateAppRequest
-newCreateAppRequest _Name _StackId _Type = CreateAppRequest { "Name": _Name, "StackId": _StackId, "Type": _Type, "AppSource": (NullOrUndefined Nothing), "Attributes": (NullOrUndefined Nothing), "DataSources": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Domains": (NullOrUndefined Nothing), "EnableSsl": (NullOrUndefined Nothing), "Environment": (NullOrUndefined Nothing), "Shortname": (NullOrUndefined Nothing), "SslConfiguration": (NullOrUndefined Nothing) }
+newCreateAppRequest _Name _StackId _Type = CreateAppRequest { "Name": _Name, "StackId": _StackId, "Type": _Type, "AppSource": Nothing, "Attributes": Nothing, "DataSources": Nothing, "Description": Nothing, "Domains": Nothing, "EnableSsl": Nothing, "Environment": Nothing, "Shortname": Nothing, "SslConfiguration": Nothing }
 
 -- | Constructs CreateAppRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateAppRequest' :: String -> String -> AppType -> ( { "StackId" :: (String) , "Shortname" :: NullOrUndefined (String) , "Name" :: (String) , "Description" :: NullOrUndefined (String) , "DataSources" :: NullOrUndefined (DataSources) , "Type" :: (AppType) , "AppSource" :: NullOrUndefined (Source) , "Domains" :: NullOrUndefined (Strings) , "EnableSsl" :: NullOrUndefined (Boolean) , "SslConfiguration" :: NullOrUndefined (SslConfiguration) , "Attributes" :: NullOrUndefined (AppAttributes) , "Environment" :: NullOrUndefined (EnvironmentVariables) } -> {"StackId" :: (String) , "Shortname" :: NullOrUndefined (String) , "Name" :: (String) , "Description" :: NullOrUndefined (String) , "DataSources" :: NullOrUndefined (DataSources) , "Type" :: (AppType) , "AppSource" :: NullOrUndefined (Source) , "Domains" :: NullOrUndefined (Strings) , "EnableSsl" :: NullOrUndefined (Boolean) , "SslConfiguration" :: NullOrUndefined (SslConfiguration) , "Attributes" :: NullOrUndefined (AppAttributes) , "Environment" :: NullOrUndefined (EnvironmentVariables) } ) -> CreateAppRequest
-newCreateAppRequest' _Name _StackId _Type customize = (CreateAppRequest <<< customize) { "Name": _Name, "StackId": _StackId, "Type": _Type, "AppSource": (NullOrUndefined Nothing), "Attributes": (NullOrUndefined Nothing), "DataSources": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Domains": (NullOrUndefined Nothing), "EnableSsl": (NullOrUndefined Nothing), "Environment": (NullOrUndefined Nothing), "Shortname": (NullOrUndefined Nothing), "SslConfiguration": (NullOrUndefined Nothing) }
+newCreateAppRequest' :: String -> String -> AppType -> ( { "StackId" :: (String) , "Shortname" :: Maybe (String) , "Name" :: (String) , "Description" :: Maybe (String) , "DataSources" :: Maybe (DataSources) , "Type" :: (AppType) , "AppSource" :: Maybe (Source) , "Domains" :: Maybe (Strings) , "EnableSsl" :: Maybe (Boolean) , "SslConfiguration" :: Maybe (SslConfiguration) , "Attributes" :: Maybe (AppAttributes) , "Environment" :: Maybe (EnvironmentVariables) } -> {"StackId" :: (String) , "Shortname" :: Maybe (String) , "Name" :: (String) , "Description" :: Maybe (String) , "DataSources" :: Maybe (DataSources) , "Type" :: (AppType) , "AppSource" :: Maybe (Source) , "Domains" :: Maybe (Strings) , "EnableSsl" :: Maybe (Boolean) , "SslConfiguration" :: Maybe (SslConfiguration) , "Attributes" :: Maybe (AppAttributes) , "Environment" :: Maybe (EnvironmentVariables) } ) -> CreateAppRequest
+newCreateAppRequest' _Name _StackId _Type customize = (CreateAppRequest <<< customize) { "Name": _Name, "StackId": _StackId, "Type": _Type, "AppSource": Nothing, "Attributes": Nothing, "DataSources": Nothing, "Description": Nothing, "Domains": Nothing, "EnableSsl": Nothing, "Environment": Nothing, "Shortname": Nothing, "SslConfiguration": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>CreateApp</code> request.</p>
 newtype CreateAppResult = CreateAppResult 
-  { "AppId" :: NullOrUndefined (String)
+  { "AppId" :: Maybe (String)
   }
 derive instance newtypeCreateAppResult :: Newtype CreateAppResult _
 derive instance repGenericCreateAppResult :: Generic CreateAppResult _
@@ -540,23 +539,23 @@ instance encodeCreateAppResult :: Encode CreateAppResult where encode = genericE
 
 -- | Constructs CreateAppResult from required parameters
 newCreateAppResult :: CreateAppResult
-newCreateAppResult  = CreateAppResult { "AppId": (NullOrUndefined Nothing) }
+newCreateAppResult  = CreateAppResult { "AppId": Nothing }
 
 -- | Constructs CreateAppResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateAppResult' :: ( { "AppId" :: NullOrUndefined (String) } -> {"AppId" :: NullOrUndefined (String) } ) -> CreateAppResult
-newCreateAppResult'  customize = (CreateAppResult <<< customize) { "AppId": (NullOrUndefined Nothing) }
+newCreateAppResult' :: ( { "AppId" :: Maybe (String) } -> {"AppId" :: Maybe (String) } ) -> CreateAppResult
+newCreateAppResult'  customize = (CreateAppResult <<< customize) { "AppId": Nothing }
 
 
 
 newtype CreateDeploymentRequest = CreateDeploymentRequest 
   { "StackId" :: (String)
-  , "AppId" :: NullOrUndefined (String)
-  , "InstanceIds" :: NullOrUndefined (Strings)
-  , "LayerIds" :: NullOrUndefined (Strings)
+  , "AppId" :: Maybe (String)
+  , "InstanceIds" :: Maybe (Strings)
+  , "LayerIds" :: Maybe (Strings)
   , "Command" :: (DeploymentCommand)
-  , "Comment" :: NullOrUndefined (String)
-  , "CustomJson" :: NullOrUndefined (String)
+  , "Comment" :: Maybe (String)
+  , "CustomJson" :: Maybe (String)
   }
 derive instance newtypeCreateDeploymentRequest :: Newtype CreateDeploymentRequest _
 derive instance repGenericCreateDeploymentRequest :: Generic CreateDeploymentRequest _
@@ -566,18 +565,18 @@ instance encodeCreateDeploymentRequest :: Encode CreateDeploymentRequest where e
 
 -- | Constructs CreateDeploymentRequest from required parameters
 newCreateDeploymentRequest :: DeploymentCommand -> String -> CreateDeploymentRequest
-newCreateDeploymentRequest _Command _StackId = CreateDeploymentRequest { "Command": _Command, "StackId": _StackId, "AppId": (NullOrUndefined Nothing), "Comment": (NullOrUndefined Nothing), "CustomJson": (NullOrUndefined Nothing), "InstanceIds": (NullOrUndefined Nothing), "LayerIds": (NullOrUndefined Nothing) }
+newCreateDeploymentRequest _Command _StackId = CreateDeploymentRequest { "Command": _Command, "StackId": _StackId, "AppId": Nothing, "Comment": Nothing, "CustomJson": Nothing, "InstanceIds": Nothing, "LayerIds": Nothing }
 
 -- | Constructs CreateDeploymentRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateDeploymentRequest' :: DeploymentCommand -> String -> ( { "StackId" :: (String) , "AppId" :: NullOrUndefined (String) , "InstanceIds" :: NullOrUndefined (Strings) , "LayerIds" :: NullOrUndefined (Strings) , "Command" :: (DeploymentCommand) , "Comment" :: NullOrUndefined (String) , "CustomJson" :: NullOrUndefined (String) } -> {"StackId" :: (String) , "AppId" :: NullOrUndefined (String) , "InstanceIds" :: NullOrUndefined (Strings) , "LayerIds" :: NullOrUndefined (Strings) , "Command" :: (DeploymentCommand) , "Comment" :: NullOrUndefined (String) , "CustomJson" :: NullOrUndefined (String) } ) -> CreateDeploymentRequest
-newCreateDeploymentRequest' _Command _StackId customize = (CreateDeploymentRequest <<< customize) { "Command": _Command, "StackId": _StackId, "AppId": (NullOrUndefined Nothing), "Comment": (NullOrUndefined Nothing), "CustomJson": (NullOrUndefined Nothing), "InstanceIds": (NullOrUndefined Nothing), "LayerIds": (NullOrUndefined Nothing) }
+newCreateDeploymentRequest' :: DeploymentCommand -> String -> ( { "StackId" :: (String) , "AppId" :: Maybe (String) , "InstanceIds" :: Maybe (Strings) , "LayerIds" :: Maybe (Strings) , "Command" :: (DeploymentCommand) , "Comment" :: Maybe (String) , "CustomJson" :: Maybe (String) } -> {"StackId" :: (String) , "AppId" :: Maybe (String) , "InstanceIds" :: Maybe (Strings) , "LayerIds" :: Maybe (Strings) , "Command" :: (DeploymentCommand) , "Comment" :: Maybe (String) , "CustomJson" :: Maybe (String) } ) -> CreateDeploymentRequest
+newCreateDeploymentRequest' _Command _StackId customize = (CreateDeploymentRequest <<< customize) { "Command": _Command, "StackId": _StackId, "AppId": Nothing, "Comment": Nothing, "CustomJson": Nothing, "InstanceIds": Nothing, "LayerIds": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>CreateDeployment</code> request.</p>
 newtype CreateDeploymentResult = CreateDeploymentResult 
-  { "DeploymentId" :: NullOrUndefined (String)
+  { "DeploymentId" :: Maybe (String)
   }
 derive instance newtypeCreateDeploymentResult :: Newtype CreateDeploymentResult _
 derive instance repGenericCreateDeploymentResult :: Generic CreateDeploymentResult _
@@ -587,12 +586,12 @@ instance encodeCreateDeploymentResult :: Encode CreateDeploymentResult where enc
 
 -- | Constructs CreateDeploymentResult from required parameters
 newCreateDeploymentResult :: CreateDeploymentResult
-newCreateDeploymentResult  = CreateDeploymentResult { "DeploymentId": (NullOrUndefined Nothing) }
+newCreateDeploymentResult  = CreateDeploymentResult { "DeploymentId": Nothing }
 
 -- | Constructs CreateDeploymentResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateDeploymentResult' :: ( { "DeploymentId" :: NullOrUndefined (String) } -> {"DeploymentId" :: NullOrUndefined (String) } ) -> CreateDeploymentResult
-newCreateDeploymentResult'  customize = (CreateDeploymentResult <<< customize) { "DeploymentId": (NullOrUndefined Nothing) }
+newCreateDeploymentResult' :: ( { "DeploymentId" :: Maybe (String) } -> {"DeploymentId" :: Maybe (String) } ) -> CreateDeploymentResult
+newCreateDeploymentResult'  customize = (CreateDeploymentResult <<< customize) { "DeploymentId": Nothing }
 
 
 
@@ -600,21 +599,21 @@ newtype CreateInstanceRequest = CreateInstanceRequest
   { "StackId" :: (String)
   , "LayerIds" :: (Strings)
   , "InstanceType" :: (String)
-  , "AutoScalingType" :: NullOrUndefined (AutoScalingType)
-  , "Hostname" :: NullOrUndefined (String)
-  , "Os" :: NullOrUndefined (String)
-  , "AmiId" :: NullOrUndefined (String)
-  , "SshKeyName" :: NullOrUndefined (String)
-  , "AvailabilityZone" :: NullOrUndefined (String)
-  , "VirtualizationType" :: NullOrUndefined (String)
-  , "SubnetId" :: NullOrUndefined (String)
-  , "Architecture" :: NullOrUndefined (Architecture)
-  , "RootDeviceType" :: NullOrUndefined (RootDeviceType)
-  , "BlockDeviceMappings" :: NullOrUndefined (BlockDeviceMappings)
-  , "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean)
-  , "EbsOptimized" :: NullOrUndefined (Boolean)
-  , "AgentVersion" :: NullOrUndefined (String)
-  , "Tenancy" :: NullOrUndefined (String)
+  , "AutoScalingType" :: Maybe (AutoScalingType)
+  , "Hostname" :: Maybe (String)
+  , "Os" :: Maybe (String)
+  , "AmiId" :: Maybe (String)
+  , "SshKeyName" :: Maybe (String)
+  , "AvailabilityZone" :: Maybe (String)
+  , "VirtualizationType" :: Maybe (String)
+  , "SubnetId" :: Maybe (String)
+  , "Architecture" :: Maybe (Architecture)
+  , "RootDeviceType" :: Maybe (RootDeviceType)
+  , "BlockDeviceMappings" :: Maybe (BlockDeviceMappings)
+  , "InstallUpdatesOnBoot" :: Maybe (Boolean)
+  , "EbsOptimized" :: Maybe (Boolean)
+  , "AgentVersion" :: Maybe (String)
+  , "Tenancy" :: Maybe (String)
   }
 derive instance newtypeCreateInstanceRequest :: Newtype CreateInstanceRequest _
 derive instance repGenericCreateInstanceRequest :: Generic CreateInstanceRequest _
@@ -624,18 +623,18 @@ instance encodeCreateInstanceRequest :: Encode CreateInstanceRequest where encod
 
 -- | Constructs CreateInstanceRequest from required parameters
 newCreateInstanceRequest :: String -> Strings -> String -> CreateInstanceRequest
-newCreateInstanceRequest _InstanceType _LayerIds _StackId = CreateInstanceRequest { "InstanceType": _InstanceType, "LayerIds": _LayerIds, "StackId": _StackId, "AgentVersion": (NullOrUndefined Nothing), "AmiId": (NullOrUndefined Nothing), "Architecture": (NullOrUndefined Nothing), "AutoScalingType": (NullOrUndefined Nothing), "AvailabilityZone": (NullOrUndefined Nothing), "BlockDeviceMappings": (NullOrUndefined Nothing), "EbsOptimized": (NullOrUndefined Nothing), "Hostname": (NullOrUndefined Nothing), "InstallUpdatesOnBoot": (NullOrUndefined Nothing), "Os": (NullOrUndefined Nothing), "RootDeviceType": (NullOrUndefined Nothing), "SshKeyName": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing), "Tenancy": (NullOrUndefined Nothing), "VirtualizationType": (NullOrUndefined Nothing) }
+newCreateInstanceRequest _InstanceType _LayerIds _StackId = CreateInstanceRequest { "InstanceType": _InstanceType, "LayerIds": _LayerIds, "StackId": _StackId, "AgentVersion": Nothing, "AmiId": Nothing, "Architecture": Nothing, "AutoScalingType": Nothing, "AvailabilityZone": Nothing, "BlockDeviceMappings": Nothing, "EbsOptimized": Nothing, "Hostname": Nothing, "InstallUpdatesOnBoot": Nothing, "Os": Nothing, "RootDeviceType": Nothing, "SshKeyName": Nothing, "SubnetId": Nothing, "Tenancy": Nothing, "VirtualizationType": Nothing }
 
 -- | Constructs CreateInstanceRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateInstanceRequest' :: String -> Strings -> String -> ( { "StackId" :: (String) , "LayerIds" :: (Strings) , "InstanceType" :: (String) , "AutoScalingType" :: NullOrUndefined (AutoScalingType) , "Hostname" :: NullOrUndefined (String) , "Os" :: NullOrUndefined (String) , "AmiId" :: NullOrUndefined (String) , "SshKeyName" :: NullOrUndefined (String) , "AvailabilityZone" :: NullOrUndefined (String) , "VirtualizationType" :: NullOrUndefined (String) , "SubnetId" :: NullOrUndefined (String) , "Architecture" :: NullOrUndefined (Architecture) , "RootDeviceType" :: NullOrUndefined (RootDeviceType) , "BlockDeviceMappings" :: NullOrUndefined (BlockDeviceMappings) , "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean) , "EbsOptimized" :: NullOrUndefined (Boolean) , "AgentVersion" :: NullOrUndefined (String) , "Tenancy" :: NullOrUndefined (String) } -> {"StackId" :: (String) , "LayerIds" :: (Strings) , "InstanceType" :: (String) , "AutoScalingType" :: NullOrUndefined (AutoScalingType) , "Hostname" :: NullOrUndefined (String) , "Os" :: NullOrUndefined (String) , "AmiId" :: NullOrUndefined (String) , "SshKeyName" :: NullOrUndefined (String) , "AvailabilityZone" :: NullOrUndefined (String) , "VirtualizationType" :: NullOrUndefined (String) , "SubnetId" :: NullOrUndefined (String) , "Architecture" :: NullOrUndefined (Architecture) , "RootDeviceType" :: NullOrUndefined (RootDeviceType) , "BlockDeviceMappings" :: NullOrUndefined (BlockDeviceMappings) , "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean) , "EbsOptimized" :: NullOrUndefined (Boolean) , "AgentVersion" :: NullOrUndefined (String) , "Tenancy" :: NullOrUndefined (String) } ) -> CreateInstanceRequest
-newCreateInstanceRequest' _InstanceType _LayerIds _StackId customize = (CreateInstanceRequest <<< customize) { "InstanceType": _InstanceType, "LayerIds": _LayerIds, "StackId": _StackId, "AgentVersion": (NullOrUndefined Nothing), "AmiId": (NullOrUndefined Nothing), "Architecture": (NullOrUndefined Nothing), "AutoScalingType": (NullOrUndefined Nothing), "AvailabilityZone": (NullOrUndefined Nothing), "BlockDeviceMappings": (NullOrUndefined Nothing), "EbsOptimized": (NullOrUndefined Nothing), "Hostname": (NullOrUndefined Nothing), "InstallUpdatesOnBoot": (NullOrUndefined Nothing), "Os": (NullOrUndefined Nothing), "RootDeviceType": (NullOrUndefined Nothing), "SshKeyName": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing), "Tenancy": (NullOrUndefined Nothing), "VirtualizationType": (NullOrUndefined Nothing) }
+newCreateInstanceRequest' :: String -> Strings -> String -> ( { "StackId" :: (String) , "LayerIds" :: (Strings) , "InstanceType" :: (String) , "AutoScalingType" :: Maybe (AutoScalingType) , "Hostname" :: Maybe (String) , "Os" :: Maybe (String) , "AmiId" :: Maybe (String) , "SshKeyName" :: Maybe (String) , "AvailabilityZone" :: Maybe (String) , "VirtualizationType" :: Maybe (String) , "SubnetId" :: Maybe (String) , "Architecture" :: Maybe (Architecture) , "RootDeviceType" :: Maybe (RootDeviceType) , "BlockDeviceMappings" :: Maybe (BlockDeviceMappings) , "InstallUpdatesOnBoot" :: Maybe (Boolean) , "EbsOptimized" :: Maybe (Boolean) , "AgentVersion" :: Maybe (String) , "Tenancy" :: Maybe (String) } -> {"StackId" :: (String) , "LayerIds" :: (Strings) , "InstanceType" :: (String) , "AutoScalingType" :: Maybe (AutoScalingType) , "Hostname" :: Maybe (String) , "Os" :: Maybe (String) , "AmiId" :: Maybe (String) , "SshKeyName" :: Maybe (String) , "AvailabilityZone" :: Maybe (String) , "VirtualizationType" :: Maybe (String) , "SubnetId" :: Maybe (String) , "Architecture" :: Maybe (Architecture) , "RootDeviceType" :: Maybe (RootDeviceType) , "BlockDeviceMappings" :: Maybe (BlockDeviceMappings) , "InstallUpdatesOnBoot" :: Maybe (Boolean) , "EbsOptimized" :: Maybe (Boolean) , "AgentVersion" :: Maybe (String) , "Tenancy" :: Maybe (String) } ) -> CreateInstanceRequest
+newCreateInstanceRequest' _InstanceType _LayerIds _StackId customize = (CreateInstanceRequest <<< customize) { "InstanceType": _InstanceType, "LayerIds": _LayerIds, "StackId": _StackId, "AgentVersion": Nothing, "AmiId": Nothing, "Architecture": Nothing, "AutoScalingType": Nothing, "AvailabilityZone": Nothing, "BlockDeviceMappings": Nothing, "EbsOptimized": Nothing, "Hostname": Nothing, "InstallUpdatesOnBoot": Nothing, "Os": Nothing, "RootDeviceType": Nothing, "SshKeyName": Nothing, "SubnetId": Nothing, "Tenancy": Nothing, "VirtualizationType": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>CreateInstance</code> request.</p>
 newtype CreateInstanceResult = CreateInstanceResult 
-  { "InstanceId" :: NullOrUndefined (String)
+  { "InstanceId" :: Maybe (String)
   }
 derive instance newtypeCreateInstanceResult :: Newtype CreateInstanceResult _
 derive instance repGenericCreateInstanceResult :: Generic CreateInstanceResult _
@@ -645,12 +644,12 @@ instance encodeCreateInstanceResult :: Encode CreateInstanceResult where encode 
 
 -- | Constructs CreateInstanceResult from required parameters
 newCreateInstanceResult :: CreateInstanceResult
-newCreateInstanceResult  = CreateInstanceResult { "InstanceId": (NullOrUndefined Nothing) }
+newCreateInstanceResult  = CreateInstanceResult { "InstanceId": Nothing }
 
 -- | Constructs CreateInstanceResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateInstanceResult' :: ( { "InstanceId" :: NullOrUndefined (String) } -> {"InstanceId" :: NullOrUndefined (String) } ) -> CreateInstanceResult
-newCreateInstanceResult'  customize = (CreateInstanceResult <<< customize) { "InstanceId": (NullOrUndefined Nothing) }
+newCreateInstanceResult' :: ( { "InstanceId" :: Maybe (String) } -> {"InstanceId" :: Maybe (String) } ) -> CreateInstanceResult
+newCreateInstanceResult'  customize = (CreateInstanceResult <<< customize) { "InstanceId": Nothing }
 
 
 
@@ -659,20 +658,20 @@ newtype CreateLayerRequest = CreateLayerRequest
   , "Type" :: (LayerType)
   , "Name" :: (String)
   , "Shortname" :: (String)
-  , "Attributes" :: NullOrUndefined (LayerAttributes)
-  , "CloudWatchLogsConfiguration" :: NullOrUndefined (CloudWatchLogsConfiguration)
-  , "CustomInstanceProfileArn" :: NullOrUndefined (String)
-  , "CustomJson" :: NullOrUndefined (String)
-  , "CustomSecurityGroupIds" :: NullOrUndefined (Strings)
-  , "Packages" :: NullOrUndefined (Strings)
-  , "VolumeConfigurations" :: NullOrUndefined (VolumeConfigurations)
-  , "EnableAutoHealing" :: NullOrUndefined (Boolean)
-  , "AutoAssignElasticIps" :: NullOrUndefined (Boolean)
-  , "AutoAssignPublicIps" :: NullOrUndefined (Boolean)
-  , "CustomRecipes" :: NullOrUndefined (Recipes)
-  , "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean)
-  , "UseEbsOptimizedInstances" :: NullOrUndefined (Boolean)
-  , "LifecycleEventConfiguration" :: NullOrUndefined (LifecycleEventConfiguration)
+  , "Attributes" :: Maybe (LayerAttributes)
+  , "CloudWatchLogsConfiguration" :: Maybe (CloudWatchLogsConfiguration)
+  , "CustomInstanceProfileArn" :: Maybe (String)
+  , "CustomJson" :: Maybe (String)
+  , "CustomSecurityGroupIds" :: Maybe (Strings)
+  , "Packages" :: Maybe (Strings)
+  , "VolumeConfigurations" :: Maybe (VolumeConfigurations)
+  , "EnableAutoHealing" :: Maybe (Boolean)
+  , "AutoAssignElasticIps" :: Maybe (Boolean)
+  , "AutoAssignPublicIps" :: Maybe (Boolean)
+  , "CustomRecipes" :: Maybe (Recipes)
+  , "InstallUpdatesOnBoot" :: Maybe (Boolean)
+  , "UseEbsOptimizedInstances" :: Maybe (Boolean)
+  , "LifecycleEventConfiguration" :: Maybe (LifecycleEventConfiguration)
   }
 derive instance newtypeCreateLayerRequest :: Newtype CreateLayerRequest _
 derive instance repGenericCreateLayerRequest :: Generic CreateLayerRequest _
@@ -682,18 +681,18 @@ instance encodeCreateLayerRequest :: Encode CreateLayerRequest where encode = ge
 
 -- | Constructs CreateLayerRequest from required parameters
 newCreateLayerRequest :: String -> String -> String -> LayerType -> CreateLayerRequest
-newCreateLayerRequest _Name _Shortname _StackId _Type = CreateLayerRequest { "Name": _Name, "Shortname": _Shortname, "StackId": _StackId, "Type": _Type, "Attributes": (NullOrUndefined Nothing), "AutoAssignElasticIps": (NullOrUndefined Nothing), "AutoAssignPublicIps": (NullOrUndefined Nothing), "CloudWatchLogsConfiguration": (NullOrUndefined Nothing), "CustomInstanceProfileArn": (NullOrUndefined Nothing), "CustomJson": (NullOrUndefined Nothing), "CustomRecipes": (NullOrUndefined Nothing), "CustomSecurityGroupIds": (NullOrUndefined Nothing), "EnableAutoHealing": (NullOrUndefined Nothing), "InstallUpdatesOnBoot": (NullOrUndefined Nothing), "LifecycleEventConfiguration": (NullOrUndefined Nothing), "Packages": (NullOrUndefined Nothing), "UseEbsOptimizedInstances": (NullOrUndefined Nothing), "VolumeConfigurations": (NullOrUndefined Nothing) }
+newCreateLayerRequest _Name _Shortname _StackId _Type = CreateLayerRequest { "Name": _Name, "Shortname": _Shortname, "StackId": _StackId, "Type": _Type, "Attributes": Nothing, "AutoAssignElasticIps": Nothing, "AutoAssignPublicIps": Nothing, "CloudWatchLogsConfiguration": Nothing, "CustomInstanceProfileArn": Nothing, "CustomJson": Nothing, "CustomRecipes": Nothing, "CustomSecurityGroupIds": Nothing, "EnableAutoHealing": Nothing, "InstallUpdatesOnBoot": Nothing, "LifecycleEventConfiguration": Nothing, "Packages": Nothing, "UseEbsOptimizedInstances": Nothing, "VolumeConfigurations": Nothing }
 
 -- | Constructs CreateLayerRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateLayerRequest' :: String -> String -> String -> LayerType -> ( { "StackId" :: (String) , "Type" :: (LayerType) , "Name" :: (String) , "Shortname" :: (String) , "Attributes" :: NullOrUndefined (LayerAttributes) , "CloudWatchLogsConfiguration" :: NullOrUndefined (CloudWatchLogsConfiguration) , "CustomInstanceProfileArn" :: NullOrUndefined (String) , "CustomJson" :: NullOrUndefined (String) , "CustomSecurityGroupIds" :: NullOrUndefined (Strings) , "Packages" :: NullOrUndefined (Strings) , "VolumeConfigurations" :: NullOrUndefined (VolumeConfigurations) , "EnableAutoHealing" :: NullOrUndefined (Boolean) , "AutoAssignElasticIps" :: NullOrUndefined (Boolean) , "AutoAssignPublicIps" :: NullOrUndefined (Boolean) , "CustomRecipes" :: NullOrUndefined (Recipes) , "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean) , "UseEbsOptimizedInstances" :: NullOrUndefined (Boolean) , "LifecycleEventConfiguration" :: NullOrUndefined (LifecycleEventConfiguration) } -> {"StackId" :: (String) , "Type" :: (LayerType) , "Name" :: (String) , "Shortname" :: (String) , "Attributes" :: NullOrUndefined (LayerAttributes) , "CloudWatchLogsConfiguration" :: NullOrUndefined (CloudWatchLogsConfiguration) , "CustomInstanceProfileArn" :: NullOrUndefined (String) , "CustomJson" :: NullOrUndefined (String) , "CustomSecurityGroupIds" :: NullOrUndefined (Strings) , "Packages" :: NullOrUndefined (Strings) , "VolumeConfigurations" :: NullOrUndefined (VolumeConfigurations) , "EnableAutoHealing" :: NullOrUndefined (Boolean) , "AutoAssignElasticIps" :: NullOrUndefined (Boolean) , "AutoAssignPublicIps" :: NullOrUndefined (Boolean) , "CustomRecipes" :: NullOrUndefined (Recipes) , "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean) , "UseEbsOptimizedInstances" :: NullOrUndefined (Boolean) , "LifecycleEventConfiguration" :: NullOrUndefined (LifecycleEventConfiguration) } ) -> CreateLayerRequest
-newCreateLayerRequest' _Name _Shortname _StackId _Type customize = (CreateLayerRequest <<< customize) { "Name": _Name, "Shortname": _Shortname, "StackId": _StackId, "Type": _Type, "Attributes": (NullOrUndefined Nothing), "AutoAssignElasticIps": (NullOrUndefined Nothing), "AutoAssignPublicIps": (NullOrUndefined Nothing), "CloudWatchLogsConfiguration": (NullOrUndefined Nothing), "CustomInstanceProfileArn": (NullOrUndefined Nothing), "CustomJson": (NullOrUndefined Nothing), "CustomRecipes": (NullOrUndefined Nothing), "CustomSecurityGroupIds": (NullOrUndefined Nothing), "EnableAutoHealing": (NullOrUndefined Nothing), "InstallUpdatesOnBoot": (NullOrUndefined Nothing), "LifecycleEventConfiguration": (NullOrUndefined Nothing), "Packages": (NullOrUndefined Nothing), "UseEbsOptimizedInstances": (NullOrUndefined Nothing), "VolumeConfigurations": (NullOrUndefined Nothing) }
+newCreateLayerRequest' :: String -> String -> String -> LayerType -> ( { "StackId" :: (String) , "Type" :: (LayerType) , "Name" :: (String) , "Shortname" :: (String) , "Attributes" :: Maybe (LayerAttributes) , "CloudWatchLogsConfiguration" :: Maybe (CloudWatchLogsConfiguration) , "CustomInstanceProfileArn" :: Maybe (String) , "CustomJson" :: Maybe (String) , "CustomSecurityGroupIds" :: Maybe (Strings) , "Packages" :: Maybe (Strings) , "VolumeConfigurations" :: Maybe (VolumeConfigurations) , "EnableAutoHealing" :: Maybe (Boolean) , "AutoAssignElasticIps" :: Maybe (Boolean) , "AutoAssignPublicIps" :: Maybe (Boolean) , "CustomRecipes" :: Maybe (Recipes) , "InstallUpdatesOnBoot" :: Maybe (Boolean) , "UseEbsOptimizedInstances" :: Maybe (Boolean) , "LifecycleEventConfiguration" :: Maybe (LifecycleEventConfiguration) } -> {"StackId" :: (String) , "Type" :: (LayerType) , "Name" :: (String) , "Shortname" :: (String) , "Attributes" :: Maybe (LayerAttributes) , "CloudWatchLogsConfiguration" :: Maybe (CloudWatchLogsConfiguration) , "CustomInstanceProfileArn" :: Maybe (String) , "CustomJson" :: Maybe (String) , "CustomSecurityGroupIds" :: Maybe (Strings) , "Packages" :: Maybe (Strings) , "VolumeConfigurations" :: Maybe (VolumeConfigurations) , "EnableAutoHealing" :: Maybe (Boolean) , "AutoAssignElasticIps" :: Maybe (Boolean) , "AutoAssignPublicIps" :: Maybe (Boolean) , "CustomRecipes" :: Maybe (Recipes) , "InstallUpdatesOnBoot" :: Maybe (Boolean) , "UseEbsOptimizedInstances" :: Maybe (Boolean) , "LifecycleEventConfiguration" :: Maybe (LifecycleEventConfiguration) } ) -> CreateLayerRequest
+newCreateLayerRequest' _Name _Shortname _StackId _Type customize = (CreateLayerRequest <<< customize) { "Name": _Name, "Shortname": _Shortname, "StackId": _StackId, "Type": _Type, "Attributes": Nothing, "AutoAssignElasticIps": Nothing, "AutoAssignPublicIps": Nothing, "CloudWatchLogsConfiguration": Nothing, "CustomInstanceProfileArn": Nothing, "CustomJson": Nothing, "CustomRecipes": Nothing, "CustomSecurityGroupIds": Nothing, "EnableAutoHealing": Nothing, "InstallUpdatesOnBoot": Nothing, "LifecycleEventConfiguration": Nothing, "Packages": Nothing, "UseEbsOptimizedInstances": Nothing, "VolumeConfigurations": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>CreateLayer</code> request.</p>
 newtype CreateLayerResult = CreateLayerResult 
-  { "LayerId" :: NullOrUndefined (String)
+  { "LayerId" :: Maybe (String)
   }
 derive instance newtypeCreateLayerResult :: Newtype CreateLayerResult _
 derive instance repGenericCreateLayerResult :: Generic CreateLayerResult _
@@ -703,35 +702,35 @@ instance encodeCreateLayerResult :: Encode CreateLayerResult where encode = gene
 
 -- | Constructs CreateLayerResult from required parameters
 newCreateLayerResult :: CreateLayerResult
-newCreateLayerResult  = CreateLayerResult { "LayerId": (NullOrUndefined Nothing) }
+newCreateLayerResult  = CreateLayerResult { "LayerId": Nothing }
 
 -- | Constructs CreateLayerResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateLayerResult' :: ( { "LayerId" :: NullOrUndefined (String) } -> {"LayerId" :: NullOrUndefined (String) } ) -> CreateLayerResult
-newCreateLayerResult'  customize = (CreateLayerResult <<< customize) { "LayerId": (NullOrUndefined Nothing) }
+newCreateLayerResult' :: ( { "LayerId" :: Maybe (String) } -> {"LayerId" :: Maybe (String) } ) -> CreateLayerResult
+newCreateLayerResult'  customize = (CreateLayerResult <<< customize) { "LayerId": Nothing }
 
 
 
 newtype CreateStackRequest = CreateStackRequest 
   { "Name" :: (String)
   , "Region" :: (String)
-  , "VpcId" :: NullOrUndefined (String)
-  , "Attributes" :: NullOrUndefined (StackAttributes)
+  , "VpcId" :: Maybe (String)
+  , "Attributes" :: Maybe (StackAttributes)
   , "ServiceRoleArn" :: (String)
   , "DefaultInstanceProfileArn" :: (String)
-  , "DefaultOs" :: NullOrUndefined (String)
-  , "HostnameTheme" :: NullOrUndefined (String)
-  , "DefaultAvailabilityZone" :: NullOrUndefined (String)
-  , "DefaultSubnetId" :: NullOrUndefined (String)
-  , "CustomJson" :: NullOrUndefined (String)
-  , "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager)
-  , "ChefConfiguration" :: NullOrUndefined (ChefConfiguration)
-  , "UseCustomCookbooks" :: NullOrUndefined (Boolean)
-  , "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean)
-  , "CustomCookbooksSource" :: NullOrUndefined (Source)
-  , "DefaultSshKeyName" :: NullOrUndefined (String)
-  , "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType)
-  , "AgentVersion" :: NullOrUndefined (String)
+  , "DefaultOs" :: Maybe (String)
+  , "HostnameTheme" :: Maybe (String)
+  , "DefaultAvailabilityZone" :: Maybe (String)
+  , "DefaultSubnetId" :: Maybe (String)
+  , "CustomJson" :: Maybe (String)
+  , "ConfigurationManager" :: Maybe (StackConfigurationManager)
+  , "ChefConfiguration" :: Maybe (ChefConfiguration)
+  , "UseCustomCookbooks" :: Maybe (Boolean)
+  , "UseOpsworksSecurityGroups" :: Maybe (Boolean)
+  , "CustomCookbooksSource" :: Maybe (Source)
+  , "DefaultSshKeyName" :: Maybe (String)
+  , "DefaultRootDeviceType" :: Maybe (RootDeviceType)
+  , "AgentVersion" :: Maybe (String)
   }
 derive instance newtypeCreateStackRequest :: Newtype CreateStackRequest _
 derive instance repGenericCreateStackRequest :: Generic CreateStackRequest _
@@ -741,18 +740,18 @@ instance encodeCreateStackRequest :: Encode CreateStackRequest where encode = ge
 
 -- | Constructs CreateStackRequest from required parameters
 newCreateStackRequest :: String -> String -> String -> String -> CreateStackRequest
-newCreateStackRequest _DefaultInstanceProfileArn _Name _Region _ServiceRoleArn = CreateStackRequest { "DefaultInstanceProfileArn": _DefaultInstanceProfileArn, "Name": _Name, "Region": _Region, "ServiceRoleArn": _ServiceRoleArn, "AgentVersion": (NullOrUndefined Nothing), "Attributes": (NullOrUndefined Nothing), "ChefConfiguration": (NullOrUndefined Nothing), "ConfigurationManager": (NullOrUndefined Nothing), "CustomCookbooksSource": (NullOrUndefined Nothing), "CustomJson": (NullOrUndefined Nothing), "DefaultAvailabilityZone": (NullOrUndefined Nothing), "DefaultOs": (NullOrUndefined Nothing), "DefaultRootDeviceType": (NullOrUndefined Nothing), "DefaultSshKeyName": (NullOrUndefined Nothing), "DefaultSubnetId": (NullOrUndefined Nothing), "HostnameTheme": (NullOrUndefined Nothing), "UseCustomCookbooks": (NullOrUndefined Nothing), "UseOpsworksSecurityGroups": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newCreateStackRequest _DefaultInstanceProfileArn _Name _Region _ServiceRoleArn = CreateStackRequest { "DefaultInstanceProfileArn": _DefaultInstanceProfileArn, "Name": _Name, "Region": _Region, "ServiceRoleArn": _ServiceRoleArn, "AgentVersion": Nothing, "Attributes": Nothing, "ChefConfiguration": Nothing, "ConfigurationManager": Nothing, "CustomCookbooksSource": Nothing, "CustomJson": Nothing, "DefaultAvailabilityZone": Nothing, "DefaultOs": Nothing, "DefaultRootDeviceType": Nothing, "DefaultSshKeyName": Nothing, "DefaultSubnetId": Nothing, "HostnameTheme": Nothing, "UseCustomCookbooks": Nothing, "UseOpsworksSecurityGroups": Nothing, "VpcId": Nothing }
 
 -- | Constructs CreateStackRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateStackRequest' :: String -> String -> String -> String -> ( { "Name" :: (String) , "Region" :: (String) , "VpcId" :: NullOrUndefined (String) , "Attributes" :: NullOrUndefined (StackAttributes) , "ServiceRoleArn" :: (String) , "DefaultInstanceProfileArn" :: (String) , "DefaultOs" :: NullOrUndefined (String) , "HostnameTheme" :: NullOrUndefined (String) , "DefaultAvailabilityZone" :: NullOrUndefined (String) , "DefaultSubnetId" :: NullOrUndefined (String) , "CustomJson" :: NullOrUndefined (String) , "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager) , "ChefConfiguration" :: NullOrUndefined (ChefConfiguration) , "UseCustomCookbooks" :: NullOrUndefined (Boolean) , "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean) , "CustomCookbooksSource" :: NullOrUndefined (Source) , "DefaultSshKeyName" :: NullOrUndefined (String) , "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType) , "AgentVersion" :: NullOrUndefined (String) } -> {"Name" :: (String) , "Region" :: (String) , "VpcId" :: NullOrUndefined (String) , "Attributes" :: NullOrUndefined (StackAttributes) , "ServiceRoleArn" :: (String) , "DefaultInstanceProfileArn" :: (String) , "DefaultOs" :: NullOrUndefined (String) , "HostnameTheme" :: NullOrUndefined (String) , "DefaultAvailabilityZone" :: NullOrUndefined (String) , "DefaultSubnetId" :: NullOrUndefined (String) , "CustomJson" :: NullOrUndefined (String) , "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager) , "ChefConfiguration" :: NullOrUndefined (ChefConfiguration) , "UseCustomCookbooks" :: NullOrUndefined (Boolean) , "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean) , "CustomCookbooksSource" :: NullOrUndefined (Source) , "DefaultSshKeyName" :: NullOrUndefined (String) , "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType) , "AgentVersion" :: NullOrUndefined (String) } ) -> CreateStackRequest
-newCreateStackRequest' _DefaultInstanceProfileArn _Name _Region _ServiceRoleArn customize = (CreateStackRequest <<< customize) { "DefaultInstanceProfileArn": _DefaultInstanceProfileArn, "Name": _Name, "Region": _Region, "ServiceRoleArn": _ServiceRoleArn, "AgentVersion": (NullOrUndefined Nothing), "Attributes": (NullOrUndefined Nothing), "ChefConfiguration": (NullOrUndefined Nothing), "ConfigurationManager": (NullOrUndefined Nothing), "CustomCookbooksSource": (NullOrUndefined Nothing), "CustomJson": (NullOrUndefined Nothing), "DefaultAvailabilityZone": (NullOrUndefined Nothing), "DefaultOs": (NullOrUndefined Nothing), "DefaultRootDeviceType": (NullOrUndefined Nothing), "DefaultSshKeyName": (NullOrUndefined Nothing), "DefaultSubnetId": (NullOrUndefined Nothing), "HostnameTheme": (NullOrUndefined Nothing), "UseCustomCookbooks": (NullOrUndefined Nothing), "UseOpsworksSecurityGroups": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newCreateStackRequest' :: String -> String -> String -> String -> ( { "Name" :: (String) , "Region" :: (String) , "VpcId" :: Maybe (String) , "Attributes" :: Maybe (StackAttributes) , "ServiceRoleArn" :: (String) , "DefaultInstanceProfileArn" :: (String) , "DefaultOs" :: Maybe (String) , "HostnameTheme" :: Maybe (String) , "DefaultAvailabilityZone" :: Maybe (String) , "DefaultSubnetId" :: Maybe (String) , "CustomJson" :: Maybe (String) , "ConfigurationManager" :: Maybe (StackConfigurationManager) , "ChefConfiguration" :: Maybe (ChefConfiguration) , "UseCustomCookbooks" :: Maybe (Boolean) , "UseOpsworksSecurityGroups" :: Maybe (Boolean) , "CustomCookbooksSource" :: Maybe (Source) , "DefaultSshKeyName" :: Maybe (String) , "DefaultRootDeviceType" :: Maybe (RootDeviceType) , "AgentVersion" :: Maybe (String) } -> {"Name" :: (String) , "Region" :: (String) , "VpcId" :: Maybe (String) , "Attributes" :: Maybe (StackAttributes) , "ServiceRoleArn" :: (String) , "DefaultInstanceProfileArn" :: (String) , "DefaultOs" :: Maybe (String) , "HostnameTheme" :: Maybe (String) , "DefaultAvailabilityZone" :: Maybe (String) , "DefaultSubnetId" :: Maybe (String) , "CustomJson" :: Maybe (String) , "ConfigurationManager" :: Maybe (StackConfigurationManager) , "ChefConfiguration" :: Maybe (ChefConfiguration) , "UseCustomCookbooks" :: Maybe (Boolean) , "UseOpsworksSecurityGroups" :: Maybe (Boolean) , "CustomCookbooksSource" :: Maybe (Source) , "DefaultSshKeyName" :: Maybe (String) , "DefaultRootDeviceType" :: Maybe (RootDeviceType) , "AgentVersion" :: Maybe (String) } ) -> CreateStackRequest
+newCreateStackRequest' _DefaultInstanceProfileArn _Name _Region _ServiceRoleArn customize = (CreateStackRequest <<< customize) { "DefaultInstanceProfileArn": _DefaultInstanceProfileArn, "Name": _Name, "Region": _Region, "ServiceRoleArn": _ServiceRoleArn, "AgentVersion": Nothing, "Attributes": Nothing, "ChefConfiguration": Nothing, "ConfigurationManager": Nothing, "CustomCookbooksSource": Nothing, "CustomJson": Nothing, "DefaultAvailabilityZone": Nothing, "DefaultOs": Nothing, "DefaultRootDeviceType": Nothing, "DefaultSshKeyName": Nothing, "DefaultSubnetId": Nothing, "HostnameTheme": Nothing, "UseCustomCookbooks": Nothing, "UseOpsworksSecurityGroups": Nothing, "VpcId": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>CreateStack</code> request.</p>
 newtype CreateStackResult = CreateStackResult 
-  { "StackId" :: NullOrUndefined (String)
+  { "StackId" :: Maybe (String)
   }
 derive instance newtypeCreateStackResult :: Newtype CreateStackResult _
 derive instance repGenericCreateStackResult :: Generic CreateStackResult _
@@ -762,20 +761,20 @@ instance encodeCreateStackResult :: Encode CreateStackResult where encode = gene
 
 -- | Constructs CreateStackResult from required parameters
 newCreateStackResult :: CreateStackResult
-newCreateStackResult  = CreateStackResult { "StackId": (NullOrUndefined Nothing) }
+newCreateStackResult  = CreateStackResult { "StackId": Nothing }
 
 -- | Constructs CreateStackResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateStackResult' :: ( { "StackId" :: NullOrUndefined (String) } -> {"StackId" :: NullOrUndefined (String) } ) -> CreateStackResult
-newCreateStackResult'  customize = (CreateStackResult <<< customize) { "StackId": (NullOrUndefined Nothing) }
+newCreateStackResult' :: ( { "StackId" :: Maybe (String) } -> {"StackId" :: Maybe (String) } ) -> CreateStackResult
+newCreateStackResult'  customize = (CreateStackResult <<< customize) { "StackId": Nothing }
 
 
 
 newtype CreateUserProfileRequest = CreateUserProfileRequest 
   { "IamUserArn" :: (String)
-  , "SshUsername" :: NullOrUndefined (String)
-  , "SshPublicKey" :: NullOrUndefined (String)
-  , "AllowSelfManagement" :: NullOrUndefined (Boolean)
+  , "SshUsername" :: Maybe (String)
+  , "SshPublicKey" :: Maybe (String)
+  , "AllowSelfManagement" :: Maybe (Boolean)
   }
 derive instance newtypeCreateUserProfileRequest :: Newtype CreateUserProfileRequest _
 derive instance repGenericCreateUserProfileRequest :: Generic CreateUserProfileRequest _
@@ -785,18 +784,18 @@ instance encodeCreateUserProfileRequest :: Encode CreateUserProfileRequest where
 
 -- | Constructs CreateUserProfileRequest from required parameters
 newCreateUserProfileRequest :: String -> CreateUserProfileRequest
-newCreateUserProfileRequest _IamUserArn = CreateUserProfileRequest { "IamUserArn": _IamUserArn, "AllowSelfManagement": (NullOrUndefined Nothing), "SshPublicKey": (NullOrUndefined Nothing), "SshUsername": (NullOrUndefined Nothing) }
+newCreateUserProfileRequest _IamUserArn = CreateUserProfileRequest { "IamUserArn": _IamUserArn, "AllowSelfManagement": Nothing, "SshPublicKey": Nothing, "SshUsername": Nothing }
 
 -- | Constructs CreateUserProfileRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateUserProfileRequest' :: String -> ( { "IamUserArn" :: (String) , "SshUsername" :: NullOrUndefined (String) , "SshPublicKey" :: NullOrUndefined (String) , "AllowSelfManagement" :: NullOrUndefined (Boolean) } -> {"IamUserArn" :: (String) , "SshUsername" :: NullOrUndefined (String) , "SshPublicKey" :: NullOrUndefined (String) , "AllowSelfManagement" :: NullOrUndefined (Boolean) } ) -> CreateUserProfileRequest
-newCreateUserProfileRequest' _IamUserArn customize = (CreateUserProfileRequest <<< customize) { "IamUserArn": _IamUserArn, "AllowSelfManagement": (NullOrUndefined Nothing), "SshPublicKey": (NullOrUndefined Nothing), "SshUsername": (NullOrUndefined Nothing) }
+newCreateUserProfileRequest' :: String -> ( { "IamUserArn" :: (String) , "SshUsername" :: Maybe (String) , "SshPublicKey" :: Maybe (String) , "AllowSelfManagement" :: Maybe (Boolean) } -> {"IamUserArn" :: (String) , "SshUsername" :: Maybe (String) , "SshPublicKey" :: Maybe (String) , "AllowSelfManagement" :: Maybe (Boolean) } ) -> CreateUserProfileRequest
+newCreateUserProfileRequest' _IamUserArn customize = (CreateUserProfileRequest <<< customize) { "IamUserArn": _IamUserArn, "AllowSelfManagement": Nothing, "SshPublicKey": Nothing, "SshUsername": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>CreateUserProfile</code> request.</p>
 newtype CreateUserProfileResult = CreateUserProfileResult 
-  { "IamUserArn" :: NullOrUndefined (String)
+  { "IamUserArn" :: Maybe (String)
   }
 derive instance newtypeCreateUserProfileResult :: Newtype CreateUserProfileResult _
 derive instance repGenericCreateUserProfileResult :: Generic CreateUserProfileResult _
@@ -806,12 +805,12 @@ instance encodeCreateUserProfileResult :: Encode CreateUserProfileResult where e
 
 -- | Constructs CreateUserProfileResult from required parameters
 newCreateUserProfileResult :: CreateUserProfileResult
-newCreateUserProfileResult  = CreateUserProfileResult { "IamUserArn": (NullOrUndefined Nothing) }
+newCreateUserProfileResult  = CreateUserProfileResult { "IamUserArn": Nothing }
 
 -- | Constructs CreateUserProfileResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateUserProfileResult' :: ( { "IamUserArn" :: NullOrUndefined (String) } -> {"IamUserArn" :: NullOrUndefined (String) } ) -> CreateUserProfileResult
-newCreateUserProfileResult'  customize = (CreateUserProfileResult <<< customize) { "IamUserArn": (NullOrUndefined Nothing) }
+newCreateUserProfileResult' :: ( { "IamUserArn" :: Maybe (String) } -> {"IamUserArn" :: Maybe (String) } ) -> CreateUserProfileResult
+newCreateUserProfileResult'  customize = (CreateUserProfileResult <<< customize) { "IamUserArn": Nothing }
 
 
 
@@ -826,9 +825,9 @@ instance encodeDailyAutoScalingSchedule :: Encode DailyAutoScalingSchedule where
 
 -- | <p>Describes an app's data source.</p>
 newtype DataSource = DataSource 
-  { "Type" :: NullOrUndefined (String)
-  , "Arn" :: NullOrUndefined (String)
-  , "DatabaseName" :: NullOrUndefined (String)
+  { "Type" :: Maybe (String)
+  , "Arn" :: Maybe (String)
+  , "DatabaseName" :: Maybe (String)
   }
 derive instance newtypeDataSource :: Newtype DataSource _
 derive instance repGenericDataSource :: Generic DataSource _
@@ -838,12 +837,12 @@ instance encodeDataSource :: Encode DataSource where encode = genericEncode opti
 
 -- | Constructs DataSource from required parameters
 newDataSource :: DataSource
-newDataSource  = DataSource { "Arn": (NullOrUndefined Nothing), "DatabaseName": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newDataSource  = DataSource { "Arn": Nothing, "DatabaseName": Nothing, "Type": Nothing }
 
 -- | Constructs DataSource's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDataSource' :: ( { "Type" :: NullOrUndefined (String) , "Arn" :: NullOrUndefined (String) , "DatabaseName" :: NullOrUndefined (String) } -> {"Type" :: NullOrUndefined (String) , "Arn" :: NullOrUndefined (String) , "DatabaseName" :: NullOrUndefined (String) } ) -> DataSource
-newDataSource'  customize = (DataSource <<< customize) { "Arn": (NullOrUndefined Nothing), "DatabaseName": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newDataSource' :: ( { "Type" :: Maybe (String) , "Arn" :: Maybe (String) , "DatabaseName" :: Maybe (String) } -> {"Type" :: Maybe (String) , "Arn" :: Maybe (String) , "DatabaseName" :: Maybe (String) } ) -> DataSource
+newDataSource'  customize = (DataSource <<< customize) { "Arn": Nothing, "DatabaseName": Nothing, "Type": Nothing }
 
 
 
@@ -887,8 +886,8 @@ newDeleteAppRequest' _AppId customize = (DeleteAppRequest <<< customize) { "AppI
 
 newtype DeleteInstanceRequest = DeleteInstanceRequest 
   { "InstanceId" :: (String)
-  , "DeleteElasticIp" :: NullOrUndefined (Boolean)
-  , "DeleteVolumes" :: NullOrUndefined (Boolean)
+  , "DeleteElasticIp" :: Maybe (Boolean)
+  , "DeleteVolumes" :: Maybe (Boolean)
   }
 derive instance newtypeDeleteInstanceRequest :: Newtype DeleteInstanceRequest _
 derive instance repGenericDeleteInstanceRequest :: Generic DeleteInstanceRequest _
@@ -898,12 +897,12 @@ instance encodeDeleteInstanceRequest :: Encode DeleteInstanceRequest where encod
 
 -- | Constructs DeleteInstanceRequest from required parameters
 newDeleteInstanceRequest :: String -> DeleteInstanceRequest
-newDeleteInstanceRequest _InstanceId = DeleteInstanceRequest { "InstanceId": _InstanceId, "DeleteElasticIp": (NullOrUndefined Nothing), "DeleteVolumes": (NullOrUndefined Nothing) }
+newDeleteInstanceRequest _InstanceId = DeleteInstanceRequest { "InstanceId": _InstanceId, "DeleteElasticIp": Nothing, "DeleteVolumes": Nothing }
 
 -- | Constructs DeleteInstanceRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteInstanceRequest' :: String -> ( { "InstanceId" :: (String) , "DeleteElasticIp" :: NullOrUndefined (Boolean) , "DeleteVolumes" :: NullOrUndefined (Boolean) } -> {"InstanceId" :: (String) , "DeleteElasticIp" :: NullOrUndefined (Boolean) , "DeleteVolumes" :: NullOrUndefined (Boolean) } ) -> DeleteInstanceRequest
-newDeleteInstanceRequest' _InstanceId customize = (DeleteInstanceRequest <<< customize) { "InstanceId": _InstanceId, "DeleteElasticIp": (NullOrUndefined Nothing), "DeleteVolumes": (NullOrUndefined Nothing) }
+newDeleteInstanceRequest' :: String -> ( { "InstanceId" :: (String) , "DeleteElasticIp" :: Maybe (Boolean) , "DeleteVolumes" :: Maybe (Boolean) } -> {"InstanceId" :: (String) , "DeleteElasticIp" :: Maybe (Boolean) , "DeleteVolumes" :: Maybe (Boolean) } ) -> DeleteInstanceRequest
+newDeleteInstanceRequest' _InstanceId customize = (DeleteInstanceRequest <<< customize) { "InstanceId": _InstanceId, "DeleteElasticIp": Nothing, "DeleteVolumes": Nothing }
 
 
 
@@ -969,18 +968,18 @@ newDeleteUserProfileRequest' _IamUserArn customize = (DeleteUserProfileRequest <
 
 -- | <p>Describes a deployment of a stack or app.</p>
 newtype Deployment = Deployment 
-  { "DeploymentId" :: NullOrUndefined (String)
-  , "StackId" :: NullOrUndefined (String)
-  , "AppId" :: NullOrUndefined (String)
-  , "CreatedAt" :: NullOrUndefined (DateTime)
-  , "CompletedAt" :: NullOrUndefined (DateTime)
-  , "Duration" :: NullOrUndefined (Int)
-  , "IamUserArn" :: NullOrUndefined (String)
-  , "Comment" :: NullOrUndefined (String)
-  , "Command" :: NullOrUndefined (DeploymentCommand)
-  , "Status" :: NullOrUndefined (String)
-  , "CustomJson" :: NullOrUndefined (String)
-  , "InstanceIds" :: NullOrUndefined (Strings)
+  { "DeploymentId" :: Maybe (String)
+  , "StackId" :: Maybe (String)
+  , "AppId" :: Maybe (String)
+  , "CreatedAt" :: Maybe (DateTime)
+  , "CompletedAt" :: Maybe (DateTime)
+  , "Duration" :: Maybe (Int)
+  , "IamUserArn" :: Maybe (String)
+  , "Comment" :: Maybe (String)
+  , "Command" :: Maybe (DeploymentCommand)
+  , "Status" :: Maybe (String)
+  , "CustomJson" :: Maybe (String)
+  , "InstanceIds" :: Maybe (Strings)
   }
 derive instance newtypeDeployment :: Newtype Deployment _
 derive instance repGenericDeployment :: Generic Deployment _
@@ -990,19 +989,19 @@ instance encodeDeployment :: Encode Deployment where encode = genericEncode opti
 
 -- | Constructs Deployment from required parameters
 newDeployment :: Deployment
-newDeployment  = Deployment { "AppId": (NullOrUndefined Nothing), "Command": (NullOrUndefined Nothing), "Comment": (NullOrUndefined Nothing), "CompletedAt": (NullOrUndefined Nothing), "CreatedAt": (NullOrUndefined Nothing), "CustomJson": (NullOrUndefined Nothing), "DeploymentId": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "IamUserArn": (NullOrUndefined Nothing), "InstanceIds": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newDeployment  = Deployment { "AppId": Nothing, "Command": Nothing, "Comment": Nothing, "CompletedAt": Nothing, "CreatedAt": Nothing, "CustomJson": Nothing, "DeploymentId": Nothing, "Duration": Nothing, "IamUserArn": Nothing, "InstanceIds": Nothing, "StackId": Nothing, "Status": Nothing }
 
 -- | Constructs Deployment's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeployment' :: ( { "DeploymentId" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "AppId" :: NullOrUndefined (String) , "CreatedAt" :: NullOrUndefined (DateTime) , "CompletedAt" :: NullOrUndefined (DateTime) , "Duration" :: NullOrUndefined (Int) , "IamUserArn" :: NullOrUndefined (String) , "Comment" :: NullOrUndefined (String) , "Command" :: NullOrUndefined (DeploymentCommand) , "Status" :: NullOrUndefined (String) , "CustomJson" :: NullOrUndefined (String) , "InstanceIds" :: NullOrUndefined (Strings) } -> {"DeploymentId" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "AppId" :: NullOrUndefined (String) , "CreatedAt" :: NullOrUndefined (DateTime) , "CompletedAt" :: NullOrUndefined (DateTime) , "Duration" :: NullOrUndefined (Int) , "IamUserArn" :: NullOrUndefined (String) , "Comment" :: NullOrUndefined (String) , "Command" :: NullOrUndefined (DeploymentCommand) , "Status" :: NullOrUndefined (String) , "CustomJson" :: NullOrUndefined (String) , "InstanceIds" :: NullOrUndefined (Strings) } ) -> Deployment
-newDeployment'  customize = (Deployment <<< customize) { "AppId": (NullOrUndefined Nothing), "Command": (NullOrUndefined Nothing), "Comment": (NullOrUndefined Nothing), "CompletedAt": (NullOrUndefined Nothing), "CreatedAt": (NullOrUndefined Nothing), "CustomJson": (NullOrUndefined Nothing), "DeploymentId": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "IamUserArn": (NullOrUndefined Nothing), "InstanceIds": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newDeployment' :: ( { "DeploymentId" :: Maybe (String) , "StackId" :: Maybe (String) , "AppId" :: Maybe (String) , "CreatedAt" :: Maybe (DateTime) , "CompletedAt" :: Maybe (DateTime) , "Duration" :: Maybe (Int) , "IamUserArn" :: Maybe (String) , "Comment" :: Maybe (String) , "Command" :: Maybe (DeploymentCommand) , "Status" :: Maybe (String) , "CustomJson" :: Maybe (String) , "InstanceIds" :: Maybe (Strings) } -> {"DeploymentId" :: Maybe (String) , "StackId" :: Maybe (String) , "AppId" :: Maybe (String) , "CreatedAt" :: Maybe (DateTime) , "CompletedAt" :: Maybe (DateTime) , "Duration" :: Maybe (Int) , "IamUserArn" :: Maybe (String) , "Comment" :: Maybe (String) , "Command" :: Maybe (DeploymentCommand) , "Status" :: Maybe (String) , "CustomJson" :: Maybe (String) , "InstanceIds" :: Maybe (Strings) } ) -> Deployment
+newDeployment'  customize = (Deployment <<< customize) { "AppId": Nothing, "Command": Nothing, "Comment": Nothing, "CompletedAt": Nothing, "CreatedAt": Nothing, "CustomJson": Nothing, "DeploymentId": Nothing, "Duration": Nothing, "IamUserArn": Nothing, "InstanceIds": Nothing, "StackId": Nothing, "Status": Nothing }
 
 
 
 -- | <p>Used to specify a stack or deployment command.</p>
 newtype DeploymentCommand = DeploymentCommand 
   { "Name" :: (DeploymentCommandName)
-  , "Args" :: NullOrUndefined (DeploymentCommandArgs)
+  , "Args" :: Maybe (DeploymentCommandArgs)
   }
 derive instance newtypeDeploymentCommand :: Newtype DeploymentCommand _
 derive instance repGenericDeploymentCommand :: Generic DeploymentCommand _
@@ -1012,12 +1011,12 @@ instance encodeDeploymentCommand :: Encode DeploymentCommand where encode = gene
 
 -- | Constructs DeploymentCommand from required parameters
 newDeploymentCommand :: DeploymentCommandName -> DeploymentCommand
-newDeploymentCommand _Name = DeploymentCommand { "Name": _Name, "Args": (NullOrUndefined Nothing) }
+newDeploymentCommand _Name = DeploymentCommand { "Name": _Name, "Args": Nothing }
 
 -- | Constructs DeploymentCommand's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeploymentCommand' :: DeploymentCommandName -> ( { "Name" :: (DeploymentCommandName) , "Args" :: NullOrUndefined (DeploymentCommandArgs) } -> {"Name" :: (DeploymentCommandName) , "Args" :: NullOrUndefined (DeploymentCommandArgs) } ) -> DeploymentCommand
-newDeploymentCommand' _Name customize = (DeploymentCommand <<< customize) { "Name": _Name, "Args": (NullOrUndefined Nothing) }
+newDeploymentCommand' :: DeploymentCommandName -> ( { "Name" :: (DeploymentCommandName) , "Args" :: Maybe (DeploymentCommandArgs) } -> {"Name" :: (DeploymentCommandName) , "Args" :: Maybe (DeploymentCommandArgs) } ) -> DeploymentCommand
+newDeploymentCommand' _Name customize = (DeploymentCommand <<< customize) { "Name": _Name, "Args": Nothing }
 
 
 
@@ -1149,8 +1148,8 @@ newDeregisterVolumeRequest' _VolumeId customize = (DeregisterVolumeRequest <<< c
 
 
 newtype DescribeAgentVersionsRequest = DescribeAgentVersionsRequest 
-  { "StackId" :: NullOrUndefined (String)
-  , "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager)
+  { "StackId" :: Maybe (String)
+  , "ConfigurationManager" :: Maybe (StackConfigurationManager)
   }
 derive instance newtypeDescribeAgentVersionsRequest :: Newtype DescribeAgentVersionsRequest _
 derive instance repGenericDescribeAgentVersionsRequest :: Generic DescribeAgentVersionsRequest _
@@ -1160,18 +1159,18 @@ instance encodeDescribeAgentVersionsRequest :: Encode DescribeAgentVersionsReque
 
 -- | Constructs DescribeAgentVersionsRequest from required parameters
 newDescribeAgentVersionsRequest :: DescribeAgentVersionsRequest
-newDescribeAgentVersionsRequest  = DescribeAgentVersionsRequest { "ConfigurationManager": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribeAgentVersionsRequest  = DescribeAgentVersionsRequest { "ConfigurationManager": Nothing, "StackId": Nothing }
 
 -- | Constructs DescribeAgentVersionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAgentVersionsRequest' :: ( { "StackId" :: NullOrUndefined (String) , "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager) } -> {"StackId" :: NullOrUndefined (String) , "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager) } ) -> DescribeAgentVersionsRequest
-newDescribeAgentVersionsRequest'  customize = (DescribeAgentVersionsRequest <<< customize) { "ConfigurationManager": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribeAgentVersionsRequest' :: ( { "StackId" :: Maybe (String) , "ConfigurationManager" :: Maybe (StackConfigurationManager) } -> {"StackId" :: Maybe (String) , "ConfigurationManager" :: Maybe (StackConfigurationManager) } ) -> DescribeAgentVersionsRequest
+newDescribeAgentVersionsRequest'  customize = (DescribeAgentVersionsRequest <<< customize) { "ConfigurationManager": Nothing, "StackId": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>DescribeAgentVersions</code> request.</p>
 newtype DescribeAgentVersionsResult = DescribeAgentVersionsResult 
-  { "AgentVersions" :: NullOrUndefined (AgentVersions)
+  { "AgentVersions" :: Maybe (AgentVersions)
   }
 derive instance newtypeDescribeAgentVersionsResult :: Newtype DescribeAgentVersionsResult _
 derive instance repGenericDescribeAgentVersionsResult :: Generic DescribeAgentVersionsResult _
@@ -1181,18 +1180,18 @@ instance encodeDescribeAgentVersionsResult :: Encode DescribeAgentVersionsResult
 
 -- | Constructs DescribeAgentVersionsResult from required parameters
 newDescribeAgentVersionsResult :: DescribeAgentVersionsResult
-newDescribeAgentVersionsResult  = DescribeAgentVersionsResult { "AgentVersions": (NullOrUndefined Nothing) }
+newDescribeAgentVersionsResult  = DescribeAgentVersionsResult { "AgentVersions": Nothing }
 
 -- | Constructs DescribeAgentVersionsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAgentVersionsResult' :: ( { "AgentVersions" :: NullOrUndefined (AgentVersions) } -> {"AgentVersions" :: NullOrUndefined (AgentVersions) } ) -> DescribeAgentVersionsResult
-newDescribeAgentVersionsResult'  customize = (DescribeAgentVersionsResult <<< customize) { "AgentVersions": (NullOrUndefined Nothing) }
+newDescribeAgentVersionsResult' :: ( { "AgentVersions" :: Maybe (AgentVersions) } -> {"AgentVersions" :: Maybe (AgentVersions) } ) -> DescribeAgentVersionsResult
+newDescribeAgentVersionsResult'  customize = (DescribeAgentVersionsResult <<< customize) { "AgentVersions": Nothing }
 
 
 
 newtype DescribeAppsRequest = DescribeAppsRequest 
-  { "StackId" :: NullOrUndefined (String)
-  , "AppIds" :: NullOrUndefined (Strings)
+  { "StackId" :: Maybe (String)
+  , "AppIds" :: Maybe (Strings)
   }
 derive instance newtypeDescribeAppsRequest :: Newtype DescribeAppsRequest _
 derive instance repGenericDescribeAppsRequest :: Generic DescribeAppsRequest _
@@ -1202,18 +1201,18 @@ instance encodeDescribeAppsRequest :: Encode DescribeAppsRequest where encode = 
 
 -- | Constructs DescribeAppsRequest from required parameters
 newDescribeAppsRequest :: DescribeAppsRequest
-newDescribeAppsRequest  = DescribeAppsRequest { "AppIds": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribeAppsRequest  = DescribeAppsRequest { "AppIds": Nothing, "StackId": Nothing }
 
 -- | Constructs DescribeAppsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAppsRequest' :: ( { "StackId" :: NullOrUndefined (String) , "AppIds" :: NullOrUndefined (Strings) } -> {"StackId" :: NullOrUndefined (String) , "AppIds" :: NullOrUndefined (Strings) } ) -> DescribeAppsRequest
-newDescribeAppsRequest'  customize = (DescribeAppsRequest <<< customize) { "AppIds": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribeAppsRequest' :: ( { "StackId" :: Maybe (String) , "AppIds" :: Maybe (Strings) } -> {"StackId" :: Maybe (String) , "AppIds" :: Maybe (Strings) } ) -> DescribeAppsRequest
+newDescribeAppsRequest'  customize = (DescribeAppsRequest <<< customize) { "AppIds": Nothing, "StackId": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>DescribeApps</code> request.</p>
 newtype DescribeAppsResult = DescribeAppsResult 
-  { "Apps" :: NullOrUndefined (Apps)
+  { "Apps" :: Maybe (Apps)
   }
 derive instance newtypeDescribeAppsResult :: Newtype DescribeAppsResult _
 derive instance repGenericDescribeAppsResult :: Generic DescribeAppsResult _
@@ -1223,19 +1222,19 @@ instance encodeDescribeAppsResult :: Encode DescribeAppsResult where encode = ge
 
 -- | Constructs DescribeAppsResult from required parameters
 newDescribeAppsResult :: DescribeAppsResult
-newDescribeAppsResult  = DescribeAppsResult { "Apps": (NullOrUndefined Nothing) }
+newDescribeAppsResult  = DescribeAppsResult { "Apps": Nothing }
 
 -- | Constructs DescribeAppsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAppsResult' :: ( { "Apps" :: NullOrUndefined (Apps) } -> {"Apps" :: NullOrUndefined (Apps) } ) -> DescribeAppsResult
-newDescribeAppsResult'  customize = (DescribeAppsResult <<< customize) { "Apps": (NullOrUndefined Nothing) }
+newDescribeAppsResult' :: ( { "Apps" :: Maybe (Apps) } -> {"Apps" :: Maybe (Apps) } ) -> DescribeAppsResult
+newDescribeAppsResult'  customize = (DescribeAppsResult <<< customize) { "Apps": Nothing }
 
 
 
 newtype DescribeCommandsRequest = DescribeCommandsRequest 
-  { "DeploymentId" :: NullOrUndefined (String)
-  , "InstanceId" :: NullOrUndefined (String)
-  , "CommandIds" :: NullOrUndefined (Strings)
+  { "DeploymentId" :: Maybe (String)
+  , "InstanceId" :: Maybe (String)
+  , "CommandIds" :: Maybe (Strings)
   }
 derive instance newtypeDescribeCommandsRequest :: Newtype DescribeCommandsRequest _
 derive instance repGenericDescribeCommandsRequest :: Generic DescribeCommandsRequest _
@@ -1245,18 +1244,18 @@ instance encodeDescribeCommandsRequest :: Encode DescribeCommandsRequest where e
 
 -- | Constructs DescribeCommandsRequest from required parameters
 newDescribeCommandsRequest :: DescribeCommandsRequest
-newDescribeCommandsRequest  = DescribeCommandsRequest { "CommandIds": (NullOrUndefined Nothing), "DeploymentId": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing) }
+newDescribeCommandsRequest  = DescribeCommandsRequest { "CommandIds": Nothing, "DeploymentId": Nothing, "InstanceId": Nothing }
 
 -- | Constructs DescribeCommandsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeCommandsRequest' :: ( { "DeploymentId" :: NullOrUndefined (String) , "InstanceId" :: NullOrUndefined (String) , "CommandIds" :: NullOrUndefined (Strings) } -> {"DeploymentId" :: NullOrUndefined (String) , "InstanceId" :: NullOrUndefined (String) , "CommandIds" :: NullOrUndefined (Strings) } ) -> DescribeCommandsRequest
-newDescribeCommandsRequest'  customize = (DescribeCommandsRequest <<< customize) { "CommandIds": (NullOrUndefined Nothing), "DeploymentId": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing) }
+newDescribeCommandsRequest' :: ( { "DeploymentId" :: Maybe (String) , "InstanceId" :: Maybe (String) , "CommandIds" :: Maybe (Strings) } -> {"DeploymentId" :: Maybe (String) , "InstanceId" :: Maybe (String) , "CommandIds" :: Maybe (Strings) } ) -> DescribeCommandsRequest
+newDescribeCommandsRequest'  customize = (DescribeCommandsRequest <<< customize) { "CommandIds": Nothing, "DeploymentId": Nothing, "InstanceId": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>DescribeCommands</code> request.</p>
 newtype DescribeCommandsResult = DescribeCommandsResult 
-  { "Commands" :: NullOrUndefined (Commands)
+  { "Commands" :: Maybe (Commands)
   }
 derive instance newtypeDescribeCommandsResult :: Newtype DescribeCommandsResult _
 derive instance repGenericDescribeCommandsResult :: Generic DescribeCommandsResult _
@@ -1266,19 +1265,19 @@ instance encodeDescribeCommandsResult :: Encode DescribeCommandsResult where enc
 
 -- | Constructs DescribeCommandsResult from required parameters
 newDescribeCommandsResult :: DescribeCommandsResult
-newDescribeCommandsResult  = DescribeCommandsResult { "Commands": (NullOrUndefined Nothing) }
+newDescribeCommandsResult  = DescribeCommandsResult { "Commands": Nothing }
 
 -- | Constructs DescribeCommandsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeCommandsResult' :: ( { "Commands" :: NullOrUndefined (Commands) } -> {"Commands" :: NullOrUndefined (Commands) } ) -> DescribeCommandsResult
-newDescribeCommandsResult'  customize = (DescribeCommandsResult <<< customize) { "Commands": (NullOrUndefined Nothing) }
+newDescribeCommandsResult' :: ( { "Commands" :: Maybe (Commands) } -> {"Commands" :: Maybe (Commands) } ) -> DescribeCommandsResult
+newDescribeCommandsResult'  customize = (DescribeCommandsResult <<< customize) { "Commands": Nothing }
 
 
 
 newtype DescribeDeploymentsRequest = DescribeDeploymentsRequest 
-  { "StackId" :: NullOrUndefined (String)
-  , "AppId" :: NullOrUndefined (String)
-  , "DeploymentIds" :: NullOrUndefined (Strings)
+  { "StackId" :: Maybe (String)
+  , "AppId" :: Maybe (String)
+  , "DeploymentIds" :: Maybe (Strings)
   }
 derive instance newtypeDescribeDeploymentsRequest :: Newtype DescribeDeploymentsRequest _
 derive instance repGenericDescribeDeploymentsRequest :: Generic DescribeDeploymentsRequest _
@@ -1288,18 +1287,18 @@ instance encodeDescribeDeploymentsRequest :: Encode DescribeDeploymentsRequest w
 
 -- | Constructs DescribeDeploymentsRequest from required parameters
 newDescribeDeploymentsRequest :: DescribeDeploymentsRequest
-newDescribeDeploymentsRequest  = DescribeDeploymentsRequest { "AppId": (NullOrUndefined Nothing), "DeploymentIds": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribeDeploymentsRequest  = DescribeDeploymentsRequest { "AppId": Nothing, "DeploymentIds": Nothing, "StackId": Nothing }
 
 -- | Constructs DescribeDeploymentsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeDeploymentsRequest' :: ( { "StackId" :: NullOrUndefined (String) , "AppId" :: NullOrUndefined (String) , "DeploymentIds" :: NullOrUndefined (Strings) } -> {"StackId" :: NullOrUndefined (String) , "AppId" :: NullOrUndefined (String) , "DeploymentIds" :: NullOrUndefined (Strings) } ) -> DescribeDeploymentsRequest
-newDescribeDeploymentsRequest'  customize = (DescribeDeploymentsRequest <<< customize) { "AppId": (NullOrUndefined Nothing), "DeploymentIds": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribeDeploymentsRequest' :: ( { "StackId" :: Maybe (String) , "AppId" :: Maybe (String) , "DeploymentIds" :: Maybe (Strings) } -> {"StackId" :: Maybe (String) , "AppId" :: Maybe (String) , "DeploymentIds" :: Maybe (Strings) } ) -> DescribeDeploymentsRequest
+newDescribeDeploymentsRequest'  customize = (DescribeDeploymentsRequest <<< customize) { "AppId": Nothing, "DeploymentIds": Nothing, "StackId": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>DescribeDeployments</code> request.</p>
 newtype DescribeDeploymentsResult = DescribeDeploymentsResult 
-  { "Deployments" :: NullOrUndefined (Deployments)
+  { "Deployments" :: Maybe (Deployments)
   }
 derive instance newtypeDescribeDeploymentsResult :: Newtype DescribeDeploymentsResult _
 derive instance repGenericDescribeDeploymentsResult :: Generic DescribeDeploymentsResult _
@@ -1309,20 +1308,20 @@ instance encodeDescribeDeploymentsResult :: Encode DescribeDeploymentsResult whe
 
 -- | Constructs DescribeDeploymentsResult from required parameters
 newDescribeDeploymentsResult :: DescribeDeploymentsResult
-newDescribeDeploymentsResult  = DescribeDeploymentsResult { "Deployments": (NullOrUndefined Nothing) }
+newDescribeDeploymentsResult  = DescribeDeploymentsResult { "Deployments": Nothing }
 
 -- | Constructs DescribeDeploymentsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeDeploymentsResult' :: ( { "Deployments" :: NullOrUndefined (Deployments) } -> {"Deployments" :: NullOrUndefined (Deployments) } ) -> DescribeDeploymentsResult
-newDescribeDeploymentsResult'  customize = (DescribeDeploymentsResult <<< customize) { "Deployments": (NullOrUndefined Nothing) }
+newDescribeDeploymentsResult' :: ( { "Deployments" :: Maybe (Deployments) } -> {"Deployments" :: Maybe (Deployments) } ) -> DescribeDeploymentsResult
+newDescribeDeploymentsResult'  customize = (DescribeDeploymentsResult <<< customize) { "Deployments": Nothing }
 
 
 
 newtype DescribeEcsClustersRequest = DescribeEcsClustersRequest 
-  { "EcsClusterArns" :: NullOrUndefined (Strings)
-  , "StackId" :: NullOrUndefined (String)
-  , "NextToken" :: NullOrUndefined (String)
-  , "MaxResults" :: NullOrUndefined (Int)
+  { "EcsClusterArns" :: Maybe (Strings)
+  , "StackId" :: Maybe (String)
+  , "NextToken" :: Maybe (String)
+  , "MaxResults" :: Maybe (Int)
   }
 derive instance newtypeDescribeEcsClustersRequest :: Newtype DescribeEcsClustersRequest _
 derive instance repGenericDescribeEcsClustersRequest :: Generic DescribeEcsClustersRequest _
@@ -1332,19 +1331,19 @@ instance encodeDescribeEcsClustersRequest :: Encode DescribeEcsClustersRequest w
 
 -- | Constructs DescribeEcsClustersRequest from required parameters
 newDescribeEcsClustersRequest :: DescribeEcsClustersRequest
-newDescribeEcsClustersRequest  = DescribeEcsClustersRequest { "EcsClusterArns": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribeEcsClustersRequest  = DescribeEcsClustersRequest { "EcsClusterArns": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "StackId": Nothing }
 
 -- | Constructs DescribeEcsClustersRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEcsClustersRequest' :: ( { "EcsClusterArns" :: NullOrUndefined (Strings) , "StackId" :: NullOrUndefined (String) , "NextToken" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (Int) } -> {"EcsClusterArns" :: NullOrUndefined (Strings) , "StackId" :: NullOrUndefined (String) , "NextToken" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (Int) } ) -> DescribeEcsClustersRequest
-newDescribeEcsClustersRequest'  customize = (DescribeEcsClustersRequest <<< customize) { "EcsClusterArns": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribeEcsClustersRequest' :: ( { "EcsClusterArns" :: Maybe (Strings) , "StackId" :: Maybe (String) , "NextToken" :: Maybe (String) , "MaxResults" :: Maybe (Int) } -> {"EcsClusterArns" :: Maybe (Strings) , "StackId" :: Maybe (String) , "NextToken" :: Maybe (String) , "MaxResults" :: Maybe (Int) } ) -> DescribeEcsClustersRequest
+newDescribeEcsClustersRequest'  customize = (DescribeEcsClustersRequest <<< customize) { "EcsClusterArns": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "StackId": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>DescribeEcsClusters</code> request.</p>
 newtype DescribeEcsClustersResult = DescribeEcsClustersResult 
-  { "EcsClusters" :: NullOrUndefined (EcsClusters)
-  , "NextToken" :: NullOrUndefined (String)
+  { "EcsClusters" :: Maybe (EcsClusters)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeDescribeEcsClustersResult :: Newtype DescribeEcsClustersResult _
 derive instance repGenericDescribeEcsClustersResult :: Generic DescribeEcsClustersResult _
@@ -1354,19 +1353,19 @@ instance encodeDescribeEcsClustersResult :: Encode DescribeEcsClustersResult whe
 
 -- | Constructs DescribeEcsClustersResult from required parameters
 newDescribeEcsClustersResult :: DescribeEcsClustersResult
-newDescribeEcsClustersResult  = DescribeEcsClustersResult { "EcsClusters": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeEcsClustersResult  = DescribeEcsClustersResult { "EcsClusters": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeEcsClustersResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEcsClustersResult' :: ( { "EcsClusters" :: NullOrUndefined (EcsClusters) , "NextToken" :: NullOrUndefined (String) } -> {"EcsClusters" :: NullOrUndefined (EcsClusters) , "NextToken" :: NullOrUndefined (String) } ) -> DescribeEcsClustersResult
-newDescribeEcsClustersResult'  customize = (DescribeEcsClustersResult <<< customize) { "EcsClusters": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeEcsClustersResult' :: ( { "EcsClusters" :: Maybe (EcsClusters) , "NextToken" :: Maybe (String) } -> {"EcsClusters" :: Maybe (EcsClusters) , "NextToken" :: Maybe (String) } ) -> DescribeEcsClustersResult
+newDescribeEcsClustersResult'  customize = (DescribeEcsClustersResult <<< customize) { "EcsClusters": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeElasticIpsRequest = DescribeElasticIpsRequest 
-  { "InstanceId" :: NullOrUndefined (String)
-  , "StackId" :: NullOrUndefined (String)
-  , "Ips" :: NullOrUndefined (Strings)
+  { "InstanceId" :: Maybe (String)
+  , "StackId" :: Maybe (String)
+  , "Ips" :: Maybe (Strings)
   }
 derive instance newtypeDescribeElasticIpsRequest :: Newtype DescribeElasticIpsRequest _
 derive instance repGenericDescribeElasticIpsRequest :: Generic DescribeElasticIpsRequest _
@@ -1376,18 +1375,18 @@ instance encodeDescribeElasticIpsRequest :: Encode DescribeElasticIpsRequest whe
 
 -- | Constructs DescribeElasticIpsRequest from required parameters
 newDescribeElasticIpsRequest :: DescribeElasticIpsRequest
-newDescribeElasticIpsRequest  = DescribeElasticIpsRequest { "InstanceId": (NullOrUndefined Nothing), "Ips": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribeElasticIpsRequest  = DescribeElasticIpsRequest { "InstanceId": Nothing, "Ips": Nothing, "StackId": Nothing }
 
 -- | Constructs DescribeElasticIpsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeElasticIpsRequest' :: ( { "InstanceId" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "Ips" :: NullOrUndefined (Strings) } -> {"InstanceId" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "Ips" :: NullOrUndefined (Strings) } ) -> DescribeElasticIpsRequest
-newDescribeElasticIpsRequest'  customize = (DescribeElasticIpsRequest <<< customize) { "InstanceId": (NullOrUndefined Nothing), "Ips": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribeElasticIpsRequest' :: ( { "InstanceId" :: Maybe (String) , "StackId" :: Maybe (String) , "Ips" :: Maybe (Strings) } -> {"InstanceId" :: Maybe (String) , "StackId" :: Maybe (String) , "Ips" :: Maybe (Strings) } ) -> DescribeElasticIpsRequest
+newDescribeElasticIpsRequest'  customize = (DescribeElasticIpsRequest <<< customize) { "InstanceId": Nothing, "Ips": Nothing, "StackId": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>DescribeElasticIps</code> request.</p>
 newtype DescribeElasticIpsResult = DescribeElasticIpsResult 
-  { "ElasticIps" :: NullOrUndefined (ElasticIps)
+  { "ElasticIps" :: Maybe (ElasticIps)
   }
 derive instance newtypeDescribeElasticIpsResult :: Newtype DescribeElasticIpsResult _
 derive instance repGenericDescribeElasticIpsResult :: Generic DescribeElasticIpsResult _
@@ -1397,18 +1396,18 @@ instance encodeDescribeElasticIpsResult :: Encode DescribeElasticIpsResult where
 
 -- | Constructs DescribeElasticIpsResult from required parameters
 newDescribeElasticIpsResult :: DescribeElasticIpsResult
-newDescribeElasticIpsResult  = DescribeElasticIpsResult { "ElasticIps": (NullOrUndefined Nothing) }
+newDescribeElasticIpsResult  = DescribeElasticIpsResult { "ElasticIps": Nothing }
 
 -- | Constructs DescribeElasticIpsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeElasticIpsResult' :: ( { "ElasticIps" :: NullOrUndefined (ElasticIps) } -> {"ElasticIps" :: NullOrUndefined (ElasticIps) } ) -> DescribeElasticIpsResult
-newDescribeElasticIpsResult'  customize = (DescribeElasticIpsResult <<< customize) { "ElasticIps": (NullOrUndefined Nothing) }
+newDescribeElasticIpsResult' :: ( { "ElasticIps" :: Maybe (ElasticIps) } -> {"ElasticIps" :: Maybe (ElasticIps) } ) -> DescribeElasticIpsResult
+newDescribeElasticIpsResult'  customize = (DescribeElasticIpsResult <<< customize) { "ElasticIps": Nothing }
 
 
 
 newtype DescribeElasticLoadBalancersRequest = DescribeElasticLoadBalancersRequest 
-  { "StackId" :: NullOrUndefined (String)
-  , "LayerIds" :: NullOrUndefined (Strings)
+  { "StackId" :: Maybe (String)
+  , "LayerIds" :: Maybe (Strings)
   }
 derive instance newtypeDescribeElasticLoadBalancersRequest :: Newtype DescribeElasticLoadBalancersRequest _
 derive instance repGenericDescribeElasticLoadBalancersRequest :: Generic DescribeElasticLoadBalancersRequest _
@@ -1418,18 +1417,18 @@ instance encodeDescribeElasticLoadBalancersRequest :: Encode DescribeElasticLoad
 
 -- | Constructs DescribeElasticLoadBalancersRequest from required parameters
 newDescribeElasticLoadBalancersRequest :: DescribeElasticLoadBalancersRequest
-newDescribeElasticLoadBalancersRequest  = DescribeElasticLoadBalancersRequest { "LayerIds": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribeElasticLoadBalancersRequest  = DescribeElasticLoadBalancersRequest { "LayerIds": Nothing, "StackId": Nothing }
 
 -- | Constructs DescribeElasticLoadBalancersRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeElasticLoadBalancersRequest' :: ( { "StackId" :: NullOrUndefined (String) , "LayerIds" :: NullOrUndefined (Strings) } -> {"StackId" :: NullOrUndefined (String) , "LayerIds" :: NullOrUndefined (Strings) } ) -> DescribeElasticLoadBalancersRequest
-newDescribeElasticLoadBalancersRequest'  customize = (DescribeElasticLoadBalancersRequest <<< customize) { "LayerIds": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribeElasticLoadBalancersRequest' :: ( { "StackId" :: Maybe (String) , "LayerIds" :: Maybe (Strings) } -> {"StackId" :: Maybe (String) , "LayerIds" :: Maybe (Strings) } ) -> DescribeElasticLoadBalancersRequest
+newDescribeElasticLoadBalancersRequest'  customize = (DescribeElasticLoadBalancersRequest <<< customize) { "LayerIds": Nothing, "StackId": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>DescribeElasticLoadBalancers</code> request.</p>
 newtype DescribeElasticLoadBalancersResult = DescribeElasticLoadBalancersResult 
-  { "ElasticLoadBalancers" :: NullOrUndefined (ElasticLoadBalancers)
+  { "ElasticLoadBalancers" :: Maybe (ElasticLoadBalancers)
   }
 derive instance newtypeDescribeElasticLoadBalancersResult :: Newtype DescribeElasticLoadBalancersResult _
 derive instance repGenericDescribeElasticLoadBalancersResult :: Generic DescribeElasticLoadBalancersResult _
@@ -1439,19 +1438,19 @@ instance encodeDescribeElasticLoadBalancersResult :: Encode DescribeElasticLoadB
 
 -- | Constructs DescribeElasticLoadBalancersResult from required parameters
 newDescribeElasticLoadBalancersResult :: DescribeElasticLoadBalancersResult
-newDescribeElasticLoadBalancersResult  = DescribeElasticLoadBalancersResult { "ElasticLoadBalancers": (NullOrUndefined Nothing) }
+newDescribeElasticLoadBalancersResult  = DescribeElasticLoadBalancersResult { "ElasticLoadBalancers": Nothing }
 
 -- | Constructs DescribeElasticLoadBalancersResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeElasticLoadBalancersResult' :: ( { "ElasticLoadBalancers" :: NullOrUndefined (ElasticLoadBalancers) } -> {"ElasticLoadBalancers" :: NullOrUndefined (ElasticLoadBalancers) } ) -> DescribeElasticLoadBalancersResult
-newDescribeElasticLoadBalancersResult'  customize = (DescribeElasticLoadBalancersResult <<< customize) { "ElasticLoadBalancers": (NullOrUndefined Nothing) }
+newDescribeElasticLoadBalancersResult' :: ( { "ElasticLoadBalancers" :: Maybe (ElasticLoadBalancers) } -> {"ElasticLoadBalancers" :: Maybe (ElasticLoadBalancers) } ) -> DescribeElasticLoadBalancersResult
+newDescribeElasticLoadBalancersResult'  customize = (DescribeElasticLoadBalancersResult <<< customize) { "ElasticLoadBalancers": Nothing }
 
 
 
 newtype DescribeInstancesRequest = DescribeInstancesRequest 
-  { "StackId" :: NullOrUndefined (String)
-  , "LayerId" :: NullOrUndefined (String)
-  , "InstanceIds" :: NullOrUndefined (Strings)
+  { "StackId" :: Maybe (String)
+  , "LayerId" :: Maybe (String)
+  , "InstanceIds" :: Maybe (Strings)
   }
 derive instance newtypeDescribeInstancesRequest :: Newtype DescribeInstancesRequest _
 derive instance repGenericDescribeInstancesRequest :: Generic DescribeInstancesRequest _
@@ -1461,18 +1460,18 @@ instance encodeDescribeInstancesRequest :: Encode DescribeInstancesRequest where
 
 -- | Constructs DescribeInstancesRequest from required parameters
 newDescribeInstancesRequest :: DescribeInstancesRequest
-newDescribeInstancesRequest  = DescribeInstancesRequest { "InstanceIds": (NullOrUndefined Nothing), "LayerId": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribeInstancesRequest  = DescribeInstancesRequest { "InstanceIds": Nothing, "LayerId": Nothing, "StackId": Nothing }
 
 -- | Constructs DescribeInstancesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeInstancesRequest' :: ( { "StackId" :: NullOrUndefined (String) , "LayerId" :: NullOrUndefined (String) , "InstanceIds" :: NullOrUndefined (Strings) } -> {"StackId" :: NullOrUndefined (String) , "LayerId" :: NullOrUndefined (String) , "InstanceIds" :: NullOrUndefined (Strings) } ) -> DescribeInstancesRequest
-newDescribeInstancesRequest'  customize = (DescribeInstancesRequest <<< customize) { "InstanceIds": (NullOrUndefined Nothing), "LayerId": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribeInstancesRequest' :: ( { "StackId" :: Maybe (String) , "LayerId" :: Maybe (String) , "InstanceIds" :: Maybe (Strings) } -> {"StackId" :: Maybe (String) , "LayerId" :: Maybe (String) , "InstanceIds" :: Maybe (Strings) } ) -> DescribeInstancesRequest
+newDescribeInstancesRequest'  customize = (DescribeInstancesRequest <<< customize) { "InstanceIds": Nothing, "LayerId": Nothing, "StackId": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>DescribeInstances</code> request.</p>
 newtype DescribeInstancesResult = DescribeInstancesResult 
-  { "Instances" :: NullOrUndefined (Instances)
+  { "Instances" :: Maybe (Instances)
   }
 derive instance newtypeDescribeInstancesResult :: Newtype DescribeInstancesResult _
 derive instance repGenericDescribeInstancesResult :: Generic DescribeInstancesResult _
@@ -1482,18 +1481,18 @@ instance encodeDescribeInstancesResult :: Encode DescribeInstancesResult where e
 
 -- | Constructs DescribeInstancesResult from required parameters
 newDescribeInstancesResult :: DescribeInstancesResult
-newDescribeInstancesResult  = DescribeInstancesResult { "Instances": (NullOrUndefined Nothing) }
+newDescribeInstancesResult  = DescribeInstancesResult { "Instances": Nothing }
 
 -- | Constructs DescribeInstancesResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeInstancesResult' :: ( { "Instances" :: NullOrUndefined (Instances) } -> {"Instances" :: NullOrUndefined (Instances) } ) -> DescribeInstancesResult
-newDescribeInstancesResult'  customize = (DescribeInstancesResult <<< customize) { "Instances": (NullOrUndefined Nothing) }
+newDescribeInstancesResult' :: ( { "Instances" :: Maybe (Instances) } -> {"Instances" :: Maybe (Instances) } ) -> DescribeInstancesResult
+newDescribeInstancesResult'  customize = (DescribeInstancesResult <<< customize) { "Instances": Nothing }
 
 
 
 newtype DescribeLayersRequest = DescribeLayersRequest 
-  { "StackId" :: NullOrUndefined (String)
-  , "LayerIds" :: NullOrUndefined (Strings)
+  { "StackId" :: Maybe (String)
+  , "LayerIds" :: Maybe (Strings)
   }
 derive instance newtypeDescribeLayersRequest :: Newtype DescribeLayersRequest _
 derive instance repGenericDescribeLayersRequest :: Generic DescribeLayersRequest _
@@ -1503,18 +1502,18 @@ instance encodeDescribeLayersRequest :: Encode DescribeLayersRequest where encod
 
 -- | Constructs DescribeLayersRequest from required parameters
 newDescribeLayersRequest :: DescribeLayersRequest
-newDescribeLayersRequest  = DescribeLayersRequest { "LayerIds": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribeLayersRequest  = DescribeLayersRequest { "LayerIds": Nothing, "StackId": Nothing }
 
 -- | Constructs DescribeLayersRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeLayersRequest' :: ( { "StackId" :: NullOrUndefined (String) , "LayerIds" :: NullOrUndefined (Strings) } -> {"StackId" :: NullOrUndefined (String) , "LayerIds" :: NullOrUndefined (Strings) } ) -> DescribeLayersRequest
-newDescribeLayersRequest'  customize = (DescribeLayersRequest <<< customize) { "LayerIds": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribeLayersRequest' :: ( { "StackId" :: Maybe (String) , "LayerIds" :: Maybe (Strings) } -> {"StackId" :: Maybe (String) , "LayerIds" :: Maybe (Strings) } ) -> DescribeLayersRequest
+newDescribeLayersRequest'  customize = (DescribeLayersRequest <<< customize) { "LayerIds": Nothing, "StackId": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>DescribeLayers</code> request.</p>
 newtype DescribeLayersResult = DescribeLayersResult 
-  { "Layers" :: NullOrUndefined (Layers)
+  { "Layers" :: Maybe (Layers)
   }
 derive instance newtypeDescribeLayersResult :: Newtype DescribeLayersResult _
 derive instance repGenericDescribeLayersResult :: Generic DescribeLayersResult _
@@ -1524,12 +1523,12 @@ instance encodeDescribeLayersResult :: Encode DescribeLayersResult where encode 
 
 -- | Constructs DescribeLayersResult from required parameters
 newDescribeLayersResult :: DescribeLayersResult
-newDescribeLayersResult  = DescribeLayersResult { "Layers": (NullOrUndefined Nothing) }
+newDescribeLayersResult  = DescribeLayersResult { "Layers": Nothing }
 
 -- | Constructs DescribeLayersResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeLayersResult' :: ( { "Layers" :: NullOrUndefined (Layers) } -> {"Layers" :: NullOrUndefined (Layers) } ) -> DescribeLayersResult
-newDescribeLayersResult'  customize = (DescribeLayersResult <<< customize) { "Layers": (NullOrUndefined Nothing) }
+newDescribeLayersResult' :: ( { "Layers" :: Maybe (Layers) } -> {"Layers" :: Maybe (Layers) } ) -> DescribeLayersResult
+newDescribeLayersResult'  customize = (DescribeLayersResult <<< customize) { "Layers": Nothing }
 
 
 
@@ -1555,7 +1554,7 @@ newDescribeLoadBasedAutoScalingRequest' _LayerIds customize = (DescribeLoadBased
 
 -- | <p>Contains the response to a <code>DescribeLoadBasedAutoScaling</code> request.</p>
 newtype DescribeLoadBasedAutoScalingResult = DescribeLoadBasedAutoScalingResult 
-  { "LoadBasedAutoScalingConfigurations" :: NullOrUndefined (LoadBasedAutoScalingConfigurations)
+  { "LoadBasedAutoScalingConfigurations" :: Maybe (LoadBasedAutoScalingConfigurations)
   }
 derive instance newtypeDescribeLoadBasedAutoScalingResult :: Newtype DescribeLoadBasedAutoScalingResult _
 derive instance repGenericDescribeLoadBasedAutoScalingResult :: Generic DescribeLoadBasedAutoScalingResult _
@@ -1565,18 +1564,18 @@ instance encodeDescribeLoadBasedAutoScalingResult :: Encode DescribeLoadBasedAut
 
 -- | Constructs DescribeLoadBasedAutoScalingResult from required parameters
 newDescribeLoadBasedAutoScalingResult :: DescribeLoadBasedAutoScalingResult
-newDescribeLoadBasedAutoScalingResult  = DescribeLoadBasedAutoScalingResult { "LoadBasedAutoScalingConfigurations": (NullOrUndefined Nothing) }
+newDescribeLoadBasedAutoScalingResult  = DescribeLoadBasedAutoScalingResult { "LoadBasedAutoScalingConfigurations": Nothing }
 
 -- | Constructs DescribeLoadBasedAutoScalingResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeLoadBasedAutoScalingResult' :: ( { "LoadBasedAutoScalingConfigurations" :: NullOrUndefined (LoadBasedAutoScalingConfigurations) } -> {"LoadBasedAutoScalingConfigurations" :: NullOrUndefined (LoadBasedAutoScalingConfigurations) } ) -> DescribeLoadBasedAutoScalingResult
-newDescribeLoadBasedAutoScalingResult'  customize = (DescribeLoadBasedAutoScalingResult <<< customize) { "LoadBasedAutoScalingConfigurations": (NullOrUndefined Nothing) }
+newDescribeLoadBasedAutoScalingResult' :: ( { "LoadBasedAutoScalingConfigurations" :: Maybe (LoadBasedAutoScalingConfigurations) } -> {"LoadBasedAutoScalingConfigurations" :: Maybe (LoadBasedAutoScalingConfigurations) } ) -> DescribeLoadBasedAutoScalingResult
+newDescribeLoadBasedAutoScalingResult'  customize = (DescribeLoadBasedAutoScalingResult <<< customize) { "LoadBasedAutoScalingConfigurations": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>DescribeMyUserProfile</code> request.</p>
 newtype DescribeMyUserProfileResult = DescribeMyUserProfileResult 
-  { "UserProfile" :: NullOrUndefined (SelfUserProfile)
+  { "UserProfile" :: Maybe (SelfUserProfile)
   }
 derive instance newtypeDescribeMyUserProfileResult :: Newtype DescribeMyUserProfileResult _
 derive instance repGenericDescribeMyUserProfileResult :: Generic DescribeMyUserProfileResult _
@@ -1586,18 +1585,18 @@ instance encodeDescribeMyUserProfileResult :: Encode DescribeMyUserProfileResult
 
 -- | Constructs DescribeMyUserProfileResult from required parameters
 newDescribeMyUserProfileResult :: DescribeMyUserProfileResult
-newDescribeMyUserProfileResult  = DescribeMyUserProfileResult { "UserProfile": (NullOrUndefined Nothing) }
+newDescribeMyUserProfileResult  = DescribeMyUserProfileResult { "UserProfile": Nothing }
 
 -- | Constructs DescribeMyUserProfileResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeMyUserProfileResult' :: ( { "UserProfile" :: NullOrUndefined (SelfUserProfile) } -> {"UserProfile" :: NullOrUndefined (SelfUserProfile) } ) -> DescribeMyUserProfileResult
-newDescribeMyUserProfileResult'  customize = (DescribeMyUserProfileResult <<< customize) { "UserProfile": (NullOrUndefined Nothing) }
+newDescribeMyUserProfileResult' :: ( { "UserProfile" :: Maybe (SelfUserProfile) } -> {"UserProfile" :: Maybe (SelfUserProfile) } ) -> DescribeMyUserProfileResult
+newDescribeMyUserProfileResult'  customize = (DescribeMyUserProfileResult <<< customize) { "UserProfile": Nothing }
 
 
 
 -- | <p>The response to a <code>DescribeOperatingSystems</code> request.</p>
 newtype DescribeOperatingSystemsResponse = DescribeOperatingSystemsResponse 
-  { "OperatingSystems" :: NullOrUndefined (OperatingSystems)
+  { "OperatingSystems" :: Maybe (OperatingSystems)
   }
 derive instance newtypeDescribeOperatingSystemsResponse :: Newtype DescribeOperatingSystemsResponse _
 derive instance repGenericDescribeOperatingSystemsResponse :: Generic DescribeOperatingSystemsResponse _
@@ -1607,18 +1606,18 @@ instance encodeDescribeOperatingSystemsResponse :: Encode DescribeOperatingSyste
 
 -- | Constructs DescribeOperatingSystemsResponse from required parameters
 newDescribeOperatingSystemsResponse :: DescribeOperatingSystemsResponse
-newDescribeOperatingSystemsResponse  = DescribeOperatingSystemsResponse { "OperatingSystems": (NullOrUndefined Nothing) }
+newDescribeOperatingSystemsResponse  = DescribeOperatingSystemsResponse { "OperatingSystems": Nothing }
 
 -- | Constructs DescribeOperatingSystemsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeOperatingSystemsResponse' :: ( { "OperatingSystems" :: NullOrUndefined (OperatingSystems) } -> {"OperatingSystems" :: NullOrUndefined (OperatingSystems) } ) -> DescribeOperatingSystemsResponse
-newDescribeOperatingSystemsResponse'  customize = (DescribeOperatingSystemsResponse <<< customize) { "OperatingSystems": (NullOrUndefined Nothing) }
+newDescribeOperatingSystemsResponse' :: ( { "OperatingSystems" :: Maybe (OperatingSystems) } -> {"OperatingSystems" :: Maybe (OperatingSystems) } ) -> DescribeOperatingSystemsResponse
+newDescribeOperatingSystemsResponse'  customize = (DescribeOperatingSystemsResponse <<< customize) { "OperatingSystems": Nothing }
 
 
 
 newtype DescribePermissionsRequest = DescribePermissionsRequest 
-  { "IamUserArn" :: NullOrUndefined (String)
-  , "StackId" :: NullOrUndefined (String)
+  { "IamUserArn" :: Maybe (String)
+  , "StackId" :: Maybe (String)
   }
 derive instance newtypeDescribePermissionsRequest :: Newtype DescribePermissionsRequest _
 derive instance repGenericDescribePermissionsRequest :: Generic DescribePermissionsRequest _
@@ -1628,18 +1627,18 @@ instance encodeDescribePermissionsRequest :: Encode DescribePermissionsRequest w
 
 -- | Constructs DescribePermissionsRequest from required parameters
 newDescribePermissionsRequest :: DescribePermissionsRequest
-newDescribePermissionsRequest  = DescribePermissionsRequest { "IamUserArn": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribePermissionsRequest  = DescribePermissionsRequest { "IamUserArn": Nothing, "StackId": Nothing }
 
 -- | Constructs DescribePermissionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribePermissionsRequest' :: ( { "IamUserArn" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) } -> {"IamUserArn" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) } ) -> DescribePermissionsRequest
-newDescribePermissionsRequest'  customize = (DescribePermissionsRequest <<< customize) { "IamUserArn": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribePermissionsRequest' :: ( { "IamUserArn" :: Maybe (String) , "StackId" :: Maybe (String) } -> {"IamUserArn" :: Maybe (String) , "StackId" :: Maybe (String) } ) -> DescribePermissionsRequest
+newDescribePermissionsRequest'  customize = (DescribePermissionsRequest <<< customize) { "IamUserArn": Nothing, "StackId": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>DescribePermissions</code> request.</p>
 newtype DescribePermissionsResult = DescribePermissionsResult 
-  { "Permissions" :: NullOrUndefined (Permissions)
+  { "Permissions" :: Maybe (Permissions)
   }
 derive instance newtypeDescribePermissionsResult :: Newtype DescribePermissionsResult _
 derive instance repGenericDescribePermissionsResult :: Generic DescribePermissionsResult _
@@ -1649,19 +1648,19 @@ instance encodeDescribePermissionsResult :: Encode DescribePermissionsResult whe
 
 -- | Constructs DescribePermissionsResult from required parameters
 newDescribePermissionsResult :: DescribePermissionsResult
-newDescribePermissionsResult  = DescribePermissionsResult { "Permissions": (NullOrUndefined Nothing) }
+newDescribePermissionsResult  = DescribePermissionsResult { "Permissions": Nothing }
 
 -- | Constructs DescribePermissionsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribePermissionsResult' :: ( { "Permissions" :: NullOrUndefined (Permissions) } -> {"Permissions" :: NullOrUndefined (Permissions) } ) -> DescribePermissionsResult
-newDescribePermissionsResult'  customize = (DescribePermissionsResult <<< customize) { "Permissions": (NullOrUndefined Nothing) }
+newDescribePermissionsResult' :: ( { "Permissions" :: Maybe (Permissions) } -> {"Permissions" :: Maybe (Permissions) } ) -> DescribePermissionsResult
+newDescribePermissionsResult'  customize = (DescribePermissionsResult <<< customize) { "Permissions": Nothing }
 
 
 
 newtype DescribeRaidArraysRequest = DescribeRaidArraysRequest 
-  { "InstanceId" :: NullOrUndefined (String)
-  , "StackId" :: NullOrUndefined (String)
-  , "RaidArrayIds" :: NullOrUndefined (Strings)
+  { "InstanceId" :: Maybe (String)
+  , "StackId" :: Maybe (String)
+  , "RaidArrayIds" :: Maybe (Strings)
   }
 derive instance newtypeDescribeRaidArraysRequest :: Newtype DescribeRaidArraysRequest _
 derive instance repGenericDescribeRaidArraysRequest :: Generic DescribeRaidArraysRequest _
@@ -1671,18 +1670,18 @@ instance encodeDescribeRaidArraysRequest :: Encode DescribeRaidArraysRequest whe
 
 -- | Constructs DescribeRaidArraysRequest from required parameters
 newDescribeRaidArraysRequest :: DescribeRaidArraysRequest
-newDescribeRaidArraysRequest  = DescribeRaidArraysRequest { "InstanceId": (NullOrUndefined Nothing), "RaidArrayIds": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribeRaidArraysRequest  = DescribeRaidArraysRequest { "InstanceId": Nothing, "RaidArrayIds": Nothing, "StackId": Nothing }
 
 -- | Constructs DescribeRaidArraysRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeRaidArraysRequest' :: ( { "InstanceId" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "RaidArrayIds" :: NullOrUndefined (Strings) } -> {"InstanceId" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "RaidArrayIds" :: NullOrUndefined (Strings) } ) -> DescribeRaidArraysRequest
-newDescribeRaidArraysRequest'  customize = (DescribeRaidArraysRequest <<< customize) { "InstanceId": (NullOrUndefined Nothing), "RaidArrayIds": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribeRaidArraysRequest' :: ( { "InstanceId" :: Maybe (String) , "StackId" :: Maybe (String) , "RaidArrayIds" :: Maybe (Strings) } -> {"InstanceId" :: Maybe (String) , "StackId" :: Maybe (String) , "RaidArrayIds" :: Maybe (Strings) } ) -> DescribeRaidArraysRequest
+newDescribeRaidArraysRequest'  customize = (DescribeRaidArraysRequest <<< customize) { "InstanceId": Nothing, "RaidArrayIds": Nothing, "StackId": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>DescribeRaidArrays</code> request.</p>
 newtype DescribeRaidArraysResult = DescribeRaidArraysResult 
-  { "RaidArrays" :: NullOrUndefined (RaidArrays)
+  { "RaidArrays" :: Maybe (RaidArrays)
   }
 derive instance newtypeDescribeRaidArraysResult :: Newtype DescribeRaidArraysResult _
 derive instance repGenericDescribeRaidArraysResult :: Generic DescribeRaidArraysResult _
@@ -1692,18 +1691,18 @@ instance encodeDescribeRaidArraysResult :: Encode DescribeRaidArraysResult where
 
 -- | Constructs DescribeRaidArraysResult from required parameters
 newDescribeRaidArraysResult :: DescribeRaidArraysResult
-newDescribeRaidArraysResult  = DescribeRaidArraysResult { "RaidArrays": (NullOrUndefined Nothing) }
+newDescribeRaidArraysResult  = DescribeRaidArraysResult { "RaidArrays": Nothing }
 
 -- | Constructs DescribeRaidArraysResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeRaidArraysResult' :: ( { "RaidArrays" :: NullOrUndefined (RaidArrays) } -> {"RaidArrays" :: NullOrUndefined (RaidArrays) } ) -> DescribeRaidArraysResult
-newDescribeRaidArraysResult'  customize = (DescribeRaidArraysResult <<< customize) { "RaidArrays": (NullOrUndefined Nothing) }
+newDescribeRaidArraysResult' :: ( { "RaidArrays" :: Maybe (RaidArrays) } -> {"RaidArrays" :: Maybe (RaidArrays) } ) -> DescribeRaidArraysResult
+newDescribeRaidArraysResult'  customize = (DescribeRaidArraysResult <<< customize) { "RaidArrays": Nothing }
 
 
 
 newtype DescribeRdsDbInstancesRequest = DescribeRdsDbInstancesRequest 
   { "StackId" :: (String)
-  , "RdsDbInstanceArns" :: NullOrUndefined (Strings)
+  , "RdsDbInstanceArns" :: Maybe (Strings)
   }
 derive instance newtypeDescribeRdsDbInstancesRequest :: Newtype DescribeRdsDbInstancesRequest _
 derive instance repGenericDescribeRdsDbInstancesRequest :: Generic DescribeRdsDbInstancesRequest _
@@ -1713,18 +1712,18 @@ instance encodeDescribeRdsDbInstancesRequest :: Encode DescribeRdsDbInstancesReq
 
 -- | Constructs DescribeRdsDbInstancesRequest from required parameters
 newDescribeRdsDbInstancesRequest :: String -> DescribeRdsDbInstancesRequest
-newDescribeRdsDbInstancesRequest _StackId = DescribeRdsDbInstancesRequest { "StackId": _StackId, "RdsDbInstanceArns": (NullOrUndefined Nothing) }
+newDescribeRdsDbInstancesRequest _StackId = DescribeRdsDbInstancesRequest { "StackId": _StackId, "RdsDbInstanceArns": Nothing }
 
 -- | Constructs DescribeRdsDbInstancesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeRdsDbInstancesRequest' :: String -> ( { "StackId" :: (String) , "RdsDbInstanceArns" :: NullOrUndefined (Strings) } -> {"StackId" :: (String) , "RdsDbInstanceArns" :: NullOrUndefined (Strings) } ) -> DescribeRdsDbInstancesRequest
-newDescribeRdsDbInstancesRequest' _StackId customize = (DescribeRdsDbInstancesRequest <<< customize) { "StackId": _StackId, "RdsDbInstanceArns": (NullOrUndefined Nothing) }
+newDescribeRdsDbInstancesRequest' :: String -> ( { "StackId" :: (String) , "RdsDbInstanceArns" :: Maybe (Strings) } -> {"StackId" :: (String) , "RdsDbInstanceArns" :: Maybe (Strings) } ) -> DescribeRdsDbInstancesRequest
+newDescribeRdsDbInstancesRequest' _StackId customize = (DescribeRdsDbInstancesRequest <<< customize) { "StackId": _StackId, "RdsDbInstanceArns": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>DescribeRdsDbInstances</code> request.</p>
 newtype DescribeRdsDbInstancesResult = DescribeRdsDbInstancesResult 
-  { "RdsDbInstances" :: NullOrUndefined (RdsDbInstances)
+  { "RdsDbInstances" :: Maybe (RdsDbInstances)
   }
 derive instance newtypeDescribeRdsDbInstancesResult :: Newtype DescribeRdsDbInstancesResult _
 derive instance repGenericDescribeRdsDbInstancesResult :: Generic DescribeRdsDbInstancesResult _
@@ -1734,19 +1733,19 @@ instance encodeDescribeRdsDbInstancesResult :: Encode DescribeRdsDbInstancesResu
 
 -- | Constructs DescribeRdsDbInstancesResult from required parameters
 newDescribeRdsDbInstancesResult :: DescribeRdsDbInstancesResult
-newDescribeRdsDbInstancesResult  = DescribeRdsDbInstancesResult { "RdsDbInstances": (NullOrUndefined Nothing) }
+newDescribeRdsDbInstancesResult  = DescribeRdsDbInstancesResult { "RdsDbInstances": Nothing }
 
 -- | Constructs DescribeRdsDbInstancesResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeRdsDbInstancesResult' :: ( { "RdsDbInstances" :: NullOrUndefined (RdsDbInstances) } -> {"RdsDbInstances" :: NullOrUndefined (RdsDbInstances) } ) -> DescribeRdsDbInstancesResult
-newDescribeRdsDbInstancesResult'  customize = (DescribeRdsDbInstancesResult <<< customize) { "RdsDbInstances": (NullOrUndefined Nothing) }
+newDescribeRdsDbInstancesResult' :: ( { "RdsDbInstances" :: Maybe (RdsDbInstances) } -> {"RdsDbInstances" :: Maybe (RdsDbInstances) } ) -> DescribeRdsDbInstancesResult
+newDescribeRdsDbInstancesResult'  customize = (DescribeRdsDbInstancesResult <<< customize) { "RdsDbInstances": Nothing }
 
 
 
 newtype DescribeServiceErrorsRequest = DescribeServiceErrorsRequest 
-  { "StackId" :: NullOrUndefined (String)
-  , "InstanceId" :: NullOrUndefined (String)
-  , "ServiceErrorIds" :: NullOrUndefined (Strings)
+  { "StackId" :: Maybe (String)
+  , "InstanceId" :: Maybe (String)
+  , "ServiceErrorIds" :: Maybe (Strings)
   }
 derive instance newtypeDescribeServiceErrorsRequest :: Newtype DescribeServiceErrorsRequest _
 derive instance repGenericDescribeServiceErrorsRequest :: Generic DescribeServiceErrorsRequest _
@@ -1756,18 +1755,18 @@ instance encodeDescribeServiceErrorsRequest :: Encode DescribeServiceErrorsReque
 
 -- | Constructs DescribeServiceErrorsRequest from required parameters
 newDescribeServiceErrorsRequest :: DescribeServiceErrorsRequest
-newDescribeServiceErrorsRequest  = DescribeServiceErrorsRequest { "InstanceId": (NullOrUndefined Nothing), "ServiceErrorIds": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribeServiceErrorsRequest  = DescribeServiceErrorsRequest { "InstanceId": Nothing, "ServiceErrorIds": Nothing, "StackId": Nothing }
 
 -- | Constructs DescribeServiceErrorsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeServiceErrorsRequest' :: ( { "StackId" :: NullOrUndefined (String) , "InstanceId" :: NullOrUndefined (String) , "ServiceErrorIds" :: NullOrUndefined (Strings) } -> {"StackId" :: NullOrUndefined (String) , "InstanceId" :: NullOrUndefined (String) , "ServiceErrorIds" :: NullOrUndefined (Strings) } ) -> DescribeServiceErrorsRequest
-newDescribeServiceErrorsRequest'  customize = (DescribeServiceErrorsRequest <<< customize) { "InstanceId": (NullOrUndefined Nothing), "ServiceErrorIds": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newDescribeServiceErrorsRequest' :: ( { "StackId" :: Maybe (String) , "InstanceId" :: Maybe (String) , "ServiceErrorIds" :: Maybe (Strings) } -> {"StackId" :: Maybe (String) , "InstanceId" :: Maybe (String) , "ServiceErrorIds" :: Maybe (Strings) } ) -> DescribeServiceErrorsRequest
+newDescribeServiceErrorsRequest'  customize = (DescribeServiceErrorsRequest <<< customize) { "InstanceId": Nothing, "ServiceErrorIds": Nothing, "StackId": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>DescribeServiceErrors</code> request.</p>
 newtype DescribeServiceErrorsResult = DescribeServiceErrorsResult 
-  { "ServiceErrors" :: NullOrUndefined (ServiceErrors)
+  { "ServiceErrors" :: Maybe (ServiceErrors)
   }
 derive instance newtypeDescribeServiceErrorsResult :: Newtype DescribeServiceErrorsResult _
 derive instance repGenericDescribeServiceErrorsResult :: Generic DescribeServiceErrorsResult _
@@ -1777,12 +1776,12 @@ instance encodeDescribeServiceErrorsResult :: Encode DescribeServiceErrorsResult
 
 -- | Constructs DescribeServiceErrorsResult from required parameters
 newDescribeServiceErrorsResult :: DescribeServiceErrorsResult
-newDescribeServiceErrorsResult  = DescribeServiceErrorsResult { "ServiceErrors": (NullOrUndefined Nothing) }
+newDescribeServiceErrorsResult  = DescribeServiceErrorsResult { "ServiceErrors": Nothing }
 
 -- | Constructs DescribeServiceErrorsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeServiceErrorsResult' :: ( { "ServiceErrors" :: NullOrUndefined (ServiceErrors) } -> {"ServiceErrors" :: NullOrUndefined (ServiceErrors) } ) -> DescribeServiceErrorsResult
-newDescribeServiceErrorsResult'  customize = (DescribeServiceErrorsResult <<< customize) { "ServiceErrors": (NullOrUndefined Nothing) }
+newDescribeServiceErrorsResult' :: ( { "ServiceErrors" :: Maybe (ServiceErrors) } -> {"ServiceErrors" :: Maybe (ServiceErrors) } ) -> DescribeServiceErrorsResult
+newDescribeServiceErrorsResult'  customize = (DescribeServiceErrorsResult <<< customize) { "ServiceErrors": Nothing }
 
 
 
@@ -1808,8 +1807,8 @@ newDescribeStackProvisioningParametersRequest' _StackId customize = (DescribeSta
 
 -- | <p>Contains the response to a <code>DescribeStackProvisioningParameters</code> request.</p>
 newtype DescribeStackProvisioningParametersResult = DescribeStackProvisioningParametersResult 
-  { "AgentInstallerUrl" :: NullOrUndefined (String)
-  , "Parameters" :: NullOrUndefined (Parameters)
+  { "AgentInstallerUrl" :: Maybe (String)
+  , "Parameters" :: Maybe (Parameters)
   }
 derive instance newtypeDescribeStackProvisioningParametersResult :: Newtype DescribeStackProvisioningParametersResult _
 derive instance repGenericDescribeStackProvisioningParametersResult :: Generic DescribeStackProvisioningParametersResult _
@@ -1819,12 +1818,12 @@ instance encodeDescribeStackProvisioningParametersResult :: Encode DescribeStack
 
 -- | Constructs DescribeStackProvisioningParametersResult from required parameters
 newDescribeStackProvisioningParametersResult :: DescribeStackProvisioningParametersResult
-newDescribeStackProvisioningParametersResult  = DescribeStackProvisioningParametersResult { "AgentInstallerUrl": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newDescribeStackProvisioningParametersResult  = DescribeStackProvisioningParametersResult { "AgentInstallerUrl": Nothing, "Parameters": Nothing }
 
 -- | Constructs DescribeStackProvisioningParametersResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeStackProvisioningParametersResult' :: ( { "AgentInstallerUrl" :: NullOrUndefined (String) , "Parameters" :: NullOrUndefined (Parameters) } -> {"AgentInstallerUrl" :: NullOrUndefined (String) , "Parameters" :: NullOrUndefined (Parameters) } ) -> DescribeStackProvisioningParametersResult
-newDescribeStackProvisioningParametersResult'  customize = (DescribeStackProvisioningParametersResult <<< customize) { "AgentInstallerUrl": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newDescribeStackProvisioningParametersResult' :: ( { "AgentInstallerUrl" :: Maybe (String) , "Parameters" :: Maybe (Parameters) } -> {"AgentInstallerUrl" :: Maybe (String) , "Parameters" :: Maybe (Parameters) } ) -> DescribeStackProvisioningParametersResult
+newDescribeStackProvisioningParametersResult'  customize = (DescribeStackProvisioningParametersResult <<< customize) { "AgentInstallerUrl": Nothing, "Parameters": Nothing }
 
 
 
@@ -1850,7 +1849,7 @@ newDescribeStackSummaryRequest' _StackId customize = (DescribeStackSummaryReques
 
 -- | <p>Contains the response to a <code>DescribeStackSummary</code> request.</p>
 newtype DescribeStackSummaryResult = DescribeStackSummaryResult 
-  { "StackSummary" :: NullOrUndefined (StackSummary)
+  { "StackSummary" :: Maybe (StackSummary)
   }
 derive instance newtypeDescribeStackSummaryResult :: Newtype DescribeStackSummaryResult _
 derive instance repGenericDescribeStackSummaryResult :: Generic DescribeStackSummaryResult _
@@ -1860,17 +1859,17 @@ instance encodeDescribeStackSummaryResult :: Encode DescribeStackSummaryResult w
 
 -- | Constructs DescribeStackSummaryResult from required parameters
 newDescribeStackSummaryResult :: DescribeStackSummaryResult
-newDescribeStackSummaryResult  = DescribeStackSummaryResult { "StackSummary": (NullOrUndefined Nothing) }
+newDescribeStackSummaryResult  = DescribeStackSummaryResult { "StackSummary": Nothing }
 
 -- | Constructs DescribeStackSummaryResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeStackSummaryResult' :: ( { "StackSummary" :: NullOrUndefined (StackSummary) } -> {"StackSummary" :: NullOrUndefined (StackSummary) } ) -> DescribeStackSummaryResult
-newDescribeStackSummaryResult'  customize = (DescribeStackSummaryResult <<< customize) { "StackSummary": (NullOrUndefined Nothing) }
+newDescribeStackSummaryResult' :: ( { "StackSummary" :: Maybe (StackSummary) } -> {"StackSummary" :: Maybe (StackSummary) } ) -> DescribeStackSummaryResult
+newDescribeStackSummaryResult'  customize = (DescribeStackSummaryResult <<< customize) { "StackSummary": Nothing }
 
 
 
 newtype DescribeStacksRequest = DescribeStacksRequest 
-  { "StackIds" :: NullOrUndefined (Strings)
+  { "StackIds" :: Maybe (Strings)
   }
 derive instance newtypeDescribeStacksRequest :: Newtype DescribeStacksRequest _
 derive instance repGenericDescribeStacksRequest :: Generic DescribeStacksRequest _
@@ -1880,18 +1879,18 @@ instance encodeDescribeStacksRequest :: Encode DescribeStacksRequest where encod
 
 -- | Constructs DescribeStacksRequest from required parameters
 newDescribeStacksRequest :: DescribeStacksRequest
-newDescribeStacksRequest  = DescribeStacksRequest { "StackIds": (NullOrUndefined Nothing) }
+newDescribeStacksRequest  = DescribeStacksRequest { "StackIds": Nothing }
 
 -- | Constructs DescribeStacksRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeStacksRequest' :: ( { "StackIds" :: NullOrUndefined (Strings) } -> {"StackIds" :: NullOrUndefined (Strings) } ) -> DescribeStacksRequest
-newDescribeStacksRequest'  customize = (DescribeStacksRequest <<< customize) { "StackIds": (NullOrUndefined Nothing) }
+newDescribeStacksRequest' :: ( { "StackIds" :: Maybe (Strings) } -> {"StackIds" :: Maybe (Strings) } ) -> DescribeStacksRequest
+newDescribeStacksRequest'  customize = (DescribeStacksRequest <<< customize) { "StackIds": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>DescribeStacks</code> request.</p>
 newtype DescribeStacksResult = DescribeStacksResult 
-  { "Stacks" :: NullOrUndefined (Stacks)
+  { "Stacks" :: Maybe (Stacks)
   }
 derive instance newtypeDescribeStacksResult :: Newtype DescribeStacksResult _
 derive instance repGenericDescribeStacksResult :: Generic DescribeStacksResult _
@@ -1901,12 +1900,12 @@ instance encodeDescribeStacksResult :: Encode DescribeStacksResult where encode 
 
 -- | Constructs DescribeStacksResult from required parameters
 newDescribeStacksResult :: DescribeStacksResult
-newDescribeStacksResult  = DescribeStacksResult { "Stacks": (NullOrUndefined Nothing) }
+newDescribeStacksResult  = DescribeStacksResult { "Stacks": Nothing }
 
 -- | Constructs DescribeStacksResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeStacksResult' :: ( { "Stacks" :: NullOrUndefined (Stacks) } -> {"Stacks" :: NullOrUndefined (Stacks) } ) -> DescribeStacksResult
-newDescribeStacksResult'  customize = (DescribeStacksResult <<< customize) { "Stacks": (NullOrUndefined Nothing) }
+newDescribeStacksResult' :: ( { "Stacks" :: Maybe (Stacks) } -> {"Stacks" :: Maybe (Stacks) } ) -> DescribeStacksResult
+newDescribeStacksResult'  customize = (DescribeStacksResult <<< customize) { "Stacks": Nothing }
 
 
 
@@ -1932,7 +1931,7 @@ newDescribeTimeBasedAutoScalingRequest' _InstanceIds customize = (DescribeTimeBa
 
 -- | <p>Contains the response to a <code>DescribeTimeBasedAutoScaling</code> request.</p>
 newtype DescribeTimeBasedAutoScalingResult = DescribeTimeBasedAutoScalingResult 
-  { "TimeBasedAutoScalingConfigurations" :: NullOrUndefined (TimeBasedAutoScalingConfigurations)
+  { "TimeBasedAutoScalingConfigurations" :: Maybe (TimeBasedAutoScalingConfigurations)
   }
 derive instance newtypeDescribeTimeBasedAutoScalingResult :: Newtype DescribeTimeBasedAutoScalingResult _
 derive instance repGenericDescribeTimeBasedAutoScalingResult :: Generic DescribeTimeBasedAutoScalingResult _
@@ -1942,17 +1941,17 @@ instance encodeDescribeTimeBasedAutoScalingResult :: Encode DescribeTimeBasedAut
 
 -- | Constructs DescribeTimeBasedAutoScalingResult from required parameters
 newDescribeTimeBasedAutoScalingResult :: DescribeTimeBasedAutoScalingResult
-newDescribeTimeBasedAutoScalingResult  = DescribeTimeBasedAutoScalingResult { "TimeBasedAutoScalingConfigurations": (NullOrUndefined Nothing) }
+newDescribeTimeBasedAutoScalingResult  = DescribeTimeBasedAutoScalingResult { "TimeBasedAutoScalingConfigurations": Nothing }
 
 -- | Constructs DescribeTimeBasedAutoScalingResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeTimeBasedAutoScalingResult' :: ( { "TimeBasedAutoScalingConfigurations" :: NullOrUndefined (TimeBasedAutoScalingConfigurations) } -> {"TimeBasedAutoScalingConfigurations" :: NullOrUndefined (TimeBasedAutoScalingConfigurations) } ) -> DescribeTimeBasedAutoScalingResult
-newDescribeTimeBasedAutoScalingResult'  customize = (DescribeTimeBasedAutoScalingResult <<< customize) { "TimeBasedAutoScalingConfigurations": (NullOrUndefined Nothing) }
+newDescribeTimeBasedAutoScalingResult' :: ( { "TimeBasedAutoScalingConfigurations" :: Maybe (TimeBasedAutoScalingConfigurations) } -> {"TimeBasedAutoScalingConfigurations" :: Maybe (TimeBasedAutoScalingConfigurations) } ) -> DescribeTimeBasedAutoScalingResult
+newDescribeTimeBasedAutoScalingResult'  customize = (DescribeTimeBasedAutoScalingResult <<< customize) { "TimeBasedAutoScalingConfigurations": Nothing }
 
 
 
 newtype DescribeUserProfilesRequest = DescribeUserProfilesRequest 
-  { "IamUserArns" :: NullOrUndefined (Strings)
+  { "IamUserArns" :: Maybe (Strings)
   }
 derive instance newtypeDescribeUserProfilesRequest :: Newtype DescribeUserProfilesRequest _
 derive instance repGenericDescribeUserProfilesRequest :: Generic DescribeUserProfilesRequest _
@@ -1962,18 +1961,18 @@ instance encodeDescribeUserProfilesRequest :: Encode DescribeUserProfilesRequest
 
 -- | Constructs DescribeUserProfilesRequest from required parameters
 newDescribeUserProfilesRequest :: DescribeUserProfilesRequest
-newDescribeUserProfilesRequest  = DescribeUserProfilesRequest { "IamUserArns": (NullOrUndefined Nothing) }
+newDescribeUserProfilesRequest  = DescribeUserProfilesRequest { "IamUserArns": Nothing }
 
 -- | Constructs DescribeUserProfilesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeUserProfilesRequest' :: ( { "IamUserArns" :: NullOrUndefined (Strings) } -> {"IamUserArns" :: NullOrUndefined (Strings) } ) -> DescribeUserProfilesRequest
-newDescribeUserProfilesRequest'  customize = (DescribeUserProfilesRequest <<< customize) { "IamUserArns": (NullOrUndefined Nothing) }
+newDescribeUserProfilesRequest' :: ( { "IamUserArns" :: Maybe (Strings) } -> {"IamUserArns" :: Maybe (Strings) } ) -> DescribeUserProfilesRequest
+newDescribeUserProfilesRequest'  customize = (DescribeUserProfilesRequest <<< customize) { "IamUserArns": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>DescribeUserProfiles</code> request.</p>
 newtype DescribeUserProfilesResult = DescribeUserProfilesResult 
-  { "UserProfiles" :: NullOrUndefined (UserProfiles)
+  { "UserProfiles" :: Maybe (UserProfiles)
   }
 derive instance newtypeDescribeUserProfilesResult :: Newtype DescribeUserProfilesResult _
 derive instance repGenericDescribeUserProfilesResult :: Generic DescribeUserProfilesResult _
@@ -1983,20 +1982,20 @@ instance encodeDescribeUserProfilesResult :: Encode DescribeUserProfilesResult w
 
 -- | Constructs DescribeUserProfilesResult from required parameters
 newDescribeUserProfilesResult :: DescribeUserProfilesResult
-newDescribeUserProfilesResult  = DescribeUserProfilesResult { "UserProfiles": (NullOrUndefined Nothing) }
+newDescribeUserProfilesResult  = DescribeUserProfilesResult { "UserProfiles": Nothing }
 
 -- | Constructs DescribeUserProfilesResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeUserProfilesResult' :: ( { "UserProfiles" :: NullOrUndefined (UserProfiles) } -> {"UserProfiles" :: NullOrUndefined (UserProfiles) } ) -> DescribeUserProfilesResult
-newDescribeUserProfilesResult'  customize = (DescribeUserProfilesResult <<< customize) { "UserProfiles": (NullOrUndefined Nothing) }
+newDescribeUserProfilesResult' :: ( { "UserProfiles" :: Maybe (UserProfiles) } -> {"UserProfiles" :: Maybe (UserProfiles) } ) -> DescribeUserProfilesResult
+newDescribeUserProfilesResult'  customize = (DescribeUserProfilesResult <<< customize) { "UserProfiles": Nothing }
 
 
 
 newtype DescribeVolumesRequest = DescribeVolumesRequest 
-  { "InstanceId" :: NullOrUndefined (String)
-  , "StackId" :: NullOrUndefined (String)
-  , "RaidArrayId" :: NullOrUndefined (String)
-  , "VolumeIds" :: NullOrUndefined (Strings)
+  { "InstanceId" :: Maybe (String)
+  , "StackId" :: Maybe (String)
+  , "RaidArrayId" :: Maybe (String)
+  , "VolumeIds" :: Maybe (Strings)
   }
 derive instance newtypeDescribeVolumesRequest :: Newtype DescribeVolumesRequest _
 derive instance repGenericDescribeVolumesRequest :: Generic DescribeVolumesRequest _
@@ -2006,18 +2005,18 @@ instance encodeDescribeVolumesRequest :: Encode DescribeVolumesRequest where enc
 
 -- | Constructs DescribeVolumesRequest from required parameters
 newDescribeVolumesRequest :: DescribeVolumesRequest
-newDescribeVolumesRequest  = DescribeVolumesRequest { "InstanceId": (NullOrUndefined Nothing), "RaidArrayId": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing), "VolumeIds": (NullOrUndefined Nothing) }
+newDescribeVolumesRequest  = DescribeVolumesRequest { "InstanceId": Nothing, "RaidArrayId": Nothing, "StackId": Nothing, "VolumeIds": Nothing }
 
 -- | Constructs DescribeVolumesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeVolumesRequest' :: ( { "InstanceId" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "RaidArrayId" :: NullOrUndefined (String) , "VolumeIds" :: NullOrUndefined (Strings) } -> {"InstanceId" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "RaidArrayId" :: NullOrUndefined (String) , "VolumeIds" :: NullOrUndefined (Strings) } ) -> DescribeVolumesRequest
-newDescribeVolumesRequest'  customize = (DescribeVolumesRequest <<< customize) { "InstanceId": (NullOrUndefined Nothing), "RaidArrayId": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing), "VolumeIds": (NullOrUndefined Nothing) }
+newDescribeVolumesRequest' :: ( { "InstanceId" :: Maybe (String) , "StackId" :: Maybe (String) , "RaidArrayId" :: Maybe (String) , "VolumeIds" :: Maybe (Strings) } -> {"InstanceId" :: Maybe (String) , "StackId" :: Maybe (String) , "RaidArrayId" :: Maybe (String) , "VolumeIds" :: Maybe (Strings) } ) -> DescribeVolumesRequest
+newDescribeVolumesRequest'  customize = (DescribeVolumesRequest <<< customize) { "InstanceId": Nothing, "RaidArrayId": Nothing, "StackId": Nothing, "VolumeIds": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>DescribeVolumes</code> request.</p>
 newtype DescribeVolumesResult = DescribeVolumesResult 
-  { "Volumes" :: NullOrUndefined (Volumes)
+  { "Volumes" :: Maybe (Volumes)
   }
 derive instance newtypeDescribeVolumesResult :: Newtype DescribeVolumesResult _
 derive instance repGenericDescribeVolumesResult :: Generic DescribeVolumesResult _
@@ -2027,12 +2026,12 @@ instance encodeDescribeVolumesResult :: Encode DescribeVolumesResult where encod
 
 -- | Constructs DescribeVolumesResult from required parameters
 newDescribeVolumesResult :: DescribeVolumesResult
-newDescribeVolumesResult  = DescribeVolumesResult { "Volumes": (NullOrUndefined Nothing) }
+newDescribeVolumesResult  = DescribeVolumesResult { "Volumes": Nothing }
 
 -- | Constructs DescribeVolumesResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeVolumesResult' :: ( { "Volumes" :: NullOrUndefined (Volumes) } -> {"Volumes" :: NullOrUndefined (Volumes) } ) -> DescribeVolumesResult
-newDescribeVolumesResult'  customize = (DescribeVolumesResult <<< customize) { "Volumes": (NullOrUndefined Nothing) }
+newDescribeVolumesResult' :: ( { "Volumes" :: Maybe (Volumes) } -> {"Volumes" :: Maybe (Volumes) } ) -> DescribeVolumesResult
+newDescribeVolumesResult'  customize = (DescribeVolumesResult <<< customize) { "Volumes": Nothing }
 
 
 
@@ -2079,11 +2078,11 @@ newDisassociateElasticIpRequest' _ElasticIp customize = (DisassociateElasticIpRe
 
 -- | <p>Describes an Amazon EBS volume. This data type maps directly to the Amazon EC2 <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a> data type.</p>
 newtype EbsBlockDevice = EbsBlockDevice 
-  { "SnapshotId" :: NullOrUndefined (String)
-  , "Iops" :: NullOrUndefined (Int)
-  , "VolumeSize" :: NullOrUndefined (Int)
-  , "VolumeType" :: NullOrUndefined (VolumeType)
-  , "DeleteOnTermination" :: NullOrUndefined (Boolean)
+  { "SnapshotId" :: Maybe (String)
+  , "Iops" :: Maybe (Int)
+  , "VolumeSize" :: Maybe (Int)
+  , "VolumeType" :: Maybe (VolumeType)
+  , "DeleteOnTermination" :: Maybe (Boolean)
   }
 derive instance newtypeEbsBlockDevice :: Newtype EbsBlockDevice _
 derive instance repGenericEbsBlockDevice :: Generic EbsBlockDevice _
@@ -2093,21 +2092,21 @@ instance encodeEbsBlockDevice :: Encode EbsBlockDevice where encode = genericEnc
 
 -- | Constructs EbsBlockDevice from required parameters
 newEbsBlockDevice :: EbsBlockDevice
-newEbsBlockDevice  = EbsBlockDevice { "DeleteOnTermination": (NullOrUndefined Nothing), "Iops": (NullOrUndefined Nothing), "SnapshotId": (NullOrUndefined Nothing), "VolumeSize": (NullOrUndefined Nothing), "VolumeType": (NullOrUndefined Nothing) }
+newEbsBlockDevice  = EbsBlockDevice { "DeleteOnTermination": Nothing, "Iops": Nothing, "SnapshotId": Nothing, "VolumeSize": Nothing, "VolumeType": Nothing }
 
 -- | Constructs EbsBlockDevice's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEbsBlockDevice' :: ( { "SnapshotId" :: NullOrUndefined (String) , "Iops" :: NullOrUndefined (Int) , "VolumeSize" :: NullOrUndefined (Int) , "VolumeType" :: NullOrUndefined (VolumeType) , "DeleteOnTermination" :: NullOrUndefined (Boolean) } -> {"SnapshotId" :: NullOrUndefined (String) , "Iops" :: NullOrUndefined (Int) , "VolumeSize" :: NullOrUndefined (Int) , "VolumeType" :: NullOrUndefined (VolumeType) , "DeleteOnTermination" :: NullOrUndefined (Boolean) } ) -> EbsBlockDevice
-newEbsBlockDevice'  customize = (EbsBlockDevice <<< customize) { "DeleteOnTermination": (NullOrUndefined Nothing), "Iops": (NullOrUndefined Nothing), "SnapshotId": (NullOrUndefined Nothing), "VolumeSize": (NullOrUndefined Nothing), "VolumeType": (NullOrUndefined Nothing) }
+newEbsBlockDevice' :: ( { "SnapshotId" :: Maybe (String) , "Iops" :: Maybe (Int) , "VolumeSize" :: Maybe (Int) , "VolumeType" :: Maybe (VolumeType) , "DeleteOnTermination" :: Maybe (Boolean) } -> {"SnapshotId" :: Maybe (String) , "Iops" :: Maybe (Int) , "VolumeSize" :: Maybe (Int) , "VolumeType" :: Maybe (VolumeType) , "DeleteOnTermination" :: Maybe (Boolean) } ) -> EbsBlockDevice
+newEbsBlockDevice'  customize = (EbsBlockDevice <<< customize) { "DeleteOnTermination": Nothing, "Iops": Nothing, "SnapshotId": Nothing, "VolumeSize": Nothing, "VolumeType": Nothing }
 
 
 
 -- | <p>Describes a registered Amazon ECS cluster.</p>
 newtype EcsCluster = EcsCluster 
-  { "EcsClusterArn" :: NullOrUndefined (String)
-  , "EcsClusterName" :: NullOrUndefined (String)
-  , "StackId" :: NullOrUndefined (String)
-  , "RegisteredAt" :: NullOrUndefined (DateTime)
+  { "EcsClusterArn" :: Maybe (String)
+  , "EcsClusterName" :: Maybe (String)
+  , "StackId" :: Maybe (String)
+  , "RegisteredAt" :: Maybe (DateTime)
   }
 derive instance newtypeEcsCluster :: Newtype EcsCluster _
 derive instance repGenericEcsCluster :: Generic EcsCluster _
@@ -2117,12 +2116,12 @@ instance encodeEcsCluster :: Encode EcsCluster where encode = genericEncode opti
 
 -- | Constructs EcsCluster from required parameters
 newEcsCluster :: EcsCluster
-newEcsCluster  = EcsCluster { "EcsClusterArn": (NullOrUndefined Nothing), "EcsClusterName": (NullOrUndefined Nothing), "RegisteredAt": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newEcsCluster  = EcsCluster { "EcsClusterArn": Nothing, "EcsClusterName": Nothing, "RegisteredAt": Nothing, "StackId": Nothing }
 
 -- | Constructs EcsCluster's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEcsCluster' :: ( { "EcsClusterArn" :: NullOrUndefined (String) , "EcsClusterName" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "RegisteredAt" :: NullOrUndefined (DateTime) } -> {"EcsClusterArn" :: NullOrUndefined (String) , "EcsClusterName" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "RegisteredAt" :: NullOrUndefined (DateTime) } ) -> EcsCluster
-newEcsCluster'  customize = (EcsCluster <<< customize) { "EcsClusterArn": (NullOrUndefined Nothing), "EcsClusterName": (NullOrUndefined Nothing), "RegisteredAt": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newEcsCluster' :: ( { "EcsClusterArn" :: Maybe (String) , "EcsClusterName" :: Maybe (String) , "StackId" :: Maybe (String) , "RegisteredAt" :: Maybe (DateTime) } -> {"EcsClusterArn" :: Maybe (String) , "EcsClusterName" :: Maybe (String) , "StackId" :: Maybe (String) , "RegisteredAt" :: Maybe (DateTime) } ) -> EcsCluster
+newEcsCluster'  customize = (EcsCluster <<< customize) { "EcsClusterArn": Nothing, "EcsClusterName": Nothing, "RegisteredAt": Nothing, "StackId": Nothing }
 
 
 
@@ -2137,11 +2136,11 @@ instance encodeEcsClusters :: Encode EcsClusters where encode = genericEncode op
 
 -- | <p>Describes an Elastic IP address.</p>
 newtype ElasticIp = ElasticIp 
-  { "Ip" :: NullOrUndefined (String)
-  , "Name" :: NullOrUndefined (String)
-  , "Domain" :: NullOrUndefined (String)
-  , "Region" :: NullOrUndefined (String)
-  , "InstanceId" :: NullOrUndefined (String)
+  { "Ip" :: Maybe (String)
+  , "Name" :: Maybe (String)
+  , "Domain" :: Maybe (String)
+  , "Region" :: Maybe (String)
+  , "InstanceId" :: Maybe (String)
   }
 derive instance newtypeElasticIp :: Newtype ElasticIp _
 derive instance repGenericElasticIp :: Generic ElasticIp _
@@ -2151,12 +2150,12 @@ instance encodeElasticIp :: Encode ElasticIp where encode = genericEncode option
 
 -- | Constructs ElasticIp from required parameters
 newElasticIp :: ElasticIp
-newElasticIp  = ElasticIp { "Domain": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "Ip": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Region": (NullOrUndefined Nothing) }
+newElasticIp  = ElasticIp { "Domain": Nothing, "InstanceId": Nothing, "Ip": Nothing, "Name": Nothing, "Region": Nothing }
 
 -- | Constructs ElasticIp's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newElasticIp' :: ( { "Ip" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "Domain" :: NullOrUndefined (String) , "Region" :: NullOrUndefined (String) , "InstanceId" :: NullOrUndefined (String) } -> {"Ip" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "Domain" :: NullOrUndefined (String) , "Region" :: NullOrUndefined (String) , "InstanceId" :: NullOrUndefined (String) } ) -> ElasticIp
-newElasticIp'  customize = (ElasticIp <<< customize) { "Domain": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "Ip": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Region": (NullOrUndefined Nothing) }
+newElasticIp' :: ( { "Ip" :: Maybe (String) , "Name" :: Maybe (String) , "Domain" :: Maybe (String) , "Region" :: Maybe (String) , "InstanceId" :: Maybe (String) } -> {"Ip" :: Maybe (String) , "Name" :: Maybe (String) , "Domain" :: Maybe (String) , "Region" :: Maybe (String) , "InstanceId" :: Maybe (String) } ) -> ElasticIp
+newElasticIp'  customize = (ElasticIp <<< customize) { "Domain": Nothing, "InstanceId": Nothing, "Ip": Nothing, "Name": Nothing, "Region": Nothing }
 
 
 
@@ -2171,15 +2170,15 @@ instance encodeElasticIps :: Encode ElasticIps where encode = genericEncode opti
 
 -- | <p>Describes an Elastic Load Balancing instance.</p>
 newtype ElasticLoadBalancer = ElasticLoadBalancer 
-  { "ElasticLoadBalancerName" :: NullOrUndefined (String)
-  , "Region" :: NullOrUndefined (String)
-  , "DnsName" :: NullOrUndefined (String)
-  , "StackId" :: NullOrUndefined (String)
-  , "LayerId" :: NullOrUndefined (String)
-  , "VpcId" :: NullOrUndefined (String)
-  , "AvailabilityZones" :: NullOrUndefined (Strings)
-  , "SubnetIds" :: NullOrUndefined (Strings)
-  , "Ec2InstanceIds" :: NullOrUndefined (Strings)
+  { "ElasticLoadBalancerName" :: Maybe (String)
+  , "Region" :: Maybe (String)
+  , "DnsName" :: Maybe (String)
+  , "StackId" :: Maybe (String)
+  , "LayerId" :: Maybe (String)
+  , "VpcId" :: Maybe (String)
+  , "AvailabilityZones" :: Maybe (Strings)
+  , "SubnetIds" :: Maybe (Strings)
+  , "Ec2InstanceIds" :: Maybe (Strings)
   }
 derive instance newtypeElasticLoadBalancer :: Newtype ElasticLoadBalancer _
 derive instance repGenericElasticLoadBalancer :: Generic ElasticLoadBalancer _
@@ -2189,12 +2188,12 @@ instance encodeElasticLoadBalancer :: Encode ElasticLoadBalancer where encode = 
 
 -- | Constructs ElasticLoadBalancer from required parameters
 newElasticLoadBalancer :: ElasticLoadBalancer
-newElasticLoadBalancer  = ElasticLoadBalancer { "AvailabilityZones": (NullOrUndefined Nothing), "DnsName": (NullOrUndefined Nothing), "Ec2InstanceIds": (NullOrUndefined Nothing), "ElasticLoadBalancerName": (NullOrUndefined Nothing), "LayerId": (NullOrUndefined Nothing), "Region": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newElasticLoadBalancer  = ElasticLoadBalancer { "AvailabilityZones": Nothing, "DnsName": Nothing, "Ec2InstanceIds": Nothing, "ElasticLoadBalancerName": Nothing, "LayerId": Nothing, "Region": Nothing, "StackId": Nothing, "SubnetIds": Nothing, "VpcId": Nothing }
 
 -- | Constructs ElasticLoadBalancer's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newElasticLoadBalancer' :: ( { "ElasticLoadBalancerName" :: NullOrUndefined (String) , "Region" :: NullOrUndefined (String) , "DnsName" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "LayerId" :: NullOrUndefined (String) , "VpcId" :: NullOrUndefined (String) , "AvailabilityZones" :: NullOrUndefined (Strings) , "SubnetIds" :: NullOrUndefined (Strings) , "Ec2InstanceIds" :: NullOrUndefined (Strings) } -> {"ElasticLoadBalancerName" :: NullOrUndefined (String) , "Region" :: NullOrUndefined (String) , "DnsName" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "LayerId" :: NullOrUndefined (String) , "VpcId" :: NullOrUndefined (String) , "AvailabilityZones" :: NullOrUndefined (Strings) , "SubnetIds" :: NullOrUndefined (Strings) , "Ec2InstanceIds" :: NullOrUndefined (Strings) } ) -> ElasticLoadBalancer
-newElasticLoadBalancer'  customize = (ElasticLoadBalancer <<< customize) { "AvailabilityZones": (NullOrUndefined Nothing), "DnsName": (NullOrUndefined Nothing), "Ec2InstanceIds": (NullOrUndefined Nothing), "ElasticLoadBalancerName": (NullOrUndefined Nothing), "LayerId": (NullOrUndefined Nothing), "Region": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newElasticLoadBalancer' :: ( { "ElasticLoadBalancerName" :: Maybe (String) , "Region" :: Maybe (String) , "DnsName" :: Maybe (String) , "StackId" :: Maybe (String) , "LayerId" :: Maybe (String) , "VpcId" :: Maybe (String) , "AvailabilityZones" :: Maybe (Strings) , "SubnetIds" :: Maybe (Strings) , "Ec2InstanceIds" :: Maybe (Strings) } -> {"ElasticLoadBalancerName" :: Maybe (String) , "Region" :: Maybe (String) , "DnsName" :: Maybe (String) , "StackId" :: Maybe (String) , "LayerId" :: Maybe (String) , "VpcId" :: Maybe (String) , "AvailabilityZones" :: Maybe (Strings) , "SubnetIds" :: Maybe (Strings) , "Ec2InstanceIds" :: Maybe (Strings) } ) -> ElasticLoadBalancer
+newElasticLoadBalancer'  customize = (ElasticLoadBalancer <<< customize) { "AvailabilityZones": Nothing, "DnsName": Nothing, "Ec2InstanceIds": Nothing, "ElasticLoadBalancerName": Nothing, "LayerId": Nothing, "Region": Nothing, "StackId": Nothing, "SubnetIds": Nothing, "VpcId": Nothing }
 
 
 
@@ -2211,7 +2210,7 @@ instance encodeElasticLoadBalancers :: Encode ElasticLoadBalancers where encode 
 newtype EnvironmentVariable = EnvironmentVariable 
   { "Key" :: (String)
   , "Value" :: (String)
-  , "Secure" :: NullOrUndefined (Boolean)
+  , "Secure" :: Maybe (Boolean)
   }
 derive instance newtypeEnvironmentVariable :: Newtype EnvironmentVariable _
 derive instance repGenericEnvironmentVariable :: Generic EnvironmentVariable _
@@ -2221,12 +2220,12 @@ instance encodeEnvironmentVariable :: Encode EnvironmentVariable where encode = 
 
 -- | Constructs EnvironmentVariable from required parameters
 newEnvironmentVariable :: String -> String -> EnvironmentVariable
-newEnvironmentVariable _Key _Value = EnvironmentVariable { "Key": _Key, "Value": _Value, "Secure": (NullOrUndefined Nothing) }
+newEnvironmentVariable _Key _Value = EnvironmentVariable { "Key": _Key, "Value": _Value, "Secure": Nothing }
 
 -- | Constructs EnvironmentVariable's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEnvironmentVariable' :: String -> String -> ( { "Key" :: (String) , "Value" :: (String) , "Secure" :: NullOrUndefined (Boolean) } -> {"Key" :: (String) , "Value" :: (String) , "Secure" :: NullOrUndefined (Boolean) } ) -> EnvironmentVariable
-newEnvironmentVariable' _Key _Value customize = (EnvironmentVariable <<< customize) { "Key": _Key, "Value": _Value, "Secure": (NullOrUndefined Nothing) }
+newEnvironmentVariable' :: String -> String -> ( { "Key" :: (String) , "Value" :: (String) , "Secure" :: Maybe (Boolean) } -> {"Key" :: (String) , "Value" :: (String) , "Secure" :: Maybe (Boolean) } ) -> EnvironmentVariable
+newEnvironmentVariable' _Key _Value customize = (EnvironmentVariable <<< customize) { "Key": _Key, "Value": _Value, "Secure": Nothing }
 
 
 
@@ -2261,8 +2260,8 @@ newGetHostnameSuggestionRequest' _LayerId customize = (GetHostnameSuggestionRequ
 
 -- | <p>Contains the response to a <code>GetHostnameSuggestion</code> request.</p>
 newtype GetHostnameSuggestionResult = GetHostnameSuggestionResult 
-  { "LayerId" :: NullOrUndefined (String)
-  , "Hostname" :: NullOrUndefined (String)
+  { "LayerId" :: Maybe (String)
+  , "Hostname" :: Maybe (String)
   }
 derive instance newtypeGetHostnameSuggestionResult :: Newtype GetHostnameSuggestionResult _
 derive instance repGenericGetHostnameSuggestionResult :: Generic GetHostnameSuggestionResult _
@@ -2272,18 +2271,18 @@ instance encodeGetHostnameSuggestionResult :: Encode GetHostnameSuggestionResult
 
 -- | Constructs GetHostnameSuggestionResult from required parameters
 newGetHostnameSuggestionResult :: GetHostnameSuggestionResult
-newGetHostnameSuggestionResult  = GetHostnameSuggestionResult { "Hostname": (NullOrUndefined Nothing), "LayerId": (NullOrUndefined Nothing) }
+newGetHostnameSuggestionResult  = GetHostnameSuggestionResult { "Hostname": Nothing, "LayerId": Nothing }
 
 -- | Constructs GetHostnameSuggestionResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetHostnameSuggestionResult' :: ( { "LayerId" :: NullOrUndefined (String) , "Hostname" :: NullOrUndefined (String) } -> {"LayerId" :: NullOrUndefined (String) , "Hostname" :: NullOrUndefined (String) } ) -> GetHostnameSuggestionResult
-newGetHostnameSuggestionResult'  customize = (GetHostnameSuggestionResult <<< customize) { "Hostname": (NullOrUndefined Nothing), "LayerId": (NullOrUndefined Nothing) }
+newGetHostnameSuggestionResult' :: ( { "LayerId" :: Maybe (String) , "Hostname" :: Maybe (String) } -> {"LayerId" :: Maybe (String) , "Hostname" :: Maybe (String) } ) -> GetHostnameSuggestionResult
+newGetHostnameSuggestionResult'  customize = (GetHostnameSuggestionResult <<< customize) { "Hostname": Nothing, "LayerId": Nothing }
 
 
 
 newtype GrantAccessRequest = GrantAccessRequest 
   { "InstanceId" :: (String)
-  , "ValidForInMinutes" :: NullOrUndefined (ValidForInMinutes)
+  , "ValidForInMinutes" :: Maybe (ValidForInMinutes)
   }
 derive instance newtypeGrantAccessRequest :: Newtype GrantAccessRequest _
 derive instance repGenericGrantAccessRequest :: Generic GrantAccessRequest _
@@ -2293,18 +2292,18 @@ instance encodeGrantAccessRequest :: Encode GrantAccessRequest where encode = ge
 
 -- | Constructs GrantAccessRequest from required parameters
 newGrantAccessRequest :: String -> GrantAccessRequest
-newGrantAccessRequest _InstanceId = GrantAccessRequest { "InstanceId": _InstanceId, "ValidForInMinutes": (NullOrUndefined Nothing) }
+newGrantAccessRequest _InstanceId = GrantAccessRequest { "InstanceId": _InstanceId, "ValidForInMinutes": Nothing }
 
 -- | Constructs GrantAccessRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGrantAccessRequest' :: String -> ( { "InstanceId" :: (String) , "ValidForInMinutes" :: NullOrUndefined (ValidForInMinutes) } -> {"InstanceId" :: (String) , "ValidForInMinutes" :: NullOrUndefined (ValidForInMinutes) } ) -> GrantAccessRequest
-newGrantAccessRequest' _InstanceId customize = (GrantAccessRequest <<< customize) { "InstanceId": _InstanceId, "ValidForInMinutes": (NullOrUndefined Nothing) }
+newGrantAccessRequest' :: String -> ( { "InstanceId" :: (String) , "ValidForInMinutes" :: Maybe (ValidForInMinutes) } -> {"InstanceId" :: (String) , "ValidForInMinutes" :: Maybe (ValidForInMinutes) } ) -> GrantAccessRequest
+newGrantAccessRequest' _InstanceId customize = (GrantAccessRequest <<< customize) { "InstanceId": _InstanceId, "ValidForInMinutes": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>GrantAccess</code> request.</p>
 newtype GrantAccessResult = GrantAccessResult 
-  { "TemporaryCredential" :: NullOrUndefined (TemporaryCredential)
+  { "TemporaryCredential" :: Maybe (TemporaryCredential)
   }
 derive instance newtypeGrantAccessResult :: Newtype GrantAccessResult _
 derive instance repGenericGrantAccessResult :: Generic GrantAccessResult _
@@ -2314,12 +2313,12 @@ instance encodeGrantAccessResult :: Encode GrantAccessResult where encode = gene
 
 -- | Constructs GrantAccessResult from required parameters
 newGrantAccessResult :: GrantAccessResult
-newGrantAccessResult  = GrantAccessResult { "TemporaryCredential": (NullOrUndefined Nothing) }
+newGrantAccessResult  = GrantAccessResult { "TemporaryCredential": Nothing }
 
 -- | Constructs GrantAccessResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGrantAccessResult' :: ( { "TemporaryCredential" :: NullOrUndefined (TemporaryCredential) } -> {"TemporaryCredential" :: NullOrUndefined (TemporaryCredential) } ) -> GrantAccessResult
-newGrantAccessResult'  customize = (GrantAccessResult <<< customize) { "TemporaryCredential": (NullOrUndefined Nothing) }
+newGrantAccessResult' :: ( { "TemporaryCredential" :: Maybe (TemporaryCredential) } -> {"TemporaryCredential" :: Maybe (TemporaryCredential) } ) -> GrantAccessResult
+newGrantAccessResult'  customize = (GrantAccessResult <<< customize) { "TemporaryCredential": Nothing }
 
 
 
@@ -2334,47 +2333,47 @@ instance encodeHour :: Encode Hour where encode = genericEncode options
 
 -- | <p>Describes an instance.</p>
 newtype Instance = Instance 
-  { "AgentVersion" :: NullOrUndefined (String)
-  , "AmiId" :: NullOrUndefined (String)
-  , "Architecture" :: NullOrUndefined (Architecture)
-  , "Arn" :: NullOrUndefined (String)
-  , "AutoScalingType" :: NullOrUndefined (AutoScalingType)
-  , "AvailabilityZone" :: NullOrUndefined (String)
-  , "BlockDeviceMappings" :: NullOrUndefined (BlockDeviceMappings)
-  , "CreatedAt" :: NullOrUndefined (DateTime)
-  , "EbsOptimized" :: NullOrUndefined (Boolean)
-  , "Ec2InstanceId" :: NullOrUndefined (String)
-  , "EcsClusterArn" :: NullOrUndefined (String)
-  , "EcsContainerInstanceArn" :: NullOrUndefined (String)
-  , "ElasticIp" :: NullOrUndefined (String)
-  , "Hostname" :: NullOrUndefined (String)
-  , "InfrastructureClass" :: NullOrUndefined (String)
-  , "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean)
-  , "InstanceId" :: NullOrUndefined (String)
-  , "InstanceProfileArn" :: NullOrUndefined (String)
-  , "InstanceType" :: NullOrUndefined (String)
-  , "LastServiceErrorId" :: NullOrUndefined (String)
-  , "LayerIds" :: NullOrUndefined (Strings)
-  , "Os" :: NullOrUndefined (String)
-  , "Platform" :: NullOrUndefined (String)
-  , "PrivateDns" :: NullOrUndefined (String)
-  , "PrivateIp" :: NullOrUndefined (String)
-  , "PublicDns" :: NullOrUndefined (String)
-  , "PublicIp" :: NullOrUndefined (String)
-  , "RegisteredBy" :: NullOrUndefined (String)
-  , "ReportedAgentVersion" :: NullOrUndefined (String)
-  , "ReportedOs" :: NullOrUndefined (ReportedOs)
-  , "RootDeviceType" :: NullOrUndefined (RootDeviceType)
-  , "RootDeviceVolumeId" :: NullOrUndefined (String)
-  , "SecurityGroupIds" :: NullOrUndefined (Strings)
-  , "SshHostDsaKeyFingerprint" :: NullOrUndefined (String)
-  , "SshHostRsaKeyFingerprint" :: NullOrUndefined (String)
-  , "SshKeyName" :: NullOrUndefined (String)
-  , "StackId" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (String)
-  , "SubnetId" :: NullOrUndefined (String)
-  , "Tenancy" :: NullOrUndefined (String)
-  , "VirtualizationType" :: NullOrUndefined (VirtualizationType)
+  { "AgentVersion" :: Maybe (String)
+  , "AmiId" :: Maybe (String)
+  , "Architecture" :: Maybe (Architecture)
+  , "Arn" :: Maybe (String)
+  , "AutoScalingType" :: Maybe (AutoScalingType)
+  , "AvailabilityZone" :: Maybe (String)
+  , "BlockDeviceMappings" :: Maybe (BlockDeviceMappings)
+  , "CreatedAt" :: Maybe (DateTime)
+  , "EbsOptimized" :: Maybe (Boolean)
+  , "Ec2InstanceId" :: Maybe (String)
+  , "EcsClusterArn" :: Maybe (String)
+  , "EcsContainerInstanceArn" :: Maybe (String)
+  , "ElasticIp" :: Maybe (String)
+  , "Hostname" :: Maybe (String)
+  , "InfrastructureClass" :: Maybe (String)
+  , "InstallUpdatesOnBoot" :: Maybe (Boolean)
+  , "InstanceId" :: Maybe (String)
+  , "InstanceProfileArn" :: Maybe (String)
+  , "InstanceType" :: Maybe (String)
+  , "LastServiceErrorId" :: Maybe (String)
+  , "LayerIds" :: Maybe (Strings)
+  , "Os" :: Maybe (String)
+  , "Platform" :: Maybe (String)
+  , "PrivateDns" :: Maybe (String)
+  , "PrivateIp" :: Maybe (String)
+  , "PublicDns" :: Maybe (String)
+  , "PublicIp" :: Maybe (String)
+  , "RegisteredBy" :: Maybe (String)
+  , "ReportedAgentVersion" :: Maybe (String)
+  , "ReportedOs" :: Maybe (ReportedOs)
+  , "RootDeviceType" :: Maybe (RootDeviceType)
+  , "RootDeviceVolumeId" :: Maybe (String)
+  , "SecurityGroupIds" :: Maybe (Strings)
+  , "SshHostDsaKeyFingerprint" :: Maybe (String)
+  , "SshHostRsaKeyFingerprint" :: Maybe (String)
+  , "SshKeyName" :: Maybe (String)
+  , "StackId" :: Maybe (String)
+  , "Status" :: Maybe (String)
+  , "SubnetId" :: Maybe (String)
+  , "Tenancy" :: Maybe (String)
+  , "VirtualizationType" :: Maybe (VirtualizationType)
   }
 derive instance newtypeInstance :: Newtype Instance _
 derive instance repGenericInstance :: Generic Instance _
@@ -2384,19 +2383,19 @@ instance encodeInstance :: Encode Instance where encode = genericEncode options
 
 -- | Constructs Instance from required parameters
 newInstance :: Instance
-newInstance  = Instance { "AgentVersion": (NullOrUndefined Nothing), "AmiId": (NullOrUndefined Nothing), "Architecture": (NullOrUndefined Nothing), "Arn": (NullOrUndefined Nothing), "AutoScalingType": (NullOrUndefined Nothing), "AvailabilityZone": (NullOrUndefined Nothing), "BlockDeviceMappings": (NullOrUndefined Nothing), "CreatedAt": (NullOrUndefined Nothing), "EbsOptimized": (NullOrUndefined Nothing), "Ec2InstanceId": (NullOrUndefined Nothing), "EcsClusterArn": (NullOrUndefined Nothing), "EcsContainerInstanceArn": (NullOrUndefined Nothing), "ElasticIp": (NullOrUndefined Nothing), "Hostname": (NullOrUndefined Nothing), "InfrastructureClass": (NullOrUndefined Nothing), "InstallUpdatesOnBoot": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "InstanceProfileArn": (NullOrUndefined Nothing), "InstanceType": (NullOrUndefined Nothing), "LastServiceErrorId": (NullOrUndefined Nothing), "LayerIds": (NullOrUndefined Nothing), "Os": (NullOrUndefined Nothing), "Platform": (NullOrUndefined Nothing), "PrivateDns": (NullOrUndefined Nothing), "PrivateIp": (NullOrUndefined Nothing), "PublicDns": (NullOrUndefined Nothing), "PublicIp": (NullOrUndefined Nothing), "RegisteredBy": (NullOrUndefined Nothing), "ReportedAgentVersion": (NullOrUndefined Nothing), "ReportedOs": (NullOrUndefined Nothing), "RootDeviceType": (NullOrUndefined Nothing), "RootDeviceVolumeId": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing), "SshHostDsaKeyFingerprint": (NullOrUndefined Nothing), "SshHostRsaKeyFingerprint": (NullOrUndefined Nothing), "SshKeyName": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing), "Tenancy": (NullOrUndefined Nothing), "VirtualizationType": (NullOrUndefined Nothing) }
+newInstance  = Instance { "AgentVersion": Nothing, "AmiId": Nothing, "Architecture": Nothing, "Arn": Nothing, "AutoScalingType": Nothing, "AvailabilityZone": Nothing, "BlockDeviceMappings": Nothing, "CreatedAt": Nothing, "EbsOptimized": Nothing, "Ec2InstanceId": Nothing, "EcsClusterArn": Nothing, "EcsContainerInstanceArn": Nothing, "ElasticIp": Nothing, "Hostname": Nothing, "InfrastructureClass": Nothing, "InstallUpdatesOnBoot": Nothing, "InstanceId": Nothing, "InstanceProfileArn": Nothing, "InstanceType": Nothing, "LastServiceErrorId": Nothing, "LayerIds": Nothing, "Os": Nothing, "Platform": Nothing, "PrivateDns": Nothing, "PrivateIp": Nothing, "PublicDns": Nothing, "PublicIp": Nothing, "RegisteredBy": Nothing, "ReportedAgentVersion": Nothing, "ReportedOs": Nothing, "RootDeviceType": Nothing, "RootDeviceVolumeId": Nothing, "SecurityGroupIds": Nothing, "SshHostDsaKeyFingerprint": Nothing, "SshHostRsaKeyFingerprint": Nothing, "SshKeyName": Nothing, "StackId": Nothing, "Status": Nothing, "SubnetId": Nothing, "Tenancy": Nothing, "VirtualizationType": Nothing }
 
 -- | Constructs Instance's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstance' :: ( { "AgentVersion" :: NullOrUndefined (String) , "AmiId" :: NullOrUndefined (String) , "Architecture" :: NullOrUndefined (Architecture) , "Arn" :: NullOrUndefined (String) , "AutoScalingType" :: NullOrUndefined (AutoScalingType) , "AvailabilityZone" :: NullOrUndefined (String) , "BlockDeviceMappings" :: NullOrUndefined (BlockDeviceMappings) , "CreatedAt" :: NullOrUndefined (DateTime) , "EbsOptimized" :: NullOrUndefined (Boolean) , "Ec2InstanceId" :: NullOrUndefined (String) , "EcsClusterArn" :: NullOrUndefined (String) , "EcsContainerInstanceArn" :: NullOrUndefined (String) , "ElasticIp" :: NullOrUndefined (String) , "Hostname" :: NullOrUndefined (String) , "InfrastructureClass" :: NullOrUndefined (String) , "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean) , "InstanceId" :: NullOrUndefined (String) , "InstanceProfileArn" :: NullOrUndefined (String) , "InstanceType" :: NullOrUndefined (String) , "LastServiceErrorId" :: NullOrUndefined (String) , "LayerIds" :: NullOrUndefined (Strings) , "Os" :: NullOrUndefined (String) , "Platform" :: NullOrUndefined (String) , "PrivateDns" :: NullOrUndefined (String) , "PrivateIp" :: NullOrUndefined (String) , "PublicDns" :: NullOrUndefined (String) , "PublicIp" :: NullOrUndefined (String) , "RegisteredBy" :: NullOrUndefined (String) , "ReportedAgentVersion" :: NullOrUndefined (String) , "ReportedOs" :: NullOrUndefined (ReportedOs) , "RootDeviceType" :: NullOrUndefined (RootDeviceType) , "RootDeviceVolumeId" :: NullOrUndefined (String) , "SecurityGroupIds" :: NullOrUndefined (Strings) , "SshHostDsaKeyFingerprint" :: NullOrUndefined (String) , "SshHostRsaKeyFingerprint" :: NullOrUndefined (String) , "SshKeyName" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "SubnetId" :: NullOrUndefined (String) , "Tenancy" :: NullOrUndefined (String) , "VirtualizationType" :: NullOrUndefined (VirtualizationType) } -> {"AgentVersion" :: NullOrUndefined (String) , "AmiId" :: NullOrUndefined (String) , "Architecture" :: NullOrUndefined (Architecture) , "Arn" :: NullOrUndefined (String) , "AutoScalingType" :: NullOrUndefined (AutoScalingType) , "AvailabilityZone" :: NullOrUndefined (String) , "BlockDeviceMappings" :: NullOrUndefined (BlockDeviceMappings) , "CreatedAt" :: NullOrUndefined (DateTime) , "EbsOptimized" :: NullOrUndefined (Boolean) , "Ec2InstanceId" :: NullOrUndefined (String) , "EcsClusterArn" :: NullOrUndefined (String) , "EcsContainerInstanceArn" :: NullOrUndefined (String) , "ElasticIp" :: NullOrUndefined (String) , "Hostname" :: NullOrUndefined (String) , "InfrastructureClass" :: NullOrUndefined (String) , "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean) , "InstanceId" :: NullOrUndefined (String) , "InstanceProfileArn" :: NullOrUndefined (String) , "InstanceType" :: NullOrUndefined (String) , "LastServiceErrorId" :: NullOrUndefined (String) , "LayerIds" :: NullOrUndefined (Strings) , "Os" :: NullOrUndefined (String) , "Platform" :: NullOrUndefined (String) , "PrivateDns" :: NullOrUndefined (String) , "PrivateIp" :: NullOrUndefined (String) , "PublicDns" :: NullOrUndefined (String) , "PublicIp" :: NullOrUndefined (String) , "RegisteredBy" :: NullOrUndefined (String) , "ReportedAgentVersion" :: NullOrUndefined (String) , "ReportedOs" :: NullOrUndefined (ReportedOs) , "RootDeviceType" :: NullOrUndefined (RootDeviceType) , "RootDeviceVolumeId" :: NullOrUndefined (String) , "SecurityGroupIds" :: NullOrUndefined (Strings) , "SshHostDsaKeyFingerprint" :: NullOrUndefined (String) , "SshHostRsaKeyFingerprint" :: NullOrUndefined (String) , "SshKeyName" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "SubnetId" :: NullOrUndefined (String) , "Tenancy" :: NullOrUndefined (String) , "VirtualizationType" :: NullOrUndefined (VirtualizationType) } ) -> Instance
-newInstance'  customize = (Instance <<< customize) { "AgentVersion": (NullOrUndefined Nothing), "AmiId": (NullOrUndefined Nothing), "Architecture": (NullOrUndefined Nothing), "Arn": (NullOrUndefined Nothing), "AutoScalingType": (NullOrUndefined Nothing), "AvailabilityZone": (NullOrUndefined Nothing), "BlockDeviceMappings": (NullOrUndefined Nothing), "CreatedAt": (NullOrUndefined Nothing), "EbsOptimized": (NullOrUndefined Nothing), "Ec2InstanceId": (NullOrUndefined Nothing), "EcsClusterArn": (NullOrUndefined Nothing), "EcsContainerInstanceArn": (NullOrUndefined Nothing), "ElasticIp": (NullOrUndefined Nothing), "Hostname": (NullOrUndefined Nothing), "InfrastructureClass": (NullOrUndefined Nothing), "InstallUpdatesOnBoot": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "InstanceProfileArn": (NullOrUndefined Nothing), "InstanceType": (NullOrUndefined Nothing), "LastServiceErrorId": (NullOrUndefined Nothing), "LayerIds": (NullOrUndefined Nothing), "Os": (NullOrUndefined Nothing), "Platform": (NullOrUndefined Nothing), "PrivateDns": (NullOrUndefined Nothing), "PrivateIp": (NullOrUndefined Nothing), "PublicDns": (NullOrUndefined Nothing), "PublicIp": (NullOrUndefined Nothing), "RegisteredBy": (NullOrUndefined Nothing), "ReportedAgentVersion": (NullOrUndefined Nothing), "ReportedOs": (NullOrUndefined Nothing), "RootDeviceType": (NullOrUndefined Nothing), "RootDeviceVolumeId": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing), "SshHostDsaKeyFingerprint": (NullOrUndefined Nothing), "SshHostRsaKeyFingerprint": (NullOrUndefined Nothing), "SshKeyName": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing), "Tenancy": (NullOrUndefined Nothing), "VirtualizationType": (NullOrUndefined Nothing) }
+newInstance' :: ( { "AgentVersion" :: Maybe (String) , "AmiId" :: Maybe (String) , "Architecture" :: Maybe (Architecture) , "Arn" :: Maybe (String) , "AutoScalingType" :: Maybe (AutoScalingType) , "AvailabilityZone" :: Maybe (String) , "BlockDeviceMappings" :: Maybe (BlockDeviceMappings) , "CreatedAt" :: Maybe (DateTime) , "EbsOptimized" :: Maybe (Boolean) , "Ec2InstanceId" :: Maybe (String) , "EcsClusterArn" :: Maybe (String) , "EcsContainerInstanceArn" :: Maybe (String) , "ElasticIp" :: Maybe (String) , "Hostname" :: Maybe (String) , "InfrastructureClass" :: Maybe (String) , "InstallUpdatesOnBoot" :: Maybe (Boolean) , "InstanceId" :: Maybe (String) , "InstanceProfileArn" :: Maybe (String) , "InstanceType" :: Maybe (String) , "LastServiceErrorId" :: Maybe (String) , "LayerIds" :: Maybe (Strings) , "Os" :: Maybe (String) , "Platform" :: Maybe (String) , "PrivateDns" :: Maybe (String) , "PrivateIp" :: Maybe (String) , "PublicDns" :: Maybe (String) , "PublicIp" :: Maybe (String) , "RegisteredBy" :: Maybe (String) , "ReportedAgentVersion" :: Maybe (String) , "ReportedOs" :: Maybe (ReportedOs) , "RootDeviceType" :: Maybe (RootDeviceType) , "RootDeviceVolumeId" :: Maybe (String) , "SecurityGroupIds" :: Maybe (Strings) , "SshHostDsaKeyFingerprint" :: Maybe (String) , "SshHostRsaKeyFingerprint" :: Maybe (String) , "SshKeyName" :: Maybe (String) , "StackId" :: Maybe (String) , "Status" :: Maybe (String) , "SubnetId" :: Maybe (String) , "Tenancy" :: Maybe (String) , "VirtualizationType" :: Maybe (VirtualizationType) } -> {"AgentVersion" :: Maybe (String) , "AmiId" :: Maybe (String) , "Architecture" :: Maybe (Architecture) , "Arn" :: Maybe (String) , "AutoScalingType" :: Maybe (AutoScalingType) , "AvailabilityZone" :: Maybe (String) , "BlockDeviceMappings" :: Maybe (BlockDeviceMappings) , "CreatedAt" :: Maybe (DateTime) , "EbsOptimized" :: Maybe (Boolean) , "Ec2InstanceId" :: Maybe (String) , "EcsClusterArn" :: Maybe (String) , "EcsContainerInstanceArn" :: Maybe (String) , "ElasticIp" :: Maybe (String) , "Hostname" :: Maybe (String) , "InfrastructureClass" :: Maybe (String) , "InstallUpdatesOnBoot" :: Maybe (Boolean) , "InstanceId" :: Maybe (String) , "InstanceProfileArn" :: Maybe (String) , "InstanceType" :: Maybe (String) , "LastServiceErrorId" :: Maybe (String) , "LayerIds" :: Maybe (Strings) , "Os" :: Maybe (String) , "Platform" :: Maybe (String) , "PrivateDns" :: Maybe (String) , "PrivateIp" :: Maybe (String) , "PublicDns" :: Maybe (String) , "PublicIp" :: Maybe (String) , "RegisteredBy" :: Maybe (String) , "ReportedAgentVersion" :: Maybe (String) , "ReportedOs" :: Maybe (ReportedOs) , "RootDeviceType" :: Maybe (RootDeviceType) , "RootDeviceVolumeId" :: Maybe (String) , "SecurityGroupIds" :: Maybe (Strings) , "SshHostDsaKeyFingerprint" :: Maybe (String) , "SshHostRsaKeyFingerprint" :: Maybe (String) , "SshKeyName" :: Maybe (String) , "StackId" :: Maybe (String) , "Status" :: Maybe (String) , "SubnetId" :: Maybe (String) , "Tenancy" :: Maybe (String) , "VirtualizationType" :: Maybe (VirtualizationType) } ) -> Instance
+newInstance'  customize = (Instance <<< customize) { "AgentVersion": Nothing, "AmiId": Nothing, "Architecture": Nothing, "Arn": Nothing, "AutoScalingType": Nothing, "AvailabilityZone": Nothing, "BlockDeviceMappings": Nothing, "CreatedAt": Nothing, "EbsOptimized": Nothing, "Ec2InstanceId": Nothing, "EcsClusterArn": Nothing, "EcsContainerInstanceArn": Nothing, "ElasticIp": Nothing, "Hostname": Nothing, "InfrastructureClass": Nothing, "InstallUpdatesOnBoot": Nothing, "InstanceId": Nothing, "InstanceProfileArn": Nothing, "InstanceType": Nothing, "LastServiceErrorId": Nothing, "LayerIds": Nothing, "Os": Nothing, "Platform": Nothing, "PrivateDns": Nothing, "PrivateIp": Nothing, "PublicDns": Nothing, "PublicIp": Nothing, "RegisteredBy": Nothing, "ReportedAgentVersion": Nothing, "ReportedOs": Nothing, "RootDeviceType": Nothing, "RootDeviceVolumeId": Nothing, "SecurityGroupIds": Nothing, "SshHostDsaKeyFingerprint": Nothing, "SshHostRsaKeyFingerprint": Nothing, "SshKeyName": Nothing, "StackId": Nothing, "Status": Nothing, "SubnetId": Nothing, "Tenancy": Nothing, "VirtualizationType": Nothing }
 
 
 
 -- | <p>Contains a description of an Amazon EC2 instance from the Amazon EC2 metadata service. For more information, see <a href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html">Instance Metadata and User Data</a>.</p>
 newtype InstanceIdentity = InstanceIdentity 
-  { "Document" :: NullOrUndefined (String)
-  , "Signature" :: NullOrUndefined (String)
+  { "Document" :: Maybe (String)
+  , "Signature" :: Maybe (String)
   }
 derive instance newtypeInstanceIdentity :: Newtype InstanceIdentity _
 derive instance repGenericInstanceIdentity :: Generic InstanceIdentity _
@@ -2406,12 +2405,12 @@ instance encodeInstanceIdentity :: Encode InstanceIdentity where encode = generi
 
 -- | Constructs InstanceIdentity from required parameters
 newInstanceIdentity :: InstanceIdentity
-newInstanceIdentity  = InstanceIdentity { "Document": (NullOrUndefined Nothing), "Signature": (NullOrUndefined Nothing) }
+newInstanceIdentity  = InstanceIdentity { "Document": Nothing, "Signature": Nothing }
 
 -- | Constructs InstanceIdentity's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceIdentity' :: ( { "Document" :: NullOrUndefined (String) , "Signature" :: NullOrUndefined (String) } -> {"Document" :: NullOrUndefined (String) , "Signature" :: NullOrUndefined (String) } ) -> InstanceIdentity
-newInstanceIdentity'  customize = (InstanceIdentity <<< customize) { "Document": (NullOrUndefined Nothing), "Signature": (NullOrUndefined Nothing) }
+newInstanceIdentity' :: ( { "Document" :: Maybe (String) , "Signature" :: Maybe (String) } -> {"Document" :: Maybe (String) , "Signature" :: Maybe (String) } ) -> InstanceIdentity
+newInstanceIdentity'  customize = (InstanceIdentity <<< customize) { "Document": Nothing, "Signature": Nothing }
 
 
 
@@ -2426,26 +2425,26 @@ instance encodeInstances :: Encode Instances where encode = genericEncode option
 
 -- | <p>Describes how many instances a stack has for each status.</p>
 newtype InstancesCount = InstancesCount 
-  { "Assigning" :: NullOrUndefined (Int)
-  , "Booting" :: NullOrUndefined (Int)
-  , "ConnectionLost" :: NullOrUndefined (Int)
-  , "Deregistering" :: NullOrUndefined (Int)
-  , "Online" :: NullOrUndefined (Int)
-  , "Pending" :: NullOrUndefined (Int)
-  , "Rebooting" :: NullOrUndefined (Int)
-  , "Registered" :: NullOrUndefined (Int)
-  , "Registering" :: NullOrUndefined (Int)
-  , "Requested" :: NullOrUndefined (Int)
-  , "RunningSetup" :: NullOrUndefined (Int)
-  , "SetupFailed" :: NullOrUndefined (Int)
-  , "ShuttingDown" :: NullOrUndefined (Int)
-  , "StartFailed" :: NullOrUndefined (Int)
-  , "StopFailed" :: NullOrUndefined (Int)
-  , "Stopped" :: NullOrUndefined (Int)
-  , "Stopping" :: NullOrUndefined (Int)
-  , "Terminated" :: NullOrUndefined (Int)
-  , "Terminating" :: NullOrUndefined (Int)
-  , "Unassigning" :: NullOrUndefined (Int)
+  { "Assigning" :: Maybe (Int)
+  , "Booting" :: Maybe (Int)
+  , "ConnectionLost" :: Maybe (Int)
+  , "Deregistering" :: Maybe (Int)
+  , "Online" :: Maybe (Int)
+  , "Pending" :: Maybe (Int)
+  , "Rebooting" :: Maybe (Int)
+  , "Registered" :: Maybe (Int)
+  , "Registering" :: Maybe (Int)
+  , "Requested" :: Maybe (Int)
+  , "RunningSetup" :: Maybe (Int)
+  , "SetupFailed" :: Maybe (Int)
+  , "ShuttingDown" :: Maybe (Int)
+  , "StartFailed" :: Maybe (Int)
+  , "StopFailed" :: Maybe (Int)
+  , "Stopped" :: Maybe (Int)
+  , "Stopping" :: Maybe (Int)
+  , "Terminated" :: Maybe (Int)
+  , "Terminating" :: Maybe (Int)
+  , "Unassigning" :: Maybe (Int)
   }
 derive instance newtypeInstancesCount :: Newtype InstancesCount _
 derive instance repGenericInstancesCount :: Generic InstancesCount _
@@ -2455,40 +2454,40 @@ instance encodeInstancesCount :: Encode InstancesCount where encode = genericEnc
 
 -- | Constructs InstancesCount from required parameters
 newInstancesCount :: InstancesCount
-newInstancesCount  = InstancesCount { "Assigning": (NullOrUndefined Nothing), "Booting": (NullOrUndefined Nothing), "ConnectionLost": (NullOrUndefined Nothing), "Deregistering": (NullOrUndefined Nothing), "Online": (NullOrUndefined Nothing), "Pending": (NullOrUndefined Nothing), "Rebooting": (NullOrUndefined Nothing), "Registered": (NullOrUndefined Nothing), "Registering": (NullOrUndefined Nothing), "Requested": (NullOrUndefined Nothing), "RunningSetup": (NullOrUndefined Nothing), "SetupFailed": (NullOrUndefined Nothing), "ShuttingDown": (NullOrUndefined Nothing), "StartFailed": (NullOrUndefined Nothing), "StopFailed": (NullOrUndefined Nothing), "Stopped": (NullOrUndefined Nothing), "Stopping": (NullOrUndefined Nothing), "Terminated": (NullOrUndefined Nothing), "Terminating": (NullOrUndefined Nothing), "Unassigning": (NullOrUndefined Nothing) }
+newInstancesCount  = InstancesCount { "Assigning": Nothing, "Booting": Nothing, "ConnectionLost": Nothing, "Deregistering": Nothing, "Online": Nothing, "Pending": Nothing, "Rebooting": Nothing, "Registered": Nothing, "Registering": Nothing, "Requested": Nothing, "RunningSetup": Nothing, "SetupFailed": Nothing, "ShuttingDown": Nothing, "StartFailed": Nothing, "StopFailed": Nothing, "Stopped": Nothing, "Stopping": Nothing, "Terminated": Nothing, "Terminating": Nothing, "Unassigning": Nothing }
 
 -- | Constructs InstancesCount's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstancesCount' :: ( { "Assigning" :: NullOrUndefined (Int) , "Booting" :: NullOrUndefined (Int) , "ConnectionLost" :: NullOrUndefined (Int) , "Deregistering" :: NullOrUndefined (Int) , "Online" :: NullOrUndefined (Int) , "Pending" :: NullOrUndefined (Int) , "Rebooting" :: NullOrUndefined (Int) , "Registered" :: NullOrUndefined (Int) , "Registering" :: NullOrUndefined (Int) , "Requested" :: NullOrUndefined (Int) , "RunningSetup" :: NullOrUndefined (Int) , "SetupFailed" :: NullOrUndefined (Int) , "ShuttingDown" :: NullOrUndefined (Int) , "StartFailed" :: NullOrUndefined (Int) , "StopFailed" :: NullOrUndefined (Int) , "Stopped" :: NullOrUndefined (Int) , "Stopping" :: NullOrUndefined (Int) , "Terminated" :: NullOrUndefined (Int) , "Terminating" :: NullOrUndefined (Int) , "Unassigning" :: NullOrUndefined (Int) } -> {"Assigning" :: NullOrUndefined (Int) , "Booting" :: NullOrUndefined (Int) , "ConnectionLost" :: NullOrUndefined (Int) , "Deregistering" :: NullOrUndefined (Int) , "Online" :: NullOrUndefined (Int) , "Pending" :: NullOrUndefined (Int) , "Rebooting" :: NullOrUndefined (Int) , "Registered" :: NullOrUndefined (Int) , "Registering" :: NullOrUndefined (Int) , "Requested" :: NullOrUndefined (Int) , "RunningSetup" :: NullOrUndefined (Int) , "SetupFailed" :: NullOrUndefined (Int) , "ShuttingDown" :: NullOrUndefined (Int) , "StartFailed" :: NullOrUndefined (Int) , "StopFailed" :: NullOrUndefined (Int) , "Stopped" :: NullOrUndefined (Int) , "Stopping" :: NullOrUndefined (Int) , "Terminated" :: NullOrUndefined (Int) , "Terminating" :: NullOrUndefined (Int) , "Unassigning" :: NullOrUndefined (Int) } ) -> InstancesCount
-newInstancesCount'  customize = (InstancesCount <<< customize) { "Assigning": (NullOrUndefined Nothing), "Booting": (NullOrUndefined Nothing), "ConnectionLost": (NullOrUndefined Nothing), "Deregistering": (NullOrUndefined Nothing), "Online": (NullOrUndefined Nothing), "Pending": (NullOrUndefined Nothing), "Rebooting": (NullOrUndefined Nothing), "Registered": (NullOrUndefined Nothing), "Registering": (NullOrUndefined Nothing), "Requested": (NullOrUndefined Nothing), "RunningSetup": (NullOrUndefined Nothing), "SetupFailed": (NullOrUndefined Nothing), "ShuttingDown": (NullOrUndefined Nothing), "StartFailed": (NullOrUndefined Nothing), "StopFailed": (NullOrUndefined Nothing), "Stopped": (NullOrUndefined Nothing), "Stopping": (NullOrUndefined Nothing), "Terminated": (NullOrUndefined Nothing), "Terminating": (NullOrUndefined Nothing), "Unassigning": (NullOrUndefined Nothing) }
+newInstancesCount' :: ( { "Assigning" :: Maybe (Int) , "Booting" :: Maybe (Int) , "ConnectionLost" :: Maybe (Int) , "Deregistering" :: Maybe (Int) , "Online" :: Maybe (Int) , "Pending" :: Maybe (Int) , "Rebooting" :: Maybe (Int) , "Registered" :: Maybe (Int) , "Registering" :: Maybe (Int) , "Requested" :: Maybe (Int) , "RunningSetup" :: Maybe (Int) , "SetupFailed" :: Maybe (Int) , "ShuttingDown" :: Maybe (Int) , "StartFailed" :: Maybe (Int) , "StopFailed" :: Maybe (Int) , "Stopped" :: Maybe (Int) , "Stopping" :: Maybe (Int) , "Terminated" :: Maybe (Int) , "Terminating" :: Maybe (Int) , "Unassigning" :: Maybe (Int) } -> {"Assigning" :: Maybe (Int) , "Booting" :: Maybe (Int) , "ConnectionLost" :: Maybe (Int) , "Deregistering" :: Maybe (Int) , "Online" :: Maybe (Int) , "Pending" :: Maybe (Int) , "Rebooting" :: Maybe (Int) , "Registered" :: Maybe (Int) , "Registering" :: Maybe (Int) , "Requested" :: Maybe (Int) , "RunningSetup" :: Maybe (Int) , "SetupFailed" :: Maybe (Int) , "ShuttingDown" :: Maybe (Int) , "StartFailed" :: Maybe (Int) , "StopFailed" :: Maybe (Int) , "Stopped" :: Maybe (Int) , "Stopping" :: Maybe (Int) , "Terminated" :: Maybe (Int) , "Terminating" :: Maybe (Int) , "Unassigning" :: Maybe (Int) } ) -> InstancesCount
+newInstancesCount'  customize = (InstancesCount <<< customize) { "Assigning": Nothing, "Booting": Nothing, "ConnectionLost": Nothing, "Deregistering": Nothing, "Online": Nothing, "Pending": Nothing, "Rebooting": Nothing, "Registered": Nothing, "Registering": Nothing, "Requested": Nothing, "RunningSetup": Nothing, "SetupFailed": Nothing, "ShuttingDown": Nothing, "StartFailed": Nothing, "StopFailed": Nothing, "Stopped": Nothing, "Stopping": Nothing, "Terminated": Nothing, "Terminating": Nothing, "Unassigning": Nothing }
 
 
 
 -- | <p>Describes a layer.</p>
 newtype Layer = Layer 
-  { "Arn" :: NullOrUndefined (String)
-  , "StackId" :: NullOrUndefined (String)
-  , "LayerId" :: NullOrUndefined (String)
-  , "Type" :: NullOrUndefined (LayerType)
-  , "Name" :: NullOrUndefined (String)
-  , "Shortname" :: NullOrUndefined (String)
-  , "Attributes" :: NullOrUndefined (LayerAttributes)
-  , "CloudWatchLogsConfiguration" :: NullOrUndefined (CloudWatchLogsConfiguration)
-  , "CustomInstanceProfileArn" :: NullOrUndefined (String)
-  , "CustomJson" :: NullOrUndefined (String)
-  , "CustomSecurityGroupIds" :: NullOrUndefined (Strings)
-  , "DefaultSecurityGroupNames" :: NullOrUndefined (Strings)
-  , "Packages" :: NullOrUndefined (Strings)
-  , "VolumeConfigurations" :: NullOrUndefined (VolumeConfigurations)
-  , "EnableAutoHealing" :: NullOrUndefined (Boolean)
-  , "AutoAssignElasticIps" :: NullOrUndefined (Boolean)
-  , "AutoAssignPublicIps" :: NullOrUndefined (Boolean)
-  , "DefaultRecipes" :: NullOrUndefined (Recipes)
-  , "CustomRecipes" :: NullOrUndefined (Recipes)
-  , "CreatedAt" :: NullOrUndefined (DateTime)
-  , "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean)
-  , "UseEbsOptimizedInstances" :: NullOrUndefined (Boolean)
-  , "LifecycleEventConfiguration" :: NullOrUndefined (LifecycleEventConfiguration)
+  { "Arn" :: Maybe (String)
+  , "StackId" :: Maybe (String)
+  , "LayerId" :: Maybe (String)
+  , "Type" :: Maybe (LayerType)
+  , "Name" :: Maybe (String)
+  , "Shortname" :: Maybe (String)
+  , "Attributes" :: Maybe (LayerAttributes)
+  , "CloudWatchLogsConfiguration" :: Maybe (CloudWatchLogsConfiguration)
+  , "CustomInstanceProfileArn" :: Maybe (String)
+  , "CustomJson" :: Maybe (String)
+  , "CustomSecurityGroupIds" :: Maybe (Strings)
+  , "DefaultSecurityGroupNames" :: Maybe (Strings)
+  , "Packages" :: Maybe (Strings)
+  , "VolumeConfigurations" :: Maybe (VolumeConfigurations)
+  , "EnableAutoHealing" :: Maybe (Boolean)
+  , "AutoAssignElasticIps" :: Maybe (Boolean)
+  , "AutoAssignPublicIps" :: Maybe (Boolean)
+  , "DefaultRecipes" :: Maybe (Recipes)
+  , "CustomRecipes" :: Maybe (Recipes)
+  , "CreatedAt" :: Maybe (DateTime)
+  , "InstallUpdatesOnBoot" :: Maybe (Boolean)
+  , "UseEbsOptimizedInstances" :: Maybe (Boolean)
+  , "LifecycleEventConfiguration" :: Maybe (LifecycleEventConfiguration)
   }
 derive instance newtypeLayer :: Newtype Layer _
 derive instance repGenericLayer :: Generic Layer _
@@ -2498,12 +2497,12 @@ instance encodeLayer :: Encode Layer where encode = genericEncode options
 
 -- | Constructs Layer from required parameters
 newLayer :: Layer
-newLayer  = Layer { "Arn": (NullOrUndefined Nothing), "Attributes": (NullOrUndefined Nothing), "AutoAssignElasticIps": (NullOrUndefined Nothing), "AutoAssignPublicIps": (NullOrUndefined Nothing), "CloudWatchLogsConfiguration": (NullOrUndefined Nothing), "CreatedAt": (NullOrUndefined Nothing), "CustomInstanceProfileArn": (NullOrUndefined Nothing), "CustomJson": (NullOrUndefined Nothing), "CustomRecipes": (NullOrUndefined Nothing), "CustomSecurityGroupIds": (NullOrUndefined Nothing), "DefaultRecipes": (NullOrUndefined Nothing), "DefaultSecurityGroupNames": (NullOrUndefined Nothing), "EnableAutoHealing": (NullOrUndefined Nothing), "InstallUpdatesOnBoot": (NullOrUndefined Nothing), "LayerId": (NullOrUndefined Nothing), "LifecycleEventConfiguration": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Packages": (NullOrUndefined Nothing), "Shortname": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "UseEbsOptimizedInstances": (NullOrUndefined Nothing), "VolumeConfigurations": (NullOrUndefined Nothing) }
+newLayer  = Layer { "Arn": Nothing, "Attributes": Nothing, "AutoAssignElasticIps": Nothing, "AutoAssignPublicIps": Nothing, "CloudWatchLogsConfiguration": Nothing, "CreatedAt": Nothing, "CustomInstanceProfileArn": Nothing, "CustomJson": Nothing, "CustomRecipes": Nothing, "CustomSecurityGroupIds": Nothing, "DefaultRecipes": Nothing, "DefaultSecurityGroupNames": Nothing, "EnableAutoHealing": Nothing, "InstallUpdatesOnBoot": Nothing, "LayerId": Nothing, "LifecycleEventConfiguration": Nothing, "Name": Nothing, "Packages": Nothing, "Shortname": Nothing, "StackId": Nothing, "Type": Nothing, "UseEbsOptimizedInstances": Nothing, "VolumeConfigurations": Nothing }
 
 -- | Constructs Layer's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLayer' :: ( { "Arn" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "LayerId" :: NullOrUndefined (String) , "Type" :: NullOrUndefined (LayerType) , "Name" :: NullOrUndefined (String) , "Shortname" :: NullOrUndefined (String) , "Attributes" :: NullOrUndefined (LayerAttributes) , "CloudWatchLogsConfiguration" :: NullOrUndefined (CloudWatchLogsConfiguration) , "CustomInstanceProfileArn" :: NullOrUndefined (String) , "CustomJson" :: NullOrUndefined (String) , "CustomSecurityGroupIds" :: NullOrUndefined (Strings) , "DefaultSecurityGroupNames" :: NullOrUndefined (Strings) , "Packages" :: NullOrUndefined (Strings) , "VolumeConfigurations" :: NullOrUndefined (VolumeConfigurations) , "EnableAutoHealing" :: NullOrUndefined (Boolean) , "AutoAssignElasticIps" :: NullOrUndefined (Boolean) , "AutoAssignPublicIps" :: NullOrUndefined (Boolean) , "DefaultRecipes" :: NullOrUndefined (Recipes) , "CustomRecipes" :: NullOrUndefined (Recipes) , "CreatedAt" :: NullOrUndefined (DateTime) , "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean) , "UseEbsOptimizedInstances" :: NullOrUndefined (Boolean) , "LifecycleEventConfiguration" :: NullOrUndefined (LifecycleEventConfiguration) } -> {"Arn" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "LayerId" :: NullOrUndefined (String) , "Type" :: NullOrUndefined (LayerType) , "Name" :: NullOrUndefined (String) , "Shortname" :: NullOrUndefined (String) , "Attributes" :: NullOrUndefined (LayerAttributes) , "CloudWatchLogsConfiguration" :: NullOrUndefined (CloudWatchLogsConfiguration) , "CustomInstanceProfileArn" :: NullOrUndefined (String) , "CustomJson" :: NullOrUndefined (String) , "CustomSecurityGroupIds" :: NullOrUndefined (Strings) , "DefaultSecurityGroupNames" :: NullOrUndefined (Strings) , "Packages" :: NullOrUndefined (Strings) , "VolumeConfigurations" :: NullOrUndefined (VolumeConfigurations) , "EnableAutoHealing" :: NullOrUndefined (Boolean) , "AutoAssignElasticIps" :: NullOrUndefined (Boolean) , "AutoAssignPublicIps" :: NullOrUndefined (Boolean) , "DefaultRecipes" :: NullOrUndefined (Recipes) , "CustomRecipes" :: NullOrUndefined (Recipes) , "CreatedAt" :: NullOrUndefined (DateTime) , "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean) , "UseEbsOptimizedInstances" :: NullOrUndefined (Boolean) , "LifecycleEventConfiguration" :: NullOrUndefined (LifecycleEventConfiguration) } ) -> Layer
-newLayer'  customize = (Layer <<< customize) { "Arn": (NullOrUndefined Nothing), "Attributes": (NullOrUndefined Nothing), "AutoAssignElasticIps": (NullOrUndefined Nothing), "AutoAssignPublicIps": (NullOrUndefined Nothing), "CloudWatchLogsConfiguration": (NullOrUndefined Nothing), "CreatedAt": (NullOrUndefined Nothing), "CustomInstanceProfileArn": (NullOrUndefined Nothing), "CustomJson": (NullOrUndefined Nothing), "CustomRecipes": (NullOrUndefined Nothing), "CustomSecurityGroupIds": (NullOrUndefined Nothing), "DefaultRecipes": (NullOrUndefined Nothing), "DefaultSecurityGroupNames": (NullOrUndefined Nothing), "EnableAutoHealing": (NullOrUndefined Nothing), "InstallUpdatesOnBoot": (NullOrUndefined Nothing), "LayerId": (NullOrUndefined Nothing), "LifecycleEventConfiguration": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Packages": (NullOrUndefined Nothing), "Shortname": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "UseEbsOptimizedInstances": (NullOrUndefined Nothing), "VolumeConfigurations": (NullOrUndefined Nothing) }
+newLayer' :: ( { "Arn" :: Maybe (String) , "StackId" :: Maybe (String) , "LayerId" :: Maybe (String) , "Type" :: Maybe (LayerType) , "Name" :: Maybe (String) , "Shortname" :: Maybe (String) , "Attributes" :: Maybe (LayerAttributes) , "CloudWatchLogsConfiguration" :: Maybe (CloudWatchLogsConfiguration) , "CustomInstanceProfileArn" :: Maybe (String) , "CustomJson" :: Maybe (String) , "CustomSecurityGroupIds" :: Maybe (Strings) , "DefaultSecurityGroupNames" :: Maybe (Strings) , "Packages" :: Maybe (Strings) , "VolumeConfigurations" :: Maybe (VolumeConfigurations) , "EnableAutoHealing" :: Maybe (Boolean) , "AutoAssignElasticIps" :: Maybe (Boolean) , "AutoAssignPublicIps" :: Maybe (Boolean) , "DefaultRecipes" :: Maybe (Recipes) , "CustomRecipes" :: Maybe (Recipes) , "CreatedAt" :: Maybe (DateTime) , "InstallUpdatesOnBoot" :: Maybe (Boolean) , "UseEbsOptimizedInstances" :: Maybe (Boolean) , "LifecycleEventConfiguration" :: Maybe (LifecycleEventConfiguration) } -> {"Arn" :: Maybe (String) , "StackId" :: Maybe (String) , "LayerId" :: Maybe (String) , "Type" :: Maybe (LayerType) , "Name" :: Maybe (String) , "Shortname" :: Maybe (String) , "Attributes" :: Maybe (LayerAttributes) , "CloudWatchLogsConfiguration" :: Maybe (CloudWatchLogsConfiguration) , "CustomInstanceProfileArn" :: Maybe (String) , "CustomJson" :: Maybe (String) , "CustomSecurityGroupIds" :: Maybe (Strings) , "DefaultSecurityGroupNames" :: Maybe (Strings) , "Packages" :: Maybe (Strings) , "VolumeConfigurations" :: Maybe (VolumeConfigurations) , "EnableAutoHealing" :: Maybe (Boolean) , "AutoAssignElasticIps" :: Maybe (Boolean) , "AutoAssignPublicIps" :: Maybe (Boolean) , "DefaultRecipes" :: Maybe (Recipes) , "CustomRecipes" :: Maybe (Recipes) , "CreatedAt" :: Maybe (DateTime) , "InstallUpdatesOnBoot" :: Maybe (Boolean) , "UseEbsOptimizedInstances" :: Maybe (Boolean) , "LifecycleEventConfiguration" :: Maybe (LifecycleEventConfiguration) } ) -> Layer
+newLayer'  customize = (Layer <<< customize) { "Arn": Nothing, "Attributes": Nothing, "AutoAssignElasticIps": Nothing, "AutoAssignPublicIps": Nothing, "CloudWatchLogsConfiguration": Nothing, "CreatedAt": Nothing, "CustomInstanceProfileArn": Nothing, "CustomJson": Nothing, "CustomRecipes": Nothing, "CustomSecurityGroupIds": Nothing, "DefaultRecipes": Nothing, "DefaultSecurityGroupNames": Nothing, "EnableAutoHealing": Nothing, "InstallUpdatesOnBoot": Nothing, "LayerId": Nothing, "LifecycleEventConfiguration": Nothing, "Name": Nothing, "Packages": Nothing, "Shortname": Nothing, "StackId": Nothing, "Type": Nothing, "UseEbsOptimizedInstances": Nothing, "VolumeConfigurations": Nothing }
 
 
 
@@ -2545,7 +2544,7 @@ instance encodeLayers :: Encode Layers where encode = genericEncode options
 
 -- | <p>Specifies the lifecycle event configuration</p>
 newtype LifecycleEventConfiguration = LifecycleEventConfiguration 
-  { "Shutdown" :: NullOrUndefined (ShutdownEventConfiguration)
+  { "Shutdown" :: Maybe (ShutdownEventConfiguration)
   }
 derive instance newtypeLifecycleEventConfiguration :: Newtype LifecycleEventConfiguration _
 derive instance repGenericLifecycleEventConfiguration :: Generic LifecycleEventConfiguration _
@@ -2555,19 +2554,19 @@ instance encodeLifecycleEventConfiguration :: Encode LifecycleEventConfiguration
 
 -- | Constructs LifecycleEventConfiguration from required parameters
 newLifecycleEventConfiguration :: LifecycleEventConfiguration
-newLifecycleEventConfiguration  = LifecycleEventConfiguration { "Shutdown": (NullOrUndefined Nothing) }
+newLifecycleEventConfiguration  = LifecycleEventConfiguration { "Shutdown": Nothing }
 
 -- | Constructs LifecycleEventConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLifecycleEventConfiguration' :: ( { "Shutdown" :: NullOrUndefined (ShutdownEventConfiguration) } -> {"Shutdown" :: NullOrUndefined (ShutdownEventConfiguration) } ) -> LifecycleEventConfiguration
-newLifecycleEventConfiguration'  customize = (LifecycleEventConfiguration <<< customize) { "Shutdown": (NullOrUndefined Nothing) }
+newLifecycleEventConfiguration' :: ( { "Shutdown" :: Maybe (ShutdownEventConfiguration) } -> {"Shutdown" :: Maybe (ShutdownEventConfiguration) } ) -> LifecycleEventConfiguration
+newLifecycleEventConfiguration'  customize = (LifecycleEventConfiguration <<< customize) { "Shutdown": Nothing }
 
 
 
 newtype ListTagsRequest = ListTagsRequest 
   { "ResourceArn" :: (ResourceArn)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  , "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListTagsRequest :: Newtype ListTagsRequest _
 derive instance repGenericListTagsRequest :: Generic ListTagsRequest _
@@ -2577,19 +2576,19 @@ instance encodeListTagsRequest :: Encode ListTagsRequest where encode = genericE
 
 -- | Constructs ListTagsRequest from required parameters
 newListTagsRequest :: ResourceArn -> ListTagsRequest
-newListTagsRequest _ResourceArn = ListTagsRequest { "ResourceArn": _ResourceArn, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListTagsRequest _ResourceArn = ListTagsRequest { "ResourceArn": _ResourceArn, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListTagsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListTagsRequest' :: ResourceArn -> ( { "ResourceArn" :: (ResourceArn) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"ResourceArn" :: (ResourceArn) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListTagsRequest
-newListTagsRequest' _ResourceArn customize = (ListTagsRequest <<< customize) { "ResourceArn": _ResourceArn, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListTagsRequest' :: ResourceArn -> ( { "ResourceArn" :: (ResourceArn) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } -> {"ResourceArn" :: (ResourceArn) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } ) -> ListTagsRequest
+newListTagsRequest' _ResourceArn customize = (ListTagsRequest <<< customize) { "ResourceArn": _ResourceArn, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>ListTags</code> request.</p>
 newtype ListTagsResult = ListTagsResult 
-  { "Tags" :: NullOrUndefined (Tags)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Tags" :: Maybe (Tags)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListTagsResult :: Newtype ListTagsResult _
 derive instance repGenericListTagsResult :: Generic ListTagsResult _
@@ -2599,21 +2598,21 @@ instance encodeListTagsResult :: Encode ListTagsResult where encode = genericEnc
 
 -- | Constructs ListTagsResult from required parameters
 newListTagsResult :: ListTagsResult
-newListTagsResult  = ListTagsResult { "NextToken": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newListTagsResult  = ListTagsResult { "NextToken": Nothing, "Tags": Nothing }
 
 -- | Constructs ListTagsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListTagsResult' :: ( { "Tags" :: NullOrUndefined (Tags) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Tags" :: NullOrUndefined (Tags) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListTagsResult
-newListTagsResult'  customize = (ListTagsResult <<< customize) { "NextToken": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newListTagsResult' :: ( { "Tags" :: Maybe (Tags) , "NextToken" :: Maybe (NextToken) } -> {"Tags" :: Maybe (Tags) , "NextToken" :: Maybe (NextToken) } ) -> ListTagsResult
+newListTagsResult'  customize = (ListTagsResult <<< customize) { "NextToken": Nothing, "Tags": Nothing }
 
 
 
 -- | <p>Describes a layer's load-based auto scaling configuration.</p>
 newtype LoadBasedAutoScalingConfiguration = LoadBasedAutoScalingConfiguration 
-  { "LayerId" :: NullOrUndefined (String)
-  , "Enable" :: NullOrUndefined (Boolean)
-  , "UpScaling" :: NullOrUndefined (AutoScalingThresholds)
-  , "DownScaling" :: NullOrUndefined (AutoScalingThresholds)
+  { "LayerId" :: Maybe (String)
+  , "Enable" :: Maybe (Boolean)
+  , "UpScaling" :: Maybe (AutoScalingThresholds)
+  , "DownScaling" :: Maybe (AutoScalingThresholds)
   }
 derive instance newtypeLoadBasedAutoScalingConfiguration :: Newtype LoadBasedAutoScalingConfiguration _
 derive instance repGenericLoadBasedAutoScalingConfiguration :: Generic LoadBasedAutoScalingConfiguration _
@@ -2623,12 +2622,12 @@ instance encodeLoadBasedAutoScalingConfiguration :: Encode LoadBasedAutoScalingC
 
 -- | Constructs LoadBasedAutoScalingConfiguration from required parameters
 newLoadBasedAutoScalingConfiguration :: LoadBasedAutoScalingConfiguration
-newLoadBasedAutoScalingConfiguration  = LoadBasedAutoScalingConfiguration { "DownScaling": (NullOrUndefined Nothing), "Enable": (NullOrUndefined Nothing), "LayerId": (NullOrUndefined Nothing), "UpScaling": (NullOrUndefined Nothing) }
+newLoadBasedAutoScalingConfiguration  = LoadBasedAutoScalingConfiguration { "DownScaling": Nothing, "Enable": Nothing, "LayerId": Nothing, "UpScaling": Nothing }
 
 -- | Constructs LoadBasedAutoScalingConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLoadBasedAutoScalingConfiguration' :: ( { "LayerId" :: NullOrUndefined (String) , "Enable" :: NullOrUndefined (Boolean) , "UpScaling" :: NullOrUndefined (AutoScalingThresholds) , "DownScaling" :: NullOrUndefined (AutoScalingThresholds) } -> {"LayerId" :: NullOrUndefined (String) , "Enable" :: NullOrUndefined (Boolean) , "UpScaling" :: NullOrUndefined (AutoScalingThresholds) , "DownScaling" :: NullOrUndefined (AutoScalingThresholds) } ) -> LoadBasedAutoScalingConfiguration
-newLoadBasedAutoScalingConfiguration'  customize = (LoadBasedAutoScalingConfiguration <<< customize) { "DownScaling": (NullOrUndefined Nothing), "Enable": (NullOrUndefined Nothing), "LayerId": (NullOrUndefined Nothing), "UpScaling": (NullOrUndefined Nothing) }
+newLoadBasedAutoScalingConfiguration' :: ( { "LayerId" :: Maybe (String) , "Enable" :: Maybe (Boolean) , "UpScaling" :: Maybe (AutoScalingThresholds) , "DownScaling" :: Maybe (AutoScalingThresholds) } -> {"LayerId" :: Maybe (String) , "Enable" :: Maybe (Boolean) , "UpScaling" :: Maybe (AutoScalingThresholds) , "DownScaling" :: Maybe (AutoScalingThresholds) } ) -> LoadBasedAutoScalingConfiguration
+newLoadBasedAutoScalingConfiguration'  customize = (LoadBasedAutoScalingConfiguration <<< customize) { "DownScaling": Nothing, "Enable": Nothing, "LayerId": Nothing, "UpScaling": Nothing }
 
 
 
@@ -2670,13 +2669,13 @@ instance encodeNextToken :: Encode NextToken where encode = genericEncode option
 
 -- | <p>Describes supported operating systems in AWS OpsWorks Stacks.</p>
 newtype OperatingSystem = OperatingSystem 
-  { "Name" :: NullOrUndefined (String)
-  , "Id" :: NullOrUndefined (String)
-  , "Type" :: NullOrUndefined (String)
-  , "ConfigurationManagers" :: NullOrUndefined (OperatingSystemConfigurationManagers)
-  , "ReportedName" :: NullOrUndefined (String)
-  , "ReportedVersion" :: NullOrUndefined (String)
-  , "Supported" :: NullOrUndefined (Boolean)
+  { "Name" :: Maybe (String)
+  , "Id" :: Maybe (String)
+  , "Type" :: Maybe (String)
+  , "ConfigurationManagers" :: Maybe (OperatingSystemConfigurationManagers)
+  , "ReportedName" :: Maybe (String)
+  , "ReportedVersion" :: Maybe (String)
+  , "Supported" :: Maybe (Boolean)
   }
 derive instance newtypeOperatingSystem :: Newtype OperatingSystem _
 derive instance repGenericOperatingSystem :: Generic OperatingSystem _
@@ -2686,19 +2685,19 @@ instance encodeOperatingSystem :: Encode OperatingSystem where encode = genericE
 
 -- | Constructs OperatingSystem from required parameters
 newOperatingSystem :: OperatingSystem
-newOperatingSystem  = OperatingSystem { "ConfigurationManagers": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "ReportedName": (NullOrUndefined Nothing), "ReportedVersion": (NullOrUndefined Nothing), "Supported": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newOperatingSystem  = OperatingSystem { "ConfigurationManagers": Nothing, "Id": Nothing, "Name": Nothing, "ReportedName": Nothing, "ReportedVersion": Nothing, "Supported": Nothing, "Type": Nothing }
 
 -- | Constructs OperatingSystem's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOperatingSystem' :: ( { "Name" :: NullOrUndefined (String) , "Id" :: NullOrUndefined (String) , "Type" :: NullOrUndefined (String) , "ConfigurationManagers" :: NullOrUndefined (OperatingSystemConfigurationManagers) , "ReportedName" :: NullOrUndefined (String) , "ReportedVersion" :: NullOrUndefined (String) , "Supported" :: NullOrUndefined (Boolean) } -> {"Name" :: NullOrUndefined (String) , "Id" :: NullOrUndefined (String) , "Type" :: NullOrUndefined (String) , "ConfigurationManagers" :: NullOrUndefined (OperatingSystemConfigurationManagers) , "ReportedName" :: NullOrUndefined (String) , "ReportedVersion" :: NullOrUndefined (String) , "Supported" :: NullOrUndefined (Boolean) } ) -> OperatingSystem
-newOperatingSystem'  customize = (OperatingSystem <<< customize) { "ConfigurationManagers": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "ReportedName": (NullOrUndefined Nothing), "ReportedVersion": (NullOrUndefined Nothing), "Supported": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newOperatingSystem' :: ( { "Name" :: Maybe (String) , "Id" :: Maybe (String) , "Type" :: Maybe (String) , "ConfigurationManagers" :: Maybe (OperatingSystemConfigurationManagers) , "ReportedName" :: Maybe (String) , "ReportedVersion" :: Maybe (String) , "Supported" :: Maybe (Boolean) } -> {"Name" :: Maybe (String) , "Id" :: Maybe (String) , "Type" :: Maybe (String) , "ConfigurationManagers" :: Maybe (OperatingSystemConfigurationManagers) , "ReportedName" :: Maybe (String) , "ReportedVersion" :: Maybe (String) , "Supported" :: Maybe (Boolean) } ) -> OperatingSystem
+newOperatingSystem'  customize = (OperatingSystem <<< customize) { "ConfigurationManagers": Nothing, "Id": Nothing, "Name": Nothing, "ReportedName": Nothing, "ReportedVersion": Nothing, "Supported": Nothing, "Type": Nothing }
 
 
 
 -- | <p>A block that contains information about the configuration manager (Chef) and the versions of the configuration manager that are supported for an operating system.</p>
 newtype OperatingSystemConfigurationManager = OperatingSystemConfigurationManager 
-  { "Name" :: NullOrUndefined (String)
-  , "Version" :: NullOrUndefined (String)
+  { "Name" :: Maybe (String)
+  , "Version" :: Maybe (String)
   }
 derive instance newtypeOperatingSystemConfigurationManager :: Newtype OperatingSystemConfigurationManager _
 derive instance repGenericOperatingSystemConfigurationManager :: Generic OperatingSystemConfigurationManager _
@@ -2708,12 +2707,12 @@ instance encodeOperatingSystemConfigurationManager :: Encode OperatingSystemConf
 
 -- | Constructs OperatingSystemConfigurationManager from required parameters
 newOperatingSystemConfigurationManager :: OperatingSystemConfigurationManager
-newOperatingSystemConfigurationManager  = OperatingSystemConfigurationManager { "Name": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newOperatingSystemConfigurationManager  = OperatingSystemConfigurationManager { "Name": Nothing, "Version": Nothing }
 
 -- | Constructs OperatingSystemConfigurationManager's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOperatingSystemConfigurationManager' :: ( { "Name" :: NullOrUndefined (String) , "Version" :: NullOrUndefined (String) } -> {"Name" :: NullOrUndefined (String) , "Version" :: NullOrUndefined (String) } ) -> OperatingSystemConfigurationManager
-newOperatingSystemConfigurationManager'  customize = (OperatingSystemConfigurationManager <<< customize) { "Name": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newOperatingSystemConfigurationManager' :: ( { "Name" :: Maybe (String) , "Version" :: Maybe (String) } -> {"Name" :: Maybe (String) , "Version" :: Maybe (String) } ) -> OperatingSystemConfigurationManager
+newOperatingSystemConfigurationManager'  customize = (OperatingSystemConfigurationManager <<< customize) { "Name": Nothing, "Version": Nothing }
 
 
 
@@ -2746,11 +2745,11 @@ instance encodeParameters :: Encode Parameters where encode = genericEncode opti
 
 -- | <p>Describes stack or user permissions.</p>
 newtype Permission = Permission 
-  { "StackId" :: NullOrUndefined (String)
-  , "IamUserArn" :: NullOrUndefined (String)
-  , "AllowSsh" :: NullOrUndefined (Boolean)
-  , "AllowSudo" :: NullOrUndefined (Boolean)
-  , "Level" :: NullOrUndefined (String)
+  { "StackId" :: Maybe (String)
+  , "IamUserArn" :: Maybe (String)
+  , "AllowSsh" :: Maybe (Boolean)
+  , "AllowSudo" :: Maybe (Boolean)
+  , "Level" :: Maybe (String)
   }
 derive instance newtypePermission :: Newtype Permission _
 derive instance repGenericPermission :: Generic Permission _
@@ -2760,12 +2759,12 @@ instance encodePermission :: Encode Permission where encode = genericEncode opti
 
 -- | Constructs Permission from required parameters
 newPermission :: Permission
-newPermission  = Permission { "AllowSsh": (NullOrUndefined Nothing), "AllowSudo": (NullOrUndefined Nothing), "IamUserArn": (NullOrUndefined Nothing), "Level": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newPermission  = Permission { "AllowSsh": Nothing, "AllowSudo": Nothing, "IamUserArn": Nothing, "Level": Nothing, "StackId": Nothing }
 
 -- | Constructs Permission's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPermission' :: ( { "StackId" :: NullOrUndefined (String) , "IamUserArn" :: NullOrUndefined (String) , "AllowSsh" :: NullOrUndefined (Boolean) , "AllowSudo" :: NullOrUndefined (Boolean) , "Level" :: NullOrUndefined (String) } -> {"StackId" :: NullOrUndefined (String) , "IamUserArn" :: NullOrUndefined (String) , "AllowSsh" :: NullOrUndefined (Boolean) , "AllowSudo" :: NullOrUndefined (Boolean) , "Level" :: NullOrUndefined (String) } ) -> Permission
-newPermission'  customize = (Permission <<< customize) { "AllowSsh": (NullOrUndefined Nothing), "AllowSudo": (NullOrUndefined Nothing), "IamUserArn": (NullOrUndefined Nothing), "Level": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newPermission' :: ( { "StackId" :: Maybe (String) , "IamUserArn" :: Maybe (String) , "AllowSsh" :: Maybe (Boolean) , "AllowSudo" :: Maybe (Boolean) , "Level" :: Maybe (String) } -> {"StackId" :: Maybe (String) , "IamUserArn" :: Maybe (String) , "AllowSsh" :: Maybe (Boolean) , "AllowSudo" :: Maybe (Boolean) , "Level" :: Maybe (String) } ) -> Permission
+newPermission'  customize = (Permission <<< customize) { "AllowSsh": Nothing, "AllowSudo": Nothing, "IamUserArn": Nothing, "Level": Nothing, "StackId": Nothing }
 
 
 
@@ -2780,19 +2779,19 @@ instance encodePermissions :: Encode Permissions where encode = genericEncode op
 
 -- | <p>Describes an instance's RAID array.</p>
 newtype RaidArray = RaidArray 
-  { "RaidArrayId" :: NullOrUndefined (String)
-  , "InstanceId" :: NullOrUndefined (String)
-  , "Name" :: NullOrUndefined (String)
-  , "RaidLevel" :: NullOrUndefined (Int)
-  , "NumberOfDisks" :: NullOrUndefined (Int)
-  , "Size" :: NullOrUndefined (Int)
-  , "Device" :: NullOrUndefined (String)
-  , "MountPoint" :: NullOrUndefined (String)
-  , "AvailabilityZone" :: NullOrUndefined (String)
-  , "CreatedAt" :: NullOrUndefined (DateTime)
-  , "StackId" :: NullOrUndefined (String)
-  , "VolumeType" :: NullOrUndefined (String)
-  , "Iops" :: NullOrUndefined (Int)
+  { "RaidArrayId" :: Maybe (String)
+  , "InstanceId" :: Maybe (String)
+  , "Name" :: Maybe (String)
+  , "RaidLevel" :: Maybe (Int)
+  , "NumberOfDisks" :: Maybe (Int)
+  , "Size" :: Maybe (Int)
+  , "Device" :: Maybe (String)
+  , "MountPoint" :: Maybe (String)
+  , "AvailabilityZone" :: Maybe (String)
+  , "CreatedAt" :: Maybe (DateTime)
+  , "StackId" :: Maybe (String)
+  , "VolumeType" :: Maybe (String)
+  , "Iops" :: Maybe (Int)
   }
 derive instance newtypeRaidArray :: Newtype RaidArray _
 derive instance repGenericRaidArray :: Generic RaidArray _
@@ -2802,12 +2801,12 @@ instance encodeRaidArray :: Encode RaidArray where encode = genericEncode option
 
 -- | Constructs RaidArray from required parameters
 newRaidArray :: RaidArray
-newRaidArray  = RaidArray { "AvailabilityZone": (NullOrUndefined Nothing), "CreatedAt": (NullOrUndefined Nothing), "Device": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "Iops": (NullOrUndefined Nothing), "MountPoint": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "NumberOfDisks": (NullOrUndefined Nothing), "RaidArrayId": (NullOrUndefined Nothing), "RaidLevel": (NullOrUndefined Nothing), "Size": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing), "VolumeType": (NullOrUndefined Nothing) }
+newRaidArray  = RaidArray { "AvailabilityZone": Nothing, "CreatedAt": Nothing, "Device": Nothing, "InstanceId": Nothing, "Iops": Nothing, "MountPoint": Nothing, "Name": Nothing, "NumberOfDisks": Nothing, "RaidArrayId": Nothing, "RaidLevel": Nothing, "Size": Nothing, "StackId": Nothing, "VolumeType": Nothing }
 
 -- | Constructs RaidArray's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRaidArray' :: ( { "RaidArrayId" :: NullOrUndefined (String) , "InstanceId" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "RaidLevel" :: NullOrUndefined (Int) , "NumberOfDisks" :: NullOrUndefined (Int) , "Size" :: NullOrUndefined (Int) , "Device" :: NullOrUndefined (String) , "MountPoint" :: NullOrUndefined (String) , "AvailabilityZone" :: NullOrUndefined (String) , "CreatedAt" :: NullOrUndefined (DateTime) , "StackId" :: NullOrUndefined (String) , "VolumeType" :: NullOrUndefined (String) , "Iops" :: NullOrUndefined (Int) } -> {"RaidArrayId" :: NullOrUndefined (String) , "InstanceId" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "RaidLevel" :: NullOrUndefined (Int) , "NumberOfDisks" :: NullOrUndefined (Int) , "Size" :: NullOrUndefined (Int) , "Device" :: NullOrUndefined (String) , "MountPoint" :: NullOrUndefined (String) , "AvailabilityZone" :: NullOrUndefined (String) , "CreatedAt" :: NullOrUndefined (DateTime) , "StackId" :: NullOrUndefined (String) , "VolumeType" :: NullOrUndefined (String) , "Iops" :: NullOrUndefined (Int) } ) -> RaidArray
-newRaidArray'  customize = (RaidArray <<< customize) { "AvailabilityZone": (NullOrUndefined Nothing), "CreatedAt": (NullOrUndefined Nothing), "Device": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "Iops": (NullOrUndefined Nothing), "MountPoint": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "NumberOfDisks": (NullOrUndefined Nothing), "RaidArrayId": (NullOrUndefined Nothing), "RaidLevel": (NullOrUndefined Nothing), "Size": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing), "VolumeType": (NullOrUndefined Nothing) }
+newRaidArray' :: ( { "RaidArrayId" :: Maybe (String) , "InstanceId" :: Maybe (String) , "Name" :: Maybe (String) , "RaidLevel" :: Maybe (Int) , "NumberOfDisks" :: Maybe (Int) , "Size" :: Maybe (Int) , "Device" :: Maybe (String) , "MountPoint" :: Maybe (String) , "AvailabilityZone" :: Maybe (String) , "CreatedAt" :: Maybe (DateTime) , "StackId" :: Maybe (String) , "VolumeType" :: Maybe (String) , "Iops" :: Maybe (Int) } -> {"RaidArrayId" :: Maybe (String) , "InstanceId" :: Maybe (String) , "Name" :: Maybe (String) , "RaidLevel" :: Maybe (Int) , "NumberOfDisks" :: Maybe (Int) , "Size" :: Maybe (Int) , "Device" :: Maybe (String) , "MountPoint" :: Maybe (String) , "AvailabilityZone" :: Maybe (String) , "CreatedAt" :: Maybe (DateTime) , "StackId" :: Maybe (String) , "VolumeType" :: Maybe (String) , "Iops" :: Maybe (Int) } ) -> RaidArray
+newRaidArray'  customize = (RaidArray <<< customize) { "AvailabilityZone": Nothing, "CreatedAt": Nothing, "Device": Nothing, "InstanceId": Nothing, "Iops": Nothing, "MountPoint": Nothing, "Name": Nothing, "NumberOfDisks": Nothing, "RaidArrayId": Nothing, "RaidLevel": Nothing, "Size": Nothing, "StackId": Nothing, "VolumeType": Nothing }
 
 
 
@@ -2822,15 +2821,15 @@ instance encodeRaidArrays :: Encode RaidArrays where encode = genericEncode opti
 
 -- | <p>Describes an Amazon RDS instance.</p>
 newtype RdsDbInstance = RdsDbInstance 
-  { "RdsDbInstanceArn" :: NullOrUndefined (String)
-  , "DbInstanceIdentifier" :: NullOrUndefined (String)
-  , "DbUser" :: NullOrUndefined (String)
-  , "DbPassword" :: NullOrUndefined (String)
-  , "Region" :: NullOrUndefined (String)
-  , "Address" :: NullOrUndefined (String)
-  , "Engine" :: NullOrUndefined (String)
-  , "StackId" :: NullOrUndefined (String)
-  , "MissingOnRds" :: NullOrUndefined (Boolean)
+  { "RdsDbInstanceArn" :: Maybe (String)
+  , "DbInstanceIdentifier" :: Maybe (String)
+  , "DbUser" :: Maybe (String)
+  , "DbPassword" :: Maybe (String)
+  , "Region" :: Maybe (String)
+  , "Address" :: Maybe (String)
+  , "Engine" :: Maybe (String)
+  , "StackId" :: Maybe (String)
+  , "MissingOnRds" :: Maybe (Boolean)
   }
 derive instance newtypeRdsDbInstance :: Newtype RdsDbInstance _
 derive instance repGenericRdsDbInstance :: Generic RdsDbInstance _
@@ -2840,12 +2839,12 @@ instance encodeRdsDbInstance :: Encode RdsDbInstance where encode = genericEncod
 
 -- | Constructs RdsDbInstance from required parameters
 newRdsDbInstance :: RdsDbInstance
-newRdsDbInstance  = RdsDbInstance { "Address": (NullOrUndefined Nothing), "DbInstanceIdentifier": (NullOrUndefined Nothing), "DbPassword": (NullOrUndefined Nothing), "DbUser": (NullOrUndefined Nothing), "Engine": (NullOrUndefined Nothing), "MissingOnRds": (NullOrUndefined Nothing), "RdsDbInstanceArn": (NullOrUndefined Nothing), "Region": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newRdsDbInstance  = RdsDbInstance { "Address": Nothing, "DbInstanceIdentifier": Nothing, "DbPassword": Nothing, "DbUser": Nothing, "Engine": Nothing, "MissingOnRds": Nothing, "RdsDbInstanceArn": Nothing, "Region": Nothing, "StackId": Nothing }
 
 -- | Constructs RdsDbInstance's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRdsDbInstance' :: ( { "RdsDbInstanceArn" :: NullOrUndefined (String) , "DbInstanceIdentifier" :: NullOrUndefined (String) , "DbUser" :: NullOrUndefined (String) , "DbPassword" :: NullOrUndefined (String) , "Region" :: NullOrUndefined (String) , "Address" :: NullOrUndefined (String) , "Engine" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "MissingOnRds" :: NullOrUndefined (Boolean) } -> {"RdsDbInstanceArn" :: NullOrUndefined (String) , "DbInstanceIdentifier" :: NullOrUndefined (String) , "DbUser" :: NullOrUndefined (String) , "DbPassword" :: NullOrUndefined (String) , "Region" :: NullOrUndefined (String) , "Address" :: NullOrUndefined (String) , "Engine" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "MissingOnRds" :: NullOrUndefined (Boolean) } ) -> RdsDbInstance
-newRdsDbInstance'  customize = (RdsDbInstance <<< customize) { "Address": (NullOrUndefined Nothing), "DbInstanceIdentifier": (NullOrUndefined Nothing), "DbPassword": (NullOrUndefined Nothing), "DbUser": (NullOrUndefined Nothing), "Engine": (NullOrUndefined Nothing), "MissingOnRds": (NullOrUndefined Nothing), "RdsDbInstanceArn": (NullOrUndefined Nothing), "Region": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newRdsDbInstance' :: ( { "RdsDbInstanceArn" :: Maybe (String) , "DbInstanceIdentifier" :: Maybe (String) , "DbUser" :: Maybe (String) , "DbPassword" :: Maybe (String) , "Region" :: Maybe (String) , "Address" :: Maybe (String) , "Engine" :: Maybe (String) , "StackId" :: Maybe (String) , "MissingOnRds" :: Maybe (Boolean) } -> {"RdsDbInstanceArn" :: Maybe (String) , "DbInstanceIdentifier" :: Maybe (String) , "DbUser" :: Maybe (String) , "DbPassword" :: Maybe (String) , "Region" :: Maybe (String) , "Address" :: Maybe (String) , "Engine" :: Maybe (String) , "StackId" :: Maybe (String) , "MissingOnRds" :: Maybe (Boolean) } ) -> RdsDbInstance
+newRdsDbInstance'  customize = (RdsDbInstance <<< customize) { "Address": Nothing, "DbInstanceIdentifier": Nothing, "DbPassword": Nothing, "DbUser": Nothing, "Engine": Nothing, "MissingOnRds": Nothing, "RdsDbInstanceArn": Nothing, "Region": Nothing, "StackId": Nothing }
 
 
 
@@ -2880,11 +2879,11 @@ newRebootInstanceRequest' _InstanceId customize = (RebootInstanceRequest <<< cus
 
 -- | <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. In addition, you can provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events. </p> <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the .rb extension. For example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the repository's phpapp2 folder.</p>
 newtype Recipes = Recipes 
-  { "Setup" :: NullOrUndefined (Strings)
-  , "Configure" :: NullOrUndefined (Strings)
-  , "Deploy" :: NullOrUndefined (Strings)
-  , "Undeploy" :: NullOrUndefined (Strings)
-  , "Shutdown" :: NullOrUndefined (Strings)
+  { "Setup" :: Maybe (Strings)
+  , "Configure" :: Maybe (Strings)
+  , "Deploy" :: Maybe (Strings)
+  , "Undeploy" :: Maybe (Strings)
+  , "Shutdown" :: Maybe (Strings)
   }
 derive instance newtypeRecipes :: Newtype Recipes _
 derive instance repGenericRecipes :: Generic Recipes _
@@ -2894,12 +2893,12 @@ instance encodeRecipes :: Encode Recipes where encode = genericEncode options
 
 -- | Constructs Recipes from required parameters
 newRecipes :: Recipes
-newRecipes  = Recipes { "Configure": (NullOrUndefined Nothing), "Deploy": (NullOrUndefined Nothing), "Setup": (NullOrUndefined Nothing), "Shutdown": (NullOrUndefined Nothing), "Undeploy": (NullOrUndefined Nothing) }
+newRecipes  = Recipes { "Configure": Nothing, "Deploy": Nothing, "Setup": Nothing, "Shutdown": Nothing, "Undeploy": Nothing }
 
 -- | Constructs Recipes's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRecipes' :: ( { "Setup" :: NullOrUndefined (Strings) , "Configure" :: NullOrUndefined (Strings) , "Deploy" :: NullOrUndefined (Strings) , "Undeploy" :: NullOrUndefined (Strings) , "Shutdown" :: NullOrUndefined (Strings) } -> {"Setup" :: NullOrUndefined (Strings) , "Configure" :: NullOrUndefined (Strings) , "Deploy" :: NullOrUndefined (Strings) , "Undeploy" :: NullOrUndefined (Strings) , "Shutdown" :: NullOrUndefined (Strings) } ) -> Recipes
-newRecipes'  customize = (Recipes <<< customize) { "Configure": (NullOrUndefined Nothing), "Deploy": (NullOrUndefined Nothing), "Setup": (NullOrUndefined Nothing), "Shutdown": (NullOrUndefined Nothing), "Undeploy": (NullOrUndefined Nothing) }
+newRecipes' :: ( { "Setup" :: Maybe (Strings) , "Configure" :: Maybe (Strings) , "Deploy" :: Maybe (Strings) , "Undeploy" :: Maybe (Strings) , "Shutdown" :: Maybe (Strings) } -> {"Setup" :: Maybe (Strings) , "Configure" :: Maybe (Strings) , "Deploy" :: Maybe (Strings) , "Undeploy" :: Maybe (Strings) , "Shutdown" :: Maybe (Strings) } ) -> Recipes
+newRecipes'  customize = (Recipes <<< customize) { "Configure": Nothing, "Deploy": Nothing, "Setup": Nothing, "Shutdown": Nothing, "Undeploy": Nothing }
 
 
 
@@ -2926,7 +2925,7 @@ newRegisterEcsClusterRequest' _EcsClusterArn _StackId customize = (RegisterEcsCl
 
 -- | <p>Contains the response to a <code>RegisterEcsCluster</code> request.</p>
 newtype RegisterEcsClusterResult = RegisterEcsClusterResult 
-  { "EcsClusterArn" :: NullOrUndefined (String)
+  { "EcsClusterArn" :: Maybe (String)
   }
 derive instance newtypeRegisterEcsClusterResult :: Newtype RegisterEcsClusterResult _
 derive instance repGenericRegisterEcsClusterResult :: Generic RegisterEcsClusterResult _
@@ -2936,12 +2935,12 @@ instance encodeRegisterEcsClusterResult :: Encode RegisterEcsClusterResult where
 
 -- | Constructs RegisterEcsClusterResult from required parameters
 newRegisterEcsClusterResult :: RegisterEcsClusterResult
-newRegisterEcsClusterResult  = RegisterEcsClusterResult { "EcsClusterArn": (NullOrUndefined Nothing) }
+newRegisterEcsClusterResult  = RegisterEcsClusterResult { "EcsClusterArn": Nothing }
 
 -- | Constructs RegisterEcsClusterResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRegisterEcsClusterResult' :: ( { "EcsClusterArn" :: NullOrUndefined (String) } -> {"EcsClusterArn" :: NullOrUndefined (String) } ) -> RegisterEcsClusterResult
-newRegisterEcsClusterResult'  customize = (RegisterEcsClusterResult <<< customize) { "EcsClusterArn": (NullOrUndefined Nothing) }
+newRegisterEcsClusterResult' :: ( { "EcsClusterArn" :: Maybe (String) } -> {"EcsClusterArn" :: Maybe (String) } ) -> RegisterEcsClusterResult
+newRegisterEcsClusterResult'  customize = (RegisterEcsClusterResult <<< customize) { "EcsClusterArn": Nothing }
 
 
 
@@ -2968,7 +2967,7 @@ newRegisterElasticIpRequest' _ElasticIp _StackId customize = (RegisterElasticIpR
 
 -- | <p>Contains the response to a <code>RegisterElasticIp</code> request.</p>
 newtype RegisterElasticIpResult = RegisterElasticIpResult 
-  { "ElasticIp" :: NullOrUndefined (String)
+  { "ElasticIp" :: Maybe (String)
   }
 derive instance newtypeRegisterElasticIpResult :: Newtype RegisterElasticIpResult _
 derive instance repGenericRegisterElasticIpResult :: Generic RegisterElasticIpResult _
@@ -2978,23 +2977,23 @@ instance encodeRegisterElasticIpResult :: Encode RegisterElasticIpResult where e
 
 -- | Constructs RegisterElasticIpResult from required parameters
 newRegisterElasticIpResult :: RegisterElasticIpResult
-newRegisterElasticIpResult  = RegisterElasticIpResult { "ElasticIp": (NullOrUndefined Nothing) }
+newRegisterElasticIpResult  = RegisterElasticIpResult { "ElasticIp": Nothing }
 
 -- | Constructs RegisterElasticIpResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRegisterElasticIpResult' :: ( { "ElasticIp" :: NullOrUndefined (String) } -> {"ElasticIp" :: NullOrUndefined (String) } ) -> RegisterElasticIpResult
-newRegisterElasticIpResult'  customize = (RegisterElasticIpResult <<< customize) { "ElasticIp": (NullOrUndefined Nothing) }
+newRegisterElasticIpResult' :: ( { "ElasticIp" :: Maybe (String) } -> {"ElasticIp" :: Maybe (String) } ) -> RegisterElasticIpResult
+newRegisterElasticIpResult'  customize = (RegisterElasticIpResult <<< customize) { "ElasticIp": Nothing }
 
 
 
 newtype RegisterInstanceRequest = RegisterInstanceRequest 
   { "StackId" :: (String)
-  , "Hostname" :: NullOrUndefined (String)
-  , "PublicIp" :: NullOrUndefined (String)
-  , "PrivateIp" :: NullOrUndefined (String)
-  , "RsaPublicKey" :: NullOrUndefined (String)
-  , "RsaPublicKeyFingerprint" :: NullOrUndefined (String)
-  , "InstanceIdentity" :: NullOrUndefined (InstanceIdentity)
+  , "Hostname" :: Maybe (String)
+  , "PublicIp" :: Maybe (String)
+  , "PrivateIp" :: Maybe (String)
+  , "RsaPublicKey" :: Maybe (String)
+  , "RsaPublicKeyFingerprint" :: Maybe (String)
+  , "InstanceIdentity" :: Maybe (InstanceIdentity)
   }
 derive instance newtypeRegisterInstanceRequest :: Newtype RegisterInstanceRequest _
 derive instance repGenericRegisterInstanceRequest :: Generic RegisterInstanceRequest _
@@ -3004,18 +3003,18 @@ instance encodeRegisterInstanceRequest :: Encode RegisterInstanceRequest where e
 
 -- | Constructs RegisterInstanceRequest from required parameters
 newRegisterInstanceRequest :: String -> RegisterInstanceRequest
-newRegisterInstanceRequest _StackId = RegisterInstanceRequest { "StackId": _StackId, "Hostname": (NullOrUndefined Nothing), "InstanceIdentity": (NullOrUndefined Nothing), "PrivateIp": (NullOrUndefined Nothing), "PublicIp": (NullOrUndefined Nothing), "RsaPublicKey": (NullOrUndefined Nothing), "RsaPublicKeyFingerprint": (NullOrUndefined Nothing) }
+newRegisterInstanceRequest _StackId = RegisterInstanceRequest { "StackId": _StackId, "Hostname": Nothing, "InstanceIdentity": Nothing, "PrivateIp": Nothing, "PublicIp": Nothing, "RsaPublicKey": Nothing, "RsaPublicKeyFingerprint": Nothing }
 
 -- | Constructs RegisterInstanceRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRegisterInstanceRequest' :: String -> ( { "StackId" :: (String) , "Hostname" :: NullOrUndefined (String) , "PublicIp" :: NullOrUndefined (String) , "PrivateIp" :: NullOrUndefined (String) , "RsaPublicKey" :: NullOrUndefined (String) , "RsaPublicKeyFingerprint" :: NullOrUndefined (String) , "InstanceIdentity" :: NullOrUndefined (InstanceIdentity) } -> {"StackId" :: (String) , "Hostname" :: NullOrUndefined (String) , "PublicIp" :: NullOrUndefined (String) , "PrivateIp" :: NullOrUndefined (String) , "RsaPublicKey" :: NullOrUndefined (String) , "RsaPublicKeyFingerprint" :: NullOrUndefined (String) , "InstanceIdentity" :: NullOrUndefined (InstanceIdentity) } ) -> RegisterInstanceRequest
-newRegisterInstanceRequest' _StackId customize = (RegisterInstanceRequest <<< customize) { "StackId": _StackId, "Hostname": (NullOrUndefined Nothing), "InstanceIdentity": (NullOrUndefined Nothing), "PrivateIp": (NullOrUndefined Nothing), "PublicIp": (NullOrUndefined Nothing), "RsaPublicKey": (NullOrUndefined Nothing), "RsaPublicKeyFingerprint": (NullOrUndefined Nothing) }
+newRegisterInstanceRequest' :: String -> ( { "StackId" :: (String) , "Hostname" :: Maybe (String) , "PublicIp" :: Maybe (String) , "PrivateIp" :: Maybe (String) , "RsaPublicKey" :: Maybe (String) , "RsaPublicKeyFingerprint" :: Maybe (String) , "InstanceIdentity" :: Maybe (InstanceIdentity) } -> {"StackId" :: (String) , "Hostname" :: Maybe (String) , "PublicIp" :: Maybe (String) , "PrivateIp" :: Maybe (String) , "RsaPublicKey" :: Maybe (String) , "RsaPublicKeyFingerprint" :: Maybe (String) , "InstanceIdentity" :: Maybe (InstanceIdentity) } ) -> RegisterInstanceRequest
+newRegisterInstanceRequest' _StackId customize = (RegisterInstanceRequest <<< customize) { "StackId": _StackId, "Hostname": Nothing, "InstanceIdentity": Nothing, "PrivateIp": Nothing, "PublicIp": Nothing, "RsaPublicKey": Nothing, "RsaPublicKeyFingerprint": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>RegisterInstanceResult</code> request.</p>
 newtype RegisterInstanceResult = RegisterInstanceResult 
-  { "InstanceId" :: NullOrUndefined (String)
+  { "InstanceId" :: Maybe (String)
   }
 derive instance newtypeRegisterInstanceResult :: Newtype RegisterInstanceResult _
 derive instance repGenericRegisterInstanceResult :: Generic RegisterInstanceResult _
@@ -3025,12 +3024,12 @@ instance encodeRegisterInstanceResult :: Encode RegisterInstanceResult where enc
 
 -- | Constructs RegisterInstanceResult from required parameters
 newRegisterInstanceResult :: RegisterInstanceResult
-newRegisterInstanceResult  = RegisterInstanceResult { "InstanceId": (NullOrUndefined Nothing) }
+newRegisterInstanceResult  = RegisterInstanceResult { "InstanceId": Nothing }
 
 -- | Constructs RegisterInstanceResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRegisterInstanceResult' :: ( { "InstanceId" :: NullOrUndefined (String) } -> {"InstanceId" :: NullOrUndefined (String) } ) -> RegisterInstanceResult
-newRegisterInstanceResult'  customize = (RegisterInstanceResult <<< customize) { "InstanceId": (NullOrUndefined Nothing) }
+newRegisterInstanceResult' :: ( { "InstanceId" :: Maybe (String) } -> {"InstanceId" :: Maybe (String) } ) -> RegisterInstanceResult
+newRegisterInstanceResult'  customize = (RegisterInstanceResult <<< customize) { "InstanceId": Nothing }
 
 
 
@@ -3058,7 +3057,7 @@ newRegisterRdsDbInstanceRequest' _DbPassword _DbUser _RdsDbInstanceArn _StackId 
 
 
 newtype RegisterVolumeRequest = RegisterVolumeRequest 
-  { "Ec2VolumeId" :: NullOrUndefined (String)
+  { "Ec2VolumeId" :: Maybe (String)
   , "StackId" :: (String)
   }
 derive instance newtypeRegisterVolumeRequest :: Newtype RegisterVolumeRequest _
@@ -3069,18 +3068,18 @@ instance encodeRegisterVolumeRequest :: Encode RegisterVolumeRequest where encod
 
 -- | Constructs RegisterVolumeRequest from required parameters
 newRegisterVolumeRequest :: String -> RegisterVolumeRequest
-newRegisterVolumeRequest _StackId = RegisterVolumeRequest { "StackId": _StackId, "Ec2VolumeId": (NullOrUndefined Nothing) }
+newRegisterVolumeRequest _StackId = RegisterVolumeRequest { "StackId": _StackId, "Ec2VolumeId": Nothing }
 
 -- | Constructs RegisterVolumeRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRegisterVolumeRequest' :: String -> ( { "Ec2VolumeId" :: NullOrUndefined (String) , "StackId" :: (String) } -> {"Ec2VolumeId" :: NullOrUndefined (String) , "StackId" :: (String) } ) -> RegisterVolumeRequest
-newRegisterVolumeRequest' _StackId customize = (RegisterVolumeRequest <<< customize) { "StackId": _StackId, "Ec2VolumeId": (NullOrUndefined Nothing) }
+newRegisterVolumeRequest' :: String -> ( { "Ec2VolumeId" :: Maybe (String) , "StackId" :: (String) } -> {"Ec2VolumeId" :: Maybe (String) , "StackId" :: (String) } ) -> RegisterVolumeRequest
+newRegisterVolumeRequest' _StackId customize = (RegisterVolumeRequest <<< customize) { "StackId": _StackId, "Ec2VolumeId": Nothing }
 
 
 
 -- | <p>Contains the response to a <code>RegisterVolume</code> request.</p>
 newtype RegisterVolumeResult = RegisterVolumeResult 
-  { "VolumeId" :: NullOrUndefined (String)
+  { "VolumeId" :: Maybe (String)
   }
 derive instance newtypeRegisterVolumeResult :: Newtype RegisterVolumeResult _
 derive instance repGenericRegisterVolumeResult :: Generic RegisterVolumeResult _
@@ -3090,20 +3089,20 @@ instance encodeRegisterVolumeResult :: Encode RegisterVolumeResult where encode 
 
 -- | Constructs RegisterVolumeResult from required parameters
 newRegisterVolumeResult :: RegisterVolumeResult
-newRegisterVolumeResult  = RegisterVolumeResult { "VolumeId": (NullOrUndefined Nothing) }
+newRegisterVolumeResult  = RegisterVolumeResult { "VolumeId": Nothing }
 
 -- | Constructs RegisterVolumeResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRegisterVolumeResult' :: ( { "VolumeId" :: NullOrUndefined (String) } -> {"VolumeId" :: NullOrUndefined (String) } ) -> RegisterVolumeResult
-newRegisterVolumeResult'  customize = (RegisterVolumeResult <<< customize) { "VolumeId": (NullOrUndefined Nothing) }
+newRegisterVolumeResult' :: ( { "VolumeId" :: Maybe (String) } -> {"VolumeId" :: Maybe (String) } ) -> RegisterVolumeResult
+newRegisterVolumeResult'  customize = (RegisterVolumeResult <<< customize) { "VolumeId": Nothing }
 
 
 
 -- | <p>A registered instance's reported operating system.</p>
 newtype ReportedOs = ReportedOs 
-  { "Family" :: NullOrUndefined (String)
-  , "Name" :: NullOrUndefined (String)
-  , "Version" :: NullOrUndefined (String)
+  { "Family" :: Maybe (String)
+  , "Name" :: Maybe (String)
+  , "Version" :: Maybe (String)
   }
 derive instance newtypeReportedOs :: Newtype ReportedOs _
 derive instance repGenericReportedOs :: Generic ReportedOs _
@@ -3113,12 +3112,12 @@ instance encodeReportedOs :: Encode ReportedOs where encode = genericEncode opti
 
 -- | Constructs ReportedOs from required parameters
 newReportedOs :: ReportedOs
-newReportedOs  = ReportedOs { "Family": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newReportedOs  = ReportedOs { "Family": Nothing, "Name": Nothing, "Version": Nothing }
 
 -- | Constructs ReportedOs's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReportedOs' :: ( { "Family" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "Version" :: NullOrUndefined (String) } -> {"Family" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "Version" :: NullOrUndefined (String) } ) -> ReportedOs
-newReportedOs'  customize = (ReportedOs <<< customize) { "Family": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newReportedOs' :: ( { "Family" :: Maybe (String) , "Name" :: Maybe (String) , "Version" :: Maybe (String) } -> {"Family" :: Maybe (String) , "Name" :: Maybe (String) , "Version" :: Maybe (String) } ) -> ReportedOs
+newReportedOs'  customize = (ReportedOs <<< customize) { "Family": Nothing, "Name": Nothing, "Version": Nothing }
 
 
 
@@ -3133,7 +3132,7 @@ instance encodeResourceArn :: Encode ResourceArn where encode = genericEncode op
 
 -- | <p>Indicates that a resource was not found.</p>
 newtype ResourceNotFoundException = ResourceNotFoundException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeResourceNotFoundException :: Newtype ResourceNotFoundException _
 derive instance repGenericResourceNotFoundException :: Generic ResourceNotFoundException _
@@ -3143,12 +3142,12 @@ instance encodeResourceNotFoundException :: Encode ResourceNotFoundException whe
 
 -- | Constructs ResourceNotFoundException from required parameters
 newResourceNotFoundException :: ResourceNotFoundException
-newResourceNotFoundException  = ResourceNotFoundException { "message": (NullOrUndefined Nothing) }
+newResourceNotFoundException  = ResourceNotFoundException { "message": Nothing }
 
 -- | Constructs ResourceNotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceNotFoundException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> ResourceNotFoundException
-newResourceNotFoundException'  customize = (ResourceNotFoundException <<< customize) { "message": (NullOrUndefined Nothing) }
+newResourceNotFoundException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> ResourceNotFoundException
+newResourceNotFoundException'  customize = (ResourceNotFoundException <<< customize) { "message": Nothing }
 
 
 
@@ -3163,10 +3162,10 @@ instance encodeRootDeviceType :: Encode RootDeviceType where encode = genericEnc
 
 -- | <p>Describes a user's SSH information.</p>
 newtype SelfUserProfile = SelfUserProfile 
-  { "IamUserArn" :: NullOrUndefined (String)
-  , "Name" :: NullOrUndefined (String)
-  , "SshUsername" :: NullOrUndefined (String)
-  , "SshPublicKey" :: NullOrUndefined (String)
+  { "IamUserArn" :: Maybe (String)
+  , "Name" :: Maybe (String)
+  , "SshUsername" :: Maybe (String)
+  , "SshPublicKey" :: Maybe (String)
   }
 derive instance newtypeSelfUserProfile :: Newtype SelfUserProfile _
 derive instance repGenericSelfUserProfile :: Generic SelfUserProfile _
@@ -3176,23 +3175,23 @@ instance encodeSelfUserProfile :: Encode SelfUserProfile where encode = genericE
 
 -- | Constructs SelfUserProfile from required parameters
 newSelfUserProfile :: SelfUserProfile
-newSelfUserProfile  = SelfUserProfile { "IamUserArn": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "SshPublicKey": (NullOrUndefined Nothing), "SshUsername": (NullOrUndefined Nothing) }
+newSelfUserProfile  = SelfUserProfile { "IamUserArn": Nothing, "Name": Nothing, "SshPublicKey": Nothing, "SshUsername": Nothing }
 
 -- | Constructs SelfUserProfile's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSelfUserProfile' :: ( { "IamUserArn" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "SshUsername" :: NullOrUndefined (String) , "SshPublicKey" :: NullOrUndefined (String) } -> {"IamUserArn" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "SshUsername" :: NullOrUndefined (String) , "SshPublicKey" :: NullOrUndefined (String) } ) -> SelfUserProfile
-newSelfUserProfile'  customize = (SelfUserProfile <<< customize) { "IamUserArn": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "SshPublicKey": (NullOrUndefined Nothing), "SshUsername": (NullOrUndefined Nothing) }
+newSelfUserProfile' :: ( { "IamUserArn" :: Maybe (String) , "Name" :: Maybe (String) , "SshUsername" :: Maybe (String) , "SshPublicKey" :: Maybe (String) } -> {"IamUserArn" :: Maybe (String) , "Name" :: Maybe (String) , "SshUsername" :: Maybe (String) , "SshPublicKey" :: Maybe (String) } ) -> SelfUserProfile
+newSelfUserProfile'  customize = (SelfUserProfile <<< customize) { "IamUserArn": Nothing, "Name": Nothing, "SshPublicKey": Nothing, "SshUsername": Nothing }
 
 
 
 -- | <p>Describes an AWS OpsWorks Stacks service error.</p>
 newtype ServiceError = ServiceError 
-  { "ServiceErrorId" :: NullOrUndefined (String)
-  , "StackId" :: NullOrUndefined (String)
-  , "InstanceId" :: NullOrUndefined (String)
-  , "Type" :: NullOrUndefined (String)
-  , "Message" :: NullOrUndefined (String)
-  , "CreatedAt" :: NullOrUndefined (DateTime)
+  { "ServiceErrorId" :: Maybe (String)
+  , "StackId" :: Maybe (String)
+  , "InstanceId" :: Maybe (String)
+  , "Type" :: Maybe (String)
+  , "Message" :: Maybe (String)
+  , "CreatedAt" :: Maybe (DateTime)
   }
 derive instance newtypeServiceError :: Newtype ServiceError _
 derive instance repGenericServiceError :: Generic ServiceError _
@@ -3202,12 +3201,12 @@ instance encodeServiceError :: Encode ServiceError where encode = genericEncode 
 
 -- | Constructs ServiceError from required parameters
 newServiceError :: ServiceError
-newServiceError  = ServiceError { "CreatedAt": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing), "ServiceErrorId": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newServiceError  = ServiceError { "CreatedAt": Nothing, "InstanceId": Nothing, "Message": Nothing, "ServiceErrorId": Nothing, "StackId": Nothing, "Type": Nothing }
 
 -- | Constructs ServiceError's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newServiceError' :: ( { "ServiceErrorId" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "InstanceId" :: NullOrUndefined (String) , "Type" :: NullOrUndefined (String) , "Message" :: NullOrUndefined (String) , "CreatedAt" :: NullOrUndefined (DateTime) } -> {"ServiceErrorId" :: NullOrUndefined (String) , "StackId" :: NullOrUndefined (String) , "InstanceId" :: NullOrUndefined (String) , "Type" :: NullOrUndefined (String) , "Message" :: NullOrUndefined (String) , "CreatedAt" :: NullOrUndefined (DateTime) } ) -> ServiceError
-newServiceError'  customize = (ServiceError <<< customize) { "CreatedAt": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing), "ServiceErrorId": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newServiceError' :: ( { "ServiceErrorId" :: Maybe (String) , "StackId" :: Maybe (String) , "InstanceId" :: Maybe (String) , "Type" :: Maybe (String) , "Message" :: Maybe (String) , "CreatedAt" :: Maybe (DateTime) } -> {"ServiceErrorId" :: Maybe (String) , "StackId" :: Maybe (String) , "InstanceId" :: Maybe (String) , "Type" :: Maybe (String) , "Message" :: Maybe (String) , "CreatedAt" :: Maybe (DateTime) } ) -> ServiceError
+newServiceError'  customize = (ServiceError <<< customize) { "CreatedAt": Nothing, "InstanceId": Nothing, "Message": Nothing, "ServiceErrorId": Nothing, "StackId": Nothing, "Type": Nothing }
 
 
 
@@ -3222,9 +3221,9 @@ instance encodeServiceErrors :: Encode ServiceErrors where encode = genericEncod
 
 newtype SetLoadBasedAutoScalingRequest = SetLoadBasedAutoScalingRequest 
   { "LayerId" :: (String)
-  , "Enable" :: NullOrUndefined (Boolean)
-  , "UpScaling" :: NullOrUndefined (AutoScalingThresholds)
-  , "DownScaling" :: NullOrUndefined (AutoScalingThresholds)
+  , "Enable" :: Maybe (Boolean)
+  , "UpScaling" :: Maybe (AutoScalingThresholds)
+  , "DownScaling" :: Maybe (AutoScalingThresholds)
   }
 derive instance newtypeSetLoadBasedAutoScalingRequest :: Newtype SetLoadBasedAutoScalingRequest _
 derive instance repGenericSetLoadBasedAutoScalingRequest :: Generic SetLoadBasedAutoScalingRequest _
@@ -3234,21 +3233,21 @@ instance encodeSetLoadBasedAutoScalingRequest :: Encode SetLoadBasedAutoScalingR
 
 -- | Constructs SetLoadBasedAutoScalingRequest from required parameters
 newSetLoadBasedAutoScalingRequest :: String -> SetLoadBasedAutoScalingRequest
-newSetLoadBasedAutoScalingRequest _LayerId = SetLoadBasedAutoScalingRequest { "LayerId": _LayerId, "DownScaling": (NullOrUndefined Nothing), "Enable": (NullOrUndefined Nothing), "UpScaling": (NullOrUndefined Nothing) }
+newSetLoadBasedAutoScalingRequest _LayerId = SetLoadBasedAutoScalingRequest { "LayerId": _LayerId, "DownScaling": Nothing, "Enable": Nothing, "UpScaling": Nothing }
 
 -- | Constructs SetLoadBasedAutoScalingRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSetLoadBasedAutoScalingRequest' :: String -> ( { "LayerId" :: (String) , "Enable" :: NullOrUndefined (Boolean) , "UpScaling" :: NullOrUndefined (AutoScalingThresholds) , "DownScaling" :: NullOrUndefined (AutoScalingThresholds) } -> {"LayerId" :: (String) , "Enable" :: NullOrUndefined (Boolean) , "UpScaling" :: NullOrUndefined (AutoScalingThresholds) , "DownScaling" :: NullOrUndefined (AutoScalingThresholds) } ) -> SetLoadBasedAutoScalingRequest
-newSetLoadBasedAutoScalingRequest' _LayerId customize = (SetLoadBasedAutoScalingRequest <<< customize) { "LayerId": _LayerId, "DownScaling": (NullOrUndefined Nothing), "Enable": (NullOrUndefined Nothing), "UpScaling": (NullOrUndefined Nothing) }
+newSetLoadBasedAutoScalingRequest' :: String -> ( { "LayerId" :: (String) , "Enable" :: Maybe (Boolean) , "UpScaling" :: Maybe (AutoScalingThresholds) , "DownScaling" :: Maybe (AutoScalingThresholds) } -> {"LayerId" :: (String) , "Enable" :: Maybe (Boolean) , "UpScaling" :: Maybe (AutoScalingThresholds) , "DownScaling" :: Maybe (AutoScalingThresholds) } ) -> SetLoadBasedAutoScalingRequest
+newSetLoadBasedAutoScalingRequest' _LayerId customize = (SetLoadBasedAutoScalingRequest <<< customize) { "LayerId": _LayerId, "DownScaling": Nothing, "Enable": Nothing, "UpScaling": Nothing }
 
 
 
 newtype SetPermissionRequest = SetPermissionRequest 
   { "StackId" :: (String)
   , "IamUserArn" :: (String)
-  , "AllowSsh" :: NullOrUndefined (Boolean)
-  , "AllowSudo" :: NullOrUndefined (Boolean)
-  , "Level" :: NullOrUndefined (String)
+  , "AllowSsh" :: Maybe (Boolean)
+  , "AllowSudo" :: Maybe (Boolean)
+  , "Level" :: Maybe (String)
   }
 derive instance newtypeSetPermissionRequest :: Newtype SetPermissionRequest _
 derive instance repGenericSetPermissionRequest :: Generic SetPermissionRequest _
@@ -3258,18 +3257,18 @@ instance encodeSetPermissionRequest :: Encode SetPermissionRequest where encode 
 
 -- | Constructs SetPermissionRequest from required parameters
 newSetPermissionRequest :: String -> String -> SetPermissionRequest
-newSetPermissionRequest _IamUserArn _StackId = SetPermissionRequest { "IamUserArn": _IamUserArn, "StackId": _StackId, "AllowSsh": (NullOrUndefined Nothing), "AllowSudo": (NullOrUndefined Nothing), "Level": (NullOrUndefined Nothing) }
+newSetPermissionRequest _IamUserArn _StackId = SetPermissionRequest { "IamUserArn": _IamUserArn, "StackId": _StackId, "AllowSsh": Nothing, "AllowSudo": Nothing, "Level": Nothing }
 
 -- | Constructs SetPermissionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSetPermissionRequest' :: String -> String -> ( { "StackId" :: (String) , "IamUserArn" :: (String) , "AllowSsh" :: NullOrUndefined (Boolean) , "AllowSudo" :: NullOrUndefined (Boolean) , "Level" :: NullOrUndefined (String) } -> {"StackId" :: (String) , "IamUserArn" :: (String) , "AllowSsh" :: NullOrUndefined (Boolean) , "AllowSudo" :: NullOrUndefined (Boolean) , "Level" :: NullOrUndefined (String) } ) -> SetPermissionRequest
-newSetPermissionRequest' _IamUserArn _StackId customize = (SetPermissionRequest <<< customize) { "IamUserArn": _IamUserArn, "StackId": _StackId, "AllowSsh": (NullOrUndefined Nothing), "AllowSudo": (NullOrUndefined Nothing), "Level": (NullOrUndefined Nothing) }
+newSetPermissionRequest' :: String -> String -> ( { "StackId" :: (String) , "IamUserArn" :: (String) , "AllowSsh" :: Maybe (Boolean) , "AllowSudo" :: Maybe (Boolean) , "Level" :: Maybe (String) } -> {"StackId" :: (String) , "IamUserArn" :: (String) , "AllowSsh" :: Maybe (Boolean) , "AllowSudo" :: Maybe (Boolean) , "Level" :: Maybe (String) } ) -> SetPermissionRequest
+newSetPermissionRequest' _IamUserArn _StackId customize = (SetPermissionRequest <<< customize) { "IamUserArn": _IamUserArn, "StackId": _StackId, "AllowSsh": Nothing, "AllowSudo": Nothing, "Level": Nothing }
 
 
 
 newtype SetTimeBasedAutoScalingRequest = SetTimeBasedAutoScalingRequest 
   { "InstanceId" :: (String)
-  , "AutoScalingSchedule" :: NullOrUndefined (WeeklyAutoScalingSchedule)
+  , "AutoScalingSchedule" :: Maybe (WeeklyAutoScalingSchedule)
   }
 derive instance newtypeSetTimeBasedAutoScalingRequest :: Newtype SetTimeBasedAutoScalingRequest _
 derive instance repGenericSetTimeBasedAutoScalingRequest :: Generic SetTimeBasedAutoScalingRequest _
@@ -3279,19 +3278,19 @@ instance encodeSetTimeBasedAutoScalingRequest :: Encode SetTimeBasedAutoScalingR
 
 -- | Constructs SetTimeBasedAutoScalingRequest from required parameters
 newSetTimeBasedAutoScalingRequest :: String -> SetTimeBasedAutoScalingRequest
-newSetTimeBasedAutoScalingRequest _InstanceId = SetTimeBasedAutoScalingRequest { "InstanceId": _InstanceId, "AutoScalingSchedule": (NullOrUndefined Nothing) }
+newSetTimeBasedAutoScalingRequest _InstanceId = SetTimeBasedAutoScalingRequest { "InstanceId": _InstanceId, "AutoScalingSchedule": Nothing }
 
 -- | Constructs SetTimeBasedAutoScalingRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSetTimeBasedAutoScalingRequest' :: String -> ( { "InstanceId" :: (String) , "AutoScalingSchedule" :: NullOrUndefined (WeeklyAutoScalingSchedule) } -> {"InstanceId" :: (String) , "AutoScalingSchedule" :: NullOrUndefined (WeeklyAutoScalingSchedule) } ) -> SetTimeBasedAutoScalingRequest
-newSetTimeBasedAutoScalingRequest' _InstanceId customize = (SetTimeBasedAutoScalingRequest <<< customize) { "InstanceId": _InstanceId, "AutoScalingSchedule": (NullOrUndefined Nothing) }
+newSetTimeBasedAutoScalingRequest' :: String -> ( { "InstanceId" :: (String) , "AutoScalingSchedule" :: Maybe (WeeklyAutoScalingSchedule) } -> {"InstanceId" :: (String) , "AutoScalingSchedule" :: Maybe (WeeklyAutoScalingSchedule) } ) -> SetTimeBasedAutoScalingRequest
+newSetTimeBasedAutoScalingRequest' _InstanceId customize = (SetTimeBasedAutoScalingRequest <<< customize) { "InstanceId": _InstanceId, "AutoScalingSchedule": Nothing }
 
 
 
 -- | <p>The Shutdown event configuration.</p>
 newtype ShutdownEventConfiguration = ShutdownEventConfiguration 
-  { "ExecutionTimeout" :: NullOrUndefined (Int)
-  , "DelayUntilElbConnectionsDrained" :: NullOrUndefined (Boolean)
+  { "ExecutionTimeout" :: Maybe (Int)
+  , "DelayUntilElbConnectionsDrained" :: Maybe (Boolean)
   }
 derive instance newtypeShutdownEventConfiguration :: Newtype ShutdownEventConfiguration _
 derive instance repGenericShutdownEventConfiguration :: Generic ShutdownEventConfiguration _
@@ -3301,23 +3300,23 @@ instance encodeShutdownEventConfiguration :: Encode ShutdownEventConfiguration w
 
 -- | Constructs ShutdownEventConfiguration from required parameters
 newShutdownEventConfiguration :: ShutdownEventConfiguration
-newShutdownEventConfiguration  = ShutdownEventConfiguration { "DelayUntilElbConnectionsDrained": (NullOrUndefined Nothing), "ExecutionTimeout": (NullOrUndefined Nothing) }
+newShutdownEventConfiguration  = ShutdownEventConfiguration { "DelayUntilElbConnectionsDrained": Nothing, "ExecutionTimeout": Nothing }
 
 -- | Constructs ShutdownEventConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newShutdownEventConfiguration' :: ( { "ExecutionTimeout" :: NullOrUndefined (Int) , "DelayUntilElbConnectionsDrained" :: NullOrUndefined (Boolean) } -> {"ExecutionTimeout" :: NullOrUndefined (Int) , "DelayUntilElbConnectionsDrained" :: NullOrUndefined (Boolean) } ) -> ShutdownEventConfiguration
-newShutdownEventConfiguration'  customize = (ShutdownEventConfiguration <<< customize) { "DelayUntilElbConnectionsDrained": (NullOrUndefined Nothing), "ExecutionTimeout": (NullOrUndefined Nothing) }
+newShutdownEventConfiguration' :: ( { "ExecutionTimeout" :: Maybe (Int) , "DelayUntilElbConnectionsDrained" :: Maybe (Boolean) } -> {"ExecutionTimeout" :: Maybe (Int) , "DelayUntilElbConnectionsDrained" :: Maybe (Boolean) } ) -> ShutdownEventConfiguration
+newShutdownEventConfiguration'  customize = (ShutdownEventConfiguration <<< customize) { "DelayUntilElbConnectionsDrained": Nothing, "ExecutionTimeout": Nothing }
 
 
 
 -- | <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a> or <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom Recipes and Cookbooks</a>.</p>
 newtype Source = Source 
-  { "Type" :: NullOrUndefined (SourceType)
-  , "Url" :: NullOrUndefined (String)
-  , "Username" :: NullOrUndefined (String)
-  , "Password" :: NullOrUndefined (String)
-  , "SshKey" :: NullOrUndefined (String)
-  , "Revision" :: NullOrUndefined (String)
+  { "Type" :: Maybe (SourceType)
+  , "Url" :: Maybe (String)
+  , "Username" :: Maybe (String)
+  , "Password" :: Maybe (String)
+  , "SshKey" :: Maybe (String)
+  , "Revision" :: Maybe (String)
   }
 derive instance newtypeSource :: Newtype Source _
 derive instance repGenericSource :: Generic Source _
@@ -3327,12 +3326,12 @@ instance encodeSource :: Encode Source where encode = genericEncode options
 
 -- | Constructs Source from required parameters
 newSource :: Source
-newSource  = Source { "Password": (NullOrUndefined Nothing), "Revision": (NullOrUndefined Nothing), "SshKey": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "Url": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newSource  = Source { "Password": Nothing, "Revision": Nothing, "SshKey": Nothing, "Type": Nothing, "Url": Nothing, "Username": Nothing }
 
 -- | Constructs Source's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSource' :: ( { "Type" :: NullOrUndefined (SourceType) , "Url" :: NullOrUndefined (String) , "Username" :: NullOrUndefined (String) , "Password" :: NullOrUndefined (String) , "SshKey" :: NullOrUndefined (String) , "Revision" :: NullOrUndefined (String) } -> {"Type" :: NullOrUndefined (SourceType) , "Url" :: NullOrUndefined (String) , "Username" :: NullOrUndefined (String) , "Password" :: NullOrUndefined (String) , "SshKey" :: NullOrUndefined (String) , "Revision" :: NullOrUndefined (String) } ) -> Source
-newSource'  customize = (Source <<< customize) { "Password": (NullOrUndefined Nothing), "Revision": (NullOrUndefined Nothing), "SshKey": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "Url": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newSource' :: ( { "Type" :: Maybe (SourceType) , "Url" :: Maybe (String) , "Username" :: Maybe (String) , "Password" :: Maybe (String) , "SshKey" :: Maybe (String) , "Revision" :: Maybe (String) } -> {"Type" :: Maybe (SourceType) , "Url" :: Maybe (String) , "Username" :: Maybe (String) , "Password" :: Maybe (String) , "SshKey" :: Maybe (String) , "Revision" :: Maybe (String) } ) -> Source
+newSource'  customize = (Source <<< customize) { "Password": Nothing, "Revision": Nothing, "SshKey": Nothing, "Type": Nothing, "Url": Nothing, "Username": Nothing }
 
 
 
@@ -3349,7 +3348,7 @@ instance encodeSourceType :: Encode SourceType where encode = genericEncode opti
 newtype SslConfiguration = SslConfiguration 
   { "Certificate" :: (String)
   , "PrivateKey" :: (String)
-  , "Chain" :: NullOrUndefined (String)
+  , "Chain" :: Maybe (String)
   }
 derive instance newtypeSslConfiguration :: Newtype SslConfiguration _
 derive instance repGenericSslConfiguration :: Generic SslConfiguration _
@@ -3359,39 +3358,39 @@ instance encodeSslConfiguration :: Encode SslConfiguration where encode = generi
 
 -- | Constructs SslConfiguration from required parameters
 newSslConfiguration :: String -> String -> SslConfiguration
-newSslConfiguration _Certificate _PrivateKey = SslConfiguration { "Certificate": _Certificate, "PrivateKey": _PrivateKey, "Chain": (NullOrUndefined Nothing) }
+newSslConfiguration _Certificate _PrivateKey = SslConfiguration { "Certificate": _Certificate, "PrivateKey": _PrivateKey, "Chain": Nothing }
 
 -- | Constructs SslConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSslConfiguration' :: String -> String -> ( { "Certificate" :: (String) , "PrivateKey" :: (String) , "Chain" :: NullOrUndefined (String) } -> {"Certificate" :: (String) , "PrivateKey" :: (String) , "Chain" :: NullOrUndefined (String) } ) -> SslConfiguration
-newSslConfiguration' _Certificate _PrivateKey customize = (SslConfiguration <<< customize) { "Certificate": _Certificate, "PrivateKey": _PrivateKey, "Chain": (NullOrUndefined Nothing) }
+newSslConfiguration' :: String -> String -> ( { "Certificate" :: (String) , "PrivateKey" :: (String) , "Chain" :: Maybe (String) } -> {"Certificate" :: (String) , "PrivateKey" :: (String) , "Chain" :: Maybe (String) } ) -> SslConfiguration
+newSslConfiguration' _Certificate _PrivateKey customize = (SslConfiguration <<< customize) { "Certificate": _Certificate, "PrivateKey": _PrivateKey, "Chain": Nothing }
 
 
 
 -- | <p>Describes a stack.</p>
 newtype Stack = Stack 
-  { "StackId" :: NullOrUndefined (String)
-  , "Name" :: NullOrUndefined (String)
-  , "Arn" :: NullOrUndefined (String)
-  , "Region" :: NullOrUndefined (String)
-  , "VpcId" :: NullOrUndefined (String)
-  , "Attributes" :: NullOrUndefined (StackAttributes)
-  , "ServiceRoleArn" :: NullOrUndefined (String)
-  , "DefaultInstanceProfileArn" :: NullOrUndefined (String)
-  , "DefaultOs" :: NullOrUndefined (String)
-  , "HostnameTheme" :: NullOrUndefined (String)
-  , "DefaultAvailabilityZone" :: NullOrUndefined (String)
-  , "DefaultSubnetId" :: NullOrUndefined (String)
-  , "CustomJson" :: NullOrUndefined (String)
-  , "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager)
-  , "ChefConfiguration" :: NullOrUndefined (ChefConfiguration)
-  , "UseCustomCookbooks" :: NullOrUndefined (Boolean)
-  , "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean)
-  , "CustomCookbooksSource" :: NullOrUndefined (Source)
-  , "DefaultSshKeyName" :: NullOrUndefined (String)
-  , "CreatedAt" :: NullOrUndefined (DateTime)
-  , "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType)
-  , "AgentVersion" :: NullOrUndefined (String)
+  { "StackId" :: Maybe (String)
+  , "Name" :: Maybe (String)
+  , "Arn" :: Maybe (String)
+  , "Region" :: Maybe (String)
+  , "VpcId" :: Maybe (String)
+  , "Attributes" :: Maybe (StackAttributes)
+  , "ServiceRoleArn" :: Maybe (String)
+  , "DefaultInstanceProfileArn" :: Maybe (String)
+  , "DefaultOs" :: Maybe (String)
+  , "HostnameTheme" :: Maybe (String)
+  , "DefaultAvailabilityZone" :: Maybe (String)
+  , "DefaultSubnetId" :: Maybe (String)
+  , "CustomJson" :: Maybe (String)
+  , "ConfigurationManager" :: Maybe (StackConfigurationManager)
+  , "ChefConfiguration" :: Maybe (ChefConfiguration)
+  , "UseCustomCookbooks" :: Maybe (Boolean)
+  , "UseOpsworksSecurityGroups" :: Maybe (Boolean)
+  , "CustomCookbooksSource" :: Maybe (Source)
+  , "DefaultSshKeyName" :: Maybe (String)
+  , "CreatedAt" :: Maybe (DateTime)
+  , "DefaultRootDeviceType" :: Maybe (RootDeviceType)
+  , "AgentVersion" :: Maybe (String)
   }
 derive instance newtypeStack :: Newtype Stack _
 derive instance repGenericStack :: Generic Stack _
@@ -3401,12 +3400,12 @@ instance encodeStack :: Encode Stack where encode = genericEncode options
 
 -- | Constructs Stack from required parameters
 newStack :: Stack
-newStack  = Stack { "AgentVersion": (NullOrUndefined Nothing), "Arn": (NullOrUndefined Nothing), "Attributes": (NullOrUndefined Nothing), "ChefConfiguration": (NullOrUndefined Nothing), "ConfigurationManager": (NullOrUndefined Nothing), "CreatedAt": (NullOrUndefined Nothing), "CustomCookbooksSource": (NullOrUndefined Nothing), "CustomJson": (NullOrUndefined Nothing), "DefaultAvailabilityZone": (NullOrUndefined Nothing), "DefaultInstanceProfileArn": (NullOrUndefined Nothing), "DefaultOs": (NullOrUndefined Nothing), "DefaultRootDeviceType": (NullOrUndefined Nothing), "DefaultSshKeyName": (NullOrUndefined Nothing), "DefaultSubnetId": (NullOrUndefined Nothing), "HostnameTheme": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Region": (NullOrUndefined Nothing), "ServiceRoleArn": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing), "UseCustomCookbooks": (NullOrUndefined Nothing), "UseOpsworksSecurityGroups": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newStack  = Stack { "AgentVersion": Nothing, "Arn": Nothing, "Attributes": Nothing, "ChefConfiguration": Nothing, "ConfigurationManager": Nothing, "CreatedAt": Nothing, "CustomCookbooksSource": Nothing, "CustomJson": Nothing, "DefaultAvailabilityZone": Nothing, "DefaultInstanceProfileArn": Nothing, "DefaultOs": Nothing, "DefaultRootDeviceType": Nothing, "DefaultSshKeyName": Nothing, "DefaultSubnetId": Nothing, "HostnameTheme": Nothing, "Name": Nothing, "Region": Nothing, "ServiceRoleArn": Nothing, "StackId": Nothing, "UseCustomCookbooks": Nothing, "UseOpsworksSecurityGroups": Nothing, "VpcId": Nothing }
 
 -- | Constructs Stack's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStack' :: ( { "StackId" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "Arn" :: NullOrUndefined (String) , "Region" :: NullOrUndefined (String) , "VpcId" :: NullOrUndefined (String) , "Attributes" :: NullOrUndefined (StackAttributes) , "ServiceRoleArn" :: NullOrUndefined (String) , "DefaultInstanceProfileArn" :: NullOrUndefined (String) , "DefaultOs" :: NullOrUndefined (String) , "HostnameTheme" :: NullOrUndefined (String) , "DefaultAvailabilityZone" :: NullOrUndefined (String) , "DefaultSubnetId" :: NullOrUndefined (String) , "CustomJson" :: NullOrUndefined (String) , "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager) , "ChefConfiguration" :: NullOrUndefined (ChefConfiguration) , "UseCustomCookbooks" :: NullOrUndefined (Boolean) , "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean) , "CustomCookbooksSource" :: NullOrUndefined (Source) , "DefaultSshKeyName" :: NullOrUndefined (String) , "CreatedAt" :: NullOrUndefined (DateTime) , "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType) , "AgentVersion" :: NullOrUndefined (String) } -> {"StackId" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "Arn" :: NullOrUndefined (String) , "Region" :: NullOrUndefined (String) , "VpcId" :: NullOrUndefined (String) , "Attributes" :: NullOrUndefined (StackAttributes) , "ServiceRoleArn" :: NullOrUndefined (String) , "DefaultInstanceProfileArn" :: NullOrUndefined (String) , "DefaultOs" :: NullOrUndefined (String) , "HostnameTheme" :: NullOrUndefined (String) , "DefaultAvailabilityZone" :: NullOrUndefined (String) , "DefaultSubnetId" :: NullOrUndefined (String) , "CustomJson" :: NullOrUndefined (String) , "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager) , "ChefConfiguration" :: NullOrUndefined (ChefConfiguration) , "UseCustomCookbooks" :: NullOrUndefined (Boolean) , "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean) , "CustomCookbooksSource" :: NullOrUndefined (Source) , "DefaultSshKeyName" :: NullOrUndefined (String) , "CreatedAt" :: NullOrUndefined (DateTime) , "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType) , "AgentVersion" :: NullOrUndefined (String) } ) -> Stack
-newStack'  customize = (Stack <<< customize) { "AgentVersion": (NullOrUndefined Nothing), "Arn": (NullOrUndefined Nothing), "Attributes": (NullOrUndefined Nothing), "ChefConfiguration": (NullOrUndefined Nothing), "ConfigurationManager": (NullOrUndefined Nothing), "CreatedAt": (NullOrUndefined Nothing), "CustomCookbooksSource": (NullOrUndefined Nothing), "CustomJson": (NullOrUndefined Nothing), "DefaultAvailabilityZone": (NullOrUndefined Nothing), "DefaultInstanceProfileArn": (NullOrUndefined Nothing), "DefaultOs": (NullOrUndefined Nothing), "DefaultRootDeviceType": (NullOrUndefined Nothing), "DefaultSshKeyName": (NullOrUndefined Nothing), "DefaultSubnetId": (NullOrUndefined Nothing), "HostnameTheme": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Region": (NullOrUndefined Nothing), "ServiceRoleArn": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing), "UseCustomCookbooks": (NullOrUndefined Nothing), "UseOpsworksSecurityGroups": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newStack' :: ( { "StackId" :: Maybe (String) , "Name" :: Maybe (String) , "Arn" :: Maybe (String) , "Region" :: Maybe (String) , "VpcId" :: Maybe (String) , "Attributes" :: Maybe (StackAttributes) , "ServiceRoleArn" :: Maybe (String) , "DefaultInstanceProfileArn" :: Maybe (String) , "DefaultOs" :: Maybe (String) , "HostnameTheme" :: Maybe (String) , "DefaultAvailabilityZone" :: Maybe (String) , "DefaultSubnetId" :: Maybe (String) , "CustomJson" :: Maybe (String) , "ConfigurationManager" :: Maybe (StackConfigurationManager) , "ChefConfiguration" :: Maybe (ChefConfiguration) , "UseCustomCookbooks" :: Maybe (Boolean) , "UseOpsworksSecurityGroups" :: Maybe (Boolean) , "CustomCookbooksSource" :: Maybe (Source) , "DefaultSshKeyName" :: Maybe (String) , "CreatedAt" :: Maybe (DateTime) , "DefaultRootDeviceType" :: Maybe (RootDeviceType) , "AgentVersion" :: Maybe (String) } -> {"StackId" :: Maybe (String) , "Name" :: Maybe (String) , "Arn" :: Maybe (String) , "Region" :: Maybe (String) , "VpcId" :: Maybe (String) , "Attributes" :: Maybe (StackAttributes) , "ServiceRoleArn" :: Maybe (String) , "DefaultInstanceProfileArn" :: Maybe (String) , "DefaultOs" :: Maybe (String) , "HostnameTheme" :: Maybe (String) , "DefaultAvailabilityZone" :: Maybe (String) , "DefaultSubnetId" :: Maybe (String) , "CustomJson" :: Maybe (String) , "ConfigurationManager" :: Maybe (StackConfigurationManager) , "ChefConfiguration" :: Maybe (ChefConfiguration) , "UseCustomCookbooks" :: Maybe (Boolean) , "UseOpsworksSecurityGroups" :: Maybe (Boolean) , "CustomCookbooksSource" :: Maybe (Source) , "DefaultSshKeyName" :: Maybe (String) , "CreatedAt" :: Maybe (DateTime) , "DefaultRootDeviceType" :: Maybe (RootDeviceType) , "AgentVersion" :: Maybe (String) } ) -> Stack
+newStack'  customize = (Stack <<< customize) { "AgentVersion": Nothing, "Arn": Nothing, "Attributes": Nothing, "ChefConfiguration": Nothing, "ConfigurationManager": Nothing, "CreatedAt": Nothing, "CustomCookbooksSource": Nothing, "CustomJson": Nothing, "DefaultAvailabilityZone": Nothing, "DefaultInstanceProfileArn": Nothing, "DefaultOs": Nothing, "DefaultRootDeviceType": Nothing, "DefaultSshKeyName": Nothing, "DefaultSubnetId": Nothing, "HostnameTheme": Nothing, "Name": Nothing, "Region": Nothing, "ServiceRoleArn": Nothing, "StackId": Nothing, "UseCustomCookbooks": Nothing, "UseOpsworksSecurityGroups": Nothing, "VpcId": Nothing }
 
 
 
@@ -3430,8 +3429,8 @@ instance encodeStackAttributesKeys :: Encode StackAttributesKeys where encode = 
 
 -- | <p>Describes the configuration manager.</p>
 newtype StackConfigurationManager = StackConfigurationManager 
-  { "Name" :: NullOrUndefined (String)
-  , "Version" :: NullOrUndefined (String)
+  { "Name" :: Maybe (String)
+  , "Version" :: Maybe (String)
   }
 derive instance newtypeStackConfigurationManager :: Newtype StackConfigurationManager _
 derive instance repGenericStackConfigurationManager :: Generic StackConfigurationManager _
@@ -3441,23 +3440,23 @@ instance encodeStackConfigurationManager :: Encode StackConfigurationManager whe
 
 -- | Constructs StackConfigurationManager from required parameters
 newStackConfigurationManager :: StackConfigurationManager
-newStackConfigurationManager  = StackConfigurationManager { "Name": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newStackConfigurationManager  = StackConfigurationManager { "Name": Nothing, "Version": Nothing }
 
 -- | Constructs StackConfigurationManager's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStackConfigurationManager' :: ( { "Name" :: NullOrUndefined (String) , "Version" :: NullOrUndefined (String) } -> {"Name" :: NullOrUndefined (String) , "Version" :: NullOrUndefined (String) } ) -> StackConfigurationManager
-newStackConfigurationManager'  customize = (StackConfigurationManager <<< customize) { "Name": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newStackConfigurationManager' :: ( { "Name" :: Maybe (String) , "Version" :: Maybe (String) } -> {"Name" :: Maybe (String) , "Version" :: Maybe (String) } ) -> StackConfigurationManager
+newStackConfigurationManager'  customize = (StackConfigurationManager <<< customize) { "Name": Nothing, "Version": Nothing }
 
 
 
 -- | <p>Summarizes the number of layers, instances, and apps in a stack.</p>
 newtype StackSummary = StackSummary 
-  { "StackId" :: NullOrUndefined (String)
-  , "Name" :: NullOrUndefined (String)
-  , "Arn" :: NullOrUndefined (String)
-  , "LayersCount" :: NullOrUndefined (Int)
-  , "AppsCount" :: NullOrUndefined (Int)
-  , "InstancesCount" :: NullOrUndefined (InstancesCount)
+  { "StackId" :: Maybe (String)
+  , "Name" :: Maybe (String)
+  , "Arn" :: Maybe (String)
+  , "LayersCount" :: Maybe (Int)
+  , "AppsCount" :: Maybe (Int)
+  , "InstancesCount" :: Maybe (InstancesCount)
   }
 derive instance newtypeStackSummary :: Newtype StackSummary _
 derive instance repGenericStackSummary :: Generic StackSummary _
@@ -3467,12 +3466,12 @@ instance encodeStackSummary :: Encode StackSummary where encode = genericEncode 
 
 -- | Constructs StackSummary from required parameters
 newStackSummary :: StackSummary
-newStackSummary  = StackSummary { "AppsCount": (NullOrUndefined Nothing), "Arn": (NullOrUndefined Nothing), "InstancesCount": (NullOrUndefined Nothing), "LayersCount": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newStackSummary  = StackSummary { "AppsCount": Nothing, "Arn": Nothing, "InstancesCount": Nothing, "LayersCount": Nothing, "Name": Nothing, "StackId": Nothing }
 
 -- | Constructs StackSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStackSummary' :: ( { "StackId" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "Arn" :: NullOrUndefined (String) , "LayersCount" :: NullOrUndefined (Int) , "AppsCount" :: NullOrUndefined (Int) , "InstancesCount" :: NullOrUndefined (InstancesCount) } -> {"StackId" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "Arn" :: NullOrUndefined (String) , "LayersCount" :: NullOrUndefined (Int) , "AppsCount" :: NullOrUndefined (Int) , "InstancesCount" :: NullOrUndefined (InstancesCount) } ) -> StackSummary
-newStackSummary'  customize = (StackSummary <<< customize) { "AppsCount": (NullOrUndefined Nothing), "Arn": (NullOrUndefined Nothing), "InstancesCount": (NullOrUndefined Nothing), "LayersCount": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "StackId": (NullOrUndefined Nothing) }
+newStackSummary' :: ( { "StackId" :: Maybe (String) , "Name" :: Maybe (String) , "Arn" :: Maybe (String) , "LayersCount" :: Maybe (Int) , "AppsCount" :: Maybe (Int) , "InstancesCount" :: Maybe (InstancesCount) } -> {"StackId" :: Maybe (String) , "Name" :: Maybe (String) , "Arn" :: Maybe (String) , "LayersCount" :: Maybe (Int) , "AppsCount" :: Maybe (Int) , "InstancesCount" :: Maybe (InstancesCount) } ) -> StackSummary
+newStackSummary'  customize = (StackSummary <<< customize) { "AppsCount": Nothing, "Arn": Nothing, "InstancesCount": Nothing, "LayersCount": Nothing, "Name": Nothing, "StackId": Nothing }
 
 
 
@@ -3527,7 +3526,7 @@ newStartStackRequest' _StackId customize = (StartStackRequest <<< customize) { "
 
 newtype StopInstanceRequest = StopInstanceRequest 
   { "InstanceId" :: (String)
-  , "Force" :: NullOrUndefined (Boolean)
+  , "Force" :: Maybe (Boolean)
   }
 derive instance newtypeStopInstanceRequest :: Newtype StopInstanceRequest _
 derive instance repGenericStopInstanceRequest :: Generic StopInstanceRequest _
@@ -3537,12 +3536,12 @@ instance encodeStopInstanceRequest :: Encode StopInstanceRequest where encode = 
 
 -- | Constructs StopInstanceRequest from required parameters
 newStopInstanceRequest :: String -> StopInstanceRequest
-newStopInstanceRequest _InstanceId = StopInstanceRequest { "InstanceId": _InstanceId, "Force": (NullOrUndefined Nothing) }
+newStopInstanceRequest _InstanceId = StopInstanceRequest { "InstanceId": _InstanceId, "Force": Nothing }
 
 -- | Constructs StopInstanceRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStopInstanceRequest' :: String -> ( { "InstanceId" :: (String) , "Force" :: NullOrUndefined (Boolean) } -> {"InstanceId" :: (String) , "Force" :: NullOrUndefined (Boolean) } ) -> StopInstanceRequest
-newStopInstanceRequest' _InstanceId customize = (StopInstanceRequest <<< customize) { "InstanceId": _InstanceId, "Force": (NullOrUndefined Nothing) }
+newStopInstanceRequest' :: String -> ( { "InstanceId" :: (String) , "Force" :: Maybe (Boolean) } -> {"InstanceId" :: (String) , "Force" :: Maybe (Boolean) } ) -> StopInstanceRequest
+newStopInstanceRequest' _InstanceId customize = (StopInstanceRequest <<< customize) { "InstanceId": _InstanceId, "Force": Nothing }
 
 
 
@@ -3643,10 +3642,10 @@ instance encodeTags :: Encode Tags where encode = genericEncode options
 
 -- | <p>Contains the data needed by RDP clients such as the Microsoft Remote Desktop Connection to log in to the instance.</p>
 newtype TemporaryCredential = TemporaryCredential 
-  { "Username" :: NullOrUndefined (String)
-  , "Password" :: NullOrUndefined (String)
-  , "ValidForInMinutes" :: NullOrUndefined (Int)
-  , "InstanceId" :: NullOrUndefined (String)
+  { "Username" :: Maybe (String)
+  , "Password" :: Maybe (String)
+  , "ValidForInMinutes" :: Maybe (Int)
+  , "InstanceId" :: Maybe (String)
   }
 derive instance newtypeTemporaryCredential :: Newtype TemporaryCredential _
 derive instance repGenericTemporaryCredential :: Generic TemporaryCredential _
@@ -3656,19 +3655,19 @@ instance encodeTemporaryCredential :: Encode TemporaryCredential where encode = 
 
 -- | Constructs TemporaryCredential from required parameters
 newTemporaryCredential :: TemporaryCredential
-newTemporaryCredential  = TemporaryCredential { "InstanceId": (NullOrUndefined Nothing), "Password": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing), "ValidForInMinutes": (NullOrUndefined Nothing) }
+newTemporaryCredential  = TemporaryCredential { "InstanceId": Nothing, "Password": Nothing, "Username": Nothing, "ValidForInMinutes": Nothing }
 
 -- | Constructs TemporaryCredential's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTemporaryCredential' :: ( { "Username" :: NullOrUndefined (String) , "Password" :: NullOrUndefined (String) , "ValidForInMinutes" :: NullOrUndefined (Int) , "InstanceId" :: NullOrUndefined (String) } -> {"Username" :: NullOrUndefined (String) , "Password" :: NullOrUndefined (String) , "ValidForInMinutes" :: NullOrUndefined (Int) , "InstanceId" :: NullOrUndefined (String) } ) -> TemporaryCredential
-newTemporaryCredential'  customize = (TemporaryCredential <<< customize) { "InstanceId": (NullOrUndefined Nothing), "Password": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing), "ValidForInMinutes": (NullOrUndefined Nothing) }
+newTemporaryCredential' :: ( { "Username" :: Maybe (String) , "Password" :: Maybe (String) , "ValidForInMinutes" :: Maybe (Int) , "InstanceId" :: Maybe (String) } -> {"Username" :: Maybe (String) , "Password" :: Maybe (String) , "ValidForInMinutes" :: Maybe (Int) , "InstanceId" :: Maybe (String) } ) -> TemporaryCredential
+newTemporaryCredential'  customize = (TemporaryCredential <<< customize) { "InstanceId": Nothing, "Password": Nothing, "Username": Nothing, "ValidForInMinutes": Nothing }
 
 
 
 -- | <p>Describes an instance's time-based auto scaling configuration.</p>
 newtype TimeBasedAutoScalingConfiguration = TimeBasedAutoScalingConfiguration 
-  { "InstanceId" :: NullOrUndefined (String)
-  , "AutoScalingSchedule" :: NullOrUndefined (WeeklyAutoScalingSchedule)
+  { "InstanceId" :: Maybe (String)
+  , "AutoScalingSchedule" :: Maybe (WeeklyAutoScalingSchedule)
   }
 derive instance newtypeTimeBasedAutoScalingConfiguration :: Newtype TimeBasedAutoScalingConfiguration _
 derive instance repGenericTimeBasedAutoScalingConfiguration :: Generic TimeBasedAutoScalingConfiguration _
@@ -3678,12 +3677,12 @@ instance encodeTimeBasedAutoScalingConfiguration :: Encode TimeBasedAutoScalingC
 
 -- | Constructs TimeBasedAutoScalingConfiguration from required parameters
 newTimeBasedAutoScalingConfiguration :: TimeBasedAutoScalingConfiguration
-newTimeBasedAutoScalingConfiguration  = TimeBasedAutoScalingConfiguration { "AutoScalingSchedule": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing) }
+newTimeBasedAutoScalingConfiguration  = TimeBasedAutoScalingConfiguration { "AutoScalingSchedule": Nothing, "InstanceId": Nothing }
 
 -- | Constructs TimeBasedAutoScalingConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTimeBasedAutoScalingConfiguration' :: ( { "InstanceId" :: NullOrUndefined (String) , "AutoScalingSchedule" :: NullOrUndefined (WeeklyAutoScalingSchedule) } -> {"InstanceId" :: NullOrUndefined (String) , "AutoScalingSchedule" :: NullOrUndefined (WeeklyAutoScalingSchedule) } ) -> TimeBasedAutoScalingConfiguration
-newTimeBasedAutoScalingConfiguration'  customize = (TimeBasedAutoScalingConfiguration <<< customize) { "AutoScalingSchedule": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing) }
+newTimeBasedAutoScalingConfiguration' :: ( { "InstanceId" :: Maybe (String) , "AutoScalingSchedule" :: Maybe (WeeklyAutoScalingSchedule) } -> {"InstanceId" :: Maybe (String) , "AutoScalingSchedule" :: Maybe (WeeklyAutoScalingSchedule) } ) -> TimeBasedAutoScalingConfiguration
+newTimeBasedAutoScalingConfiguration'  customize = (TimeBasedAutoScalingConfiguration <<< customize) { "AutoScalingSchedule": Nothing, "InstanceId": Nothing }
 
 
 
@@ -3759,16 +3758,16 @@ newUntagResourceRequest' _ResourceArn _TagKeys customize = (UntagResourceRequest
 
 newtype UpdateAppRequest = UpdateAppRequest 
   { "AppId" :: (String)
-  , "Name" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
-  , "DataSources" :: NullOrUndefined (DataSources)
-  , "Type" :: NullOrUndefined (AppType)
-  , "AppSource" :: NullOrUndefined (Source)
-  , "Domains" :: NullOrUndefined (Strings)
-  , "EnableSsl" :: NullOrUndefined (Boolean)
-  , "SslConfiguration" :: NullOrUndefined (SslConfiguration)
-  , "Attributes" :: NullOrUndefined (AppAttributes)
-  , "Environment" :: NullOrUndefined (EnvironmentVariables)
+  , "Name" :: Maybe (String)
+  , "Description" :: Maybe (String)
+  , "DataSources" :: Maybe (DataSources)
+  , "Type" :: Maybe (AppType)
+  , "AppSource" :: Maybe (Source)
+  , "Domains" :: Maybe (Strings)
+  , "EnableSsl" :: Maybe (Boolean)
+  , "SslConfiguration" :: Maybe (SslConfiguration)
+  , "Attributes" :: Maybe (AppAttributes)
+  , "Environment" :: Maybe (EnvironmentVariables)
   }
 derive instance newtypeUpdateAppRequest :: Newtype UpdateAppRequest _
 derive instance repGenericUpdateAppRequest :: Generic UpdateAppRequest _
@@ -3778,18 +3777,18 @@ instance encodeUpdateAppRequest :: Encode UpdateAppRequest where encode = generi
 
 -- | Constructs UpdateAppRequest from required parameters
 newUpdateAppRequest :: String -> UpdateAppRequest
-newUpdateAppRequest _AppId = UpdateAppRequest { "AppId": _AppId, "AppSource": (NullOrUndefined Nothing), "Attributes": (NullOrUndefined Nothing), "DataSources": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Domains": (NullOrUndefined Nothing), "EnableSsl": (NullOrUndefined Nothing), "Environment": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "SslConfiguration": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newUpdateAppRequest _AppId = UpdateAppRequest { "AppId": _AppId, "AppSource": Nothing, "Attributes": Nothing, "DataSources": Nothing, "Description": Nothing, "Domains": Nothing, "EnableSsl": Nothing, "Environment": Nothing, "Name": Nothing, "SslConfiguration": Nothing, "Type": Nothing }
 
 -- | Constructs UpdateAppRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateAppRequest' :: String -> ( { "AppId" :: (String) , "Name" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "DataSources" :: NullOrUndefined (DataSources) , "Type" :: NullOrUndefined (AppType) , "AppSource" :: NullOrUndefined (Source) , "Domains" :: NullOrUndefined (Strings) , "EnableSsl" :: NullOrUndefined (Boolean) , "SslConfiguration" :: NullOrUndefined (SslConfiguration) , "Attributes" :: NullOrUndefined (AppAttributes) , "Environment" :: NullOrUndefined (EnvironmentVariables) } -> {"AppId" :: (String) , "Name" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "DataSources" :: NullOrUndefined (DataSources) , "Type" :: NullOrUndefined (AppType) , "AppSource" :: NullOrUndefined (Source) , "Domains" :: NullOrUndefined (Strings) , "EnableSsl" :: NullOrUndefined (Boolean) , "SslConfiguration" :: NullOrUndefined (SslConfiguration) , "Attributes" :: NullOrUndefined (AppAttributes) , "Environment" :: NullOrUndefined (EnvironmentVariables) } ) -> UpdateAppRequest
-newUpdateAppRequest' _AppId customize = (UpdateAppRequest <<< customize) { "AppId": _AppId, "AppSource": (NullOrUndefined Nothing), "Attributes": (NullOrUndefined Nothing), "DataSources": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Domains": (NullOrUndefined Nothing), "EnableSsl": (NullOrUndefined Nothing), "Environment": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "SslConfiguration": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newUpdateAppRequest' :: String -> ( { "AppId" :: (String) , "Name" :: Maybe (String) , "Description" :: Maybe (String) , "DataSources" :: Maybe (DataSources) , "Type" :: Maybe (AppType) , "AppSource" :: Maybe (Source) , "Domains" :: Maybe (Strings) , "EnableSsl" :: Maybe (Boolean) , "SslConfiguration" :: Maybe (SslConfiguration) , "Attributes" :: Maybe (AppAttributes) , "Environment" :: Maybe (EnvironmentVariables) } -> {"AppId" :: (String) , "Name" :: Maybe (String) , "Description" :: Maybe (String) , "DataSources" :: Maybe (DataSources) , "Type" :: Maybe (AppType) , "AppSource" :: Maybe (Source) , "Domains" :: Maybe (Strings) , "EnableSsl" :: Maybe (Boolean) , "SslConfiguration" :: Maybe (SslConfiguration) , "Attributes" :: Maybe (AppAttributes) , "Environment" :: Maybe (EnvironmentVariables) } ) -> UpdateAppRequest
+newUpdateAppRequest' _AppId customize = (UpdateAppRequest <<< customize) { "AppId": _AppId, "AppSource": Nothing, "Attributes": Nothing, "DataSources": Nothing, "Description": Nothing, "Domains": Nothing, "EnableSsl": Nothing, "Environment": Nothing, "Name": Nothing, "SslConfiguration": Nothing, "Type": Nothing }
 
 
 
 newtype UpdateElasticIpRequest = UpdateElasticIpRequest 
   { "ElasticIp" :: (String)
-  , "Name" :: NullOrUndefined (String)
+  , "Name" :: Maybe (String)
   }
 derive instance newtypeUpdateElasticIpRequest :: Newtype UpdateElasticIpRequest _
 derive instance repGenericUpdateElasticIpRequest :: Generic UpdateElasticIpRequest _
@@ -3799,28 +3798,28 @@ instance encodeUpdateElasticIpRequest :: Encode UpdateElasticIpRequest where enc
 
 -- | Constructs UpdateElasticIpRequest from required parameters
 newUpdateElasticIpRequest :: String -> UpdateElasticIpRequest
-newUpdateElasticIpRequest _ElasticIp = UpdateElasticIpRequest { "ElasticIp": _ElasticIp, "Name": (NullOrUndefined Nothing) }
+newUpdateElasticIpRequest _ElasticIp = UpdateElasticIpRequest { "ElasticIp": _ElasticIp, "Name": Nothing }
 
 -- | Constructs UpdateElasticIpRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateElasticIpRequest' :: String -> ( { "ElasticIp" :: (String) , "Name" :: NullOrUndefined (String) } -> {"ElasticIp" :: (String) , "Name" :: NullOrUndefined (String) } ) -> UpdateElasticIpRequest
-newUpdateElasticIpRequest' _ElasticIp customize = (UpdateElasticIpRequest <<< customize) { "ElasticIp": _ElasticIp, "Name": (NullOrUndefined Nothing) }
+newUpdateElasticIpRequest' :: String -> ( { "ElasticIp" :: (String) , "Name" :: Maybe (String) } -> {"ElasticIp" :: (String) , "Name" :: Maybe (String) } ) -> UpdateElasticIpRequest
+newUpdateElasticIpRequest' _ElasticIp customize = (UpdateElasticIpRequest <<< customize) { "ElasticIp": _ElasticIp, "Name": Nothing }
 
 
 
 newtype UpdateInstanceRequest = UpdateInstanceRequest 
   { "InstanceId" :: (String)
-  , "LayerIds" :: NullOrUndefined (Strings)
-  , "InstanceType" :: NullOrUndefined (String)
-  , "AutoScalingType" :: NullOrUndefined (AutoScalingType)
-  , "Hostname" :: NullOrUndefined (String)
-  , "Os" :: NullOrUndefined (String)
-  , "AmiId" :: NullOrUndefined (String)
-  , "SshKeyName" :: NullOrUndefined (String)
-  , "Architecture" :: NullOrUndefined (Architecture)
-  , "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean)
-  , "EbsOptimized" :: NullOrUndefined (Boolean)
-  , "AgentVersion" :: NullOrUndefined (String)
+  , "LayerIds" :: Maybe (Strings)
+  , "InstanceType" :: Maybe (String)
+  , "AutoScalingType" :: Maybe (AutoScalingType)
+  , "Hostname" :: Maybe (String)
+  , "Os" :: Maybe (String)
+  , "AmiId" :: Maybe (String)
+  , "SshKeyName" :: Maybe (String)
+  , "Architecture" :: Maybe (Architecture)
+  , "InstallUpdatesOnBoot" :: Maybe (Boolean)
+  , "EbsOptimized" :: Maybe (Boolean)
+  , "AgentVersion" :: Maybe (String)
   }
 derive instance newtypeUpdateInstanceRequest :: Newtype UpdateInstanceRequest _
 derive instance repGenericUpdateInstanceRequest :: Generic UpdateInstanceRequest _
@@ -3830,33 +3829,33 @@ instance encodeUpdateInstanceRequest :: Encode UpdateInstanceRequest where encod
 
 -- | Constructs UpdateInstanceRequest from required parameters
 newUpdateInstanceRequest :: String -> UpdateInstanceRequest
-newUpdateInstanceRequest _InstanceId = UpdateInstanceRequest { "InstanceId": _InstanceId, "AgentVersion": (NullOrUndefined Nothing), "AmiId": (NullOrUndefined Nothing), "Architecture": (NullOrUndefined Nothing), "AutoScalingType": (NullOrUndefined Nothing), "EbsOptimized": (NullOrUndefined Nothing), "Hostname": (NullOrUndefined Nothing), "InstallUpdatesOnBoot": (NullOrUndefined Nothing), "InstanceType": (NullOrUndefined Nothing), "LayerIds": (NullOrUndefined Nothing), "Os": (NullOrUndefined Nothing), "SshKeyName": (NullOrUndefined Nothing) }
+newUpdateInstanceRequest _InstanceId = UpdateInstanceRequest { "InstanceId": _InstanceId, "AgentVersion": Nothing, "AmiId": Nothing, "Architecture": Nothing, "AutoScalingType": Nothing, "EbsOptimized": Nothing, "Hostname": Nothing, "InstallUpdatesOnBoot": Nothing, "InstanceType": Nothing, "LayerIds": Nothing, "Os": Nothing, "SshKeyName": Nothing }
 
 -- | Constructs UpdateInstanceRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateInstanceRequest' :: String -> ( { "InstanceId" :: (String) , "LayerIds" :: NullOrUndefined (Strings) , "InstanceType" :: NullOrUndefined (String) , "AutoScalingType" :: NullOrUndefined (AutoScalingType) , "Hostname" :: NullOrUndefined (String) , "Os" :: NullOrUndefined (String) , "AmiId" :: NullOrUndefined (String) , "SshKeyName" :: NullOrUndefined (String) , "Architecture" :: NullOrUndefined (Architecture) , "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean) , "EbsOptimized" :: NullOrUndefined (Boolean) , "AgentVersion" :: NullOrUndefined (String) } -> {"InstanceId" :: (String) , "LayerIds" :: NullOrUndefined (Strings) , "InstanceType" :: NullOrUndefined (String) , "AutoScalingType" :: NullOrUndefined (AutoScalingType) , "Hostname" :: NullOrUndefined (String) , "Os" :: NullOrUndefined (String) , "AmiId" :: NullOrUndefined (String) , "SshKeyName" :: NullOrUndefined (String) , "Architecture" :: NullOrUndefined (Architecture) , "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean) , "EbsOptimized" :: NullOrUndefined (Boolean) , "AgentVersion" :: NullOrUndefined (String) } ) -> UpdateInstanceRequest
-newUpdateInstanceRequest' _InstanceId customize = (UpdateInstanceRequest <<< customize) { "InstanceId": _InstanceId, "AgentVersion": (NullOrUndefined Nothing), "AmiId": (NullOrUndefined Nothing), "Architecture": (NullOrUndefined Nothing), "AutoScalingType": (NullOrUndefined Nothing), "EbsOptimized": (NullOrUndefined Nothing), "Hostname": (NullOrUndefined Nothing), "InstallUpdatesOnBoot": (NullOrUndefined Nothing), "InstanceType": (NullOrUndefined Nothing), "LayerIds": (NullOrUndefined Nothing), "Os": (NullOrUndefined Nothing), "SshKeyName": (NullOrUndefined Nothing) }
+newUpdateInstanceRequest' :: String -> ( { "InstanceId" :: (String) , "LayerIds" :: Maybe (Strings) , "InstanceType" :: Maybe (String) , "AutoScalingType" :: Maybe (AutoScalingType) , "Hostname" :: Maybe (String) , "Os" :: Maybe (String) , "AmiId" :: Maybe (String) , "SshKeyName" :: Maybe (String) , "Architecture" :: Maybe (Architecture) , "InstallUpdatesOnBoot" :: Maybe (Boolean) , "EbsOptimized" :: Maybe (Boolean) , "AgentVersion" :: Maybe (String) } -> {"InstanceId" :: (String) , "LayerIds" :: Maybe (Strings) , "InstanceType" :: Maybe (String) , "AutoScalingType" :: Maybe (AutoScalingType) , "Hostname" :: Maybe (String) , "Os" :: Maybe (String) , "AmiId" :: Maybe (String) , "SshKeyName" :: Maybe (String) , "Architecture" :: Maybe (Architecture) , "InstallUpdatesOnBoot" :: Maybe (Boolean) , "EbsOptimized" :: Maybe (Boolean) , "AgentVersion" :: Maybe (String) } ) -> UpdateInstanceRequest
+newUpdateInstanceRequest' _InstanceId customize = (UpdateInstanceRequest <<< customize) { "InstanceId": _InstanceId, "AgentVersion": Nothing, "AmiId": Nothing, "Architecture": Nothing, "AutoScalingType": Nothing, "EbsOptimized": Nothing, "Hostname": Nothing, "InstallUpdatesOnBoot": Nothing, "InstanceType": Nothing, "LayerIds": Nothing, "Os": Nothing, "SshKeyName": Nothing }
 
 
 
 newtype UpdateLayerRequest = UpdateLayerRequest 
   { "LayerId" :: (String)
-  , "Name" :: NullOrUndefined (String)
-  , "Shortname" :: NullOrUndefined (String)
-  , "Attributes" :: NullOrUndefined (LayerAttributes)
-  , "CloudWatchLogsConfiguration" :: NullOrUndefined (CloudWatchLogsConfiguration)
-  , "CustomInstanceProfileArn" :: NullOrUndefined (String)
-  , "CustomJson" :: NullOrUndefined (String)
-  , "CustomSecurityGroupIds" :: NullOrUndefined (Strings)
-  , "Packages" :: NullOrUndefined (Strings)
-  , "VolumeConfigurations" :: NullOrUndefined (VolumeConfigurations)
-  , "EnableAutoHealing" :: NullOrUndefined (Boolean)
-  , "AutoAssignElasticIps" :: NullOrUndefined (Boolean)
-  , "AutoAssignPublicIps" :: NullOrUndefined (Boolean)
-  , "CustomRecipes" :: NullOrUndefined (Recipes)
-  , "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean)
-  , "UseEbsOptimizedInstances" :: NullOrUndefined (Boolean)
-  , "LifecycleEventConfiguration" :: NullOrUndefined (LifecycleEventConfiguration)
+  , "Name" :: Maybe (String)
+  , "Shortname" :: Maybe (String)
+  , "Attributes" :: Maybe (LayerAttributes)
+  , "CloudWatchLogsConfiguration" :: Maybe (CloudWatchLogsConfiguration)
+  , "CustomInstanceProfileArn" :: Maybe (String)
+  , "CustomJson" :: Maybe (String)
+  , "CustomSecurityGroupIds" :: Maybe (Strings)
+  , "Packages" :: Maybe (Strings)
+  , "VolumeConfigurations" :: Maybe (VolumeConfigurations)
+  , "EnableAutoHealing" :: Maybe (Boolean)
+  , "AutoAssignElasticIps" :: Maybe (Boolean)
+  , "AutoAssignPublicIps" :: Maybe (Boolean)
+  , "CustomRecipes" :: Maybe (Recipes)
+  , "InstallUpdatesOnBoot" :: Maybe (Boolean)
+  , "UseEbsOptimizedInstances" :: Maybe (Boolean)
+  , "LifecycleEventConfiguration" :: Maybe (LifecycleEventConfiguration)
   }
 derive instance newtypeUpdateLayerRequest :: Newtype UpdateLayerRequest _
 derive instance repGenericUpdateLayerRequest :: Generic UpdateLayerRequest _
@@ -3866,17 +3865,17 @@ instance encodeUpdateLayerRequest :: Encode UpdateLayerRequest where encode = ge
 
 -- | Constructs UpdateLayerRequest from required parameters
 newUpdateLayerRequest :: String -> UpdateLayerRequest
-newUpdateLayerRequest _LayerId = UpdateLayerRequest { "LayerId": _LayerId, "Attributes": (NullOrUndefined Nothing), "AutoAssignElasticIps": (NullOrUndefined Nothing), "AutoAssignPublicIps": (NullOrUndefined Nothing), "CloudWatchLogsConfiguration": (NullOrUndefined Nothing), "CustomInstanceProfileArn": (NullOrUndefined Nothing), "CustomJson": (NullOrUndefined Nothing), "CustomRecipes": (NullOrUndefined Nothing), "CustomSecurityGroupIds": (NullOrUndefined Nothing), "EnableAutoHealing": (NullOrUndefined Nothing), "InstallUpdatesOnBoot": (NullOrUndefined Nothing), "LifecycleEventConfiguration": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Packages": (NullOrUndefined Nothing), "Shortname": (NullOrUndefined Nothing), "UseEbsOptimizedInstances": (NullOrUndefined Nothing), "VolumeConfigurations": (NullOrUndefined Nothing) }
+newUpdateLayerRequest _LayerId = UpdateLayerRequest { "LayerId": _LayerId, "Attributes": Nothing, "AutoAssignElasticIps": Nothing, "AutoAssignPublicIps": Nothing, "CloudWatchLogsConfiguration": Nothing, "CustomInstanceProfileArn": Nothing, "CustomJson": Nothing, "CustomRecipes": Nothing, "CustomSecurityGroupIds": Nothing, "EnableAutoHealing": Nothing, "InstallUpdatesOnBoot": Nothing, "LifecycleEventConfiguration": Nothing, "Name": Nothing, "Packages": Nothing, "Shortname": Nothing, "UseEbsOptimizedInstances": Nothing, "VolumeConfigurations": Nothing }
 
 -- | Constructs UpdateLayerRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateLayerRequest' :: String -> ( { "LayerId" :: (String) , "Name" :: NullOrUndefined (String) , "Shortname" :: NullOrUndefined (String) , "Attributes" :: NullOrUndefined (LayerAttributes) , "CloudWatchLogsConfiguration" :: NullOrUndefined (CloudWatchLogsConfiguration) , "CustomInstanceProfileArn" :: NullOrUndefined (String) , "CustomJson" :: NullOrUndefined (String) , "CustomSecurityGroupIds" :: NullOrUndefined (Strings) , "Packages" :: NullOrUndefined (Strings) , "VolumeConfigurations" :: NullOrUndefined (VolumeConfigurations) , "EnableAutoHealing" :: NullOrUndefined (Boolean) , "AutoAssignElasticIps" :: NullOrUndefined (Boolean) , "AutoAssignPublicIps" :: NullOrUndefined (Boolean) , "CustomRecipes" :: NullOrUndefined (Recipes) , "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean) , "UseEbsOptimizedInstances" :: NullOrUndefined (Boolean) , "LifecycleEventConfiguration" :: NullOrUndefined (LifecycleEventConfiguration) } -> {"LayerId" :: (String) , "Name" :: NullOrUndefined (String) , "Shortname" :: NullOrUndefined (String) , "Attributes" :: NullOrUndefined (LayerAttributes) , "CloudWatchLogsConfiguration" :: NullOrUndefined (CloudWatchLogsConfiguration) , "CustomInstanceProfileArn" :: NullOrUndefined (String) , "CustomJson" :: NullOrUndefined (String) , "CustomSecurityGroupIds" :: NullOrUndefined (Strings) , "Packages" :: NullOrUndefined (Strings) , "VolumeConfigurations" :: NullOrUndefined (VolumeConfigurations) , "EnableAutoHealing" :: NullOrUndefined (Boolean) , "AutoAssignElasticIps" :: NullOrUndefined (Boolean) , "AutoAssignPublicIps" :: NullOrUndefined (Boolean) , "CustomRecipes" :: NullOrUndefined (Recipes) , "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean) , "UseEbsOptimizedInstances" :: NullOrUndefined (Boolean) , "LifecycleEventConfiguration" :: NullOrUndefined (LifecycleEventConfiguration) } ) -> UpdateLayerRequest
-newUpdateLayerRequest' _LayerId customize = (UpdateLayerRequest <<< customize) { "LayerId": _LayerId, "Attributes": (NullOrUndefined Nothing), "AutoAssignElasticIps": (NullOrUndefined Nothing), "AutoAssignPublicIps": (NullOrUndefined Nothing), "CloudWatchLogsConfiguration": (NullOrUndefined Nothing), "CustomInstanceProfileArn": (NullOrUndefined Nothing), "CustomJson": (NullOrUndefined Nothing), "CustomRecipes": (NullOrUndefined Nothing), "CustomSecurityGroupIds": (NullOrUndefined Nothing), "EnableAutoHealing": (NullOrUndefined Nothing), "InstallUpdatesOnBoot": (NullOrUndefined Nothing), "LifecycleEventConfiguration": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Packages": (NullOrUndefined Nothing), "Shortname": (NullOrUndefined Nothing), "UseEbsOptimizedInstances": (NullOrUndefined Nothing), "VolumeConfigurations": (NullOrUndefined Nothing) }
+newUpdateLayerRequest' :: String -> ( { "LayerId" :: (String) , "Name" :: Maybe (String) , "Shortname" :: Maybe (String) , "Attributes" :: Maybe (LayerAttributes) , "CloudWatchLogsConfiguration" :: Maybe (CloudWatchLogsConfiguration) , "CustomInstanceProfileArn" :: Maybe (String) , "CustomJson" :: Maybe (String) , "CustomSecurityGroupIds" :: Maybe (Strings) , "Packages" :: Maybe (Strings) , "VolumeConfigurations" :: Maybe (VolumeConfigurations) , "EnableAutoHealing" :: Maybe (Boolean) , "AutoAssignElasticIps" :: Maybe (Boolean) , "AutoAssignPublicIps" :: Maybe (Boolean) , "CustomRecipes" :: Maybe (Recipes) , "InstallUpdatesOnBoot" :: Maybe (Boolean) , "UseEbsOptimizedInstances" :: Maybe (Boolean) , "LifecycleEventConfiguration" :: Maybe (LifecycleEventConfiguration) } -> {"LayerId" :: (String) , "Name" :: Maybe (String) , "Shortname" :: Maybe (String) , "Attributes" :: Maybe (LayerAttributes) , "CloudWatchLogsConfiguration" :: Maybe (CloudWatchLogsConfiguration) , "CustomInstanceProfileArn" :: Maybe (String) , "CustomJson" :: Maybe (String) , "CustomSecurityGroupIds" :: Maybe (Strings) , "Packages" :: Maybe (Strings) , "VolumeConfigurations" :: Maybe (VolumeConfigurations) , "EnableAutoHealing" :: Maybe (Boolean) , "AutoAssignElasticIps" :: Maybe (Boolean) , "AutoAssignPublicIps" :: Maybe (Boolean) , "CustomRecipes" :: Maybe (Recipes) , "InstallUpdatesOnBoot" :: Maybe (Boolean) , "UseEbsOptimizedInstances" :: Maybe (Boolean) , "LifecycleEventConfiguration" :: Maybe (LifecycleEventConfiguration) } ) -> UpdateLayerRequest
+newUpdateLayerRequest' _LayerId customize = (UpdateLayerRequest <<< customize) { "LayerId": _LayerId, "Attributes": Nothing, "AutoAssignElasticIps": Nothing, "AutoAssignPublicIps": Nothing, "CloudWatchLogsConfiguration": Nothing, "CustomInstanceProfileArn": Nothing, "CustomJson": Nothing, "CustomRecipes": Nothing, "CustomSecurityGroupIds": Nothing, "EnableAutoHealing": Nothing, "InstallUpdatesOnBoot": Nothing, "LifecycleEventConfiguration": Nothing, "Name": Nothing, "Packages": Nothing, "Shortname": Nothing, "UseEbsOptimizedInstances": Nothing, "VolumeConfigurations": Nothing }
 
 
 
 newtype UpdateMyUserProfileRequest = UpdateMyUserProfileRequest 
-  { "SshPublicKey" :: NullOrUndefined (String)
+  { "SshPublicKey" :: Maybe (String)
   }
 derive instance newtypeUpdateMyUserProfileRequest :: Newtype UpdateMyUserProfileRequest _
 derive instance repGenericUpdateMyUserProfileRequest :: Generic UpdateMyUserProfileRequest _
@@ -3886,19 +3885,19 @@ instance encodeUpdateMyUserProfileRequest :: Encode UpdateMyUserProfileRequest w
 
 -- | Constructs UpdateMyUserProfileRequest from required parameters
 newUpdateMyUserProfileRequest :: UpdateMyUserProfileRequest
-newUpdateMyUserProfileRequest  = UpdateMyUserProfileRequest { "SshPublicKey": (NullOrUndefined Nothing) }
+newUpdateMyUserProfileRequest  = UpdateMyUserProfileRequest { "SshPublicKey": Nothing }
 
 -- | Constructs UpdateMyUserProfileRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateMyUserProfileRequest' :: ( { "SshPublicKey" :: NullOrUndefined (String) } -> {"SshPublicKey" :: NullOrUndefined (String) } ) -> UpdateMyUserProfileRequest
-newUpdateMyUserProfileRequest'  customize = (UpdateMyUserProfileRequest <<< customize) { "SshPublicKey": (NullOrUndefined Nothing) }
+newUpdateMyUserProfileRequest' :: ( { "SshPublicKey" :: Maybe (String) } -> {"SshPublicKey" :: Maybe (String) } ) -> UpdateMyUserProfileRequest
+newUpdateMyUserProfileRequest'  customize = (UpdateMyUserProfileRequest <<< customize) { "SshPublicKey": Nothing }
 
 
 
 newtype UpdateRdsDbInstanceRequest = UpdateRdsDbInstanceRequest 
   { "RdsDbInstanceArn" :: (String)
-  , "DbUser" :: NullOrUndefined (String)
-  , "DbPassword" :: NullOrUndefined (String)
+  , "DbUser" :: Maybe (String)
+  , "DbPassword" :: Maybe (String)
   }
 derive instance newtypeUpdateRdsDbInstanceRequest :: Newtype UpdateRdsDbInstanceRequest _
 derive instance repGenericUpdateRdsDbInstanceRequest :: Generic UpdateRdsDbInstanceRequest _
@@ -3908,34 +3907,34 @@ instance encodeUpdateRdsDbInstanceRequest :: Encode UpdateRdsDbInstanceRequest w
 
 -- | Constructs UpdateRdsDbInstanceRequest from required parameters
 newUpdateRdsDbInstanceRequest :: String -> UpdateRdsDbInstanceRequest
-newUpdateRdsDbInstanceRequest _RdsDbInstanceArn = UpdateRdsDbInstanceRequest { "RdsDbInstanceArn": _RdsDbInstanceArn, "DbPassword": (NullOrUndefined Nothing), "DbUser": (NullOrUndefined Nothing) }
+newUpdateRdsDbInstanceRequest _RdsDbInstanceArn = UpdateRdsDbInstanceRequest { "RdsDbInstanceArn": _RdsDbInstanceArn, "DbPassword": Nothing, "DbUser": Nothing }
 
 -- | Constructs UpdateRdsDbInstanceRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateRdsDbInstanceRequest' :: String -> ( { "RdsDbInstanceArn" :: (String) , "DbUser" :: NullOrUndefined (String) , "DbPassword" :: NullOrUndefined (String) } -> {"RdsDbInstanceArn" :: (String) , "DbUser" :: NullOrUndefined (String) , "DbPassword" :: NullOrUndefined (String) } ) -> UpdateRdsDbInstanceRequest
-newUpdateRdsDbInstanceRequest' _RdsDbInstanceArn customize = (UpdateRdsDbInstanceRequest <<< customize) { "RdsDbInstanceArn": _RdsDbInstanceArn, "DbPassword": (NullOrUndefined Nothing), "DbUser": (NullOrUndefined Nothing) }
+newUpdateRdsDbInstanceRequest' :: String -> ( { "RdsDbInstanceArn" :: (String) , "DbUser" :: Maybe (String) , "DbPassword" :: Maybe (String) } -> {"RdsDbInstanceArn" :: (String) , "DbUser" :: Maybe (String) , "DbPassword" :: Maybe (String) } ) -> UpdateRdsDbInstanceRequest
+newUpdateRdsDbInstanceRequest' _RdsDbInstanceArn customize = (UpdateRdsDbInstanceRequest <<< customize) { "RdsDbInstanceArn": _RdsDbInstanceArn, "DbPassword": Nothing, "DbUser": Nothing }
 
 
 
 newtype UpdateStackRequest = UpdateStackRequest 
   { "StackId" :: (String)
-  , "Name" :: NullOrUndefined (String)
-  , "Attributes" :: NullOrUndefined (StackAttributes)
-  , "ServiceRoleArn" :: NullOrUndefined (String)
-  , "DefaultInstanceProfileArn" :: NullOrUndefined (String)
-  , "DefaultOs" :: NullOrUndefined (String)
-  , "HostnameTheme" :: NullOrUndefined (String)
-  , "DefaultAvailabilityZone" :: NullOrUndefined (String)
-  , "DefaultSubnetId" :: NullOrUndefined (String)
-  , "CustomJson" :: NullOrUndefined (String)
-  , "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager)
-  , "ChefConfiguration" :: NullOrUndefined (ChefConfiguration)
-  , "UseCustomCookbooks" :: NullOrUndefined (Boolean)
-  , "CustomCookbooksSource" :: NullOrUndefined (Source)
-  , "DefaultSshKeyName" :: NullOrUndefined (String)
-  , "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType)
-  , "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean)
-  , "AgentVersion" :: NullOrUndefined (String)
+  , "Name" :: Maybe (String)
+  , "Attributes" :: Maybe (StackAttributes)
+  , "ServiceRoleArn" :: Maybe (String)
+  , "DefaultInstanceProfileArn" :: Maybe (String)
+  , "DefaultOs" :: Maybe (String)
+  , "HostnameTheme" :: Maybe (String)
+  , "DefaultAvailabilityZone" :: Maybe (String)
+  , "DefaultSubnetId" :: Maybe (String)
+  , "CustomJson" :: Maybe (String)
+  , "ConfigurationManager" :: Maybe (StackConfigurationManager)
+  , "ChefConfiguration" :: Maybe (ChefConfiguration)
+  , "UseCustomCookbooks" :: Maybe (Boolean)
+  , "CustomCookbooksSource" :: Maybe (Source)
+  , "DefaultSshKeyName" :: Maybe (String)
+  , "DefaultRootDeviceType" :: Maybe (RootDeviceType)
+  , "UseOpsworksSecurityGroups" :: Maybe (Boolean)
+  , "AgentVersion" :: Maybe (String)
   }
 derive instance newtypeUpdateStackRequest :: Newtype UpdateStackRequest _
 derive instance repGenericUpdateStackRequest :: Generic UpdateStackRequest _
@@ -3945,20 +3944,20 @@ instance encodeUpdateStackRequest :: Encode UpdateStackRequest where encode = ge
 
 -- | Constructs UpdateStackRequest from required parameters
 newUpdateStackRequest :: String -> UpdateStackRequest
-newUpdateStackRequest _StackId = UpdateStackRequest { "StackId": _StackId, "AgentVersion": (NullOrUndefined Nothing), "Attributes": (NullOrUndefined Nothing), "ChefConfiguration": (NullOrUndefined Nothing), "ConfigurationManager": (NullOrUndefined Nothing), "CustomCookbooksSource": (NullOrUndefined Nothing), "CustomJson": (NullOrUndefined Nothing), "DefaultAvailabilityZone": (NullOrUndefined Nothing), "DefaultInstanceProfileArn": (NullOrUndefined Nothing), "DefaultOs": (NullOrUndefined Nothing), "DefaultRootDeviceType": (NullOrUndefined Nothing), "DefaultSshKeyName": (NullOrUndefined Nothing), "DefaultSubnetId": (NullOrUndefined Nothing), "HostnameTheme": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "ServiceRoleArn": (NullOrUndefined Nothing), "UseCustomCookbooks": (NullOrUndefined Nothing), "UseOpsworksSecurityGroups": (NullOrUndefined Nothing) }
+newUpdateStackRequest _StackId = UpdateStackRequest { "StackId": _StackId, "AgentVersion": Nothing, "Attributes": Nothing, "ChefConfiguration": Nothing, "ConfigurationManager": Nothing, "CustomCookbooksSource": Nothing, "CustomJson": Nothing, "DefaultAvailabilityZone": Nothing, "DefaultInstanceProfileArn": Nothing, "DefaultOs": Nothing, "DefaultRootDeviceType": Nothing, "DefaultSshKeyName": Nothing, "DefaultSubnetId": Nothing, "HostnameTheme": Nothing, "Name": Nothing, "ServiceRoleArn": Nothing, "UseCustomCookbooks": Nothing, "UseOpsworksSecurityGroups": Nothing }
 
 -- | Constructs UpdateStackRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateStackRequest' :: String -> ( { "StackId" :: (String) , "Name" :: NullOrUndefined (String) , "Attributes" :: NullOrUndefined (StackAttributes) , "ServiceRoleArn" :: NullOrUndefined (String) , "DefaultInstanceProfileArn" :: NullOrUndefined (String) , "DefaultOs" :: NullOrUndefined (String) , "HostnameTheme" :: NullOrUndefined (String) , "DefaultAvailabilityZone" :: NullOrUndefined (String) , "DefaultSubnetId" :: NullOrUndefined (String) , "CustomJson" :: NullOrUndefined (String) , "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager) , "ChefConfiguration" :: NullOrUndefined (ChefConfiguration) , "UseCustomCookbooks" :: NullOrUndefined (Boolean) , "CustomCookbooksSource" :: NullOrUndefined (Source) , "DefaultSshKeyName" :: NullOrUndefined (String) , "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType) , "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean) , "AgentVersion" :: NullOrUndefined (String) } -> {"StackId" :: (String) , "Name" :: NullOrUndefined (String) , "Attributes" :: NullOrUndefined (StackAttributes) , "ServiceRoleArn" :: NullOrUndefined (String) , "DefaultInstanceProfileArn" :: NullOrUndefined (String) , "DefaultOs" :: NullOrUndefined (String) , "HostnameTheme" :: NullOrUndefined (String) , "DefaultAvailabilityZone" :: NullOrUndefined (String) , "DefaultSubnetId" :: NullOrUndefined (String) , "CustomJson" :: NullOrUndefined (String) , "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager) , "ChefConfiguration" :: NullOrUndefined (ChefConfiguration) , "UseCustomCookbooks" :: NullOrUndefined (Boolean) , "CustomCookbooksSource" :: NullOrUndefined (Source) , "DefaultSshKeyName" :: NullOrUndefined (String) , "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType) , "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean) , "AgentVersion" :: NullOrUndefined (String) } ) -> UpdateStackRequest
-newUpdateStackRequest' _StackId customize = (UpdateStackRequest <<< customize) { "StackId": _StackId, "AgentVersion": (NullOrUndefined Nothing), "Attributes": (NullOrUndefined Nothing), "ChefConfiguration": (NullOrUndefined Nothing), "ConfigurationManager": (NullOrUndefined Nothing), "CustomCookbooksSource": (NullOrUndefined Nothing), "CustomJson": (NullOrUndefined Nothing), "DefaultAvailabilityZone": (NullOrUndefined Nothing), "DefaultInstanceProfileArn": (NullOrUndefined Nothing), "DefaultOs": (NullOrUndefined Nothing), "DefaultRootDeviceType": (NullOrUndefined Nothing), "DefaultSshKeyName": (NullOrUndefined Nothing), "DefaultSubnetId": (NullOrUndefined Nothing), "HostnameTheme": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "ServiceRoleArn": (NullOrUndefined Nothing), "UseCustomCookbooks": (NullOrUndefined Nothing), "UseOpsworksSecurityGroups": (NullOrUndefined Nothing) }
+newUpdateStackRequest' :: String -> ( { "StackId" :: (String) , "Name" :: Maybe (String) , "Attributes" :: Maybe (StackAttributes) , "ServiceRoleArn" :: Maybe (String) , "DefaultInstanceProfileArn" :: Maybe (String) , "DefaultOs" :: Maybe (String) , "HostnameTheme" :: Maybe (String) , "DefaultAvailabilityZone" :: Maybe (String) , "DefaultSubnetId" :: Maybe (String) , "CustomJson" :: Maybe (String) , "ConfigurationManager" :: Maybe (StackConfigurationManager) , "ChefConfiguration" :: Maybe (ChefConfiguration) , "UseCustomCookbooks" :: Maybe (Boolean) , "CustomCookbooksSource" :: Maybe (Source) , "DefaultSshKeyName" :: Maybe (String) , "DefaultRootDeviceType" :: Maybe (RootDeviceType) , "UseOpsworksSecurityGroups" :: Maybe (Boolean) , "AgentVersion" :: Maybe (String) } -> {"StackId" :: (String) , "Name" :: Maybe (String) , "Attributes" :: Maybe (StackAttributes) , "ServiceRoleArn" :: Maybe (String) , "DefaultInstanceProfileArn" :: Maybe (String) , "DefaultOs" :: Maybe (String) , "HostnameTheme" :: Maybe (String) , "DefaultAvailabilityZone" :: Maybe (String) , "DefaultSubnetId" :: Maybe (String) , "CustomJson" :: Maybe (String) , "ConfigurationManager" :: Maybe (StackConfigurationManager) , "ChefConfiguration" :: Maybe (ChefConfiguration) , "UseCustomCookbooks" :: Maybe (Boolean) , "CustomCookbooksSource" :: Maybe (Source) , "DefaultSshKeyName" :: Maybe (String) , "DefaultRootDeviceType" :: Maybe (RootDeviceType) , "UseOpsworksSecurityGroups" :: Maybe (Boolean) , "AgentVersion" :: Maybe (String) } ) -> UpdateStackRequest
+newUpdateStackRequest' _StackId customize = (UpdateStackRequest <<< customize) { "StackId": _StackId, "AgentVersion": Nothing, "Attributes": Nothing, "ChefConfiguration": Nothing, "ConfigurationManager": Nothing, "CustomCookbooksSource": Nothing, "CustomJson": Nothing, "DefaultAvailabilityZone": Nothing, "DefaultInstanceProfileArn": Nothing, "DefaultOs": Nothing, "DefaultRootDeviceType": Nothing, "DefaultSshKeyName": Nothing, "DefaultSubnetId": Nothing, "HostnameTheme": Nothing, "Name": Nothing, "ServiceRoleArn": Nothing, "UseCustomCookbooks": Nothing, "UseOpsworksSecurityGroups": Nothing }
 
 
 
 newtype UpdateUserProfileRequest = UpdateUserProfileRequest 
   { "IamUserArn" :: (String)
-  , "SshUsername" :: NullOrUndefined (String)
-  , "SshPublicKey" :: NullOrUndefined (String)
-  , "AllowSelfManagement" :: NullOrUndefined (Boolean)
+  , "SshUsername" :: Maybe (String)
+  , "SshPublicKey" :: Maybe (String)
+  , "AllowSelfManagement" :: Maybe (Boolean)
   }
 derive instance newtypeUpdateUserProfileRequest :: Newtype UpdateUserProfileRequest _
 derive instance repGenericUpdateUserProfileRequest :: Generic UpdateUserProfileRequest _
@@ -3968,19 +3967,19 @@ instance encodeUpdateUserProfileRequest :: Encode UpdateUserProfileRequest where
 
 -- | Constructs UpdateUserProfileRequest from required parameters
 newUpdateUserProfileRequest :: String -> UpdateUserProfileRequest
-newUpdateUserProfileRequest _IamUserArn = UpdateUserProfileRequest { "IamUserArn": _IamUserArn, "AllowSelfManagement": (NullOrUndefined Nothing), "SshPublicKey": (NullOrUndefined Nothing), "SshUsername": (NullOrUndefined Nothing) }
+newUpdateUserProfileRequest _IamUserArn = UpdateUserProfileRequest { "IamUserArn": _IamUserArn, "AllowSelfManagement": Nothing, "SshPublicKey": Nothing, "SshUsername": Nothing }
 
 -- | Constructs UpdateUserProfileRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateUserProfileRequest' :: String -> ( { "IamUserArn" :: (String) , "SshUsername" :: NullOrUndefined (String) , "SshPublicKey" :: NullOrUndefined (String) , "AllowSelfManagement" :: NullOrUndefined (Boolean) } -> {"IamUserArn" :: (String) , "SshUsername" :: NullOrUndefined (String) , "SshPublicKey" :: NullOrUndefined (String) , "AllowSelfManagement" :: NullOrUndefined (Boolean) } ) -> UpdateUserProfileRequest
-newUpdateUserProfileRequest' _IamUserArn customize = (UpdateUserProfileRequest <<< customize) { "IamUserArn": _IamUserArn, "AllowSelfManagement": (NullOrUndefined Nothing), "SshPublicKey": (NullOrUndefined Nothing), "SshUsername": (NullOrUndefined Nothing) }
+newUpdateUserProfileRequest' :: String -> ( { "IamUserArn" :: (String) , "SshUsername" :: Maybe (String) , "SshPublicKey" :: Maybe (String) , "AllowSelfManagement" :: Maybe (Boolean) } -> {"IamUserArn" :: (String) , "SshUsername" :: Maybe (String) , "SshPublicKey" :: Maybe (String) , "AllowSelfManagement" :: Maybe (Boolean) } ) -> UpdateUserProfileRequest
+newUpdateUserProfileRequest' _IamUserArn customize = (UpdateUserProfileRequest <<< customize) { "IamUserArn": _IamUserArn, "AllowSelfManagement": Nothing, "SshPublicKey": Nothing, "SshUsername": Nothing }
 
 
 
 newtype UpdateVolumeRequest = UpdateVolumeRequest 
   { "VolumeId" :: (String)
-  , "Name" :: NullOrUndefined (String)
-  , "MountPoint" :: NullOrUndefined (String)
+  , "Name" :: Maybe (String)
+  , "MountPoint" :: Maybe (String)
   }
 derive instance newtypeUpdateVolumeRequest :: Newtype UpdateVolumeRequest _
 derive instance repGenericUpdateVolumeRequest :: Generic UpdateVolumeRequest _
@@ -3990,22 +3989,22 @@ instance encodeUpdateVolumeRequest :: Encode UpdateVolumeRequest where encode = 
 
 -- | Constructs UpdateVolumeRequest from required parameters
 newUpdateVolumeRequest :: String -> UpdateVolumeRequest
-newUpdateVolumeRequest _VolumeId = UpdateVolumeRequest { "VolumeId": _VolumeId, "MountPoint": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newUpdateVolumeRequest _VolumeId = UpdateVolumeRequest { "VolumeId": _VolumeId, "MountPoint": Nothing, "Name": Nothing }
 
 -- | Constructs UpdateVolumeRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateVolumeRequest' :: String -> ( { "VolumeId" :: (String) , "Name" :: NullOrUndefined (String) , "MountPoint" :: NullOrUndefined (String) } -> {"VolumeId" :: (String) , "Name" :: NullOrUndefined (String) , "MountPoint" :: NullOrUndefined (String) } ) -> UpdateVolumeRequest
-newUpdateVolumeRequest' _VolumeId customize = (UpdateVolumeRequest <<< customize) { "VolumeId": _VolumeId, "MountPoint": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newUpdateVolumeRequest' :: String -> ( { "VolumeId" :: (String) , "Name" :: Maybe (String) , "MountPoint" :: Maybe (String) } -> {"VolumeId" :: (String) , "Name" :: Maybe (String) , "MountPoint" :: Maybe (String) } ) -> UpdateVolumeRequest
+newUpdateVolumeRequest' _VolumeId customize = (UpdateVolumeRequest <<< customize) { "VolumeId": _VolumeId, "MountPoint": Nothing, "Name": Nothing }
 
 
 
 -- | <p>Describes a user's SSH information.</p>
 newtype UserProfile = UserProfile 
-  { "IamUserArn" :: NullOrUndefined (String)
-  , "Name" :: NullOrUndefined (String)
-  , "SshUsername" :: NullOrUndefined (String)
-  , "SshPublicKey" :: NullOrUndefined (String)
-  , "AllowSelfManagement" :: NullOrUndefined (Boolean)
+  { "IamUserArn" :: Maybe (String)
+  , "Name" :: Maybe (String)
+  , "SshUsername" :: Maybe (String)
+  , "SshPublicKey" :: Maybe (String)
+  , "AllowSelfManagement" :: Maybe (Boolean)
   }
 derive instance newtypeUserProfile :: Newtype UserProfile _
 derive instance repGenericUserProfile :: Generic UserProfile _
@@ -4015,12 +4014,12 @@ instance encodeUserProfile :: Encode UserProfile where encode = genericEncode op
 
 -- | Constructs UserProfile from required parameters
 newUserProfile :: UserProfile
-newUserProfile  = UserProfile { "AllowSelfManagement": (NullOrUndefined Nothing), "IamUserArn": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "SshPublicKey": (NullOrUndefined Nothing), "SshUsername": (NullOrUndefined Nothing) }
+newUserProfile  = UserProfile { "AllowSelfManagement": Nothing, "IamUserArn": Nothing, "Name": Nothing, "SshPublicKey": Nothing, "SshUsername": Nothing }
 
 -- | Constructs UserProfile's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUserProfile' :: ( { "IamUserArn" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "SshUsername" :: NullOrUndefined (String) , "SshPublicKey" :: NullOrUndefined (String) , "AllowSelfManagement" :: NullOrUndefined (Boolean) } -> {"IamUserArn" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "SshUsername" :: NullOrUndefined (String) , "SshPublicKey" :: NullOrUndefined (String) , "AllowSelfManagement" :: NullOrUndefined (Boolean) } ) -> UserProfile
-newUserProfile'  customize = (UserProfile <<< customize) { "AllowSelfManagement": (NullOrUndefined Nothing), "IamUserArn": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "SshPublicKey": (NullOrUndefined Nothing), "SshUsername": (NullOrUndefined Nothing) }
+newUserProfile' :: ( { "IamUserArn" :: Maybe (String) , "Name" :: Maybe (String) , "SshUsername" :: Maybe (String) , "SshPublicKey" :: Maybe (String) , "AllowSelfManagement" :: Maybe (Boolean) } -> {"IamUserArn" :: Maybe (String) , "Name" :: Maybe (String) , "SshUsername" :: Maybe (String) , "SshPublicKey" :: Maybe (String) , "AllowSelfManagement" :: Maybe (Boolean) } ) -> UserProfile
+newUserProfile'  customize = (UserProfile <<< customize) { "AllowSelfManagement": Nothing, "IamUserArn": Nothing, "Name": Nothing, "SshPublicKey": Nothing, "SshUsername": Nothing }
 
 
 
@@ -4044,7 +4043,7 @@ instance encodeValidForInMinutes :: Encode ValidForInMinutes where encode = gene
 
 -- | <p>Indicates that a request was not valid.</p>
 newtype ValidationException = ValidationException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeValidationException :: Newtype ValidationException _
 derive instance repGenericValidationException :: Generic ValidationException _
@@ -4054,12 +4053,12 @@ instance encodeValidationException :: Encode ValidationException where encode = 
 
 -- | Constructs ValidationException from required parameters
 newValidationException :: ValidationException
-newValidationException  = ValidationException { "message": (NullOrUndefined Nothing) }
+newValidationException  = ValidationException { "message": Nothing }
 
 -- | Constructs ValidationException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newValidationException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> ValidationException
-newValidationException'  customize = (ValidationException <<< customize) { "message": (NullOrUndefined Nothing) }
+newValidationException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> ValidationException
+newValidationException'  customize = (ValidationException <<< customize) { "message": Nothing }
 
 
 
@@ -4074,20 +4073,20 @@ instance encodeVirtualizationType :: Encode VirtualizationType where encode = ge
 
 -- | <p>Describes an instance's Amazon EBS volume.</p>
 newtype Volume = Volume 
-  { "VolumeId" :: NullOrUndefined (String)
-  , "Ec2VolumeId" :: NullOrUndefined (String)
-  , "Name" :: NullOrUndefined (String)
-  , "RaidArrayId" :: NullOrUndefined (String)
-  , "InstanceId" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (String)
-  , "Size" :: NullOrUndefined (Int)
-  , "Device" :: NullOrUndefined (String)
-  , "MountPoint" :: NullOrUndefined (String)
-  , "Region" :: NullOrUndefined (String)
-  , "AvailabilityZone" :: NullOrUndefined (String)
-  , "VolumeType" :: NullOrUndefined (String)
-  , "Iops" :: NullOrUndefined (Int)
-  , "Encrypted" :: NullOrUndefined (Boolean)
+  { "VolumeId" :: Maybe (String)
+  , "Ec2VolumeId" :: Maybe (String)
+  , "Name" :: Maybe (String)
+  , "RaidArrayId" :: Maybe (String)
+  , "InstanceId" :: Maybe (String)
+  , "Status" :: Maybe (String)
+  , "Size" :: Maybe (Int)
+  , "Device" :: Maybe (String)
+  , "MountPoint" :: Maybe (String)
+  , "Region" :: Maybe (String)
+  , "AvailabilityZone" :: Maybe (String)
+  , "VolumeType" :: Maybe (String)
+  , "Iops" :: Maybe (Int)
+  , "Encrypted" :: Maybe (Boolean)
   }
 derive instance newtypeVolume :: Newtype Volume _
 derive instance repGenericVolume :: Generic Volume _
@@ -4097,24 +4096,24 @@ instance encodeVolume :: Encode Volume where encode = genericEncode options
 
 -- | Constructs Volume from required parameters
 newVolume :: Volume
-newVolume  = Volume { "AvailabilityZone": (NullOrUndefined Nothing), "Device": (NullOrUndefined Nothing), "Ec2VolumeId": (NullOrUndefined Nothing), "Encrypted": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "Iops": (NullOrUndefined Nothing), "MountPoint": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RaidArrayId": (NullOrUndefined Nothing), "Region": (NullOrUndefined Nothing), "Size": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "VolumeId": (NullOrUndefined Nothing), "VolumeType": (NullOrUndefined Nothing) }
+newVolume  = Volume { "AvailabilityZone": Nothing, "Device": Nothing, "Ec2VolumeId": Nothing, "Encrypted": Nothing, "InstanceId": Nothing, "Iops": Nothing, "MountPoint": Nothing, "Name": Nothing, "RaidArrayId": Nothing, "Region": Nothing, "Size": Nothing, "Status": Nothing, "VolumeId": Nothing, "VolumeType": Nothing }
 
 -- | Constructs Volume's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newVolume' :: ( { "VolumeId" :: NullOrUndefined (String) , "Ec2VolumeId" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "RaidArrayId" :: NullOrUndefined (String) , "InstanceId" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "Size" :: NullOrUndefined (Int) , "Device" :: NullOrUndefined (String) , "MountPoint" :: NullOrUndefined (String) , "Region" :: NullOrUndefined (String) , "AvailabilityZone" :: NullOrUndefined (String) , "VolumeType" :: NullOrUndefined (String) , "Iops" :: NullOrUndefined (Int) , "Encrypted" :: NullOrUndefined (Boolean) } -> {"VolumeId" :: NullOrUndefined (String) , "Ec2VolumeId" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "RaidArrayId" :: NullOrUndefined (String) , "InstanceId" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "Size" :: NullOrUndefined (Int) , "Device" :: NullOrUndefined (String) , "MountPoint" :: NullOrUndefined (String) , "Region" :: NullOrUndefined (String) , "AvailabilityZone" :: NullOrUndefined (String) , "VolumeType" :: NullOrUndefined (String) , "Iops" :: NullOrUndefined (Int) , "Encrypted" :: NullOrUndefined (Boolean) } ) -> Volume
-newVolume'  customize = (Volume <<< customize) { "AvailabilityZone": (NullOrUndefined Nothing), "Device": (NullOrUndefined Nothing), "Ec2VolumeId": (NullOrUndefined Nothing), "Encrypted": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "Iops": (NullOrUndefined Nothing), "MountPoint": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RaidArrayId": (NullOrUndefined Nothing), "Region": (NullOrUndefined Nothing), "Size": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "VolumeId": (NullOrUndefined Nothing), "VolumeType": (NullOrUndefined Nothing) }
+newVolume' :: ( { "VolumeId" :: Maybe (String) , "Ec2VolumeId" :: Maybe (String) , "Name" :: Maybe (String) , "RaidArrayId" :: Maybe (String) , "InstanceId" :: Maybe (String) , "Status" :: Maybe (String) , "Size" :: Maybe (Int) , "Device" :: Maybe (String) , "MountPoint" :: Maybe (String) , "Region" :: Maybe (String) , "AvailabilityZone" :: Maybe (String) , "VolumeType" :: Maybe (String) , "Iops" :: Maybe (Int) , "Encrypted" :: Maybe (Boolean) } -> {"VolumeId" :: Maybe (String) , "Ec2VolumeId" :: Maybe (String) , "Name" :: Maybe (String) , "RaidArrayId" :: Maybe (String) , "InstanceId" :: Maybe (String) , "Status" :: Maybe (String) , "Size" :: Maybe (Int) , "Device" :: Maybe (String) , "MountPoint" :: Maybe (String) , "Region" :: Maybe (String) , "AvailabilityZone" :: Maybe (String) , "VolumeType" :: Maybe (String) , "Iops" :: Maybe (Int) , "Encrypted" :: Maybe (Boolean) } ) -> Volume
+newVolume'  customize = (Volume <<< customize) { "AvailabilityZone": Nothing, "Device": Nothing, "Ec2VolumeId": Nothing, "Encrypted": Nothing, "InstanceId": Nothing, "Iops": Nothing, "MountPoint": Nothing, "Name": Nothing, "RaidArrayId": Nothing, "Region": Nothing, "Size": Nothing, "Status": Nothing, "VolumeId": Nothing, "VolumeType": Nothing }
 
 
 
 -- | <p>Describes an Amazon EBS volume configuration.</p>
 newtype VolumeConfiguration = VolumeConfiguration 
   { "MountPoint" :: (String)
-  , "RaidLevel" :: NullOrUndefined (Int)
+  , "RaidLevel" :: Maybe (Int)
   , "NumberOfDisks" :: (Int)
   , "Size" :: (Int)
-  , "VolumeType" :: NullOrUndefined (String)
-  , "Iops" :: NullOrUndefined (Int)
-  , "Encrypted" :: NullOrUndefined (Boolean)
+  , "VolumeType" :: Maybe (String)
+  , "Iops" :: Maybe (Int)
+  , "Encrypted" :: Maybe (Boolean)
   }
 derive instance newtypeVolumeConfiguration :: Newtype VolumeConfiguration _
 derive instance repGenericVolumeConfiguration :: Generic VolumeConfiguration _
@@ -4124,12 +4123,12 @@ instance encodeVolumeConfiguration :: Encode VolumeConfiguration where encode = 
 
 -- | Constructs VolumeConfiguration from required parameters
 newVolumeConfiguration :: String -> Int -> Int -> VolumeConfiguration
-newVolumeConfiguration _MountPoint _NumberOfDisks _Size = VolumeConfiguration { "MountPoint": _MountPoint, "NumberOfDisks": _NumberOfDisks, "Size": _Size, "Encrypted": (NullOrUndefined Nothing), "Iops": (NullOrUndefined Nothing), "RaidLevel": (NullOrUndefined Nothing), "VolumeType": (NullOrUndefined Nothing) }
+newVolumeConfiguration _MountPoint _NumberOfDisks _Size = VolumeConfiguration { "MountPoint": _MountPoint, "NumberOfDisks": _NumberOfDisks, "Size": _Size, "Encrypted": Nothing, "Iops": Nothing, "RaidLevel": Nothing, "VolumeType": Nothing }
 
 -- | Constructs VolumeConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newVolumeConfiguration' :: String -> Int -> Int -> ( { "MountPoint" :: (String) , "RaidLevel" :: NullOrUndefined (Int) , "NumberOfDisks" :: (Int) , "Size" :: (Int) , "VolumeType" :: NullOrUndefined (String) , "Iops" :: NullOrUndefined (Int) , "Encrypted" :: NullOrUndefined (Boolean) } -> {"MountPoint" :: (String) , "RaidLevel" :: NullOrUndefined (Int) , "NumberOfDisks" :: (Int) , "Size" :: (Int) , "VolumeType" :: NullOrUndefined (String) , "Iops" :: NullOrUndefined (Int) , "Encrypted" :: NullOrUndefined (Boolean) } ) -> VolumeConfiguration
-newVolumeConfiguration' _MountPoint _NumberOfDisks _Size customize = (VolumeConfiguration <<< customize) { "MountPoint": _MountPoint, "NumberOfDisks": _NumberOfDisks, "Size": _Size, "Encrypted": (NullOrUndefined Nothing), "Iops": (NullOrUndefined Nothing), "RaidLevel": (NullOrUndefined Nothing), "VolumeType": (NullOrUndefined Nothing) }
+newVolumeConfiguration' :: String -> Int -> Int -> ( { "MountPoint" :: (String) , "RaidLevel" :: Maybe (Int) , "NumberOfDisks" :: (Int) , "Size" :: (Int) , "VolumeType" :: Maybe (String) , "Iops" :: Maybe (Int) , "Encrypted" :: Maybe (Boolean) } -> {"MountPoint" :: (String) , "RaidLevel" :: Maybe (Int) , "NumberOfDisks" :: (Int) , "Size" :: (Int) , "VolumeType" :: Maybe (String) , "Iops" :: Maybe (Int) , "Encrypted" :: Maybe (Boolean) } ) -> VolumeConfiguration
+newVolumeConfiguration' _MountPoint _NumberOfDisks _Size customize = (VolumeConfiguration <<< customize) { "MountPoint": _MountPoint, "NumberOfDisks": _NumberOfDisks, "Size": _Size, "Encrypted": Nothing, "Iops": Nothing, "RaidLevel": Nothing, "VolumeType": Nothing }
 
 
 
@@ -4162,13 +4161,13 @@ instance encodeVolumes :: Encode Volumes where encode = genericEncode options
 
 -- | <p>Describes a time-based instance's auto scaling schedule. The schedule consists of a set of key-value pairs.</p> <ul> <li> <p>The key is the time period (a UTC hour) and must be an integer from 0 - 23.</p> </li> <li> <p>The value indicates whether the instance should be online or offline for the specified period, and must be set to "on" or "off"</p> </li> </ul> <p>The default setting for all time periods is off, so you use the following parameters primarily to specify the online periods. You don't have to explicitly specify offline periods unless you want to change an online period to an offline period.</p> <p>The following example specifies that the instance should be online for four hours, from UTC 1200 - 1600. It will be off for the remainder of the day.</p> <p> <code> { "12":"on", "13":"on", "14":"on", "15":"on" } </code> </p>
 newtype WeeklyAutoScalingSchedule = WeeklyAutoScalingSchedule 
-  { "Monday" :: NullOrUndefined (DailyAutoScalingSchedule)
-  , "Tuesday" :: NullOrUndefined (DailyAutoScalingSchedule)
-  , "Wednesday" :: NullOrUndefined (DailyAutoScalingSchedule)
-  , "Thursday" :: NullOrUndefined (DailyAutoScalingSchedule)
-  , "Friday" :: NullOrUndefined (DailyAutoScalingSchedule)
-  , "Saturday" :: NullOrUndefined (DailyAutoScalingSchedule)
-  , "Sunday" :: NullOrUndefined (DailyAutoScalingSchedule)
+  { "Monday" :: Maybe (DailyAutoScalingSchedule)
+  , "Tuesday" :: Maybe (DailyAutoScalingSchedule)
+  , "Wednesday" :: Maybe (DailyAutoScalingSchedule)
+  , "Thursday" :: Maybe (DailyAutoScalingSchedule)
+  , "Friday" :: Maybe (DailyAutoScalingSchedule)
+  , "Saturday" :: Maybe (DailyAutoScalingSchedule)
+  , "Sunday" :: Maybe (DailyAutoScalingSchedule)
   }
 derive instance newtypeWeeklyAutoScalingSchedule :: Newtype WeeklyAutoScalingSchedule _
 derive instance repGenericWeeklyAutoScalingSchedule :: Generic WeeklyAutoScalingSchedule _
@@ -4178,10 +4177,10 @@ instance encodeWeeklyAutoScalingSchedule :: Encode WeeklyAutoScalingSchedule whe
 
 -- | Constructs WeeklyAutoScalingSchedule from required parameters
 newWeeklyAutoScalingSchedule :: WeeklyAutoScalingSchedule
-newWeeklyAutoScalingSchedule  = WeeklyAutoScalingSchedule { "Friday": (NullOrUndefined Nothing), "Monday": (NullOrUndefined Nothing), "Saturday": (NullOrUndefined Nothing), "Sunday": (NullOrUndefined Nothing), "Thursday": (NullOrUndefined Nothing), "Tuesday": (NullOrUndefined Nothing), "Wednesday": (NullOrUndefined Nothing) }
+newWeeklyAutoScalingSchedule  = WeeklyAutoScalingSchedule { "Friday": Nothing, "Monday": Nothing, "Saturday": Nothing, "Sunday": Nothing, "Thursday": Nothing, "Tuesday": Nothing, "Wednesday": Nothing }
 
 -- | Constructs WeeklyAutoScalingSchedule's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newWeeklyAutoScalingSchedule' :: ( { "Monday" :: NullOrUndefined (DailyAutoScalingSchedule) , "Tuesday" :: NullOrUndefined (DailyAutoScalingSchedule) , "Wednesday" :: NullOrUndefined (DailyAutoScalingSchedule) , "Thursday" :: NullOrUndefined (DailyAutoScalingSchedule) , "Friday" :: NullOrUndefined (DailyAutoScalingSchedule) , "Saturday" :: NullOrUndefined (DailyAutoScalingSchedule) , "Sunday" :: NullOrUndefined (DailyAutoScalingSchedule) } -> {"Monday" :: NullOrUndefined (DailyAutoScalingSchedule) , "Tuesday" :: NullOrUndefined (DailyAutoScalingSchedule) , "Wednesday" :: NullOrUndefined (DailyAutoScalingSchedule) , "Thursday" :: NullOrUndefined (DailyAutoScalingSchedule) , "Friday" :: NullOrUndefined (DailyAutoScalingSchedule) , "Saturday" :: NullOrUndefined (DailyAutoScalingSchedule) , "Sunday" :: NullOrUndefined (DailyAutoScalingSchedule) } ) -> WeeklyAutoScalingSchedule
-newWeeklyAutoScalingSchedule'  customize = (WeeklyAutoScalingSchedule <<< customize) { "Friday": (NullOrUndefined Nothing), "Monday": (NullOrUndefined Nothing), "Saturday": (NullOrUndefined Nothing), "Sunday": (NullOrUndefined Nothing), "Thursday": (NullOrUndefined Nothing), "Tuesday": (NullOrUndefined Nothing), "Wednesday": (NullOrUndefined Nothing) }
+newWeeklyAutoScalingSchedule' :: ( { "Monday" :: Maybe (DailyAutoScalingSchedule) , "Tuesday" :: Maybe (DailyAutoScalingSchedule) , "Wednesday" :: Maybe (DailyAutoScalingSchedule) , "Thursday" :: Maybe (DailyAutoScalingSchedule) , "Friday" :: Maybe (DailyAutoScalingSchedule) , "Saturday" :: Maybe (DailyAutoScalingSchedule) , "Sunday" :: Maybe (DailyAutoScalingSchedule) } -> {"Monday" :: Maybe (DailyAutoScalingSchedule) , "Tuesday" :: Maybe (DailyAutoScalingSchedule) , "Wednesday" :: Maybe (DailyAutoScalingSchedule) , "Thursday" :: Maybe (DailyAutoScalingSchedule) , "Friday" :: Maybe (DailyAutoScalingSchedule) , "Saturday" :: Maybe (DailyAutoScalingSchedule) , "Sunday" :: Maybe (DailyAutoScalingSchedule) } ) -> WeeklyAutoScalingSchedule
+newWeeklyAutoScalingSchedule'  customize = (WeeklyAutoScalingSchedule <<< customize) { "Friday": Nothing, "Monday": Nothing, "Saturday": Nothing, "Sunday": Nothing, "Thursday": Nothing, "Tuesday": Nothing, "Wednesday": Nothing }
 

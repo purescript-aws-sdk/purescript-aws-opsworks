@@ -3,7 +3,7 @@
 #### `assignInstance`
 
 ``` purescript
-assignInstance :: forall eff. Service -> AssignInstanceRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+assignInstance :: forall eff. Service -> AssignInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Assign a registered instance to a layer.</p> <ul> <li> <p>You can assign registered on-premises instances to any layer type.</p> </li> <li> <p>You can assign registered Amazon EC2 instances only to custom layers.</p> </li> <li> <p>You cannot use this action with instances that were created with AWS OpsWorks Stacks.</p> </li> </ul> <p> <b>Required Permissions</b>: To use this action, an AWS Identity and Access Management (IAM) user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -11,7 +11,7 @@ assignInstance :: forall eff. Service -> AssignInstanceRequest -> Aff (exception
 #### `assignVolume`
 
 ``` purescript
-assignVolume :: forall eff. Service -> AssignVolumeRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+assignVolume :: forall eff. Service -> AssignVolumeRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Assigns one of the stack's registered Amazon EBS volumes to a specified instance. The volume must first be registered with the stack by calling <a>RegisterVolume</a>. After you register the volume, you must call <a>UpdateVolume</a> to specify a mount point before calling <code>AssignVolume</code>. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -19,7 +19,7 @@ assignVolume :: forall eff. Service -> AssignVolumeRequest -> Aff (exception :: 
 #### `associateElasticIp`
 
 ``` purescript
-associateElasticIp :: forall eff. Service -> AssociateElasticIpRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+associateElasticIp :: forall eff. Service -> AssociateElasticIpRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Associates one of the stack's registered Elastic IP addresses with a specified instance. The address must first be registered with the stack by calling <a>RegisterElasticIp</a>. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -27,7 +27,7 @@ associateElasticIp :: forall eff. Service -> AssociateElasticIpRequest -> Aff (e
 #### `attachElasticLoadBalancer`
 
 ``` purescript
-attachElasticLoadBalancer :: forall eff. Service -> AttachElasticLoadBalancerRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+attachElasticLoadBalancer :: forall eff. Service -> AttachElasticLoadBalancerRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Attaches an Elastic Load Balancing load balancer to a specified layer. AWS OpsWorks Stacks does not support Application Load Balancer. You can only use Classic Load Balancer with AWS OpsWorks Stacks. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic Load Balancing</a>.</p> <note> <p>You must create the Elastic Load Balancing instance separately, by using the Elastic Load Balancing console, API, or CLI. For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html"> Elastic Load Balancing Developer Guide</a>.</p> </note> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -91,7 +91,7 @@ createUserProfile :: forall eff. Service -> CreateUserProfileRequest -> Aff (exc
 #### `deleteApp`
 
 ``` purescript
-deleteApp :: forall eff. Service -> DeleteAppRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteApp :: forall eff. Service -> DeleteAppRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes a specified app.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -99,7 +99,7 @@ deleteApp :: forall eff. Service -> DeleteAppRequest -> Aff (exception :: EXCEPT
 #### `deleteInstance`
 
 ``` purescript
-deleteInstance :: forall eff. Service -> DeleteInstanceRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteInstance :: forall eff. Service -> DeleteInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes a specified instance, which terminates the associated Amazon EC2 instance. You must stop an instance before you can delete it.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html">Deleting Instances</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -107,7 +107,7 @@ deleteInstance :: forall eff. Service -> DeleteInstanceRequest -> Aff (exception
 #### `deleteLayer`
 
 ``` purescript
-deleteLayer :: forall eff. Service -> DeleteLayerRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteLayer :: forall eff. Service -> DeleteLayerRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes a specified layer. You must first stop and then delete all associated instances or unassign registered instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html">How to Delete a Layer</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -115,7 +115,7 @@ deleteLayer :: forall eff. Service -> DeleteLayerRequest -> Aff (exception :: EX
 #### `deleteStack`
 
 ``` purescript
-deleteStack :: forall eff. Service -> DeleteStackRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteStack :: forall eff. Service -> DeleteStackRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes a specified stack. You must first delete all instances, layers, and apps or deregister registered instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">Shut Down a Stack</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -123,7 +123,7 @@ deleteStack :: forall eff. Service -> DeleteStackRequest -> Aff (exception :: EX
 #### `deleteUserProfile`
 
 ``` purescript
-deleteUserProfile :: forall eff. Service -> DeleteUserProfileRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteUserProfile :: forall eff. Service -> DeleteUserProfileRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes a user profile.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -131,7 +131,7 @@ deleteUserProfile :: forall eff. Service -> DeleteUserProfileRequest -> Aff (exc
 #### `deregisterEcsCluster`
 
 ``` purescript
-deregisterEcsCluster :: forall eff. Service -> DeregisterEcsClusterRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deregisterEcsCluster :: forall eff. Service -> DeregisterEcsClusterRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deregisters a specified Amazon ECS cluster from a stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html#workinglayers-ecscluster-delete"> Resource Management</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html</a>.</p>
@@ -139,7 +139,7 @@ deregisterEcsCluster :: forall eff. Service -> DeregisterEcsClusterRequest -> Af
 #### `deregisterElasticIp`
 
 ``` purescript
-deregisterElasticIp :: forall eff. Service -> DeregisterElasticIpRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deregisterElasticIp :: forall eff. Service -> DeregisterElasticIpRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deregisters a specified Elastic IP address. The address can then be registered by another stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -147,7 +147,7 @@ deregisterElasticIp :: forall eff. Service -> DeregisterElasticIpRequest -> Aff 
 #### `deregisterInstance`
 
 ``` purescript
-deregisterInstance :: forall eff. Service -> DeregisterInstanceRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deregisterInstance :: forall eff. Service -> DeregisterInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deregister a registered Amazon EC2 or on-premises instance. This action removes the instance from the stack and returns it to your control. This action can not be used with instances that were created with AWS OpsWorks Stacks.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -155,7 +155,7 @@ deregisterInstance :: forall eff. Service -> DeregisterInstanceRequest -> Aff (e
 #### `deregisterRdsDbInstance`
 
 ``` purescript
-deregisterRdsDbInstance :: forall eff. Service -> DeregisterRdsDbInstanceRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deregisterRdsDbInstance :: forall eff. Service -> DeregisterRdsDbInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deregisters an Amazon RDS instance.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -163,7 +163,7 @@ deregisterRdsDbInstance :: forall eff. Service -> DeregisterRdsDbInstanceRequest
 #### `deregisterVolume`
 
 ``` purescript
-deregisterVolume :: forall eff. Service -> DeregisterVolumeRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deregisterVolume :: forall eff. Service -> DeregisterVolumeRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deregisters an Amazon EBS volume. The volume can then be registered by another stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -347,7 +347,7 @@ describeVolumes :: forall eff. Service -> DescribeVolumesRequest -> Aff (excepti
 #### `detachElasticLoadBalancer`
 
 ``` purescript
-detachElasticLoadBalancer :: forall eff. Service -> DetachElasticLoadBalancerRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+detachElasticLoadBalancer :: forall eff. Service -> DetachElasticLoadBalancerRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Detaches a specified Elastic Load Balancing instance from its layer.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -355,7 +355,7 @@ detachElasticLoadBalancer :: forall eff. Service -> DetachElasticLoadBalancerReq
 #### `disassociateElasticIp`
 
 ``` purescript
-disassociateElasticIp :: forall eff. Service -> DisassociateElasticIpRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+disassociateElasticIp :: forall eff. Service -> DisassociateElasticIpRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Disassociates an Elastic IP address from its instance. The address remains registered with the stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -387,7 +387,7 @@ listTags :: forall eff. Service -> ListTagsRequest -> Aff (exception :: EXCEPTIO
 #### `rebootInstance`
 
 ``` purescript
-rebootInstance :: forall eff. Service -> RebootInstanceRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+rebootInstance :: forall eff. Service -> RebootInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Reboots a specified instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting, Stopping, and Rebooting Instances</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -419,7 +419,7 @@ registerInstance :: forall eff. Service -> RegisterInstanceRequest -> Aff (excep
 #### `registerRdsDbInstance`
 
 ``` purescript
-registerRdsDbInstance :: forall eff. Service -> RegisterRdsDbInstanceRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+registerRdsDbInstance :: forall eff. Service -> RegisterRdsDbInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Registers an Amazon RDS instance with a stack.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -435,7 +435,7 @@ registerVolume :: forall eff. Service -> RegisterVolumeRequest -> Aff (exception
 #### `setLoadBasedAutoScaling`
 
 ``` purescript
-setLoadBasedAutoScaling :: forall eff. Service -> SetLoadBasedAutoScalingRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+setLoadBasedAutoScaling :: forall eff. Service -> SetLoadBasedAutoScalingRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Specify the load-based auto scaling configuration for a specified layer. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing Load with Time-based and Load-based Instances</a>.</p> <note> <p>To use load-based auto scaling, you must create a set of load-based auto scaling instances. Load-based auto scaling operates only on the instances from that set, so you must ensure that you have created enough instances to handle the maximum anticipated load.</p> </note> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -443,7 +443,7 @@ setLoadBasedAutoScaling :: forall eff. Service -> SetLoadBasedAutoScalingRequest
 #### `setPermission`
 
 ``` purescript
-setPermission :: forall eff. Service -> SetPermissionRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+setPermission :: forall eff. Service -> SetPermissionRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Specifies a user's permissions. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html">Security and Permissions</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -451,7 +451,7 @@ setPermission :: forall eff. Service -> SetPermissionRequest -> Aff (exception :
 #### `setTimeBasedAutoScaling`
 
 ``` purescript
-setTimeBasedAutoScaling :: forall eff. Service -> SetTimeBasedAutoScalingRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+setTimeBasedAutoScaling :: forall eff. Service -> SetTimeBasedAutoScalingRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Specify the time-based auto scaling configuration for a specified instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing Load with Time-based and Load-based Instances</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -459,7 +459,7 @@ setTimeBasedAutoScaling :: forall eff. Service -> SetTimeBasedAutoScalingRequest
 #### `startInstance`
 
 ``` purescript
-startInstance :: forall eff. Service -> StartInstanceRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+startInstance :: forall eff. Service -> StartInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Starts a specified instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting, Stopping, and Rebooting Instances</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -467,7 +467,7 @@ startInstance :: forall eff. Service -> StartInstanceRequest -> Aff (exception :
 #### `startStack`
 
 ``` purescript
-startStack :: forall eff. Service -> StartStackRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+startStack :: forall eff. Service -> StartStackRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Starts a stack's instances.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -475,7 +475,7 @@ startStack :: forall eff. Service -> StartStackRequest -> Aff (exception :: EXCE
 #### `stopInstance`
 
 ``` purescript
-stopInstance :: forall eff. Service -> StopInstanceRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+stopInstance :: forall eff. Service -> StopInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Stops a specified instance. When you stop a standard instance, the data disappears and must be reinstalled when you restart the instance. You can stop an Amazon EBS-backed instance without losing data. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting, Stopping, and Rebooting Instances</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -483,7 +483,7 @@ stopInstance :: forall eff. Service -> StopInstanceRequest -> Aff (exception :: 
 #### `stopStack`
 
 ``` purescript
-stopStack :: forall eff. Service -> StopStackRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+stopStack :: forall eff. Service -> StopStackRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Stops a specified stack.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -491,7 +491,7 @@ stopStack :: forall eff. Service -> StopStackRequest -> Aff (exception :: EXCEPT
 #### `tagResource`
 
 ``` purescript
-tagResource :: forall eff. Service -> TagResourceRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+tagResource :: forall eff. Service -> TagResourceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Apply cost-allocation tags to a specified stack or layer in AWS OpsWorks Stacks. For more information about how tagging works, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/tagging.html">Tags</a> in the AWS OpsWorks User Guide.</p>
@@ -499,7 +499,7 @@ tagResource :: forall eff. Service -> TagResourceRequest -> Aff (exception :: EX
 #### `unassignInstance`
 
 ``` purescript
-unassignInstance :: forall eff. Service -> UnassignInstanceRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+unassignInstance :: forall eff. Service -> UnassignInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Unassigns a registered instance from all of it's layers. The instance remains in the stack as an unassigned instance and can be assigned to another layer, as needed. You cannot use this action with instances that were created with AWS OpsWorks Stacks.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -507,7 +507,7 @@ unassignInstance :: forall eff. Service -> UnassignInstanceRequest -> Aff (excep
 #### `unassignVolume`
 
 ``` purescript
-unassignVolume :: forall eff. Service -> UnassignVolumeRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+unassignVolume :: forall eff. Service -> UnassignVolumeRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Unassigns an assigned Amazon EBS volume. The volume remains registered with the stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -515,7 +515,7 @@ unassignVolume :: forall eff. Service -> UnassignVolumeRequest -> Aff (exception
 #### `untagResource`
 
 ``` purescript
-untagResource :: forall eff. Service -> UntagResourceRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+untagResource :: forall eff. Service -> UntagResourceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Removes tags from a specified stack or layer.</p>
@@ -523,7 +523,7 @@ untagResource :: forall eff. Service -> UntagResourceRequest -> Aff (exception :
 #### `updateApp`
 
 ``` purescript
-updateApp :: forall eff. Service -> UpdateAppRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+updateApp :: forall eff. Service -> UpdateAppRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Updates a specified app.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -531,7 +531,7 @@ updateApp :: forall eff. Service -> UpdateAppRequest -> Aff (exception :: EXCEPT
 #### `updateElasticIp`
 
 ``` purescript
-updateElasticIp :: forall eff. Service -> UpdateElasticIpRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+updateElasticIp :: forall eff. Service -> UpdateElasticIpRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Updates a registered Elastic IP address's name. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -539,7 +539,7 @@ updateElasticIp :: forall eff. Service -> UpdateElasticIpRequest -> Aff (excepti
 #### `updateInstance`
 
 ``` purescript
-updateInstance :: forall eff. Service -> UpdateInstanceRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+updateInstance :: forall eff. Service -> UpdateInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Updates a specified instance.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -547,7 +547,7 @@ updateInstance :: forall eff. Service -> UpdateInstanceRequest -> Aff (exception
 #### `updateLayer`
 
 ``` purescript
-updateLayer :: forall eff. Service -> UpdateLayerRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+updateLayer :: forall eff. Service -> UpdateLayerRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Updates a specified layer.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -555,7 +555,7 @@ updateLayer :: forall eff. Service -> UpdateLayerRequest -> Aff (exception :: EX
 #### `updateMyUserProfile`
 
 ``` purescript
-updateMyUserProfile :: forall eff. Service -> UpdateMyUserProfileRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+updateMyUserProfile :: forall eff. Service -> UpdateMyUserProfileRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Updates a user's SSH public key.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have self-management enabled or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -563,7 +563,7 @@ updateMyUserProfile :: forall eff. Service -> UpdateMyUserProfileRequest -> Aff 
 #### `updateRdsDbInstance`
 
 ``` purescript
-updateRdsDbInstance :: forall eff. Service -> UpdateRdsDbInstanceRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+updateRdsDbInstance :: forall eff. Service -> UpdateRdsDbInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Updates an Amazon RDS instance.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -571,7 +571,7 @@ updateRdsDbInstance :: forall eff. Service -> UpdateRdsDbInstanceRequest -> Aff 
 #### `updateStack`
 
 ``` purescript
-updateStack :: forall eff. Service -> UpdateStackRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+updateStack :: forall eff. Service -> UpdateStackRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Updates a specified stack.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -579,7 +579,7 @@ updateStack :: forall eff. Service -> UpdateStackRequest -> Aff (exception :: EX
 #### `updateUserProfile`
 
 ``` purescript
-updateUserProfile :: forall eff. Service -> UpdateUserProfileRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+updateUserProfile :: forall eff. Service -> UpdateUserProfileRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Updates a specified user profile.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -587,7 +587,7 @@ updateUserProfile :: forall eff. Service -> UpdateUserProfileRequest -> Aff (exc
 #### `updateVolume`
 
 ``` purescript
-updateVolume :: forall eff. Service -> UpdateVolumeRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+updateVolume :: forall eff. Service -> UpdateVolumeRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Updates an Amazon EBS volume's name or mount point. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>

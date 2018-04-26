@@ -13,25 +13,25 @@ import AWS.OpsWorks.Types as OpsWorksTypes
 
 
 -- | <p>Assign a registered instance to a layer.</p> <ul> <li> <p>You can assign registered on-premises instances to any layer type.</p> </li> <li> <p>You can assign registered Amazon EC2 instances only to custom layers.</p> </li> <li> <p>You cannot use this action with instances that were created with AWS OpsWorks Stacks.</p> </li> </ul> <p> <b>Required Permissions</b>: To use this action, an AWS Identity and Access Management (IAM) user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-assignInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.AssignInstanceRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+assignInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.AssignInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 assignInstance (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "assignInstance"
 
 
 -- | <p>Assigns one of the stack's registered Amazon EBS volumes to a specified instance. The volume must first be registered with the stack by calling <a>RegisterVolume</a>. After you register the volume, you must call <a>UpdateVolume</a> to specify a mount point before calling <code>AssignVolume</code>. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-assignVolume :: forall eff. OpsWorks.Service -> OpsWorksTypes.AssignVolumeRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+assignVolume :: forall eff. OpsWorks.Service -> OpsWorksTypes.AssignVolumeRequest -> Aff (exception :: EXCEPTION | eff) Unit
 assignVolume (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "assignVolume"
 
 
 -- | <p>Associates one of the stack's registered Elastic IP addresses with a specified instance. The address must first be registered with the stack by calling <a>RegisterElasticIp</a>. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-associateElasticIp :: forall eff. OpsWorks.Service -> OpsWorksTypes.AssociateElasticIpRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+associateElasticIp :: forall eff. OpsWorks.Service -> OpsWorksTypes.AssociateElasticIpRequest -> Aff (exception :: EXCEPTION | eff) Unit
 associateElasticIp (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "associateElasticIp"
 
 
 -- | <p>Attaches an Elastic Load Balancing load balancer to a specified layer. AWS OpsWorks Stacks does not support Application Load Balancer. You can only use Classic Load Balancer with AWS OpsWorks Stacks. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic Load Balancing</a>.</p> <note> <p>You must create the Elastic Load Balancing instance separately, by using the Elastic Load Balancing console, API, or CLI. For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html"> Elastic Load Balancing Developer Guide</a>.</p> </note> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-attachElasticLoadBalancer :: forall eff. OpsWorks.Service -> OpsWorksTypes.AttachElasticLoadBalancerRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+attachElasticLoadBalancer :: forall eff. OpsWorks.Service -> OpsWorksTypes.AttachElasticLoadBalancerRequest -> Aff (exception :: EXCEPTION | eff) Unit
 attachElasticLoadBalancer (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "attachElasticLoadBalancer"
 
@@ -79,61 +79,61 @@ createUserProfile (OpsWorks.Service serviceImpl) = AWS.request serviceImpl metho
 
 
 -- | <p>Deletes a specified app.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-deleteApp :: forall eff. OpsWorks.Service -> OpsWorksTypes.DeleteAppRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteApp :: forall eff. OpsWorks.Service -> OpsWorksTypes.DeleteAppRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteApp (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteApp"
 
 
 -- | <p>Deletes a specified instance, which terminates the associated Amazon EC2 instance. You must stop an instance before you can delete it.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html">Deleting Instances</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-deleteInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.DeleteInstanceRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.DeleteInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteInstance (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteInstance"
 
 
 -- | <p>Deletes a specified layer. You must first stop and then delete all associated instances or unassign registered instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html">How to Delete a Layer</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-deleteLayer :: forall eff. OpsWorks.Service -> OpsWorksTypes.DeleteLayerRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteLayer :: forall eff. OpsWorks.Service -> OpsWorksTypes.DeleteLayerRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteLayer (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteLayer"
 
 
 -- | <p>Deletes a specified stack. You must first delete all instances, layers, and apps or deregister registered instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">Shut Down a Stack</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-deleteStack :: forall eff. OpsWorks.Service -> OpsWorksTypes.DeleteStackRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteStack :: forall eff. OpsWorks.Service -> OpsWorksTypes.DeleteStackRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteStack (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteStack"
 
 
 -- | <p>Deletes a user profile.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-deleteUserProfile :: forall eff. OpsWorks.Service -> OpsWorksTypes.DeleteUserProfileRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteUserProfile :: forall eff. OpsWorks.Service -> OpsWorksTypes.DeleteUserProfileRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteUserProfile (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteUserProfile"
 
 
 -- | <p>Deregisters a specified Amazon ECS cluster from a stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html#workinglayers-ecscluster-delete"> Resource Management</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html</a>.</p>
-deregisterEcsCluster :: forall eff. OpsWorks.Service -> OpsWorksTypes.DeregisterEcsClusterRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deregisterEcsCluster :: forall eff. OpsWorks.Service -> OpsWorksTypes.DeregisterEcsClusterRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deregisterEcsCluster (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deregisterEcsCluster"
 
 
 -- | <p>Deregisters a specified Elastic IP address. The address can then be registered by another stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-deregisterElasticIp :: forall eff. OpsWorks.Service -> OpsWorksTypes.DeregisterElasticIpRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deregisterElasticIp :: forall eff. OpsWorks.Service -> OpsWorksTypes.DeregisterElasticIpRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deregisterElasticIp (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deregisterElasticIp"
 
 
 -- | <p>Deregister a registered Amazon EC2 or on-premises instance. This action removes the instance from the stack and returns it to your control. This action can not be used with instances that were created with AWS OpsWorks Stacks.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-deregisterInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.DeregisterInstanceRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deregisterInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.DeregisterInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deregisterInstance (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deregisterInstance"
 
 
 -- | <p>Deregisters an Amazon RDS instance.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-deregisterRdsDbInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.DeregisterRdsDbInstanceRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deregisterRdsDbInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.DeregisterRdsDbInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deregisterRdsDbInstance (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deregisterRdsDbInstance"
 
 
 -- | <p>Deregisters an Amazon EBS volume. The volume can then be registered by another stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-deregisterVolume :: forall eff. OpsWorks.Service -> OpsWorksTypes.DeregisterVolumeRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deregisterVolume :: forall eff. OpsWorks.Service -> OpsWorksTypes.DeregisterVolumeRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deregisterVolume (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deregisterVolume"
 
@@ -200,13 +200,13 @@ describeLoadBasedAutoScaling (OpsWorks.Service serviceImpl) = AWS.request servic
 
 -- | <p>Describes a user's SSH information.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have self-management enabled or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 describeMyUserProfile :: forall eff. OpsWorks.Service ->  Aff (exception :: EXCEPTION | eff) OpsWorksTypes.DescribeMyUserProfileResult
-describeMyUserProfile (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method (Types.NoInput unit) where
+describeMyUserProfile (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method unit where
     method = AWS.MethodName "describeMyUserProfile"
 
 
 -- | <p>Describes the operating systems that are supported by AWS OpsWorks Stacks.</p>
 describeOperatingSystems :: forall eff. OpsWorks.Service ->  Aff (exception :: EXCEPTION | eff) OpsWorksTypes.DescribeOperatingSystemsResponse
-describeOperatingSystems (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method (Types.NoInput unit) where
+describeOperatingSystems (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method unit where
     method = AWS.MethodName "describeOperatingSystems"
 
 
@@ -271,13 +271,13 @@ describeVolumes (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method 
 
 
 -- | <p>Detaches a specified Elastic Load Balancing instance from its layer.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-detachElasticLoadBalancer :: forall eff. OpsWorks.Service -> OpsWorksTypes.DetachElasticLoadBalancerRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+detachElasticLoadBalancer :: forall eff. OpsWorks.Service -> OpsWorksTypes.DetachElasticLoadBalancerRequest -> Aff (exception :: EXCEPTION | eff) Unit
 detachElasticLoadBalancer (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "detachElasticLoadBalancer"
 
 
 -- | <p>Disassociates an Elastic IP address from its instance. The address remains registered with the stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-disassociateElasticIp :: forall eff. OpsWorks.Service -> OpsWorksTypes.DisassociateElasticIpRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+disassociateElasticIp :: forall eff. OpsWorks.Service -> OpsWorksTypes.DisassociateElasticIpRequest -> Aff (exception :: EXCEPTION | eff) Unit
 disassociateElasticIp (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "disassociateElasticIp"
 
@@ -301,7 +301,7 @@ listTags (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
 
 
 -- | <p>Reboots a specified instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting, Stopping, and Rebooting Instances</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-rebootInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.RebootInstanceRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+rebootInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.RebootInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 rebootInstance (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "rebootInstance"
 
@@ -325,7 +325,7 @@ registerInstance (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method
 
 
 -- | <p>Registers an Amazon RDS instance with a stack.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-registerRdsDbInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.RegisterRdsDbInstanceRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+registerRdsDbInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.RegisterRdsDbInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 registerRdsDbInstance (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "registerRdsDbInstance"
 
@@ -337,120 +337,120 @@ registerVolume (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  
 
 
 -- | <p>Specify the load-based auto scaling configuration for a specified layer. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing Load with Time-based and Load-based Instances</a>.</p> <note> <p>To use load-based auto scaling, you must create a set of load-based auto scaling instances. Load-based auto scaling operates only on the instances from that set, so you must ensure that you have created enough instances to handle the maximum anticipated load.</p> </note> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-setLoadBasedAutoScaling :: forall eff. OpsWorks.Service -> OpsWorksTypes.SetLoadBasedAutoScalingRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+setLoadBasedAutoScaling :: forall eff. OpsWorks.Service -> OpsWorksTypes.SetLoadBasedAutoScalingRequest -> Aff (exception :: EXCEPTION | eff) Unit
 setLoadBasedAutoScaling (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "setLoadBasedAutoScaling"
 
 
 -- | <p>Specifies a user's permissions. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html">Security and Permissions</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-setPermission :: forall eff. OpsWorks.Service -> OpsWorksTypes.SetPermissionRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+setPermission :: forall eff. OpsWorks.Service -> OpsWorksTypes.SetPermissionRequest -> Aff (exception :: EXCEPTION | eff) Unit
 setPermission (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "setPermission"
 
 
 -- | <p>Specify the time-based auto scaling configuration for a specified instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing Load with Time-based and Load-based Instances</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-setTimeBasedAutoScaling :: forall eff. OpsWorks.Service -> OpsWorksTypes.SetTimeBasedAutoScalingRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+setTimeBasedAutoScaling :: forall eff. OpsWorks.Service -> OpsWorksTypes.SetTimeBasedAutoScalingRequest -> Aff (exception :: EXCEPTION | eff) Unit
 setTimeBasedAutoScaling (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "setTimeBasedAutoScaling"
 
 
 -- | <p>Starts a specified instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting, Stopping, and Rebooting Instances</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-startInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.StartInstanceRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+startInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.StartInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 startInstance (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "startInstance"
 
 
 -- | <p>Starts a stack's instances.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-startStack :: forall eff. OpsWorks.Service -> OpsWorksTypes.StartStackRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+startStack :: forall eff. OpsWorks.Service -> OpsWorksTypes.StartStackRequest -> Aff (exception :: EXCEPTION | eff) Unit
 startStack (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "startStack"
 
 
 -- | <p>Stops a specified instance. When you stop a standard instance, the data disappears and must be reinstalled when you restart the instance. You can stop an Amazon EBS-backed instance without losing data. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting, Stopping, and Rebooting Instances</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-stopInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.StopInstanceRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+stopInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.StopInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 stopInstance (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "stopInstance"
 
 
 -- | <p>Stops a specified stack.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-stopStack :: forall eff. OpsWorks.Service -> OpsWorksTypes.StopStackRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+stopStack :: forall eff. OpsWorks.Service -> OpsWorksTypes.StopStackRequest -> Aff (exception :: EXCEPTION | eff) Unit
 stopStack (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "stopStack"
 
 
 -- | <p>Apply cost-allocation tags to a specified stack or layer in AWS OpsWorks Stacks. For more information about how tagging works, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/tagging.html">Tags</a> in the AWS OpsWorks User Guide.</p>
-tagResource :: forall eff. OpsWorks.Service -> OpsWorksTypes.TagResourceRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+tagResource :: forall eff. OpsWorks.Service -> OpsWorksTypes.TagResourceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 tagResource (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "tagResource"
 
 
 -- | <p>Unassigns a registered instance from all of it's layers. The instance remains in the stack as an unassigned instance and can be assigned to another layer, as needed. You cannot use this action with instances that were created with AWS OpsWorks Stacks.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-unassignInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.UnassignInstanceRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+unassignInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.UnassignInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 unassignInstance (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "unassignInstance"
 
 
 -- | <p>Unassigns an assigned Amazon EBS volume. The volume remains registered with the stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-unassignVolume :: forall eff. OpsWorks.Service -> OpsWorksTypes.UnassignVolumeRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+unassignVolume :: forall eff. OpsWorks.Service -> OpsWorksTypes.UnassignVolumeRequest -> Aff (exception :: EXCEPTION | eff) Unit
 unassignVolume (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "unassignVolume"
 
 
 -- | <p>Removes tags from a specified stack or layer.</p>
-untagResource :: forall eff. OpsWorks.Service -> OpsWorksTypes.UntagResourceRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+untagResource :: forall eff. OpsWorks.Service -> OpsWorksTypes.UntagResourceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 untagResource (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "untagResource"
 
 
 -- | <p>Updates a specified app.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-updateApp :: forall eff. OpsWorks.Service -> OpsWorksTypes.UpdateAppRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+updateApp :: forall eff. OpsWorks.Service -> OpsWorksTypes.UpdateAppRequest -> Aff (exception :: EXCEPTION | eff) Unit
 updateApp (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "updateApp"
 
 
 -- | <p>Updates a registered Elastic IP address's name. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-updateElasticIp :: forall eff. OpsWorks.Service -> OpsWorksTypes.UpdateElasticIpRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+updateElasticIp :: forall eff. OpsWorks.Service -> OpsWorksTypes.UpdateElasticIpRequest -> Aff (exception :: EXCEPTION | eff) Unit
 updateElasticIp (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "updateElasticIp"
 
 
 -- | <p>Updates a specified instance.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-updateInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.UpdateInstanceRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+updateInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.UpdateInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 updateInstance (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "updateInstance"
 
 
 -- | <p>Updates a specified layer.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-updateLayer :: forall eff. OpsWorks.Service -> OpsWorksTypes.UpdateLayerRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+updateLayer :: forall eff. OpsWorks.Service -> OpsWorksTypes.UpdateLayerRequest -> Aff (exception :: EXCEPTION | eff) Unit
 updateLayer (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "updateLayer"
 
 
 -- | <p>Updates a user's SSH public key.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have self-management enabled or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-updateMyUserProfile :: forall eff. OpsWorks.Service -> OpsWorksTypes.UpdateMyUserProfileRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+updateMyUserProfile :: forall eff. OpsWorks.Service -> OpsWorksTypes.UpdateMyUserProfileRequest -> Aff (exception :: EXCEPTION | eff) Unit
 updateMyUserProfile (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "updateMyUserProfile"
 
 
 -- | <p>Updates an Amazon RDS instance.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-updateRdsDbInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.UpdateRdsDbInstanceRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+updateRdsDbInstance :: forall eff. OpsWorks.Service -> OpsWorksTypes.UpdateRdsDbInstanceRequest -> Aff (exception :: EXCEPTION | eff) Unit
 updateRdsDbInstance (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "updateRdsDbInstance"
 
 
 -- | <p>Updates a specified stack.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-updateStack :: forall eff. OpsWorks.Service -> OpsWorksTypes.UpdateStackRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+updateStack :: forall eff. OpsWorks.Service -> OpsWorksTypes.UpdateStackRequest -> Aff (exception :: EXCEPTION | eff) Unit
 updateStack (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "updateStack"
 
 
 -- | <p>Updates a specified user profile.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-updateUserProfile :: forall eff. OpsWorks.Service -> OpsWorksTypes.UpdateUserProfileRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+updateUserProfile :: forall eff. OpsWorks.Service -> OpsWorksTypes.UpdateUserProfileRequest -> Aff (exception :: EXCEPTION | eff) Unit
 updateUserProfile (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "updateUserProfile"
 
 
 -- | <p>Updates an Amazon EBS volume's name or mount point. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-updateVolume :: forall eff. OpsWorks.Service -> OpsWorksTypes.UpdateVolumeRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+updateVolume :: forall eff. OpsWorks.Service -> OpsWorksTypes.UpdateVolumeRequest -> Aff (exception :: EXCEPTION | eff) Unit
 updateVolume (OpsWorks.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "updateVolume"

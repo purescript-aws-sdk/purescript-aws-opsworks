@@ -10,7 +10,7 @@ options :: Options
 
 ``` purescript
 newtype AgentVersion
-  = AgentVersion { "Version" :: NullOrUndefined (String), "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager) }
+  = AgentVersion { "Version" :: Maybe (String), "ConfigurationManager" :: Maybe (StackConfigurationManager) }
 ```
 
 <p>Describes an agent version.</p>
@@ -35,7 +35,7 @@ Constructs AgentVersion from required parameters
 #### `newAgentVersion'`
 
 ``` purescript
-newAgentVersion' :: ({ "Version" :: NullOrUndefined (String), "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager) } -> { "Version" :: NullOrUndefined (String), "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager) }) -> AgentVersion
+newAgentVersion' :: ({ "Version" :: Maybe (String), "ConfigurationManager" :: Maybe (StackConfigurationManager) } -> { "Version" :: Maybe (String), "ConfigurationManager" :: Maybe (StackConfigurationManager) }) -> AgentVersion
 ```
 
 Constructs AgentVersion's fields from required parameters
@@ -60,7 +60,7 @@ Encode AgentVersions
 
 ``` purescript
 newtype App
-  = App { "AppId" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "Shortname" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "DataSources" :: NullOrUndefined (DataSources), "Type" :: NullOrUndefined (AppType), "AppSource" :: NullOrUndefined (Source), "Domains" :: NullOrUndefined (Strings), "EnableSsl" :: NullOrUndefined (Boolean), "SslConfiguration" :: NullOrUndefined (SslConfiguration), "Attributes" :: NullOrUndefined (AppAttributes), "CreatedAt" :: NullOrUndefined (String), "Environment" :: NullOrUndefined (EnvironmentVariables) }
+  = App { "AppId" :: Maybe (String), "StackId" :: Maybe (String), "Shortname" :: Maybe (String), "Name" :: Maybe (String), "Description" :: Maybe (String), "DataSources" :: Maybe (DataSources), "Type" :: Maybe (AppType), "AppSource" :: Maybe (Source), "Domains" :: Maybe (Strings), "EnableSsl" :: Maybe (Boolean), "SslConfiguration" :: Maybe (SslConfiguration), "Attributes" :: Maybe (AppAttributes), "CreatedAt" :: Maybe (String), "Environment" :: Maybe (EnvironmentVariables) }
 ```
 
 <p>A description of the app.</p>
@@ -85,7 +85,7 @@ Constructs App from required parameters
 #### `newApp'`
 
 ``` purescript
-newApp' :: ({ "AppId" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "Shortname" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "DataSources" :: NullOrUndefined (DataSources), "Type" :: NullOrUndefined (AppType), "AppSource" :: NullOrUndefined (Source), "Domains" :: NullOrUndefined (Strings), "EnableSsl" :: NullOrUndefined (Boolean), "SslConfiguration" :: NullOrUndefined (SslConfiguration), "Attributes" :: NullOrUndefined (AppAttributes), "CreatedAt" :: NullOrUndefined (String), "Environment" :: NullOrUndefined (EnvironmentVariables) } -> { "AppId" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "Shortname" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "DataSources" :: NullOrUndefined (DataSources), "Type" :: NullOrUndefined (AppType), "AppSource" :: NullOrUndefined (Source), "Domains" :: NullOrUndefined (Strings), "EnableSsl" :: NullOrUndefined (Boolean), "SslConfiguration" :: NullOrUndefined (SslConfiguration), "Attributes" :: NullOrUndefined (AppAttributes), "CreatedAt" :: NullOrUndefined (String), "Environment" :: NullOrUndefined (EnvironmentVariables) }) -> App
+newApp' :: ({ "AppId" :: Maybe (String), "StackId" :: Maybe (String), "Shortname" :: Maybe (String), "Name" :: Maybe (String), "Description" :: Maybe (String), "DataSources" :: Maybe (DataSources), "Type" :: Maybe (AppType), "AppSource" :: Maybe (Source), "Domains" :: Maybe (Strings), "EnableSsl" :: Maybe (Boolean), "SslConfiguration" :: Maybe (SslConfiguration), "Attributes" :: Maybe (AppAttributes), "CreatedAt" :: Maybe (String), "Environment" :: Maybe (EnvironmentVariables) } -> { "AppId" :: Maybe (String), "StackId" :: Maybe (String), "Shortname" :: Maybe (String), "Name" :: Maybe (String), "Description" :: Maybe (String), "DataSources" :: Maybe (DataSources), "Type" :: Maybe (AppType), "AppSource" :: Maybe (Source), "Domains" :: Maybe (Strings), "EnableSsl" :: Maybe (Boolean), "SslConfiguration" :: Maybe (SslConfiguration), "Attributes" :: Maybe (AppAttributes), "CreatedAt" :: Maybe (String), "Environment" :: Maybe (EnvironmentVariables) }) -> App
 ```
 
 Constructs App's fields from required parameters
@@ -206,7 +206,7 @@ Constructs AssignInstanceRequest's fields from required parameters
 
 ``` purescript
 newtype AssignVolumeRequest
-  = AssignVolumeRequest { "VolumeId" :: String, "InstanceId" :: NullOrUndefined (String) }
+  = AssignVolumeRequest { "VolumeId" :: String, "InstanceId" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -229,7 +229,7 @@ Constructs AssignVolumeRequest from required parameters
 #### `newAssignVolumeRequest'`
 
 ``` purescript
-newAssignVolumeRequest' :: String -> ({ "VolumeId" :: String, "InstanceId" :: NullOrUndefined (String) } -> { "VolumeId" :: String, "InstanceId" :: NullOrUndefined (String) }) -> AssignVolumeRequest
+newAssignVolumeRequest' :: String -> ({ "VolumeId" :: String, "InstanceId" :: Maybe (String) } -> { "VolumeId" :: String, "InstanceId" :: Maybe (String) }) -> AssignVolumeRequest
 ```
 
 Constructs AssignVolumeRequest's fields from required parameters
@@ -238,7 +238,7 @@ Constructs AssignVolumeRequest's fields from required parameters
 
 ``` purescript
 newtype AssociateElasticIpRequest
-  = AssociateElasticIpRequest { "ElasticIp" :: String, "InstanceId" :: NullOrUndefined (String) }
+  = AssociateElasticIpRequest { "ElasticIp" :: String, "InstanceId" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -261,7 +261,7 @@ Constructs AssociateElasticIpRequest from required parameters
 #### `newAssociateElasticIpRequest'`
 
 ``` purescript
-newAssociateElasticIpRequest' :: String -> ({ "ElasticIp" :: String, "InstanceId" :: NullOrUndefined (String) } -> { "ElasticIp" :: String, "InstanceId" :: NullOrUndefined (String) }) -> AssociateElasticIpRequest
+newAssociateElasticIpRequest' :: String -> ({ "ElasticIp" :: String, "InstanceId" :: Maybe (String) } -> { "ElasticIp" :: String, "InstanceId" :: Maybe (String) }) -> AssociateElasticIpRequest
 ```
 
 Constructs AssociateElasticIpRequest's fields from required parameters
@@ -302,7 +302,7 @@ Constructs AttachElasticLoadBalancerRequest's fields from required parameters
 
 ``` purescript
 newtype AutoScalingThresholds
-  = AutoScalingThresholds { "InstanceCount" :: NullOrUndefined (Int), "ThresholdsWaitTime" :: NullOrUndefined (Minute), "IgnoreMetricsTime" :: NullOrUndefined (Minute), "CpuThreshold" :: NullOrUndefined (Number), "MemoryThreshold" :: NullOrUndefined (Number), "LoadThreshold" :: NullOrUndefined (Number), "Alarms" :: NullOrUndefined (Strings) }
+  = AutoScalingThresholds { "InstanceCount" :: Maybe (Int), "ThresholdsWaitTime" :: Maybe (Minute), "IgnoreMetricsTime" :: Maybe (Minute), "CpuThreshold" :: Maybe (Number), "MemoryThreshold" :: Maybe (Number), "LoadThreshold" :: Maybe (Number), "Alarms" :: Maybe (Strings) }
 ```
 
 <p>Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when AWS OpsWorks Stacks starts or stops load-based instances.</p>
@@ -327,7 +327,7 @@ Constructs AutoScalingThresholds from required parameters
 #### `newAutoScalingThresholds'`
 
 ``` purescript
-newAutoScalingThresholds' :: ({ "InstanceCount" :: NullOrUndefined (Int), "ThresholdsWaitTime" :: NullOrUndefined (Minute), "IgnoreMetricsTime" :: NullOrUndefined (Minute), "CpuThreshold" :: NullOrUndefined (Number), "MemoryThreshold" :: NullOrUndefined (Number), "LoadThreshold" :: NullOrUndefined (Number), "Alarms" :: NullOrUndefined (Strings) } -> { "InstanceCount" :: NullOrUndefined (Int), "ThresholdsWaitTime" :: NullOrUndefined (Minute), "IgnoreMetricsTime" :: NullOrUndefined (Minute), "CpuThreshold" :: NullOrUndefined (Number), "MemoryThreshold" :: NullOrUndefined (Number), "LoadThreshold" :: NullOrUndefined (Number), "Alarms" :: NullOrUndefined (Strings) }) -> AutoScalingThresholds
+newAutoScalingThresholds' :: ({ "InstanceCount" :: Maybe (Int), "ThresholdsWaitTime" :: Maybe (Minute), "IgnoreMetricsTime" :: Maybe (Minute), "CpuThreshold" :: Maybe (Number), "MemoryThreshold" :: Maybe (Number), "LoadThreshold" :: Maybe (Number), "Alarms" :: Maybe (Strings) } -> { "InstanceCount" :: Maybe (Int), "ThresholdsWaitTime" :: Maybe (Minute), "IgnoreMetricsTime" :: Maybe (Minute), "CpuThreshold" :: Maybe (Number), "MemoryThreshold" :: Maybe (Number), "LoadThreshold" :: Maybe (Number), "Alarms" :: Maybe (Strings) }) -> AutoScalingThresholds
 ```
 
 Constructs AutoScalingThresholds's fields from required parameters
@@ -352,7 +352,7 @@ Encode AutoScalingType
 
 ``` purescript
 newtype BlockDeviceMapping
-  = BlockDeviceMapping { "DeviceName" :: NullOrUndefined (String), "NoDevice" :: NullOrUndefined (String), "VirtualName" :: NullOrUndefined (String), "Ebs" :: NullOrUndefined (EbsBlockDevice) }
+  = BlockDeviceMapping { "DeviceName" :: Maybe (String), "NoDevice" :: Maybe (String), "VirtualName" :: Maybe (String), "Ebs" :: Maybe (EbsBlockDevice) }
 ```
 
 <p>Describes a block device mapping. This data type maps directly to the Amazon EC2 <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a> data type. </p>
@@ -377,7 +377,7 @@ Constructs BlockDeviceMapping from required parameters
 #### `newBlockDeviceMapping'`
 
 ``` purescript
-newBlockDeviceMapping' :: ({ "DeviceName" :: NullOrUndefined (String), "NoDevice" :: NullOrUndefined (String), "VirtualName" :: NullOrUndefined (String), "Ebs" :: NullOrUndefined (EbsBlockDevice) } -> { "DeviceName" :: NullOrUndefined (String), "NoDevice" :: NullOrUndefined (String), "VirtualName" :: NullOrUndefined (String), "Ebs" :: NullOrUndefined (EbsBlockDevice) }) -> BlockDeviceMapping
+newBlockDeviceMapping' :: ({ "DeviceName" :: Maybe (String), "NoDevice" :: Maybe (String), "VirtualName" :: Maybe (String), "Ebs" :: Maybe (EbsBlockDevice) } -> { "DeviceName" :: Maybe (String), "NoDevice" :: Maybe (String), "VirtualName" :: Maybe (String), "Ebs" :: Maybe (EbsBlockDevice) }) -> BlockDeviceMapping
 ```
 
 Constructs BlockDeviceMapping's fields from required parameters
@@ -402,7 +402,7 @@ Encode BlockDeviceMappings
 
 ``` purescript
 newtype ChefConfiguration
-  = ChefConfiguration { "ManageBerkshelf" :: NullOrUndefined (Boolean), "BerkshelfVersion" :: NullOrUndefined (String) }
+  = ChefConfiguration { "ManageBerkshelf" :: Maybe (Boolean), "BerkshelfVersion" :: Maybe (String) }
 ```
 
 <p>Describes the Chef configuration.</p>
@@ -427,7 +427,7 @@ Constructs ChefConfiguration from required parameters
 #### `newChefConfiguration'`
 
 ``` purescript
-newChefConfiguration' :: ({ "ManageBerkshelf" :: NullOrUndefined (Boolean), "BerkshelfVersion" :: NullOrUndefined (String) } -> { "ManageBerkshelf" :: NullOrUndefined (Boolean), "BerkshelfVersion" :: NullOrUndefined (String) }) -> ChefConfiguration
+newChefConfiguration' :: ({ "ManageBerkshelf" :: Maybe (Boolean), "BerkshelfVersion" :: Maybe (String) } -> { "ManageBerkshelf" :: Maybe (Boolean), "BerkshelfVersion" :: Maybe (String) }) -> ChefConfiguration
 ```
 
 Constructs ChefConfiguration's fields from required parameters
@@ -436,7 +436,7 @@ Constructs ChefConfiguration's fields from required parameters
 
 ``` purescript
 newtype CloneStackRequest
-  = CloneStackRequest { "SourceStackId" :: String, "Name" :: NullOrUndefined (String), "Region" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (StackAttributes), "ServiceRoleArn" :: String, "DefaultInstanceProfileArn" :: NullOrUndefined (String), "DefaultOs" :: NullOrUndefined (String), "HostnameTheme" :: NullOrUndefined (String), "DefaultAvailabilityZone" :: NullOrUndefined (String), "DefaultSubnetId" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager), "ChefConfiguration" :: NullOrUndefined (ChefConfiguration), "UseCustomCookbooks" :: NullOrUndefined (Boolean), "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean), "CustomCookbooksSource" :: NullOrUndefined (Source), "DefaultSshKeyName" :: NullOrUndefined (String), "ClonePermissions" :: NullOrUndefined (Boolean), "CloneAppIds" :: NullOrUndefined (Strings), "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType), "AgentVersion" :: NullOrUndefined (String) }
+  = CloneStackRequest { "SourceStackId" :: String, "Name" :: Maybe (String), "Region" :: Maybe (String), "VpcId" :: Maybe (String), "Attributes" :: Maybe (StackAttributes), "ServiceRoleArn" :: String, "DefaultInstanceProfileArn" :: Maybe (String), "DefaultOs" :: Maybe (String), "HostnameTheme" :: Maybe (String), "DefaultAvailabilityZone" :: Maybe (String), "DefaultSubnetId" :: Maybe (String), "CustomJson" :: Maybe (String), "ConfigurationManager" :: Maybe (StackConfigurationManager), "ChefConfiguration" :: Maybe (ChefConfiguration), "UseCustomCookbooks" :: Maybe (Boolean), "UseOpsworksSecurityGroups" :: Maybe (Boolean), "CustomCookbooksSource" :: Maybe (Source), "DefaultSshKeyName" :: Maybe (String), "ClonePermissions" :: Maybe (Boolean), "CloneAppIds" :: Maybe (Strings), "DefaultRootDeviceType" :: Maybe (RootDeviceType), "AgentVersion" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -459,7 +459,7 @@ Constructs CloneStackRequest from required parameters
 #### `newCloneStackRequest'`
 
 ``` purescript
-newCloneStackRequest' :: String -> String -> ({ "SourceStackId" :: String, "Name" :: NullOrUndefined (String), "Region" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (StackAttributes), "ServiceRoleArn" :: String, "DefaultInstanceProfileArn" :: NullOrUndefined (String), "DefaultOs" :: NullOrUndefined (String), "HostnameTheme" :: NullOrUndefined (String), "DefaultAvailabilityZone" :: NullOrUndefined (String), "DefaultSubnetId" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager), "ChefConfiguration" :: NullOrUndefined (ChefConfiguration), "UseCustomCookbooks" :: NullOrUndefined (Boolean), "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean), "CustomCookbooksSource" :: NullOrUndefined (Source), "DefaultSshKeyName" :: NullOrUndefined (String), "ClonePermissions" :: NullOrUndefined (Boolean), "CloneAppIds" :: NullOrUndefined (Strings), "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType), "AgentVersion" :: NullOrUndefined (String) } -> { "SourceStackId" :: String, "Name" :: NullOrUndefined (String), "Region" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (StackAttributes), "ServiceRoleArn" :: String, "DefaultInstanceProfileArn" :: NullOrUndefined (String), "DefaultOs" :: NullOrUndefined (String), "HostnameTheme" :: NullOrUndefined (String), "DefaultAvailabilityZone" :: NullOrUndefined (String), "DefaultSubnetId" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager), "ChefConfiguration" :: NullOrUndefined (ChefConfiguration), "UseCustomCookbooks" :: NullOrUndefined (Boolean), "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean), "CustomCookbooksSource" :: NullOrUndefined (Source), "DefaultSshKeyName" :: NullOrUndefined (String), "ClonePermissions" :: NullOrUndefined (Boolean), "CloneAppIds" :: NullOrUndefined (Strings), "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType), "AgentVersion" :: NullOrUndefined (String) }) -> CloneStackRequest
+newCloneStackRequest' :: String -> String -> ({ "SourceStackId" :: String, "Name" :: Maybe (String), "Region" :: Maybe (String), "VpcId" :: Maybe (String), "Attributes" :: Maybe (StackAttributes), "ServiceRoleArn" :: String, "DefaultInstanceProfileArn" :: Maybe (String), "DefaultOs" :: Maybe (String), "HostnameTheme" :: Maybe (String), "DefaultAvailabilityZone" :: Maybe (String), "DefaultSubnetId" :: Maybe (String), "CustomJson" :: Maybe (String), "ConfigurationManager" :: Maybe (StackConfigurationManager), "ChefConfiguration" :: Maybe (ChefConfiguration), "UseCustomCookbooks" :: Maybe (Boolean), "UseOpsworksSecurityGroups" :: Maybe (Boolean), "CustomCookbooksSource" :: Maybe (Source), "DefaultSshKeyName" :: Maybe (String), "ClonePermissions" :: Maybe (Boolean), "CloneAppIds" :: Maybe (Strings), "DefaultRootDeviceType" :: Maybe (RootDeviceType), "AgentVersion" :: Maybe (String) } -> { "SourceStackId" :: String, "Name" :: Maybe (String), "Region" :: Maybe (String), "VpcId" :: Maybe (String), "Attributes" :: Maybe (StackAttributes), "ServiceRoleArn" :: String, "DefaultInstanceProfileArn" :: Maybe (String), "DefaultOs" :: Maybe (String), "HostnameTheme" :: Maybe (String), "DefaultAvailabilityZone" :: Maybe (String), "DefaultSubnetId" :: Maybe (String), "CustomJson" :: Maybe (String), "ConfigurationManager" :: Maybe (StackConfigurationManager), "ChefConfiguration" :: Maybe (ChefConfiguration), "UseCustomCookbooks" :: Maybe (Boolean), "UseOpsworksSecurityGroups" :: Maybe (Boolean), "CustomCookbooksSource" :: Maybe (Source), "DefaultSshKeyName" :: Maybe (String), "ClonePermissions" :: Maybe (Boolean), "CloneAppIds" :: Maybe (Strings), "DefaultRootDeviceType" :: Maybe (RootDeviceType), "AgentVersion" :: Maybe (String) }) -> CloneStackRequest
 ```
 
 Constructs CloneStackRequest's fields from required parameters
@@ -468,7 +468,7 @@ Constructs CloneStackRequest's fields from required parameters
 
 ``` purescript
 newtype CloneStackResult
-  = CloneStackResult { "StackId" :: NullOrUndefined (String) }
+  = CloneStackResult { "StackId" :: Maybe (String) }
 ```
 
 <p>Contains the response to a <code>CloneStack</code> request.</p>
@@ -493,7 +493,7 @@ Constructs CloneStackResult from required parameters
 #### `newCloneStackResult'`
 
 ``` purescript
-newCloneStackResult' :: ({ "StackId" :: NullOrUndefined (String) } -> { "StackId" :: NullOrUndefined (String) }) -> CloneStackResult
+newCloneStackResult' :: ({ "StackId" :: Maybe (String) } -> { "StackId" :: Maybe (String) }) -> CloneStackResult
 ```
 
 Constructs CloneStackResult's fields from required parameters
@@ -502,7 +502,7 @@ Constructs CloneStackResult's fields from required parameters
 
 ``` purescript
 newtype CloudWatchLogsConfiguration
-  = CloudWatchLogsConfiguration { "Enabled" :: NullOrUndefined (Boolean), "LogStreams" :: NullOrUndefined (CloudWatchLogsLogStreams) }
+  = CloudWatchLogsConfiguration { "Enabled" :: Maybe (Boolean), "LogStreams" :: Maybe (CloudWatchLogsLogStreams) }
 ```
 
 <p>Describes the Amazon CloudWatch logs configuration for a layer.</p>
@@ -527,7 +527,7 @@ Constructs CloudWatchLogsConfiguration from required parameters
 #### `newCloudWatchLogsConfiguration'`
 
 ``` purescript
-newCloudWatchLogsConfiguration' :: ({ "Enabled" :: NullOrUndefined (Boolean), "LogStreams" :: NullOrUndefined (CloudWatchLogsLogStreams) } -> { "Enabled" :: NullOrUndefined (Boolean), "LogStreams" :: NullOrUndefined (CloudWatchLogsLogStreams) }) -> CloudWatchLogsConfiguration
+newCloudWatchLogsConfiguration' :: ({ "Enabled" :: Maybe (Boolean), "LogStreams" :: Maybe (CloudWatchLogsLogStreams) } -> { "Enabled" :: Maybe (Boolean), "LogStreams" :: Maybe (CloudWatchLogsLogStreams) }) -> CloudWatchLogsConfiguration
 ```
 
 Constructs CloudWatchLogsConfiguration's fields from required parameters
@@ -572,7 +572,7 @@ Encode CloudWatchLogsInitialPosition
 
 ``` purescript
 newtype CloudWatchLogsLogStream
-  = CloudWatchLogsLogStream { "LogGroupName" :: NullOrUndefined (String), "DatetimeFormat" :: NullOrUndefined (String), "TimeZone" :: NullOrUndefined (CloudWatchLogsTimeZone), "File" :: NullOrUndefined (String), "FileFingerprintLines" :: NullOrUndefined (String), "MultiLineStartPattern" :: NullOrUndefined (String), "InitialPosition" :: NullOrUndefined (CloudWatchLogsInitialPosition), "Encoding" :: NullOrUndefined (CloudWatchLogsEncoding), "BufferDuration" :: NullOrUndefined (Int), "BatchCount" :: NullOrUndefined (Int), "BatchSize" :: NullOrUndefined (Int) }
+  = CloudWatchLogsLogStream { "LogGroupName" :: Maybe (String), "DatetimeFormat" :: Maybe (String), "TimeZone" :: Maybe (CloudWatchLogsTimeZone), "File" :: Maybe (String), "FileFingerprintLines" :: Maybe (String), "MultiLineStartPattern" :: Maybe (String), "InitialPosition" :: Maybe (CloudWatchLogsInitialPosition), "Encoding" :: Maybe (CloudWatchLogsEncoding), "BufferDuration" :: Maybe (Int), "BatchCount" :: Maybe (Int), "BatchSize" :: Maybe (Int) }
 ```
 
 <p>Describes the Amazon CloudWatch logs configuration for a layer. For detailed information about members of this data type, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
@@ -597,7 +597,7 @@ Constructs CloudWatchLogsLogStream from required parameters
 #### `newCloudWatchLogsLogStream'`
 
 ``` purescript
-newCloudWatchLogsLogStream' :: ({ "LogGroupName" :: NullOrUndefined (String), "DatetimeFormat" :: NullOrUndefined (String), "TimeZone" :: NullOrUndefined (CloudWatchLogsTimeZone), "File" :: NullOrUndefined (String), "FileFingerprintLines" :: NullOrUndefined (String), "MultiLineStartPattern" :: NullOrUndefined (String), "InitialPosition" :: NullOrUndefined (CloudWatchLogsInitialPosition), "Encoding" :: NullOrUndefined (CloudWatchLogsEncoding), "BufferDuration" :: NullOrUndefined (Int), "BatchCount" :: NullOrUndefined (Int), "BatchSize" :: NullOrUndefined (Int) } -> { "LogGroupName" :: NullOrUndefined (String), "DatetimeFormat" :: NullOrUndefined (String), "TimeZone" :: NullOrUndefined (CloudWatchLogsTimeZone), "File" :: NullOrUndefined (String), "FileFingerprintLines" :: NullOrUndefined (String), "MultiLineStartPattern" :: NullOrUndefined (String), "InitialPosition" :: NullOrUndefined (CloudWatchLogsInitialPosition), "Encoding" :: NullOrUndefined (CloudWatchLogsEncoding), "BufferDuration" :: NullOrUndefined (Int), "BatchCount" :: NullOrUndefined (Int), "BatchSize" :: NullOrUndefined (Int) }) -> CloudWatchLogsLogStream
+newCloudWatchLogsLogStream' :: ({ "LogGroupName" :: Maybe (String), "DatetimeFormat" :: Maybe (String), "TimeZone" :: Maybe (CloudWatchLogsTimeZone), "File" :: Maybe (String), "FileFingerprintLines" :: Maybe (String), "MultiLineStartPattern" :: Maybe (String), "InitialPosition" :: Maybe (CloudWatchLogsInitialPosition), "Encoding" :: Maybe (CloudWatchLogsEncoding), "BufferDuration" :: Maybe (Int), "BatchCount" :: Maybe (Int), "BatchSize" :: Maybe (Int) } -> { "LogGroupName" :: Maybe (String), "DatetimeFormat" :: Maybe (String), "TimeZone" :: Maybe (CloudWatchLogsTimeZone), "File" :: Maybe (String), "FileFingerprintLines" :: Maybe (String), "MultiLineStartPattern" :: Maybe (String), "InitialPosition" :: Maybe (CloudWatchLogsInitialPosition), "Encoding" :: Maybe (CloudWatchLogsEncoding), "BufferDuration" :: Maybe (Int), "BatchCount" :: Maybe (Int), "BatchSize" :: Maybe (Int) }) -> CloudWatchLogsLogStream
 ```
 
 Constructs CloudWatchLogsLogStream's fields from required parameters
@@ -642,7 +642,7 @@ Encode CloudWatchLogsTimeZone
 
 ``` purescript
 newtype Command
-  = Command { "CommandId" :: NullOrUndefined (String), "InstanceId" :: NullOrUndefined (String), "DeploymentId" :: NullOrUndefined (String), "CreatedAt" :: NullOrUndefined (DateTime), "AcknowledgedAt" :: NullOrUndefined (DateTime), "CompletedAt" :: NullOrUndefined (DateTime), "Status" :: NullOrUndefined (String), "ExitCode" :: NullOrUndefined (Int), "LogUrl" :: NullOrUndefined (String), "Type" :: NullOrUndefined (String) }
+  = Command { "CommandId" :: Maybe (String), "InstanceId" :: Maybe (String), "DeploymentId" :: Maybe (String), "CreatedAt" :: Maybe (DateTime), "AcknowledgedAt" :: Maybe (DateTime), "CompletedAt" :: Maybe (DateTime), "Status" :: Maybe (String), "ExitCode" :: Maybe (Int), "LogUrl" :: Maybe (String), "Type" :: Maybe (String) }
 ```
 
 <p>Describes a command.</p>
@@ -667,7 +667,7 @@ Constructs Command from required parameters
 #### `newCommand'`
 
 ``` purescript
-newCommand' :: ({ "CommandId" :: NullOrUndefined (String), "InstanceId" :: NullOrUndefined (String), "DeploymentId" :: NullOrUndefined (String), "CreatedAt" :: NullOrUndefined (DateTime), "AcknowledgedAt" :: NullOrUndefined (DateTime), "CompletedAt" :: NullOrUndefined (DateTime), "Status" :: NullOrUndefined (String), "ExitCode" :: NullOrUndefined (Int), "LogUrl" :: NullOrUndefined (String), "Type" :: NullOrUndefined (String) } -> { "CommandId" :: NullOrUndefined (String), "InstanceId" :: NullOrUndefined (String), "DeploymentId" :: NullOrUndefined (String), "CreatedAt" :: NullOrUndefined (DateTime), "AcknowledgedAt" :: NullOrUndefined (DateTime), "CompletedAt" :: NullOrUndefined (DateTime), "Status" :: NullOrUndefined (String), "ExitCode" :: NullOrUndefined (Int), "LogUrl" :: NullOrUndefined (String), "Type" :: NullOrUndefined (String) }) -> Command
+newCommand' :: ({ "CommandId" :: Maybe (String), "InstanceId" :: Maybe (String), "DeploymentId" :: Maybe (String), "CreatedAt" :: Maybe (DateTime), "AcknowledgedAt" :: Maybe (DateTime), "CompletedAt" :: Maybe (DateTime), "Status" :: Maybe (String), "ExitCode" :: Maybe (Int), "LogUrl" :: Maybe (String), "Type" :: Maybe (String) } -> { "CommandId" :: Maybe (String), "InstanceId" :: Maybe (String), "DeploymentId" :: Maybe (String), "CreatedAt" :: Maybe (DateTime), "AcknowledgedAt" :: Maybe (DateTime), "CompletedAt" :: Maybe (DateTime), "Status" :: Maybe (String), "ExitCode" :: Maybe (Int), "LogUrl" :: Maybe (String), "Type" :: Maybe (String) }) -> Command
 ```
 
 Constructs Command's fields from required parameters
@@ -692,7 +692,7 @@ Encode Commands
 
 ``` purescript
 newtype CreateAppRequest
-  = CreateAppRequest { "StackId" :: String, "Shortname" :: NullOrUndefined (String), "Name" :: String, "Description" :: NullOrUndefined (String), "DataSources" :: NullOrUndefined (DataSources), "Type" :: AppType, "AppSource" :: NullOrUndefined (Source), "Domains" :: NullOrUndefined (Strings), "EnableSsl" :: NullOrUndefined (Boolean), "SslConfiguration" :: NullOrUndefined (SslConfiguration), "Attributes" :: NullOrUndefined (AppAttributes), "Environment" :: NullOrUndefined (EnvironmentVariables) }
+  = CreateAppRequest { "StackId" :: String, "Shortname" :: Maybe (String), "Name" :: String, "Description" :: Maybe (String), "DataSources" :: Maybe (DataSources), "Type" :: AppType, "AppSource" :: Maybe (Source), "Domains" :: Maybe (Strings), "EnableSsl" :: Maybe (Boolean), "SslConfiguration" :: Maybe (SslConfiguration), "Attributes" :: Maybe (AppAttributes), "Environment" :: Maybe (EnvironmentVariables) }
 ```
 
 ##### Instances
@@ -715,7 +715,7 @@ Constructs CreateAppRequest from required parameters
 #### `newCreateAppRequest'`
 
 ``` purescript
-newCreateAppRequest' :: String -> String -> AppType -> ({ "StackId" :: String, "Shortname" :: NullOrUndefined (String), "Name" :: String, "Description" :: NullOrUndefined (String), "DataSources" :: NullOrUndefined (DataSources), "Type" :: AppType, "AppSource" :: NullOrUndefined (Source), "Domains" :: NullOrUndefined (Strings), "EnableSsl" :: NullOrUndefined (Boolean), "SslConfiguration" :: NullOrUndefined (SslConfiguration), "Attributes" :: NullOrUndefined (AppAttributes), "Environment" :: NullOrUndefined (EnvironmentVariables) } -> { "StackId" :: String, "Shortname" :: NullOrUndefined (String), "Name" :: String, "Description" :: NullOrUndefined (String), "DataSources" :: NullOrUndefined (DataSources), "Type" :: AppType, "AppSource" :: NullOrUndefined (Source), "Domains" :: NullOrUndefined (Strings), "EnableSsl" :: NullOrUndefined (Boolean), "SslConfiguration" :: NullOrUndefined (SslConfiguration), "Attributes" :: NullOrUndefined (AppAttributes), "Environment" :: NullOrUndefined (EnvironmentVariables) }) -> CreateAppRequest
+newCreateAppRequest' :: String -> String -> AppType -> ({ "StackId" :: String, "Shortname" :: Maybe (String), "Name" :: String, "Description" :: Maybe (String), "DataSources" :: Maybe (DataSources), "Type" :: AppType, "AppSource" :: Maybe (Source), "Domains" :: Maybe (Strings), "EnableSsl" :: Maybe (Boolean), "SslConfiguration" :: Maybe (SslConfiguration), "Attributes" :: Maybe (AppAttributes), "Environment" :: Maybe (EnvironmentVariables) } -> { "StackId" :: String, "Shortname" :: Maybe (String), "Name" :: String, "Description" :: Maybe (String), "DataSources" :: Maybe (DataSources), "Type" :: AppType, "AppSource" :: Maybe (Source), "Domains" :: Maybe (Strings), "EnableSsl" :: Maybe (Boolean), "SslConfiguration" :: Maybe (SslConfiguration), "Attributes" :: Maybe (AppAttributes), "Environment" :: Maybe (EnvironmentVariables) }) -> CreateAppRequest
 ```
 
 Constructs CreateAppRequest's fields from required parameters
@@ -724,7 +724,7 @@ Constructs CreateAppRequest's fields from required parameters
 
 ``` purescript
 newtype CreateAppResult
-  = CreateAppResult { "AppId" :: NullOrUndefined (String) }
+  = CreateAppResult { "AppId" :: Maybe (String) }
 ```
 
 <p>Contains the response to a <code>CreateApp</code> request.</p>
@@ -749,7 +749,7 @@ Constructs CreateAppResult from required parameters
 #### `newCreateAppResult'`
 
 ``` purescript
-newCreateAppResult' :: ({ "AppId" :: NullOrUndefined (String) } -> { "AppId" :: NullOrUndefined (String) }) -> CreateAppResult
+newCreateAppResult' :: ({ "AppId" :: Maybe (String) } -> { "AppId" :: Maybe (String) }) -> CreateAppResult
 ```
 
 Constructs CreateAppResult's fields from required parameters
@@ -758,7 +758,7 @@ Constructs CreateAppResult's fields from required parameters
 
 ``` purescript
 newtype CreateDeploymentRequest
-  = CreateDeploymentRequest { "StackId" :: String, "AppId" :: NullOrUndefined (String), "InstanceIds" :: NullOrUndefined (Strings), "LayerIds" :: NullOrUndefined (Strings), "Command" :: DeploymentCommand, "Comment" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String) }
+  = CreateDeploymentRequest { "StackId" :: String, "AppId" :: Maybe (String), "InstanceIds" :: Maybe (Strings), "LayerIds" :: Maybe (Strings), "Command" :: DeploymentCommand, "Comment" :: Maybe (String), "CustomJson" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -781,7 +781,7 @@ Constructs CreateDeploymentRequest from required parameters
 #### `newCreateDeploymentRequest'`
 
 ``` purescript
-newCreateDeploymentRequest' :: DeploymentCommand -> String -> ({ "StackId" :: String, "AppId" :: NullOrUndefined (String), "InstanceIds" :: NullOrUndefined (Strings), "LayerIds" :: NullOrUndefined (Strings), "Command" :: DeploymentCommand, "Comment" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String) } -> { "StackId" :: String, "AppId" :: NullOrUndefined (String), "InstanceIds" :: NullOrUndefined (Strings), "LayerIds" :: NullOrUndefined (Strings), "Command" :: DeploymentCommand, "Comment" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String) }) -> CreateDeploymentRequest
+newCreateDeploymentRequest' :: DeploymentCommand -> String -> ({ "StackId" :: String, "AppId" :: Maybe (String), "InstanceIds" :: Maybe (Strings), "LayerIds" :: Maybe (Strings), "Command" :: DeploymentCommand, "Comment" :: Maybe (String), "CustomJson" :: Maybe (String) } -> { "StackId" :: String, "AppId" :: Maybe (String), "InstanceIds" :: Maybe (Strings), "LayerIds" :: Maybe (Strings), "Command" :: DeploymentCommand, "Comment" :: Maybe (String), "CustomJson" :: Maybe (String) }) -> CreateDeploymentRequest
 ```
 
 Constructs CreateDeploymentRequest's fields from required parameters
@@ -790,7 +790,7 @@ Constructs CreateDeploymentRequest's fields from required parameters
 
 ``` purescript
 newtype CreateDeploymentResult
-  = CreateDeploymentResult { "DeploymentId" :: NullOrUndefined (String) }
+  = CreateDeploymentResult { "DeploymentId" :: Maybe (String) }
 ```
 
 <p>Contains the response to a <code>CreateDeployment</code> request.</p>
@@ -815,7 +815,7 @@ Constructs CreateDeploymentResult from required parameters
 #### `newCreateDeploymentResult'`
 
 ``` purescript
-newCreateDeploymentResult' :: ({ "DeploymentId" :: NullOrUndefined (String) } -> { "DeploymentId" :: NullOrUndefined (String) }) -> CreateDeploymentResult
+newCreateDeploymentResult' :: ({ "DeploymentId" :: Maybe (String) } -> { "DeploymentId" :: Maybe (String) }) -> CreateDeploymentResult
 ```
 
 Constructs CreateDeploymentResult's fields from required parameters
@@ -824,7 +824,7 @@ Constructs CreateDeploymentResult's fields from required parameters
 
 ``` purescript
 newtype CreateInstanceRequest
-  = CreateInstanceRequest { "StackId" :: String, "LayerIds" :: Strings, "InstanceType" :: String, "AutoScalingType" :: NullOrUndefined (AutoScalingType), "Hostname" :: NullOrUndefined (String), "Os" :: NullOrUndefined (String), "AmiId" :: NullOrUndefined (String), "SshKeyName" :: NullOrUndefined (String), "AvailabilityZone" :: NullOrUndefined (String), "VirtualizationType" :: NullOrUndefined (String), "SubnetId" :: NullOrUndefined (String), "Architecture" :: NullOrUndefined (Architecture), "RootDeviceType" :: NullOrUndefined (RootDeviceType), "BlockDeviceMappings" :: NullOrUndefined (BlockDeviceMappings), "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean), "EbsOptimized" :: NullOrUndefined (Boolean), "AgentVersion" :: NullOrUndefined (String), "Tenancy" :: NullOrUndefined (String) }
+  = CreateInstanceRequest { "StackId" :: String, "LayerIds" :: Strings, "InstanceType" :: String, "AutoScalingType" :: Maybe (AutoScalingType), "Hostname" :: Maybe (String), "Os" :: Maybe (String), "AmiId" :: Maybe (String), "SshKeyName" :: Maybe (String), "AvailabilityZone" :: Maybe (String), "VirtualizationType" :: Maybe (String), "SubnetId" :: Maybe (String), "Architecture" :: Maybe (Architecture), "RootDeviceType" :: Maybe (RootDeviceType), "BlockDeviceMappings" :: Maybe (BlockDeviceMappings), "InstallUpdatesOnBoot" :: Maybe (Boolean), "EbsOptimized" :: Maybe (Boolean), "AgentVersion" :: Maybe (String), "Tenancy" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -847,7 +847,7 @@ Constructs CreateInstanceRequest from required parameters
 #### `newCreateInstanceRequest'`
 
 ``` purescript
-newCreateInstanceRequest' :: String -> Strings -> String -> ({ "StackId" :: String, "LayerIds" :: Strings, "InstanceType" :: String, "AutoScalingType" :: NullOrUndefined (AutoScalingType), "Hostname" :: NullOrUndefined (String), "Os" :: NullOrUndefined (String), "AmiId" :: NullOrUndefined (String), "SshKeyName" :: NullOrUndefined (String), "AvailabilityZone" :: NullOrUndefined (String), "VirtualizationType" :: NullOrUndefined (String), "SubnetId" :: NullOrUndefined (String), "Architecture" :: NullOrUndefined (Architecture), "RootDeviceType" :: NullOrUndefined (RootDeviceType), "BlockDeviceMappings" :: NullOrUndefined (BlockDeviceMappings), "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean), "EbsOptimized" :: NullOrUndefined (Boolean), "AgentVersion" :: NullOrUndefined (String), "Tenancy" :: NullOrUndefined (String) } -> { "StackId" :: String, "LayerIds" :: Strings, "InstanceType" :: String, "AutoScalingType" :: NullOrUndefined (AutoScalingType), "Hostname" :: NullOrUndefined (String), "Os" :: NullOrUndefined (String), "AmiId" :: NullOrUndefined (String), "SshKeyName" :: NullOrUndefined (String), "AvailabilityZone" :: NullOrUndefined (String), "VirtualizationType" :: NullOrUndefined (String), "SubnetId" :: NullOrUndefined (String), "Architecture" :: NullOrUndefined (Architecture), "RootDeviceType" :: NullOrUndefined (RootDeviceType), "BlockDeviceMappings" :: NullOrUndefined (BlockDeviceMappings), "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean), "EbsOptimized" :: NullOrUndefined (Boolean), "AgentVersion" :: NullOrUndefined (String), "Tenancy" :: NullOrUndefined (String) }) -> CreateInstanceRequest
+newCreateInstanceRequest' :: String -> Strings -> String -> ({ "StackId" :: String, "LayerIds" :: Strings, "InstanceType" :: String, "AutoScalingType" :: Maybe (AutoScalingType), "Hostname" :: Maybe (String), "Os" :: Maybe (String), "AmiId" :: Maybe (String), "SshKeyName" :: Maybe (String), "AvailabilityZone" :: Maybe (String), "VirtualizationType" :: Maybe (String), "SubnetId" :: Maybe (String), "Architecture" :: Maybe (Architecture), "RootDeviceType" :: Maybe (RootDeviceType), "BlockDeviceMappings" :: Maybe (BlockDeviceMappings), "InstallUpdatesOnBoot" :: Maybe (Boolean), "EbsOptimized" :: Maybe (Boolean), "AgentVersion" :: Maybe (String), "Tenancy" :: Maybe (String) } -> { "StackId" :: String, "LayerIds" :: Strings, "InstanceType" :: String, "AutoScalingType" :: Maybe (AutoScalingType), "Hostname" :: Maybe (String), "Os" :: Maybe (String), "AmiId" :: Maybe (String), "SshKeyName" :: Maybe (String), "AvailabilityZone" :: Maybe (String), "VirtualizationType" :: Maybe (String), "SubnetId" :: Maybe (String), "Architecture" :: Maybe (Architecture), "RootDeviceType" :: Maybe (RootDeviceType), "BlockDeviceMappings" :: Maybe (BlockDeviceMappings), "InstallUpdatesOnBoot" :: Maybe (Boolean), "EbsOptimized" :: Maybe (Boolean), "AgentVersion" :: Maybe (String), "Tenancy" :: Maybe (String) }) -> CreateInstanceRequest
 ```
 
 Constructs CreateInstanceRequest's fields from required parameters
@@ -856,7 +856,7 @@ Constructs CreateInstanceRequest's fields from required parameters
 
 ``` purescript
 newtype CreateInstanceResult
-  = CreateInstanceResult { "InstanceId" :: NullOrUndefined (String) }
+  = CreateInstanceResult { "InstanceId" :: Maybe (String) }
 ```
 
 <p>Contains the response to a <code>CreateInstance</code> request.</p>
@@ -881,7 +881,7 @@ Constructs CreateInstanceResult from required parameters
 #### `newCreateInstanceResult'`
 
 ``` purescript
-newCreateInstanceResult' :: ({ "InstanceId" :: NullOrUndefined (String) } -> { "InstanceId" :: NullOrUndefined (String) }) -> CreateInstanceResult
+newCreateInstanceResult' :: ({ "InstanceId" :: Maybe (String) } -> { "InstanceId" :: Maybe (String) }) -> CreateInstanceResult
 ```
 
 Constructs CreateInstanceResult's fields from required parameters
@@ -890,7 +890,7 @@ Constructs CreateInstanceResult's fields from required parameters
 
 ``` purescript
 newtype CreateLayerRequest
-  = CreateLayerRequest { "StackId" :: String, "Type" :: LayerType, "Name" :: String, "Shortname" :: String, "Attributes" :: NullOrUndefined (LayerAttributes), "CloudWatchLogsConfiguration" :: NullOrUndefined (CloudWatchLogsConfiguration), "CustomInstanceProfileArn" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "CustomSecurityGroupIds" :: NullOrUndefined (Strings), "Packages" :: NullOrUndefined (Strings), "VolumeConfigurations" :: NullOrUndefined (VolumeConfigurations), "EnableAutoHealing" :: NullOrUndefined (Boolean), "AutoAssignElasticIps" :: NullOrUndefined (Boolean), "AutoAssignPublicIps" :: NullOrUndefined (Boolean), "CustomRecipes" :: NullOrUndefined (Recipes), "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean), "UseEbsOptimizedInstances" :: NullOrUndefined (Boolean), "LifecycleEventConfiguration" :: NullOrUndefined (LifecycleEventConfiguration) }
+  = CreateLayerRequest { "StackId" :: String, "Type" :: LayerType, "Name" :: String, "Shortname" :: String, "Attributes" :: Maybe (LayerAttributes), "CloudWatchLogsConfiguration" :: Maybe (CloudWatchLogsConfiguration), "CustomInstanceProfileArn" :: Maybe (String), "CustomJson" :: Maybe (String), "CustomSecurityGroupIds" :: Maybe (Strings), "Packages" :: Maybe (Strings), "VolumeConfigurations" :: Maybe (VolumeConfigurations), "EnableAutoHealing" :: Maybe (Boolean), "AutoAssignElasticIps" :: Maybe (Boolean), "AutoAssignPublicIps" :: Maybe (Boolean), "CustomRecipes" :: Maybe (Recipes), "InstallUpdatesOnBoot" :: Maybe (Boolean), "UseEbsOptimizedInstances" :: Maybe (Boolean), "LifecycleEventConfiguration" :: Maybe (LifecycleEventConfiguration) }
 ```
 
 ##### Instances
@@ -913,7 +913,7 @@ Constructs CreateLayerRequest from required parameters
 #### `newCreateLayerRequest'`
 
 ``` purescript
-newCreateLayerRequest' :: String -> String -> String -> LayerType -> ({ "StackId" :: String, "Type" :: LayerType, "Name" :: String, "Shortname" :: String, "Attributes" :: NullOrUndefined (LayerAttributes), "CloudWatchLogsConfiguration" :: NullOrUndefined (CloudWatchLogsConfiguration), "CustomInstanceProfileArn" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "CustomSecurityGroupIds" :: NullOrUndefined (Strings), "Packages" :: NullOrUndefined (Strings), "VolumeConfigurations" :: NullOrUndefined (VolumeConfigurations), "EnableAutoHealing" :: NullOrUndefined (Boolean), "AutoAssignElasticIps" :: NullOrUndefined (Boolean), "AutoAssignPublicIps" :: NullOrUndefined (Boolean), "CustomRecipes" :: NullOrUndefined (Recipes), "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean), "UseEbsOptimizedInstances" :: NullOrUndefined (Boolean), "LifecycleEventConfiguration" :: NullOrUndefined (LifecycleEventConfiguration) } -> { "StackId" :: String, "Type" :: LayerType, "Name" :: String, "Shortname" :: String, "Attributes" :: NullOrUndefined (LayerAttributes), "CloudWatchLogsConfiguration" :: NullOrUndefined (CloudWatchLogsConfiguration), "CustomInstanceProfileArn" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "CustomSecurityGroupIds" :: NullOrUndefined (Strings), "Packages" :: NullOrUndefined (Strings), "VolumeConfigurations" :: NullOrUndefined (VolumeConfigurations), "EnableAutoHealing" :: NullOrUndefined (Boolean), "AutoAssignElasticIps" :: NullOrUndefined (Boolean), "AutoAssignPublicIps" :: NullOrUndefined (Boolean), "CustomRecipes" :: NullOrUndefined (Recipes), "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean), "UseEbsOptimizedInstances" :: NullOrUndefined (Boolean), "LifecycleEventConfiguration" :: NullOrUndefined (LifecycleEventConfiguration) }) -> CreateLayerRequest
+newCreateLayerRequest' :: String -> String -> String -> LayerType -> ({ "StackId" :: String, "Type" :: LayerType, "Name" :: String, "Shortname" :: String, "Attributes" :: Maybe (LayerAttributes), "CloudWatchLogsConfiguration" :: Maybe (CloudWatchLogsConfiguration), "CustomInstanceProfileArn" :: Maybe (String), "CustomJson" :: Maybe (String), "CustomSecurityGroupIds" :: Maybe (Strings), "Packages" :: Maybe (Strings), "VolumeConfigurations" :: Maybe (VolumeConfigurations), "EnableAutoHealing" :: Maybe (Boolean), "AutoAssignElasticIps" :: Maybe (Boolean), "AutoAssignPublicIps" :: Maybe (Boolean), "CustomRecipes" :: Maybe (Recipes), "InstallUpdatesOnBoot" :: Maybe (Boolean), "UseEbsOptimizedInstances" :: Maybe (Boolean), "LifecycleEventConfiguration" :: Maybe (LifecycleEventConfiguration) } -> { "StackId" :: String, "Type" :: LayerType, "Name" :: String, "Shortname" :: String, "Attributes" :: Maybe (LayerAttributes), "CloudWatchLogsConfiguration" :: Maybe (CloudWatchLogsConfiguration), "CustomInstanceProfileArn" :: Maybe (String), "CustomJson" :: Maybe (String), "CustomSecurityGroupIds" :: Maybe (Strings), "Packages" :: Maybe (Strings), "VolumeConfigurations" :: Maybe (VolumeConfigurations), "EnableAutoHealing" :: Maybe (Boolean), "AutoAssignElasticIps" :: Maybe (Boolean), "AutoAssignPublicIps" :: Maybe (Boolean), "CustomRecipes" :: Maybe (Recipes), "InstallUpdatesOnBoot" :: Maybe (Boolean), "UseEbsOptimizedInstances" :: Maybe (Boolean), "LifecycleEventConfiguration" :: Maybe (LifecycleEventConfiguration) }) -> CreateLayerRequest
 ```
 
 Constructs CreateLayerRequest's fields from required parameters
@@ -922,7 +922,7 @@ Constructs CreateLayerRequest's fields from required parameters
 
 ``` purescript
 newtype CreateLayerResult
-  = CreateLayerResult { "LayerId" :: NullOrUndefined (String) }
+  = CreateLayerResult { "LayerId" :: Maybe (String) }
 ```
 
 <p>Contains the response to a <code>CreateLayer</code> request.</p>
@@ -947,7 +947,7 @@ Constructs CreateLayerResult from required parameters
 #### `newCreateLayerResult'`
 
 ``` purescript
-newCreateLayerResult' :: ({ "LayerId" :: NullOrUndefined (String) } -> { "LayerId" :: NullOrUndefined (String) }) -> CreateLayerResult
+newCreateLayerResult' :: ({ "LayerId" :: Maybe (String) } -> { "LayerId" :: Maybe (String) }) -> CreateLayerResult
 ```
 
 Constructs CreateLayerResult's fields from required parameters
@@ -956,7 +956,7 @@ Constructs CreateLayerResult's fields from required parameters
 
 ``` purescript
 newtype CreateStackRequest
-  = CreateStackRequest { "Name" :: String, "Region" :: String, "VpcId" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (StackAttributes), "ServiceRoleArn" :: String, "DefaultInstanceProfileArn" :: String, "DefaultOs" :: NullOrUndefined (String), "HostnameTheme" :: NullOrUndefined (String), "DefaultAvailabilityZone" :: NullOrUndefined (String), "DefaultSubnetId" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager), "ChefConfiguration" :: NullOrUndefined (ChefConfiguration), "UseCustomCookbooks" :: NullOrUndefined (Boolean), "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean), "CustomCookbooksSource" :: NullOrUndefined (Source), "DefaultSshKeyName" :: NullOrUndefined (String), "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType), "AgentVersion" :: NullOrUndefined (String) }
+  = CreateStackRequest { "Name" :: String, "Region" :: String, "VpcId" :: Maybe (String), "Attributes" :: Maybe (StackAttributes), "ServiceRoleArn" :: String, "DefaultInstanceProfileArn" :: String, "DefaultOs" :: Maybe (String), "HostnameTheme" :: Maybe (String), "DefaultAvailabilityZone" :: Maybe (String), "DefaultSubnetId" :: Maybe (String), "CustomJson" :: Maybe (String), "ConfigurationManager" :: Maybe (StackConfigurationManager), "ChefConfiguration" :: Maybe (ChefConfiguration), "UseCustomCookbooks" :: Maybe (Boolean), "UseOpsworksSecurityGroups" :: Maybe (Boolean), "CustomCookbooksSource" :: Maybe (Source), "DefaultSshKeyName" :: Maybe (String), "DefaultRootDeviceType" :: Maybe (RootDeviceType), "AgentVersion" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -979,7 +979,7 @@ Constructs CreateStackRequest from required parameters
 #### `newCreateStackRequest'`
 
 ``` purescript
-newCreateStackRequest' :: String -> String -> String -> String -> ({ "Name" :: String, "Region" :: String, "VpcId" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (StackAttributes), "ServiceRoleArn" :: String, "DefaultInstanceProfileArn" :: String, "DefaultOs" :: NullOrUndefined (String), "HostnameTheme" :: NullOrUndefined (String), "DefaultAvailabilityZone" :: NullOrUndefined (String), "DefaultSubnetId" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager), "ChefConfiguration" :: NullOrUndefined (ChefConfiguration), "UseCustomCookbooks" :: NullOrUndefined (Boolean), "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean), "CustomCookbooksSource" :: NullOrUndefined (Source), "DefaultSshKeyName" :: NullOrUndefined (String), "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType), "AgentVersion" :: NullOrUndefined (String) } -> { "Name" :: String, "Region" :: String, "VpcId" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (StackAttributes), "ServiceRoleArn" :: String, "DefaultInstanceProfileArn" :: String, "DefaultOs" :: NullOrUndefined (String), "HostnameTheme" :: NullOrUndefined (String), "DefaultAvailabilityZone" :: NullOrUndefined (String), "DefaultSubnetId" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager), "ChefConfiguration" :: NullOrUndefined (ChefConfiguration), "UseCustomCookbooks" :: NullOrUndefined (Boolean), "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean), "CustomCookbooksSource" :: NullOrUndefined (Source), "DefaultSshKeyName" :: NullOrUndefined (String), "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType), "AgentVersion" :: NullOrUndefined (String) }) -> CreateStackRequest
+newCreateStackRequest' :: String -> String -> String -> String -> ({ "Name" :: String, "Region" :: String, "VpcId" :: Maybe (String), "Attributes" :: Maybe (StackAttributes), "ServiceRoleArn" :: String, "DefaultInstanceProfileArn" :: String, "DefaultOs" :: Maybe (String), "HostnameTheme" :: Maybe (String), "DefaultAvailabilityZone" :: Maybe (String), "DefaultSubnetId" :: Maybe (String), "CustomJson" :: Maybe (String), "ConfigurationManager" :: Maybe (StackConfigurationManager), "ChefConfiguration" :: Maybe (ChefConfiguration), "UseCustomCookbooks" :: Maybe (Boolean), "UseOpsworksSecurityGroups" :: Maybe (Boolean), "CustomCookbooksSource" :: Maybe (Source), "DefaultSshKeyName" :: Maybe (String), "DefaultRootDeviceType" :: Maybe (RootDeviceType), "AgentVersion" :: Maybe (String) } -> { "Name" :: String, "Region" :: String, "VpcId" :: Maybe (String), "Attributes" :: Maybe (StackAttributes), "ServiceRoleArn" :: String, "DefaultInstanceProfileArn" :: String, "DefaultOs" :: Maybe (String), "HostnameTheme" :: Maybe (String), "DefaultAvailabilityZone" :: Maybe (String), "DefaultSubnetId" :: Maybe (String), "CustomJson" :: Maybe (String), "ConfigurationManager" :: Maybe (StackConfigurationManager), "ChefConfiguration" :: Maybe (ChefConfiguration), "UseCustomCookbooks" :: Maybe (Boolean), "UseOpsworksSecurityGroups" :: Maybe (Boolean), "CustomCookbooksSource" :: Maybe (Source), "DefaultSshKeyName" :: Maybe (String), "DefaultRootDeviceType" :: Maybe (RootDeviceType), "AgentVersion" :: Maybe (String) }) -> CreateStackRequest
 ```
 
 Constructs CreateStackRequest's fields from required parameters
@@ -988,7 +988,7 @@ Constructs CreateStackRequest's fields from required parameters
 
 ``` purescript
 newtype CreateStackResult
-  = CreateStackResult { "StackId" :: NullOrUndefined (String) }
+  = CreateStackResult { "StackId" :: Maybe (String) }
 ```
 
 <p>Contains the response to a <code>CreateStack</code> request.</p>
@@ -1013,7 +1013,7 @@ Constructs CreateStackResult from required parameters
 #### `newCreateStackResult'`
 
 ``` purescript
-newCreateStackResult' :: ({ "StackId" :: NullOrUndefined (String) } -> { "StackId" :: NullOrUndefined (String) }) -> CreateStackResult
+newCreateStackResult' :: ({ "StackId" :: Maybe (String) } -> { "StackId" :: Maybe (String) }) -> CreateStackResult
 ```
 
 Constructs CreateStackResult's fields from required parameters
@@ -1022,7 +1022,7 @@ Constructs CreateStackResult's fields from required parameters
 
 ``` purescript
 newtype CreateUserProfileRequest
-  = CreateUserProfileRequest { "IamUserArn" :: String, "SshUsername" :: NullOrUndefined (String), "SshPublicKey" :: NullOrUndefined (String), "AllowSelfManagement" :: NullOrUndefined (Boolean) }
+  = CreateUserProfileRequest { "IamUserArn" :: String, "SshUsername" :: Maybe (String), "SshPublicKey" :: Maybe (String), "AllowSelfManagement" :: Maybe (Boolean) }
 ```
 
 ##### Instances
@@ -1045,7 +1045,7 @@ Constructs CreateUserProfileRequest from required parameters
 #### `newCreateUserProfileRequest'`
 
 ``` purescript
-newCreateUserProfileRequest' :: String -> ({ "IamUserArn" :: String, "SshUsername" :: NullOrUndefined (String), "SshPublicKey" :: NullOrUndefined (String), "AllowSelfManagement" :: NullOrUndefined (Boolean) } -> { "IamUserArn" :: String, "SshUsername" :: NullOrUndefined (String), "SshPublicKey" :: NullOrUndefined (String), "AllowSelfManagement" :: NullOrUndefined (Boolean) }) -> CreateUserProfileRequest
+newCreateUserProfileRequest' :: String -> ({ "IamUserArn" :: String, "SshUsername" :: Maybe (String), "SshPublicKey" :: Maybe (String), "AllowSelfManagement" :: Maybe (Boolean) } -> { "IamUserArn" :: String, "SshUsername" :: Maybe (String), "SshPublicKey" :: Maybe (String), "AllowSelfManagement" :: Maybe (Boolean) }) -> CreateUserProfileRequest
 ```
 
 Constructs CreateUserProfileRequest's fields from required parameters
@@ -1054,7 +1054,7 @@ Constructs CreateUserProfileRequest's fields from required parameters
 
 ``` purescript
 newtype CreateUserProfileResult
-  = CreateUserProfileResult { "IamUserArn" :: NullOrUndefined (String) }
+  = CreateUserProfileResult { "IamUserArn" :: Maybe (String) }
 ```
 
 <p>Contains the response to a <code>CreateUserProfile</code> request.</p>
@@ -1079,7 +1079,7 @@ Constructs CreateUserProfileResult from required parameters
 #### `newCreateUserProfileResult'`
 
 ``` purescript
-newCreateUserProfileResult' :: ({ "IamUserArn" :: NullOrUndefined (String) } -> { "IamUserArn" :: NullOrUndefined (String) }) -> CreateUserProfileResult
+newCreateUserProfileResult' :: ({ "IamUserArn" :: Maybe (String) } -> { "IamUserArn" :: Maybe (String) }) -> CreateUserProfileResult
 ```
 
 Constructs CreateUserProfileResult's fields from required parameters
@@ -1104,7 +1104,7 @@ Encode DailyAutoScalingSchedule
 
 ``` purescript
 newtype DataSource
-  = DataSource { "Type" :: NullOrUndefined (String), "Arn" :: NullOrUndefined (String), "DatabaseName" :: NullOrUndefined (String) }
+  = DataSource { "Type" :: Maybe (String), "Arn" :: Maybe (String), "DatabaseName" :: Maybe (String) }
 ```
 
 <p>Describes an app's data source.</p>
@@ -1129,7 +1129,7 @@ Constructs DataSource from required parameters
 #### `newDataSource'`
 
 ``` purescript
-newDataSource' :: ({ "Type" :: NullOrUndefined (String), "Arn" :: NullOrUndefined (String), "DatabaseName" :: NullOrUndefined (String) } -> { "Type" :: NullOrUndefined (String), "Arn" :: NullOrUndefined (String), "DatabaseName" :: NullOrUndefined (String) }) -> DataSource
+newDataSource' :: ({ "Type" :: Maybe (String), "Arn" :: Maybe (String), "DatabaseName" :: Maybe (String) } -> { "Type" :: Maybe (String), "Arn" :: Maybe (String), "DatabaseName" :: Maybe (String) }) -> DataSource
 ```
 
 Constructs DataSource's fields from required parameters
@@ -1202,7 +1202,7 @@ Constructs DeleteAppRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteInstanceRequest
-  = DeleteInstanceRequest { "InstanceId" :: String, "DeleteElasticIp" :: NullOrUndefined (Boolean), "DeleteVolumes" :: NullOrUndefined (Boolean) }
+  = DeleteInstanceRequest { "InstanceId" :: String, "DeleteElasticIp" :: Maybe (Boolean), "DeleteVolumes" :: Maybe (Boolean) }
 ```
 
 ##### Instances
@@ -1225,7 +1225,7 @@ Constructs DeleteInstanceRequest from required parameters
 #### `newDeleteInstanceRequest'`
 
 ``` purescript
-newDeleteInstanceRequest' :: String -> ({ "InstanceId" :: String, "DeleteElasticIp" :: NullOrUndefined (Boolean), "DeleteVolumes" :: NullOrUndefined (Boolean) } -> { "InstanceId" :: String, "DeleteElasticIp" :: NullOrUndefined (Boolean), "DeleteVolumes" :: NullOrUndefined (Boolean) }) -> DeleteInstanceRequest
+newDeleteInstanceRequest' :: String -> ({ "InstanceId" :: String, "DeleteElasticIp" :: Maybe (Boolean), "DeleteVolumes" :: Maybe (Boolean) } -> { "InstanceId" :: String, "DeleteElasticIp" :: Maybe (Boolean), "DeleteVolumes" :: Maybe (Boolean) }) -> DeleteInstanceRequest
 ```
 
 Constructs DeleteInstanceRequest's fields from required parameters
@@ -1330,7 +1330,7 @@ Constructs DeleteUserProfileRequest's fields from required parameters
 
 ``` purescript
 newtype Deployment
-  = Deployment { "DeploymentId" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "AppId" :: NullOrUndefined (String), "CreatedAt" :: NullOrUndefined (DateTime), "CompletedAt" :: NullOrUndefined (DateTime), "Duration" :: NullOrUndefined (Int), "IamUserArn" :: NullOrUndefined (String), "Comment" :: NullOrUndefined (String), "Command" :: NullOrUndefined (DeploymentCommand), "Status" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "InstanceIds" :: NullOrUndefined (Strings) }
+  = Deployment { "DeploymentId" :: Maybe (String), "StackId" :: Maybe (String), "AppId" :: Maybe (String), "CreatedAt" :: Maybe (DateTime), "CompletedAt" :: Maybe (DateTime), "Duration" :: Maybe (Int), "IamUserArn" :: Maybe (String), "Comment" :: Maybe (String), "Command" :: Maybe (DeploymentCommand), "Status" :: Maybe (String), "CustomJson" :: Maybe (String), "InstanceIds" :: Maybe (Strings) }
 ```
 
 <p>Describes a deployment of a stack or app.</p>
@@ -1355,7 +1355,7 @@ Constructs Deployment from required parameters
 #### `newDeployment'`
 
 ``` purescript
-newDeployment' :: ({ "DeploymentId" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "AppId" :: NullOrUndefined (String), "CreatedAt" :: NullOrUndefined (DateTime), "CompletedAt" :: NullOrUndefined (DateTime), "Duration" :: NullOrUndefined (Int), "IamUserArn" :: NullOrUndefined (String), "Comment" :: NullOrUndefined (String), "Command" :: NullOrUndefined (DeploymentCommand), "Status" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "InstanceIds" :: NullOrUndefined (Strings) } -> { "DeploymentId" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "AppId" :: NullOrUndefined (String), "CreatedAt" :: NullOrUndefined (DateTime), "CompletedAt" :: NullOrUndefined (DateTime), "Duration" :: NullOrUndefined (Int), "IamUserArn" :: NullOrUndefined (String), "Comment" :: NullOrUndefined (String), "Command" :: NullOrUndefined (DeploymentCommand), "Status" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "InstanceIds" :: NullOrUndefined (Strings) }) -> Deployment
+newDeployment' :: ({ "DeploymentId" :: Maybe (String), "StackId" :: Maybe (String), "AppId" :: Maybe (String), "CreatedAt" :: Maybe (DateTime), "CompletedAt" :: Maybe (DateTime), "Duration" :: Maybe (Int), "IamUserArn" :: Maybe (String), "Comment" :: Maybe (String), "Command" :: Maybe (DeploymentCommand), "Status" :: Maybe (String), "CustomJson" :: Maybe (String), "InstanceIds" :: Maybe (Strings) } -> { "DeploymentId" :: Maybe (String), "StackId" :: Maybe (String), "AppId" :: Maybe (String), "CreatedAt" :: Maybe (DateTime), "CompletedAt" :: Maybe (DateTime), "Duration" :: Maybe (Int), "IamUserArn" :: Maybe (String), "Comment" :: Maybe (String), "Command" :: Maybe (DeploymentCommand), "Status" :: Maybe (String), "CustomJson" :: Maybe (String), "InstanceIds" :: Maybe (Strings) }) -> Deployment
 ```
 
 Constructs Deployment's fields from required parameters
@@ -1364,7 +1364,7 @@ Constructs Deployment's fields from required parameters
 
 ``` purescript
 newtype DeploymentCommand
-  = DeploymentCommand { "Name" :: DeploymentCommandName, "Args" :: NullOrUndefined (DeploymentCommandArgs) }
+  = DeploymentCommand { "Name" :: DeploymentCommandName, "Args" :: Maybe (DeploymentCommandArgs) }
 ```
 
 <p>Used to specify a stack or deployment command.</p>
@@ -1389,7 +1389,7 @@ Constructs DeploymentCommand from required parameters
 #### `newDeploymentCommand'`
 
 ``` purescript
-newDeploymentCommand' :: DeploymentCommandName -> ({ "Name" :: DeploymentCommandName, "Args" :: NullOrUndefined (DeploymentCommandArgs) } -> { "Name" :: DeploymentCommandName, "Args" :: NullOrUndefined (DeploymentCommandArgs) }) -> DeploymentCommand
+newDeploymentCommand' :: DeploymentCommandName -> ({ "Name" :: DeploymentCommandName, "Args" :: Maybe (DeploymentCommandArgs) } -> { "Name" :: DeploymentCommandName, "Args" :: Maybe (DeploymentCommandArgs) }) -> DeploymentCommand
 ```
 
 Constructs DeploymentCommand's fields from required parameters
@@ -1606,7 +1606,7 @@ Constructs DeregisterVolumeRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeAgentVersionsRequest
-  = DescribeAgentVersionsRequest { "StackId" :: NullOrUndefined (String), "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager) }
+  = DescribeAgentVersionsRequest { "StackId" :: Maybe (String), "ConfigurationManager" :: Maybe (StackConfigurationManager) }
 ```
 
 ##### Instances
@@ -1629,7 +1629,7 @@ Constructs DescribeAgentVersionsRequest from required parameters
 #### `newDescribeAgentVersionsRequest'`
 
 ``` purescript
-newDescribeAgentVersionsRequest' :: ({ "StackId" :: NullOrUndefined (String), "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager) } -> { "StackId" :: NullOrUndefined (String), "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager) }) -> DescribeAgentVersionsRequest
+newDescribeAgentVersionsRequest' :: ({ "StackId" :: Maybe (String), "ConfigurationManager" :: Maybe (StackConfigurationManager) } -> { "StackId" :: Maybe (String), "ConfigurationManager" :: Maybe (StackConfigurationManager) }) -> DescribeAgentVersionsRequest
 ```
 
 Constructs DescribeAgentVersionsRequest's fields from required parameters
@@ -1638,7 +1638,7 @@ Constructs DescribeAgentVersionsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeAgentVersionsResult
-  = DescribeAgentVersionsResult { "AgentVersions" :: NullOrUndefined (AgentVersions) }
+  = DescribeAgentVersionsResult { "AgentVersions" :: Maybe (AgentVersions) }
 ```
 
 <p>Contains the response to a <code>DescribeAgentVersions</code> request.</p>
@@ -1663,7 +1663,7 @@ Constructs DescribeAgentVersionsResult from required parameters
 #### `newDescribeAgentVersionsResult'`
 
 ``` purescript
-newDescribeAgentVersionsResult' :: ({ "AgentVersions" :: NullOrUndefined (AgentVersions) } -> { "AgentVersions" :: NullOrUndefined (AgentVersions) }) -> DescribeAgentVersionsResult
+newDescribeAgentVersionsResult' :: ({ "AgentVersions" :: Maybe (AgentVersions) } -> { "AgentVersions" :: Maybe (AgentVersions) }) -> DescribeAgentVersionsResult
 ```
 
 Constructs DescribeAgentVersionsResult's fields from required parameters
@@ -1672,7 +1672,7 @@ Constructs DescribeAgentVersionsResult's fields from required parameters
 
 ``` purescript
 newtype DescribeAppsRequest
-  = DescribeAppsRequest { "StackId" :: NullOrUndefined (String), "AppIds" :: NullOrUndefined (Strings) }
+  = DescribeAppsRequest { "StackId" :: Maybe (String), "AppIds" :: Maybe (Strings) }
 ```
 
 ##### Instances
@@ -1695,7 +1695,7 @@ Constructs DescribeAppsRequest from required parameters
 #### `newDescribeAppsRequest'`
 
 ``` purescript
-newDescribeAppsRequest' :: ({ "StackId" :: NullOrUndefined (String), "AppIds" :: NullOrUndefined (Strings) } -> { "StackId" :: NullOrUndefined (String), "AppIds" :: NullOrUndefined (Strings) }) -> DescribeAppsRequest
+newDescribeAppsRequest' :: ({ "StackId" :: Maybe (String), "AppIds" :: Maybe (Strings) } -> { "StackId" :: Maybe (String), "AppIds" :: Maybe (Strings) }) -> DescribeAppsRequest
 ```
 
 Constructs DescribeAppsRequest's fields from required parameters
@@ -1704,7 +1704,7 @@ Constructs DescribeAppsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeAppsResult
-  = DescribeAppsResult { "Apps" :: NullOrUndefined (Apps) }
+  = DescribeAppsResult { "Apps" :: Maybe (Apps) }
 ```
 
 <p>Contains the response to a <code>DescribeApps</code> request.</p>
@@ -1729,7 +1729,7 @@ Constructs DescribeAppsResult from required parameters
 #### `newDescribeAppsResult'`
 
 ``` purescript
-newDescribeAppsResult' :: ({ "Apps" :: NullOrUndefined (Apps) } -> { "Apps" :: NullOrUndefined (Apps) }) -> DescribeAppsResult
+newDescribeAppsResult' :: ({ "Apps" :: Maybe (Apps) } -> { "Apps" :: Maybe (Apps) }) -> DescribeAppsResult
 ```
 
 Constructs DescribeAppsResult's fields from required parameters
@@ -1738,7 +1738,7 @@ Constructs DescribeAppsResult's fields from required parameters
 
 ``` purescript
 newtype DescribeCommandsRequest
-  = DescribeCommandsRequest { "DeploymentId" :: NullOrUndefined (String), "InstanceId" :: NullOrUndefined (String), "CommandIds" :: NullOrUndefined (Strings) }
+  = DescribeCommandsRequest { "DeploymentId" :: Maybe (String), "InstanceId" :: Maybe (String), "CommandIds" :: Maybe (Strings) }
 ```
 
 ##### Instances
@@ -1761,7 +1761,7 @@ Constructs DescribeCommandsRequest from required parameters
 #### `newDescribeCommandsRequest'`
 
 ``` purescript
-newDescribeCommandsRequest' :: ({ "DeploymentId" :: NullOrUndefined (String), "InstanceId" :: NullOrUndefined (String), "CommandIds" :: NullOrUndefined (Strings) } -> { "DeploymentId" :: NullOrUndefined (String), "InstanceId" :: NullOrUndefined (String), "CommandIds" :: NullOrUndefined (Strings) }) -> DescribeCommandsRequest
+newDescribeCommandsRequest' :: ({ "DeploymentId" :: Maybe (String), "InstanceId" :: Maybe (String), "CommandIds" :: Maybe (Strings) } -> { "DeploymentId" :: Maybe (String), "InstanceId" :: Maybe (String), "CommandIds" :: Maybe (Strings) }) -> DescribeCommandsRequest
 ```
 
 Constructs DescribeCommandsRequest's fields from required parameters
@@ -1770,7 +1770,7 @@ Constructs DescribeCommandsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeCommandsResult
-  = DescribeCommandsResult { "Commands" :: NullOrUndefined (Commands) }
+  = DescribeCommandsResult { "Commands" :: Maybe (Commands) }
 ```
 
 <p>Contains the response to a <code>DescribeCommands</code> request.</p>
@@ -1795,7 +1795,7 @@ Constructs DescribeCommandsResult from required parameters
 #### `newDescribeCommandsResult'`
 
 ``` purescript
-newDescribeCommandsResult' :: ({ "Commands" :: NullOrUndefined (Commands) } -> { "Commands" :: NullOrUndefined (Commands) }) -> DescribeCommandsResult
+newDescribeCommandsResult' :: ({ "Commands" :: Maybe (Commands) } -> { "Commands" :: Maybe (Commands) }) -> DescribeCommandsResult
 ```
 
 Constructs DescribeCommandsResult's fields from required parameters
@@ -1804,7 +1804,7 @@ Constructs DescribeCommandsResult's fields from required parameters
 
 ``` purescript
 newtype DescribeDeploymentsRequest
-  = DescribeDeploymentsRequest { "StackId" :: NullOrUndefined (String), "AppId" :: NullOrUndefined (String), "DeploymentIds" :: NullOrUndefined (Strings) }
+  = DescribeDeploymentsRequest { "StackId" :: Maybe (String), "AppId" :: Maybe (String), "DeploymentIds" :: Maybe (Strings) }
 ```
 
 ##### Instances
@@ -1827,7 +1827,7 @@ Constructs DescribeDeploymentsRequest from required parameters
 #### `newDescribeDeploymentsRequest'`
 
 ``` purescript
-newDescribeDeploymentsRequest' :: ({ "StackId" :: NullOrUndefined (String), "AppId" :: NullOrUndefined (String), "DeploymentIds" :: NullOrUndefined (Strings) } -> { "StackId" :: NullOrUndefined (String), "AppId" :: NullOrUndefined (String), "DeploymentIds" :: NullOrUndefined (Strings) }) -> DescribeDeploymentsRequest
+newDescribeDeploymentsRequest' :: ({ "StackId" :: Maybe (String), "AppId" :: Maybe (String), "DeploymentIds" :: Maybe (Strings) } -> { "StackId" :: Maybe (String), "AppId" :: Maybe (String), "DeploymentIds" :: Maybe (Strings) }) -> DescribeDeploymentsRequest
 ```
 
 Constructs DescribeDeploymentsRequest's fields from required parameters
@@ -1836,7 +1836,7 @@ Constructs DescribeDeploymentsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeDeploymentsResult
-  = DescribeDeploymentsResult { "Deployments" :: NullOrUndefined (Deployments) }
+  = DescribeDeploymentsResult { "Deployments" :: Maybe (Deployments) }
 ```
 
 <p>Contains the response to a <code>DescribeDeployments</code> request.</p>
@@ -1861,7 +1861,7 @@ Constructs DescribeDeploymentsResult from required parameters
 #### `newDescribeDeploymentsResult'`
 
 ``` purescript
-newDescribeDeploymentsResult' :: ({ "Deployments" :: NullOrUndefined (Deployments) } -> { "Deployments" :: NullOrUndefined (Deployments) }) -> DescribeDeploymentsResult
+newDescribeDeploymentsResult' :: ({ "Deployments" :: Maybe (Deployments) } -> { "Deployments" :: Maybe (Deployments) }) -> DescribeDeploymentsResult
 ```
 
 Constructs DescribeDeploymentsResult's fields from required parameters
@@ -1870,7 +1870,7 @@ Constructs DescribeDeploymentsResult's fields from required parameters
 
 ``` purescript
 newtype DescribeEcsClustersRequest
-  = DescribeEcsClustersRequest { "EcsClusterArns" :: NullOrUndefined (Strings), "StackId" :: NullOrUndefined (String), "NextToken" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (Int) }
+  = DescribeEcsClustersRequest { "EcsClusterArns" :: Maybe (Strings), "StackId" :: Maybe (String), "NextToken" :: Maybe (String), "MaxResults" :: Maybe (Int) }
 ```
 
 ##### Instances
@@ -1893,7 +1893,7 @@ Constructs DescribeEcsClustersRequest from required parameters
 #### `newDescribeEcsClustersRequest'`
 
 ``` purescript
-newDescribeEcsClustersRequest' :: ({ "EcsClusterArns" :: NullOrUndefined (Strings), "StackId" :: NullOrUndefined (String), "NextToken" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (Int) } -> { "EcsClusterArns" :: NullOrUndefined (Strings), "StackId" :: NullOrUndefined (String), "NextToken" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (Int) }) -> DescribeEcsClustersRequest
+newDescribeEcsClustersRequest' :: ({ "EcsClusterArns" :: Maybe (Strings), "StackId" :: Maybe (String), "NextToken" :: Maybe (String), "MaxResults" :: Maybe (Int) } -> { "EcsClusterArns" :: Maybe (Strings), "StackId" :: Maybe (String), "NextToken" :: Maybe (String), "MaxResults" :: Maybe (Int) }) -> DescribeEcsClustersRequest
 ```
 
 Constructs DescribeEcsClustersRequest's fields from required parameters
@@ -1902,7 +1902,7 @@ Constructs DescribeEcsClustersRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeEcsClustersResult
-  = DescribeEcsClustersResult { "EcsClusters" :: NullOrUndefined (EcsClusters), "NextToken" :: NullOrUndefined (String) }
+  = DescribeEcsClustersResult { "EcsClusters" :: Maybe (EcsClusters), "NextToken" :: Maybe (String) }
 ```
 
 <p>Contains the response to a <code>DescribeEcsClusters</code> request.</p>
@@ -1927,7 +1927,7 @@ Constructs DescribeEcsClustersResult from required parameters
 #### `newDescribeEcsClustersResult'`
 
 ``` purescript
-newDescribeEcsClustersResult' :: ({ "EcsClusters" :: NullOrUndefined (EcsClusters), "NextToken" :: NullOrUndefined (String) } -> { "EcsClusters" :: NullOrUndefined (EcsClusters), "NextToken" :: NullOrUndefined (String) }) -> DescribeEcsClustersResult
+newDescribeEcsClustersResult' :: ({ "EcsClusters" :: Maybe (EcsClusters), "NextToken" :: Maybe (String) } -> { "EcsClusters" :: Maybe (EcsClusters), "NextToken" :: Maybe (String) }) -> DescribeEcsClustersResult
 ```
 
 Constructs DescribeEcsClustersResult's fields from required parameters
@@ -1936,7 +1936,7 @@ Constructs DescribeEcsClustersResult's fields from required parameters
 
 ``` purescript
 newtype DescribeElasticIpsRequest
-  = DescribeElasticIpsRequest { "InstanceId" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "Ips" :: NullOrUndefined (Strings) }
+  = DescribeElasticIpsRequest { "InstanceId" :: Maybe (String), "StackId" :: Maybe (String), "Ips" :: Maybe (Strings) }
 ```
 
 ##### Instances
@@ -1959,7 +1959,7 @@ Constructs DescribeElasticIpsRequest from required parameters
 #### `newDescribeElasticIpsRequest'`
 
 ``` purescript
-newDescribeElasticIpsRequest' :: ({ "InstanceId" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "Ips" :: NullOrUndefined (Strings) } -> { "InstanceId" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "Ips" :: NullOrUndefined (Strings) }) -> DescribeElasticIpsRequest
+newDescribeElasticIpsRequest' :: ({ "InstanceId" :: Maybe (String), "StackId" :: Maybe (String), "Ips" :: Maybe (Strings) } -> { "InstanceId" :: Maybe (String), "StackId" :: Maybe (String), "Ips" :: Maybe (Strings) }) -> DescribeElasticIpsRequest
 ```
 
 Constructs DescribeElasticIpsRequest's fields from required parameters
@@ -1968,7 +1968,7 @@ Constructs DescribeElasticIpsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeElasticIpsResult
-  = DescribeElasticIpsResult { "ElasticIps" :: NullOrUndefined (ElasticIps) }
+  = DescribeElasticIpsResult { "ElasticIps" :: Maybe (ElasticIps) }
 ```
 
 <p>Contains the response to a <code>DescribeElasticIps</code> request.</p>
@@ -1993,7 +1993,7 @@ Constructs DescribeElasticIpsResult from required parameters
 #### `newDescribeElasticIpsResult'`
 
 ``` purescript
-newDescribeElasticIpsResult' :: ({ "ElasticIps" :: NullOrUndefined (ElasticIps) } -> { "ElasticIps" :: NullOrUndefined (ElasticIps) }) -> DescribeElasticIpsResult
+newDescribeElasticIpsResult' :: ({ "ElasticIps" :: Maybe (ElasticIps) } -> { "ElasticIps" :: Maybe (ElasticIps) }) -> DescribeElasticIpsResult
 ```
 
 Constructs DescribeElasticIpsResult's fields from required parameters
@@ -2002,7 +2002,7 @@ Constructs DescribeElasticIpsResult's fields from required parameters
 
 ``` purescript
 newtype DescribeElasticLoadBalancersRequest
-  = DescribeElasticLoadBalancersRequest { "StackId" :: NullOrUndefined (String), "LayerIds" :: NullOrUndefined (Strings) }
+  = DescribeElasticLoadBalancersRequest { "StackId" :: Maybe (String), "LayerIds" :: Maybe (Strings) }
 ```
 
 ##### Instances
@@ -2025,7 +2025,7 @@ Constructs DescribeElasticLoadBalancersRequest from required parameters
 #### `newDescribeElasticLoadBalancersRequest'`
 
 ``` purescript
-newDescribeElasticLoadBalancersRequest' :: ({ "StackId" :: NullOrUndefined (String), "LayerIds" :: NullOrUndefined (Strings) } -> { "StackId" :: NullOrUndefined (String), "LayerIds" :: NullOrUndefined (Strings) }) -> DescribeElasticLoadBalancersRequest
+newDescribeElasticLoadBalancersRequest' :: ({ "StackId" :: Maybe (String), "LayerIds" :: Maybe (Strings) } -> { "StackId" :: Maybe (String), "LayerIds" :: Maybe (Strings) }) -> DescribeElasticLoadBalancersRequest
 ```
 
 Constructs DescribeElasticLoadBalancersRequest's fields from required parameters
@@ -2034,7 +2034,7 @@ Constructs DescribeElasticLoadBalancersRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeElasticLoadBalancersResult
-  = DescribeElasticLoadBalancersResult { "ElasticLoadBalancers" :: NullOrUndefined (ElasticLoadBalancers) }
+  = DescribeElasticLoadBalancersResult { "ElasticLoadBalancers" :: Maybe (ElasticLoadBalancers) }
 ```
 
 <p>Contains the response to a <code>DescribeElasticLoadBalancers</code> request.</p>
@@ -2059,7 +2059,7 @@ Constructs DescribeElasticLoadBalancersResult from required parameters
 #### `newDescribeElasticLoadBalancersResult'`
 
 ``` purescript
-newDescribeElasticLoadBalancersResult' :: ({ "ElasticLoadBalancers" :: NullOrUndefined (ElasticLoadBalancers) } -> { "ElasticLoadBalancers" :: NullOrUndefined (ElasticLoadBalancers) }) -> DescribeElasticLoadBalancersResult
+newDescribeElasticLoadBalancersResult' :: ({ "ElasticLoadBalancers" :: Maybe (ElasticLoadBalancers) } -> { "ElasticLoadBalancers" :: Maybe (ElasticLoadBalancers) }) -> DescribeElasticLoadBalancersResult
 ```
 
 Constructs DescribeElasticLoadBalancersResult's fields from required parameters
@@ -2068,7 +2068,7 @@ Constructs DescribeElasticLoadBalancersResult's fields from required parameters
 
 ``` purescript
 newtype DescribeInstancesRequest
-  = DescribeInstancesRequest { "StackId" :: NullOrUndefined (String), "LayerId" :: NullOrUndefined (String), "InstanceIds" :: NullOrUndefined (Strings) }
+  = DescribeInstancesRequest { "StackId" :: Maybe (String), "LayerId" :: Maybe (String), "InstanceIds" :: Maybe (Strings) }
 ```
 
 ##### Instances
@@ -2091,7 +2091,7 @@ Constructs DescribeInstancesRequest from required parameters
 #### `newDescribeInstancesRequest'`
 
 ``` purescript
-newDescribeInstancesRequest' :: ({ "StackId" :: NullOrUndefined (String), "LayerId" :: NullOrUndefined (String), "InstanceIds" :: NullOrUndefined (Strings) } -> { "StackId" :: NullOrUndefined (String), "LayerId" :: NullOrUndefined (String), "InstanceIds" :: NullOrUndefined (Strings) }) -> DescribeInstancesRequest
+newDescribeInstancesRequest' :: ({ "StackId" :: Maybe (String), "LayerId" :: Maybe (String), "InstanceIds" :: Maybe (Strings) } -> { "StackId" :: Maybe (String), "LayerId" :: Maybe (String), "InstanceIds" :: Maybe (Strings) }) -> DescribeInstancesRequest
 ```
 
 Constructs DescribeInstancesRequest's fields from required parameters
@@ -2100,7 +2100,7 @@ Constructs DescribeInstancesRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeInstancesResult
-  = DescribeInstancesResult { "Instances" :: NullOrUndefined (Instances) }
+  = DescribeInstancesResult { "Instances" :: Maybe (Instances) }
 ```
 
 <p>Contains the response to a <code>DescribeInstances</code> request.</p>
@@ -2125,7 +2125,7 @@ Constructs DescribeInstancesResult from required parameters
 #### `newDescribeInstancesResult'`
 
 ``` purescript
-newDescribeInstancesResult' :: ({ "Instances" :: NullOrUndefined (Instances) } -> { "Instances" :: NullOrUndefined (Instances) }) -> DescribeInstancesResult
+newDescribeInstancesResult' :: ({ "Instances" :: Maybe (Instances) } -> { "Instances" :: Maybe (Instances) }) -> DescribeInstancesResult
 ```
 
 Constructs DescribeInstancesResult's fields from required parameters
@@ -2134,7 +2134,7 @@ Constructs DescribeInstancesResult's fields from required parameters
 
 ``` purescript
 newtype DescribeLayersRequest
-  = DescribeLayersRequest { "StackId" :: NullOrUndefined (String), "LayerIds" :: NullOrUndefined (Strings) }
+  = DescribeLayersRequest { "StackId" :: Maybe (String), "LayerIds" :: Maybe (Strings) }
 ```
 
 ##### Instances
@@ -2157,7 +2157,7 @@ Constructs DescribeLayersRequest from required parameters
 #### `newDescribeLayersRequest'`
 
 ``` purescript
-newDescribeLayersRequest' :: ({ "StackId" :: NullOrUndefined (String), "LayerIds" :: NullOrUndefined (Strings) } -> { "StackId" :: NullOrUndefined (String), "LayerIds" :: NullOrUndefined (Strings) }) -> DescribeLayersRequest
+newDescribeLayersRequest' :: ({ "StackId" :: Maybe (String), "LayerIds" :: Maybe (Strings) } -> { "StackId" :: Maybe (String), "LayerIds" :: Maybe (Strings) }) -> DescribeLayersRequest
 ```
 
 Constructs DescribeLayersRequest's fields from required parameters
@@ -2166,7 +2166,7 @@ Constructs DescribeLayersRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeLayersResult
-  = DescribeLayersResult { "Layers" :: NullOrUndefined (Layers) }
+  = DescribeLayersResult { "Layers" :: Maybe (Layers) }
 ```
 
 <p>Contains the response to a <code>DescribeLayers</code> request.</p>
@@ -2191,7 +2191,7 @@ Constructs DescribeLayersResult from required parameters
 #### `newDescribeLayersResult'`
 
 ``` purescript
-newDescribeLayersResult' :: ({ "Layers" :: NullOrUndefined (Layers) } -> { "Layers" :: NullOrUndefined (Layers) }) -> DescribeLayersResult
+newDescribeLayersResult' :: ({ "Layers" :: Maybe (Layers) } -> { "Layers" :: Maybe (Layers) }) -> DescribeLayersResult
 ```
 
 Constructs DescribeLayersResult's fields from required parameters
@@ -2232,7 +2232,7 @@ Constructs DescribeLoadBasedAutoScalingRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeLoadBasedAutoScalingResult
-  = DescribeLoadBasedAutoScalingResult { "LoadBasedAutoScalingConfigurations" :: NullOrUndefined (LoadBasedAutoScalingConfigurations) }
+  = DescribeLoadBasedAutoScalingResult { "LoadBasedAutoScalingConfigurations" :: Maybe (LoadBasedAutoScalingConfigurations) }
 ```
 
 <p>Contains the response to a <code>DescribeLoadBasedAutoScaling</code> request.</p>
@@ -2257,7 +2257,7 @@ Constructs DescribeLoadBasedAutoScalingResult from required parameters
 #### `newDescribeLoadBasedAutoScalingResult'`
 
 ``` purescript
-newDescribeLoadBasedAutoScalingResult' :: ({ "LoadBasedAutoScalingConfigurations" :: NullOrUndefined (LoadBasedAutoScalingConfigurations) } -> { "LoadBasedAutoScalingConfigurations" :: NullOrUndefined (LoadBasedAutoScalingConfigurations) }) -> DescribeLoadBasedAutoScalingResult
+newDescribeLoadBasedAutoScalingResult' :: ({ "LoadBasedAutoScalingConfigurations" :: Maybe (LoadBasedAutoScalingConfigurations) } -> { "LoadBasedAutoScalingConfigurations" :: Maybe (LoadBasedAutoScalingConfigurations) }) -> DescribeLoadBasedAutoScalingResult
 ```
 
 Constructs DescribeLoadBasedAutoScalingResult's fields from required parameters
@@ -2266,7 +2266,7 @@ Constructs DescribeLoadBasedAutoScalingResult's fields from required parameters
 
 ``` purescript
 newtype DescribeMyUserProfileResult
-  = DescribeMyUserProfileResult { "UserProfile" :: NullOrUndefined (SelfUserProfile) }
+  = DescribeMyUserProfileResult { "UserProfile" :: Maybe (SelfUserProfile) }
 ```
 
 <p>Contains the response to a <code>DescribeMyUserProfile</code> request.</p>
@@ -2291,7 +2291,7 @@ Constructs DescribeMyUserProfileResult from required parameters
 #### `newDescribeMyUserProfileResult'`
 
 ``` purescript
-newDescribeMyUserProfileResult' :: ({ "UserProfile" :: NullOrUndefined (SelfUserProfile) } -> { "UserProfile" :: NullOrUndefined (SelfUserProfile) }) -> DescribeMyUserProfileResult
+newDescribeMyUserProfileResult' :: ({ "UserProfile" :: Maybe (SelfUserProfile) } -> { "UserProfile" :: Maybe (SelfUserProfile) }) -> DescribeMyUserProfileResult
 ```
 
 Constructs DescribeMyUserProfileResult's fields from required parameters
@@ -2300,7 +2300,7 @@ Constructs DescribeMyUserProfileResult's fields from required parameters
 
 ``` purescript
 newtype DescribeOperatingSystemsResponse
-  = DescribeOperatingSystemsResponse { "OperatingSystems" :: NullOrUndefined (OperatingSystems) }
+  = DescribeOperatingSystemsResponse { "OperatingSystems" :: Maybe (OperatingSystems) }
 ```
 
 <p>The response to a <code>DescribeOperatingSystems</code> request.</p>
@@ -2325,7 +2325,7 @@ Constructs DescribeOperatingSystemsResponse from required parameters
 #### `newDescribeOperatingSystemsResponse'`
 
 ``` purescript
-newDescribeOperatingSystemsResponse' :: ({ "OperatingSystems" :: NullOrUndefined (OperatingSystems) } -> { "OperatingSystems" :: NullOrUndefined (OperatingSystems) }) -> DescribeOperatingSystemsResponse
+newDescribeOperatingSystemsResponse' :: ({ "OperatingSystems" :: Maybe (OperatingSystems) } -> { "OperatingSystems" :: Maybe (OperatingSystems) }) -> DescribeOperatingSystemsResponse
 ```
 
 Constructs DescribeOperatingSystemsResponse's fields from required parameters
@@ -2334,7 +2334,7 @@ Constructs DescribeOperatingSystemsResponse's fields from required parameters
 
 ``` purescript
 newtype DescribePermissionsRequest
-  = DescribePermissionsRequest { "IamUserArn" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String) }
+  = DescribePermissionsRequest { "IamUserArn" :: Maybe (String), "StackId" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -2357,7 +2357,7 @@ Constructs DescribePermissionsRequest from required parameters
 #### `newDescribePermissionsRequest'`
 
 ``` purescript
-newDescribePermissionsRequest' :: ({ "IamUserArn" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String) } -> { "IamUserArn" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String) }) -> DescribePermissionsRequest
+newDescribePermissionsRequest' :: ({ "IamUserArn" :: Maybe (String), "StackId" :: Maybe (String) } -> { "IamUserArn" :: Maybe (String), "StackId" :: Maybe (String) }) -> DescribePermissionsRequest
 ```
 
 Constructs DescribePermissionsRequest's fields from required parameters
@@ -2366,7 +2366,7 @@ Constructs DescribePermissionsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribePermissionsResult
-  = DescribePermissionsResult { "Permissions" :: NullOrUndefined (Permissions) }
+  = DescribePermissionsResult { "Permissions" :: Maybe (Permissions) }
 ```
 
 <p>Contains the response to a <code>DescribePermissions</code> request.</p>
@@ -2391,7 +2391,7 @@ Constructs DescribePermissionsResult from required parameters
 #### `newDescribePermissionsResult'`
 
 ``` purescript
-newDescribePermissionsResult' :: ({ "Permissions" :: NullOrUndefined (Permissions) } -> { "Permissions" :: NullOrUndefined (Permissions) }) -> DescribePermissionsResult
+newDescribePermissionsResult' :: ({ "Permissions" :: Maybe (Permissions) } -> { "Permissions" :: Maybe (Permissions) }) -> DescribePermissionsResult
 ```
 
 Constructs DescribePermissionsResult's fields from required parameters
@@ -2400,7 +2400,7 @@ Constructs DescribePermissionsResult's fields from required parameters
 
 ``` purescript
 newtype DescribeRaidArraysRequest
-  = DescribeRaidArraysRequest { "InstanceId" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "RaidArrayIds" :: NullOrUndefined (Strings) }
+  = DescribeRaidArraysRequest { "InstanceId" :: Maybe (String), "StackId" :: Maybe (String), "RaidArrayIds" :: Maybe (Strings) }
 ```
 
 ##### Instances
@@ -2423,7 +2423,7 @@ Constructs DescribeRaidArraysRequest from required parameters
 #### `newDescribeRaidArraysRequest'`
 
 ``` purescript
-newDescribeRaidArraysRequest' :: ({ "InstanceId" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "RaidArrayIds" :: NullOrUndefined (Strings) } -> { "InstanceId" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "RaidArrayIds" :: NullOrUndefined (Strings) }) -> DescribeRaidArraysRequest
+newDescribeRaidArraysRequest' :: ({ "InstanceId" :: Maybe (String), "StackId" :: Maybe (String), "RaidArrayIds" :: Maybe (Strings) } -> { "InstanceId" :: Maybe (String), "StackId" :: Maybe (String), "RaidArrayIds" :: Maybe (Strings) }) -> DescribeRaidArraysRequest
 ```
 
 Constructs DescribeRaidArraysRequest's fields from required parameters
@@ -2432,7 +2432,7 @@ Constructs DescribeRaidArraysRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeRaidArraysResult
-  = DescribeRaidArraysResult { "RaidArrays" :: NullOrUndefined (RaidArrays) }
+  = DescribeRaidArraysResult { "RaidArrays" :: Maybe (RaidArrays) }
 ```
 
 <p>Contains the response to a <code>DescribeRaidArrays</code> request.</p>
@@ -2457,7 +2457,7 @@ Constructs DescribeRaidArraysResult from required parameters
 #### `newDescribeRaidArraysResult'`
 
 ``` purescript
-newDescribeRaidArraysResult' :: ({ "RaidArrays" :: NullOrUndefined (RaidArrays) } -> { "RaidArrays" :: NullOrUndefined (RaidArrays) }) -> DescribeRaidArraysResult
+newDescribeRaidArraysResult' :: ({ "RaidArrays" :: Maybe (RaidArrays) } -> { "RaidArrays" :: Maybe (RaidArrays) }) -> DescribeRaidArraysResult
 ```
 
 Constructs DescribeRaidArraysResult's fields from required parameters
@@ -2466,7 +2466,7 @@ Constructs DescribeRaidArraysResult's fields from required parameters
 
 ``` purescript
 newtype DescribeRdsDbInstancesRequest
-  = DescribeRdsDbInstancesRequest { "StackId" :: String, "RdsDbInstanceArns" :: NullOrUndefined (Strings) }
+  = DescribeRdsDbInstancesRequest { "StackId" :: String, "RdsDbInstanceArns" :: Maybe (Strings) }
 ```
 
 ##### Instances
@@ -2489,7 +2489,7 @@ Constructs DescribeRdsDbInstancesRequest from required parameters
 #### `newDescribeRdsDbInstancesRequest'`
 
 ``` purescript
-newDescribeRdsDbInstancesRequest' :: String -> ({ "StackId" :: String, "RdsDbInstanceArns" :: NullOrUndefined (Strings) } -> { "StackId" :: String, "RdsDbInstanceArns" :: NullOrUndefined (Strings) }) -> DescribeRdsDbInstancesRequest
+newDescribeRdsDbInstancesRequest' :: String -> ({ "StackId" :: String, "RdsDbInstanceArns" :: Maybe (Strings) } -> { "StackId" :: String, "RdsDbInstanceArns" :: Maybe (Strings) }) -> DescribeRdsDbInstancesRequest
 ```
 
 Constructs DescribeRdsDbInstancesRequest's fields from required parameters
@@ -2498,7 +2498,7 @@ Constructs DescribeRdsDbInstancesRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeRdsDbInstancesResult
-  = DescribeRdsDbInstancesResult { "RdsDbInstances" :: NullOrUndefined (RdsDbInstances) }
+  = DescribeRdsDbInstancesResult { "RdsDbInstances" :: Maybe (RdsDbInstances) }
 ```
 
 <p>Contains the response to a <code>DescribeRdsDbInstances</code> request.</p>
@@ -2523,7 +2523,7 @@ Constructs DescribeRdsDbInstancesResult from required parameters
 #### `newDescribeRdsDbInstancesResult'`
 
 ``` purescript
-newDescribeRdsDbInstancesResult' :: ({ "RdsDbInstances" :: NullOrUndefined (RdsDbInstances) } -> { "RdsDbInstances" :: NullOrUndefined (RdsDbInstances) }) -> DescribeRdsDbInstancesResult
+newDescribeRdsDbInstancesResult' :: ({ "RdsDbInstances" :: Maybe (RdsDbInstances) } -> { "RdsDbInstances" :: Maybe (RdsDbInstances) }) -> DescribeRdsDbInstancesResult
 ```
 
 Constructs DescribeRdsDbInstancesResult's fields from required parameters
@@ -2532,7 +2532,7 @@ Constructs DescribeRdsDbInstancesResult's fields from required parameters
 
 ``` purescript
 newtype DescribeServiceErrorsRequest
-  = DescribeServiceErrorsRequest { "StackId" :: NullOrUndefined (String), "InstanceId" :: NullOrUndefined (String), "ServiceErrorIds" :: NullOrUndefined (Strings) }
+  = DescribeServiceErrorsRequest { "StackId" :: Maybe (String), "InstanceId" :: Maybe (String), "ServiceErrorIds" :: Maybe (Strings) }
 ```
 
 ##### Instances
@@ -2555,7 +2555,7 @@ Constructs DescribeServiceErrorsRequest from required parameters
 #### `newDescribeServiceErrorsRequest'`
 
 ``` purescript
-newDescribeServiceErrorsRequest' :: ({ "StackId" :: NullOrUndefined (String), "InstanceId" :: NullOrUndefined (String), "ServiceErrorIds" :: NullOrUndefined (Strings) } -> { "StackId" :: NullOrUndefined (String), "InstanceId" :: NullOrUndefined (String), "ServiceErrorIds" :: NullOrUndefined (Strings) }) -> DescribeServiceErrorsRequest
+newDescribeServiceErrorsRequest' :: ({ "StackId" :: Maybe (String), "InstanceId" :: Maybe (String), "ServiceErrorIds" :: Maybe (Strings) } -> { "StackId" :: Maybe (String), "InstanceId" :: Maybe (String), "ServiceErrorIds" :: Maybe (Strings) }) -> DescribeServiceErrorsRequest
 ```
 
 Constructs DescribeServiceErrorsRequest's fields from required parameters
@@ -2564,7 +2564,7 @@ Constructs DescribeServiceErrorsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeServiceErrorsResult
-  = DescribeServiceErrorsResult { "ServiceErrors" :: NullOrUndefined (ServiceErrors) }
+  = DescribeServiceErrorsResult { "ServiceErrors" :: Maybe (ServiceErrors) }
 ```
 
 <p>Contains the response to a <code>DescribeServiceErrors</code> request.</p>
@@ -2589,7 +2589,7 @@ Constructs DescribeServiceErrorsResult from required parameters
 #### `newDescribeServiceErrorsResult'`
 
 ``` purescript
-newDescribeServiceErrorsResult' :: ({ "ServiceErrors" :: NullOrUndefined (ServiceErrors) } -> { "ServiceErrors" :: NullOrUndefined (ServiceErrors) }) -> DescribeServiceErrorsResult
+newDescribeServiceErrorsResult' :: ({ "ServiceErrors" :: Maybe (ServiceErrors) } -> { "ServiceErrors" :: Maybe (ServiceErrors) }) -> DescribeServiceErrorsResult
 ```
 
 Constructs DescribeServiceErrorsResult's fields from required parameters
@@ -2630,7 +2630,7 @@ Constructs DescribeStackProvisioningParametersRequest's fields from required par
 
 ``` purescript
 newtype DescribeStackProvisioningParametersResult
-  = DescribeStackProvisioningParametersResult { "AgentInstallerUrl" :: NullOrUndefined (String), "Parameters" :: NullOrUndefined (Parameters) }
+  = DescribeStackProvisioningParametersResult { "AgentInstallerUrl" :: Maybe (String), "Parameters" :: Maybe (Parameters) }
 ```
 
 <p>Contains the response to a <code>DescribeStackProvisioningParameters</code> request.</p>
@@ -2655,7 +2655,7 @@ Constructs DescribeStackProvisioningParametersResult from required parameters
 #### `newDescribeStackProvisioningParametersResult'`
 
 ``` purescript
-newDescribeStackProvisioningParametersResult' :: ({ "AgentInstallerUrl" :: NullOrUndefined (String), "Parameters" :: NullOrUndefined (Parameters) } -> { "AgentInstallerUrl" :: NullOrUndefined (String), "Parameters" :: NullOrUndefined (Parameters) }) -> DescribeStackProvisioningParametersResult
+newDescribeStackProvisioningParametersResult' :: ({ "AgentInstallerUrl" :: Maybe (String), "Parameters" :: Maybe (Parameters) } -> { "AgentInstallerUrl" :: Maybe (String), "Parameters" :: Maybe (Parameters) }) -> DescribeStackProvisioningParametersResult
 ```
 
 Constructs DescribeStackProvisioningParametersResult's fields from required parameters
@@ -2696,7 +2696,7 @@ Constructs DescribeStackSummaryRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeStackSummaryResult
-  = DescribeStackSummaryResult { "StackSummary" :: NullOrUndefined (StackSummary) }
+  = DescribeStackSummaryResult { "StackSummary" :: Maybe (StackSummary) }
 ```
 
 <p>Contains the response to a <code>DescribeStackSummary</code> request.</p>
@@ -2721,7 +2721,7 @@ Constructs DescribeStackSummaryResult from required parameters
 #### `newDescribeStackSummaryResult'`
 
 ``` purescript
-newDescribeStackSummaryResult' :: ({ "StackSummary" :: NullOrUndefined (StackSummary) } -> { "StackSummary" :: NullOrUndefined (StackSummary) }) -> DescribeStackSummaryResult
+newDescribeStackSummaryResult' :: ({ "StackSummary" :: Maybe (StackSummary) } -> { "StackSummary" :: Maybe (StackSummary) }) -> DescribeStackSummaryResult
 ```
 
 Constructs DescribeStackSummaryResult's fields from required parameters
@@ -2730,7 +2730,7 @@ Constructs DescribeStackSummaryResult's fields from required parameters
 
 ``` purescript
 newtype DescribeStacksRequest
-  = DescribeStacksRequest { "StackIds" :: NullOrUndefined (Strings) }
+  = DescribeStacksRequest { "StackIds" :: Maybe (Strings) }
 ```
 
 ##### Instances
@@ -2753,7 +2753,7 @@ Constructs DescribeStacksRequest from required parameters
 #### `newDescribeStacksRequest'`
 
 ``` purescript
-newDescribeStacksRequest' :: ({ "StackIds" :: NullOrUndefined (Strings) } -> { "StackIds" :: NullOrUndefined (Strings) }) -> DescribeStacksRequest
+newDescribeStacksRequest' :: ({ "StackIds" :: Maybe (Strings) } -> { "StackIds" :: Maybe (Strings) }) -> DescribeStacksRequest
 ```
 
 Constructs DescribeStacksRequest's fields from required parameters
@@ -2762,7 +2762,7 @@ Constructs DescribeStacksRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeStacksResult
-  = DescribeStacksResult { "Stacks" :: NullOrUndefined (Stacks) }
+  = DescribeStacksResult { "Stacks" :: Maybe (Stacks) }
 ```
 
 <p>Contains the response to a <code>DescribeStacks</code> request.</p>
@@ -2787,7 +2787,7 @@ Constructs DescribeStacksResult from required parameters
 #### `newDescribeStacksResult'`
 
 ``` purescript
-newDescribeStacksResult' :: ({ "Stacks" :: NullOrUndefined (Stacks) } -> { "Stacks" :: NullOrUndefined (Stacks) }) -> DescribeStacksResult
+newDescribeStacksResult' :: ({ "Stacks" :: Maybe (Stacks) } -> { "Stacks" :: Maybe (Stacks) }) -> DescribeStacksResult
 ```
 
 Constructs DescribeStacksResult's fields from required parameters
@@ -2828,7 +2828,7 @@ Constructs DescribeTimeBasedAutoScalingRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeTimeBasedAutoScalingResult
-  = DescribeTimeBasedAutoScalingResult { "TimeBasedAutoScalingConfigurations" :: NullOrUndefined (TimeBasedAutoScalingConfigurations) }
+  = DescribeTimeBasedAutoScalingResult { "TimeBasedAutoScalingConfigurations" :: Maybe (TimeBasedAutoScalingConfigurations) }
 ```
 
 <p>Contains the response to a <code>DescribeTimeBasedAutoScaling</code> request.</p>
@@ -2853,7 +2853,7 @@ Constructs DescribeTimeBasedAutoScalingResult from required parameters
 #### `newDescribeTimeBasedAutoScalingResult'`
 
 ``` purescript
-newDescribeTimeBasedAutoScalingResult' :: ({ "TimeBasedAutoScalingConfigurations" :: NullOrUndefined (TimeBasedAutoScalingConfigurations) } -> { "TimeBasedAutoScalingConfigurations" :: NullOrUndefined (TimeBasedAutoScalingConfigurations) }) -> DescribeTimeBasedAutoScalingResult
+newDescribeTimeBasedAutoScalingResult' :: ({ "TimeBasedAutoScalingConfigurations" :: Maybe (TimeBasedAutoScalingConfigurations) } -> { "TimeBasedAutoScalingConfigurations" :: Maybe (TimeBasedAutoScalingConfigurations) }) -> DescribeTimeBasedAutoScalingResult
 ```
 
 Constructs DescribeTimeBasedAutoScalingResult's fields from required parameters
@@ -2862,7 +2862,7 @@ Constructs DescribeTimeBasedAutoScalingResult's fields from required parameters
 
 ``` purescript
 newtype DescribeUserProfilesRequest
-  = DescribeUserProfilesRequest { "IamUserArns" :: NullOrUndefined (Strings) }
+  = DescribeUserProfilesRequest { "IamUserArns" :: Maybe (Strings) }
 ```
 
 ##### Instances
@@ -2885,7 +2885,7 @@ Constructs DescribeUserProfilesRequest from required parameters
 #### `newDescribeUserProfilesRequest'`
 
 ``` purescript
-newDescribeUserProfilesRequest' :: ({ "IamUserArns" :: NullOrUndefined (Strings) } -> { "IamUserArns" :: NullOrUndefined (Strings) }) -> DescribeUserProfilesRequest
+newDescribeUserProfilesRequest' :: ({ "IamUserArns" :: Maybe (Strings) } -> { "IamUserArns" :: Maybe (Strings) }) -> DescribeUserProfilesRequest
 ```
 
 Constructs DescribeUserProfilesRequest's fields from required parameters
@@ -2894,7 +2894,7 @@ Constructs DescribeUserProfilesRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeUserProfilesResult
-  = DescribeUserProfilesResult { "UserProfiles" :: NullOrUndefined (UserProfiles) }
+  = DescribeUserProfilesResult { "UserProfiles" :: Maybe (UserProfiles) }
 ```
 
 <p>Contains the response to a <code>DescribeUserProfiles</code> request.</p>
@@ -2919,7 +2919,7 @@ Constructs DescribeUserProfilesResult from required parameters
 #### `newDescribeUserProfilesResult'`
 
 ``` purescript
-newDescribeUserProfilesResult' :: ({ "UserProfiles" :: NullOrUndefined (UserProfiles) } -> { "UserProfiles" :: NullOrUndefined (UserProfiles) }) -> DescribeUserProfilesResult
+newDescribeUserProfilesResult' :: ({ "UserProfiles" :: Maybe (UserProfiles) } -> { "UserProfiles" :: Maybe (UserProfiles) }) -> DescribeUserProfilesResult
 ```
 
 Constructs DescribeUserProfilesResult's fields from required parameters
@@ -2928,7 +2928,7 @@ Constructs DescribeUserProfilesResult's fields from required parameters
 
 ``` purescript
 newtype DescribeVolumesRequest
-  = DescribeVolumesRequest { "InstanceId" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "RaidArrayId" :: NullOrUndefined (String), "VolumeIds" :: NullOrUndefined (Strings) }
+  = DescribeVolumesRequest { "InstanceId" :: Maybe (String), "StackId" :: Maybe (String), "RaidArrayId" :: Maybe (String), "VolumeIds" :: Maybe (Strings) }
 ```
 
 ##### Instances
@@ -2951,7 +2951,7 @@ Constructs DescribeVolumesRequest from required parameters
 #### `newDescribeVolumesRequest'`
 
 ``` purescript
-newDescribeVolumesRequest' :: ({ "InstanceId" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "RaidArrayId" :: NullOrUndefined (String), "VolumeIds" :: NullOrUndefined (Strings) } -> { "InstanceId" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "RaidArrayId" :: NullOrUndefined (String), "VolumeIds" :: NullOrUndefined (Strings) }) -> DescribeVolumesRequest
+newDescribeVolumesRequest' :: ({ "InstanceId" :: Maybe (String), "StackId" :: Maybe (String), "RaidArrayId" :: Maybe (String), "VolumeIds" :: Maybe (Strings) } -> { "InstanceId" :: Maybe (String), "StackId" :: Maybe (String), "RaidArrayId" :: Maybe (String), "VolumeIds" :: Maybe (Strings) }) -> DescribeVolumesRequest
 ```
 
 Constructs DescribeVolumesRequest's fields from required parameters
@@ -2960,7 +2960,7 @@ Constructs DescribeVolumesRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeVolumesResult
-  = DescribeVolumesResult { "Volumes" :: NullOrUndefined (Volumes) }
+  = DescribeVolumesResult { "Volumes" :: Maybe (Volumes) }
 ```
 
 <p>Contains the response to a <code>DescribeVolumes</code> request.</p>
@@ -2985,7 +2985,7 @@ Constructs DescribeVolumesResult from required parameters
 #### `newDescribeVolumesResult'`
 
 ``` purescript
-newDescribeVolumesResult' :: ({ "Volumes" :: NullOrUndefined (Volumes) } -> { "Volumes" :: NullOrUndefined (Volumes) }) -> DescribeVolumesResult
+newDescribeVolumesResult' :: ({ "Volumes" :: Maybe (Volumes) } -> { "Volumes" :: Maybe (Volumes) }) -> DescribeVolumesResult
 ```
 
 Constructs DescribeVolumesResult's fields from required parameters
@@ -3058,7 +3058,7 @@ Constructs DisassociateElasticIpRequest's fields from required parameters
 
 ``` purescript
 newtype EbsBlockDevice
-  = EbsBlockDevice { "SnapshotId" :: NullOrUndefined (String), "Iops" :: NullOrUndefined (Int), "VolumeSize" :: NullOrUndefined (Int), "VolumeType" :: NullOrUndefined (VolumeType), "DeleteOnTermination" :: NullOrUndefined (Boolean) }
+  = EbsBlockDevice { "SnapshotId" :: Maybe (String), "Iops" :: Maybe (Int), "VolumeSize" :: Maybe (Int), "VolumeType" :: Maybe (VolumeType), "DeleteOnTermination" :: Maybe (Boolean) }
 ```
 
 <p>Describes an Amazon EBS volume. This data type maps directly to the Amazon EC2 <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a> data type.</p>
@@ -3083,7 +3083,7 @@ Constructs EbsBlockDevice from required parameters
 #### `newEbsBlockDevice'`
 
 ``` purescript
-newEbsBlockDevice' :: ({ "SnapshotId" :: NullOrUndefined (String), "Iops" :: NullOrUndefined (Int), "VolumeSize" :: NullOrUndefined (Int), "VolumeType" :: NullOrUndefined (VolumeType), "DeleteOnTermination" :: NullOrUndefined (Boolean) } -> { "SnapshotId" :: NullOrUndefined (String), "Iops" :: NullOrUndefined (Int), "VolumeSize" :: NullOrUndefined (Int), "VolumeType" :: NullOrUndefined (VolumeType), "DeleteOnTermination" :: NullOrUndefined (Boolean) }) -> EbsBlockDevice
+newEbsBlockDevice' :: ({ "SnapshotId" :: Maybe (String), "Iops" :: Maybe (Int), "VolumeSize" :: Maybe (Int), "VolumeType" :: Maybe (VolumeType), "DeleteOnTermination" :: Maybe (Boolean) } -> { "SnapshotId" :: Maybe (String), "Iops" :: Maybe (Int), "VolumeSize" :: Maybe (Int), "VolumeType" :: Maybe (VolumeType), "DeleteOnTermination" :: Maybe (Boolean) }) -> EbsBlockDevice
 ```
 
 Constructs EbsBlockDevice's fields from required parameters
@@ -3092,7 +3092,7 @@ Constructs EbsBlockDevice's fields from required parameters
 
 ``` purescript
 newtype EcsCluster
-  = EcsCluster { "EcsClusterArn" :: NullOrUndefined (String), "EcsClusterName" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "RegisteredAt" :: NullOrUndefined (DateTime) }
+  = EcsCluster { "EcsClusterArn" :: Maybe (String), "EcsClusterName" :: Maybe (String), "StackId" :: Maybe (String), "RegisteredAt" :: Maybe (DateTime) }
 ```
 
 <p>Describes a registered Amazon ECS cluster.</p>
@@ -3117,7 +3117,7 @@ Constructs EcsCluster from required parameters
 #### `newEcsCluster'`
 
 ``` purescript
-newEcsCluster' :: ({ "EcsClusterArn" :: NullOrUndefined (String), "EcsClusterName" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "RegisteredAt" :: NullOrUndefined (DateTime) } -> { "EcsClusterArn" :: NullOrUndefined (String), "EcsClusterName" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "RegisteredAt" :: NullOrUndefined (DateTime) }) -> EcsCluster
+newEcsCluster' :: ({ "EcsClusterArn" :: Maybe (String), "EcsClusterName" :: Maybe (String), "StackId" :: Maybe (String), "RegisteredAt" :: Maybe (DateTime) } -> { "EcsClusterArn" :: Maybe (String), "EcsClusterName" :: Maybe (String), "StackId" :: Maybe (String), "RegisteredAt" :: Maybe (DateTime) }) -> EcsCluster
 ```
 
 Constructs EcsCluster's fields from required parameters
@@ -3142,7 +3142,7 @@ Encode EcsClusters
 
 ``` purescript
 newtype ElasticIp
-  = ElasticIp { "Ip" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "Domain" :: NullOrUndefined (String), "Region" :: NullOrUndefined (String), "InstanceId" :: NullOrUndefined (String) }
+  = ElasticIp { "Ip" :: Maybe (String), "Name" :: Maybe (String), "Domain" :: Maybe (String), "Region" :: Maybe (String), "InstanceId" :: Maybe (String) }
 ```
 
 <p>Describes an Elastic IP address.</p>
@@ -3167,7 +3167,7 @@ Constructs ElasticIp from required parameters
 #### `newElasticIp'`
 
 ``` purescript
-newElasticIp' :: ({ "Ip" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "Domain" :: NullOrUndefined (String), "Region" :: NullOrUndefined (String), "InstanceId" :: NullOrUndefined (String) } -> { "Ip" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "Domain" :: NullOrUndefined (String), "Region" :: NullOrUndefined (String), "InstanceId" :: NullOrUndefined (String) }) -> ElasticIp
+newElasticIp' :: ({ "Ip" :: Maybe (String), "Name" :: Maybe (String), "Domain" :: Maybe (String), "Region" :: Maybe (String), "InstanceId" :: Maybe (String) } -> { "Ip" :: Maybe (String), "Name" :: Maybe (String), "Domain" :: Maybe (String), "Region" :: Maybe (String), "InstanceId" :: Maybe (String) }) -> ElasticIp
 ```
 
 Constructs ElasticIp's fields from required parameters
@@ -3192,7 +3192,7 @@ Encode ElasticIps
 
 ``` purescript
 newtype ElasticLoadBalancer
-  = ElasticLoadBalancer { "ElasticLoadBalancerName" :: NullOrUndefined (String), "Region" :: NullOrUndefined (String), "DnsName" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "LayerId" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "AvailabilityZones" :: NullOrUndefined (Strings), "SubnetIds" :: NullOrUndefined (Strings), "Ec2InstanceIds" :: NullOrUndefined (Strings) }
+  = ElasticLoadBalancer { "ElasticLoadBalancerName" :: Maybe (String), "Region" :: Maybe (String), "DnsName" :: Maybe (String), "StackId" :: Maybe (String), "LayerId" :: Maybe (String), "VpcId" :: Maybe (String), "AvailabilityZones" :: Maybe (Strings), "SubnetIds" :: Maybe (Strings), "Ec2InstanceIds" :: Maybe (Strings) }
 ```
 
 <p>Describes an Elastic Load Balancing instance.</p>
@@ -3217,7 +3217,7 @@ Constructs ElasticLoadBalancer from required parameters
 #### `newElasticLoadBalancer'`
 
 ``` purescript
-newElasticLoadBalancer' :: ({ "ElasticLoadBalancerName" :: NullOrUndefined (String), "Region" :: NullOrUndefined (String), "DnsName" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "LayerId" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "AvailabilityZones" :: NullOrUndefined (Strings), "SubnetIds" :: NullOrUndefined (Strings), "Ec2InstanceIds" :: NullOrUndefined (Strings) } -> { "ElasticLoadBalancerName" :: NullOrUndefined (String), "Region" :: NullOrUndefined (String), "DnsName" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "LayerId" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "AvailabilityZones" :: NullOrUndefined (Strings), "SubnetIds" :: NullOrUndefined (Strings), "Ec2InstanceIds" :: NullOrUndefined (Strings) }) -> ElasticLoadBalancer
+newElasticLoadBalancer' :: ({ "ElasticLoadBalancerName" :: Maybe (String), "Region" :: Maybe (String), "DnsName" :: Maybe (String), "StackId" :: Maybe (String), "LayerId" :: Maybe (String), "VpcId" :: Maybe (String), "AvailabilityZones" :: Maybe (Strings), "SubnetIds" :: Maybe (Strings), "Ec2InstanceIds" :: Maybe (Strings) } -> { "ElasticLoadBalancerName" :: Maybe (String), "Region" :: Maybe (String), "DnsName" :: Maybe (String), "StackId" :: Maybe (String), "LayerId" :: Maybe (String), "VpcId" :: Maybe (String), "AvailabilityZones" :: Maybe (Strings), "SubnetIds" :: Maybe (Strings), "Ec2InstanceIds" :: Maybe (Strings) }) -> ElasticLoadBalancer
 ```
 
 Constructs ElasticLoadBalancer's fields from required parameters
@@ -3242,7 +3242,7 @@ Encode ElasticLoadBalancers
 
 ``` purescript
 newtype EnvironmentVariable
-  = EnvironmentVariable { "Key" :: String, "Value" :: String, "Secure" :: NullOrUndefined (Boolean) }
+  = EnvironmentVariable { "Key" :: String, "Value" :: String, "Secure" :: Maybe (Boolean) }
 ```
 
 <p>Represents an app's environment variable.</p>
@@ -3267,7 +3267,7 @@ Constructs EnvironmentVariable from required parameters
 #### `newEnvironmentVariable'`
 
 ``` purescript
-newEnvironmentVariable' :: String -> String -> ({ "Key" :: String, "Value" :: String, "Secure" :: NullOrUndefined (Boolean) } -> { "Key" :: String, "Value" :: String, "Secure" :: NullOrUndefined (Boolean) }) -> EnvironmentVariable
+newEnvironmentVariable' :: String -> String -> ({ "Key" :: String, "Value" :: String, "Secure" :: Maybe (Boolean) } -> { "Key" :: String, "Value" :: String, "Secure" :: Maybe (Boolean) }) -> EnvironmentVariable
 ```
 
 Constructs EnvironmentVariable's fields from required parameters
@@ -3324,7 +3324,7 @@ Constructs GetHostnameSuggestionRequest's fields from required parameters
 
 ``` purescript
 newtype GetHostnameSuggestionResult
-  = GetHostnameSuggestionResult { "LayerId" :: NullOrUndefined (String), "Hostname" :: NullOrUndefined (String) }
+  = GetHostnameSuggestionResult { "LayerId" :: Maybe (String), "Hostname" :: Maybe (String) }
 ```
 
 <p>Contains the response to a <code>GetHostnameSuggestion</code> request.</p>
@@ -3349,7 +3349,7 @@ Constructs GetHostnameSuggestionResult from required parameters
 #### `newGetHostnameSuggestionResult'`
 
 ``` purescript
-newGetHostnameSuggestionResult' :: ({ "LayerId" :: NullOrUndefined (String), "Hostname" :: NullOrUndefined (String) } -> { "LayerId" :: NullOrUndefined (String), "Hostname" :: NullOrUndefined (String) }) -> GetHostnameSuggestionResult
+newGetHostnameSuggestionResult' :: ({ "LayerId" :: Maybe (String), "Hostname" :: Maybe (String) } -> { "LayerId" :: Maybe (String), "Hostname" :: Maybe (String) }) -> GetHostnameSuggestionResult
 ```
 
 Constructs GetHostnameSuggestionResult's fields from required parameters
@@ -3358,7 +3358,7 @@ Constructs GetHostnameSuggestionResult's fields from required parameters
 
 ``` purescript
 newtype GrantAccessRequest
-  = GrantAccessRequest { "InstanceId" :: String, "ValidForInMinutes" :: NullOrUndefined (ValidForInMinutes) }
+  = GrantAccessRequest { "InstanceId" :: String, "ValidForInMinutes" :: Maybe (ValidForInMinutes) }
 ```
 
 ##### Instances
@@ -3381,7 +3381,7 @@ Constructs GrantAccessRequest from required parameters
 #### `newGrantAccessRequest'`
 
 ``` purescript
-newGrantAccessRequest' :: String -> ({ "InstanceId" :: String, "ValidForInMinutes" :: NullOrUndefined (ValidForInMinutes) } -> { "InstanceId" :: String, "ValidForInMinutes" :: NullOrUndefined (ValidForInMinutes) }) -> GrantAccessRequest
+newGrantAccessRequest' :: String -> ({ "InstanceId" :: String, "ValidForInMinutes" :: Maybe (ValidForInMinutes) } -> { "InstanceId" :: String, "ValidForInMinutes" :: Maybe (ValidForInMinutes) }) -> GrantAccessRequest
 ```
 
 Constructs GrantAccessRequest's fields from required parameters
@@ -3390,7 +3390,7 @@ Constructs GrantAccessRequest's fields from required parameters
 
 ``` purescript
 newtype GrantAccessResult
-  = GrantAccessResult { "TemporaryCredential" :: NullOrUndefined (TemporaryCredential) }
+  = GrantAccessResult { "TemporaryCredential" :: Maybe (TemporaryCredential) }
 ```
 
 <p>Contains the response to a <code>GrantAccess</code> request.</p>
@@ -3415,7 +3415,7 @@ Constructs GrantAccessResult from required parameters
 #### `newGrantAccessResult'`
 
 ``` purescript
-newGrantAccessResult' :: ({ "TemporaryCredential" :: NullOrUndefined (TemporaryCredential) } -> { "TemporaryCredential" :: NullOrUndefined (TemporaryCredential) }) -> GrantAccessResult
+newGrantAccessResult' :: ({ "TemporaryCredential" :: Maybe (TemporaryCredential) } -> { "TemporaryCredential" :: Maybe (TemporaryCredential) }) -> GrantAccessResult
 ```
 
 Constructs GrantAccessResult's fields from required parameters
@@ -3440,7 +3440,7 @@ Encode Hour
 
 ``` purescript
 newtype Instance
-  = Instance { "AgentVersion" :: NullOrUndefined (String), "AmiId" :: NullOrUndefined (String), "Architecture" :: NullOrUndefined (Architecture), "Arn" :: NullOrUndefined (String), "AutoScalingType" :: NullOrUndefined (AutoScalingType), "AvailabilityZone" :: NullOrUndefined (String), "BlockDeviceMappings" :: NullOrUndefined (BlockDeviceMappings), "CreatedAt" :: NullOrUndefined (DateTime), "EbsOptimized" :: NullOrUndefined (Boolean), "Ec2InstanceId" :: NullOrUndefined (String), "EcsClusterArn" :: NullOrUndefined (String), "EcsContainerInstanceArn" :: NullOrUndefined (String), "ElasticIp" :: NullOrUndefined (String), "Hostname" :: NullOrUndefined (String), "InfrastructureClass" :: NullOrUndefined (String), "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean), "InstanceId" :: NullOrUndefined (String), "InstanceProfileArn" :: NullOrUndefined (String), "InstanceType" :: NullOrUndefined (String), "LastServiceErrorId" :: NullOrUndefined (String), "LayerIds" :: NullOrUndefined (Strings), "Os" :: NullOrUndefined (String), "Platform" :: NullOrUndefined (String), "PrivateDns" :: NullOrUndefined (String), "PrivateIp" :: NullOrUndefined (String), "PublicDns" :: NullOrUndefined (String), "PublicIp" :: NullOrUndefined (String), "RegisteredBy" :: NullOrUndefined (String), "ReportedAgentVersion" :: NullOrUndefined (String), "ReportedOs" :: NullOrUndefined (ReportedOs), "RootDeviceType" :: NullOrUndefined (RootDeviceType), "RootDeviceVolumeId" :: NullOrUndefined (String), "SecurityGroupIds" :: NullOrUndefined (Strings), "SshHostDsaKeyFingerprint" :: NullOrUndefined (String), "SshHostRsaKeyFingerprint" :: NullOrUndefined (String), "SshKeyName" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "SubnetId" :: NullOrUndefined (String), "Tenancy" :: NullOrUndefined (String), "VirtualizationType" :: NullOrUndefined (VirtualizationType) }
+  = Instance { "AgentVersion" :: Maybe (String), "AmiId" :: Maybe (String), "Architecture" :: Maybe (Architecture), "Arn" :: Maybe (String), "AutoScalingType" :: Maybe (AutoScalingType), "AvailabilityZone" :: Maybe (String), "BlockDeviceMappings" :: Maybe (BlockDeviceMappings), "CreatedAt" :: Maybe (DateTime), "EbsOptimized" :: Maybe (Boolean), "Ec2InstanceId" :: Maybe (String), "EcsClusterArn" :: Maybe (String), "EcsContainerInstanceArn" :: Maybe (String), "ElasticIp" :: Maybe (String), "Hostname" :: Maybe (String), "InfrastructureClass" :: Maybe (String), "InstallUpdatesOnBoot" :: Maybe (Boolean), "InstanceId" :: Maybe (String), "InstanceProfileArn" :: Maybe (String), "InstanceType" :: Maybe (String), "LastServiceErrorId" :: Maybe (String), "LayerIds" :: Maybe (Strings), "Os" :: Maybe (String), "Platform" :: Maybe (String), "PrivateDns" :: Maybe (String), "PrivateIp" :: Maybe (String), "PublicDns" :: Maybe (String), "PublicIp" :: Maybe (String), "RegisteredBy" :: Maybe (String), "ReportedAgentVersion" :: Maybe (String), "ReportedOs" :: Maybe (ReportedOs), "RootDeviceType" :: Maybe (RootDeviceType), "RootDeviceVolumeId" :: Maybe (String), "SecurityGroupIds" :: Maybe (Strings), "SshHostDsaKeyFingerprint" :: Maybe (String), "SshHostRsaKeyFingerprint" :: Maybe (String), "SshKeyName" :: Maybe (String), "StackId" :: Maybe (String), "Status" :: Maybe (String), "SubnetId" :: Maybe (String), "Tenancy" :: Maybe (String), "VirtualizationType" :: Maybe (VirtualizationType) }
 ```
 
 <p>Describes an instance.</p>
@@ -3465,7 +3465,7 @@ Constructs Instance from required parameters
 #### `newInstance'`
 
 ``` purescript
-newInstance' :: ({ "AgentVersion" :: NullOrUndefined (String), "AmiId" :: NullOrUndefined (String), "Architecture" :: NullOrUndefined (Architecture), "Arn" :: NullOrUndefined (String), "AutoScalingType" :: NullOrUndefined (AutoScalingType), "AvailabilityZone" :: NullOrUndefined (String), "BlockDeviceMappings" :: NullOrUndefined (BlockDeviceMappings), "CreatedAt" :: NullOrUndefined (DateTime), "EbsOptimized" :: NullOrUndefined (Boolean), "Ec2InstanceId" :: NullOrUndefined (String), "EcsClusterArn" :: NullOrUndefined (String), "EcsContainerInstanceArn" :: NullOrUndefined (String), "ElasticIp" :: NullOrUndefined (String), "Hostname" :: NullOrUndefined (String), "InfrastructureClass" :: NullOrUndefined (String), "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean), "InstanceId" :: NullOrUndefined (String), "InstanceProfileArn" :: NullOrUndefined (String), "InstanceType" :: NullOrUndefined (String), "LastServiceErrorId" :: NullOrUndefined (String), "LayerIds" :: NullOrUndefined (Strings), "Os" :: NullOrUndefined (String), "Platform" :: NullOrUndefined (String), "PrivateDns" :: NullOrUndefined (String), "PrivateIp" :: NullOrUndefined (String), "PublicDns" :: NullOrUndefined (String), "PublicIp" :: NullOrUndefined (String), "RegisteredBy" :: NullOrUndefined (String), "ReportedAgentVersion" :: NullOrUndefined (String), "ReportedOs" :: NullOrUndefined (ReportedOs), "RootDeviceType" :: NullOrUndefined (RootDeviceType), "RootDeviceVolumeId" :: NullOrUndefined (String), "SecurityGroupIds" :: NullOrUndefined (Strings), "SshHostDsaKeyFingerprint" :: NullOrUndefined (String), "SshHostRsaKeyFingerprint" :: NullOrUndefined (String), "SshKeyName" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "SubnetId" :: NullOrUndefined (String), "Tenancy" :: NullOrUndefined (String), "VirtualizationType" :: NullOrUndefined (VirtualizationType) } -> { "AgentVersion" :: NullOrUndefined (String), "AmiId" :: NullOrUndefined (String), "Architecture" :: NullOrUndefined (Architecture), "Arn" :: NullOrUndefined (String), "AutoScalingType" :: NullOrUndefined (AutoScalingType), "AvailabilityZone" :: NullOrUndefined (String), "BlockDeviceMappings" :: NullOrUndefined (BlockDeviceMappings), "CreatedAt" :: NullOrUndefined (DateTime), "EbsOptimized" :: NullOrUndefined (Boolean), "Ec2InstanceId" :: NullOrUndefined (String), "EcsClusterArn" :: NullOrUndefined (String), "EcsContainerInstanceArn" :: NullOrUndefined (String), "ElasticIp" :: NullOrUndefined (String), "Hostname" :: NullOrUndefined (String), "InfrastructureClass" :: NullOrUndefined (String), "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean), "InstanceId" :: NullOrUndefined (String), "InstanceProfileArn" :: NullOrUndefined (String), "InstanceType" :: NullOrUndefined (String), "LastServiceErrorId" :: NullOrUndefined (String), "LayerIds" :: NullOrUndefined (Strings), "Os" :: NullOrUndefined (String), "Platform" :: NullOrUndefined (String), "PrivateDns" :: NullOrUndefined (String), "PrivateIp" :: NullOrUndefined (String), "PublicDns" :: NullOrUndefined (String), "PublicIp" :: NullOrUndefined (String), "RegisteredBy" :: NullOrUndefined (String), "ReportedAgentVersion" :: NullOrUndefined (String), "ReportedOs" :: NullOrUndefined (ReportedOs), "RootDeviceType" :: NullOrUndefined (RootDeviceType), "RootDeviceVolumeId" :: NullOrUndefined (String), "SecurityGroupIds" :: NullOrUndefined (Strings), "SshHostDsaKeyFingerprint" :: NullOrUndefined (String), "SshHostRsaKeyFingerprint" :: NullOrUndefined (String), "SshKeyName" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "SubnetId" :: NullOrUndefined (String), "Tenancy" :: NullOrUndefined (String), "VirtualizationType" :: NullOrUndefined (VirtualizationType) }) -> Instance
+newInstance' :: ({ "AgentVersion" :: Maybe (String), "AmiId" :: Maybe (String), "Architecture" :: Maybe (Architecture), "Arn" :: Maybe (String), "AutoScalingType" :: Maybe (AutoScalingType), "AvailabilityZone" :: Maybe (String), "BlockDeviceMappings" :: Maybe (BlockDeviceMappings), "CreatedAt" :: Maybe (DateTime), "EbsOptimized" :: Maybe (Boolean), "Ec2InstanceId" :: Maybe (String), "EcsClusterArn" :: Maybe (String), "EcsContainerInstanceArn" :: Maybe (String), "ElasticIp" :: Maybe (String), "Hostname" :: Maybe (String), "InfrastructureClass" :: Maybe (String), "InstallUpdatesOnBoot" :: Maybe (Boolean), "InstanceId" :: Maybe (String), "InstanceProfileArn" :: Maybe (String), "InstanceType" :: Maybe (String), "LastServiceErrorId" :: Maybe (String), "LayerIds" :: Maybe (Strings), "Os" :: Maybe (String), "Platform" :: Maybe (String), "PrivateDns" :: Maybe (String), "PrivateIp" :: Maybe (String), "PublicDns" :: Maybe (String), "PublicIp" :: Maybe (String), "RegisteredBy" :: Maybe (String), "ReportedAgentVersion" :: Maybe (String), "ReportedOs" :: Maybe (ReportedOs), "RootDeviceType" :: Maybe (RootDeviceType), "RootDeviceVolumeId" :: Maybe (String), "SecurityGroupIds" :: Maybe (Strings), "SshHostDsaKeyFingerprint" :: Maybe (String), "SshHostRsaKeyFingerprint" :: Maybe (String), "SshKeyName" :: Maybe (String), "StackId" :: Maybe (String), "Status" :: Maybe (String), "SubnetId" :: Maybe (String), "Tenancy" :: Maybe (String), "VirtualizationType" :: Maybe (VirtualizationType) } -> { "AgentVersion" :: Maybe (String), "AmiId" :: Maybe (String), "Architecture" :: Maybe (Architecture), "Arn" :: Maybe (String), "AutoScalingType" :: Maybe (AutoScalingType), "AvailabilityZone" :: Maybe (String), "BlockDeviceMappings" :: Maybe (BlockDeviceMappings), "CreatedAt" :: Maybe (DateTime), "EbsOptimized" :: Maybe (Boolean), "Ec2InstanceId" :: Maybe (String), "EcsClusterArn" :: Maybe (String), "EcsContainerInstanceArn" :: Maybe (String), "ElasticIp" :: Maybe (String), "Hostname" :: Maybe (String), "InfrastructureClass" :: Maybe (String), "InstallUpdatesOnBoot" :: Maybe (Boolean), "InstanceId" :: Maybe (String), "InstanceProfileArn" :: Maybe (String), "InstanceType" :: Maybe (String), "LastServiceErrorId" :: Maybe (String), "LayerIds" :: Maybe (Strings), "Os" :: Maybe (String), "Platform" :: Maybe (String), "PrivateDns" :: Maybe (String), "PrivateIp" :: Maybe (String), "PublicDns" :: Maybe (String), "PublicIp" :: Maybe (String), "RegisteredBy" :: Maybe (String), "ReportedAgentVersion" :: Maybe (String), "ReportedOs" :: Maybe (ReportedOs), "RootDeviceType" :: Maybe (RootDeviceType), "RootDeviceVolumeId" :: Maybe (String), "SecurityGroupIds" :: Maybe (Strings), "SshHostDsaKeyFingerprint" :: Maybe (String), "SshHostRsaKeyFingerprint" :: Maybe (String), "SshKeyName" :: Maybe (String), "StackId" :: Maybe (String), "Status" :: Maybe (String), "SubnetId" :: Maybe (String), "Tenancy" :: Maybe (String), "VirtualizationType" :: Maybe (VirtualizationType) }) -> Instance
 ```
 
 Constructs Instance's fields from required parameters
@@ -3474,7 +3474,7 @@ Constructs Instance's fields from required parameters
 
 ``` purescript
 newtype InstanceIdentity
-  = InstanceIdentity { "Document" :: NullOrUndefined (String), "Signature" :: NullOrUndefined (String) }
+  = InstanceIdentity { "Document" :: Maybe (String), "Signature" :: Maybe (String) }
 ```
 
 <p>Contains a description of an Amazon EC2 instance from the Amazon EC2 metadata service. For more information, see <a href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html">Instance Metadata and User Data</a>.</p>
@@ -3499,7 +3499,7 @@ Constructs InstanceIdentity from required parameters
 #### `newInstanceIdentity'`
 
 ``` purescript
-newInstanceIdentity' :: ({ "Document" :: NullOrUndefined (String), "Signature" :: NullOrUndefined (String) } -> { "Document" :: NullOrUndefined (String), "Signature" :: NullOrUndefined (String) }) -> InstanceIdentity
+newInstanceIdentity' :: ({ "Document" :: Maybe (String), "Signature" :: Maybe (String) } -> { "Document" :: Maybe (String), "Signature" :: Maybe (String) }) -> InstanceIdentity
 ```
 
 Constructs InstanceIdentity's fields from required parameters
@@ -3524,7 +3524,7 @@ Encode Instances
 
 ``` purescript
 newtype InstancesCount
-  = InstancesCount { "Assigning" :: NullOrUndefined (Int), "Booting" :: NullOrUndefined (Int), "ConnectionLost" :: NullOrUndefined (Int), "Deregistering" :: NullOrUndefined (Int), "Online" :: NullOrUndefined (Int), "Pending" :: NullOrUndefined (Int), "Rebooting" :: NullOrUndefined (Int), "Registered" :: NullOrUndefined (Int), "Registering" :: NullOrUndefined (Int), "Requested" :: NullOrUndefined (Int), "RunningSetup" :: NullOrUndefined (Int), "SetupFailed" :: NullOrUndefined (Int), "ShuttingDown" :: NullOrUndefined (Int), "StartFailed" :: NullOrUndefined (Int), "StopFailed" :: NullOrUndefined (Int), "Stopped" :: NullOrUndefined (Int), "Stopping" :: NullOrUndefined (Int), "Terminated" :: NullOrUndefined (Int), "Terminating" :: NullOrUndefined (Int), "Unassigning" :: NullOrUndefined (Int) }
+  = InstancesCount { "Assigning" :: Maybe (Int), "Booting" :: Maybe (Int), "ConnectionLost" :: Maybe (Int), "Deregistering" :: Maybe (Int), "Online" :: Maybe (Int), "Pending" :: Maybe (Int), "Rebooting" :: Maybe (Int), "Registered" :: Maybe (Int), "Registering" :: Maybe (Int), "Requested" :: Maybe (Int), "RunningSetup" :: Maybe (Int), "SetupFailed" :: Maybe (Int), "ShuttingDown" :: Maybe (Int), "StartFailed" :: Maybe (Int), "StopFailed" :: Maybe (Int), "Stopped" :: Maybe (Int), "Stopping" :: Maybe (Int), "Terminated" :: Maybe (Int), "Terminating" :: Maybe (Int), "Unassigning" :: Maybe (Int) }
 ```
 
 <p>Describes how many instances a stack has for each status.</p>
@@ -3549,7 +3549,7 @@ Constructs InstancesCount from required parameters
 #### `newInstancesCount'`
 
 ``` purescript
-newInstancesCount' :: ({ "Assigning" :: NullOrUndefined (Int), "Booting" :: NullOrUndefined (Int), "ConnectionLost" :: NullOrUndefined (Int), "Deregistering" :: NullOrUndefined (Int), "Online" :: NullOrUndefined (Int), "Pending" :: NullOrUndefined (Int), "Rebooting" :: NullOrUndefined (Int), "Registered" :: NullOrUndefined (Int), "Registering" :: NullOrUndefined (Int), "Requested" :: NullOrUndefined (Int), "RunningSetup" :: NullOrUndefined (Int), "SetupFailed" :: NullOrUndefined (Int), "ShuttingDown" :: NullOrUndefined (Int), "StartFailed" :: NullOrUndefined (Int), "StopFailed" :: NullOrUndefined (Int), "Stopped" :: NullOrUndefined (Int), "Stopping" :: NullOrUndefined (Int), "Terminated" :: NullOrUndefined (Int), "Terminating" :: NullOrUndefined (Int), "Unassigning" :: NullOrUndefined (Int) } -> { "Assigning" :: NullOrUndefined (Int), "Booting" :: NullOrUndefined (Int), "ConnectionLost" :: NullOrUndefined (Int), "Deregistering" :: NullOrUndefined (Int), "Online" :: NullOrUndefined (Int), "Pending" :: NullOrUndefined (Int), "Rebooting" :: NullOrUndefined (Int), "Registered" :: NullOrUndefined (Int), "Registering" :: NullOrUndefined (Int), "Requested" :: NullOrUndefined (Int), "RunningSetup" :: NullOrUndefined (Int), "SetupFailed" :: NullOrUndefined (Int), "ShuttingDown" :: NullOrUndefined (Int), "StartFailed" :: NullOrUndefined (Int), "StopFailed" :: NullOrUndefined (Int), "Stopped" :: NullOrUndefined (Int), "Stopping" :: NullOrUndefined (Int), "Terminated" :: NullOrUndefined (Int), "Terminating" :: NullOrUndefined (Int), "Unassigning" :: NullOrUndefined (Int) }) -> InstancesCount
+newInstancesCount' :: ({ "Assigning" :: Maybe (Int), "Booting" :: Maybe (Int), "ConnectionLost" :: Maybe (Int), "Deregistering" :: Maybe (Int), "Online" :: Maybe (Int), "Pending" :: Maybe (Int), "Rebooting" :: Maybe (Int), "Registered" :: Maybe (Int), "Registering" :: Maybe (Int), "Requested" :: Maybe (Int), "RunningSetup" :: Maybe (Int), "SetupFailed" :: Maybe (Int), "ShuttingDown" :: Maybe (Int), "StartFailed" :: Maybe (Int), "StopFailed" :: Maybe (Int), "Stopped" :: Maybe (Int), "Stopping" :: Maybe (Int), "Terminated" :: Maybe (Int), "Terminating" :: Maybe (Int), "Unassigning" :: Maybe (Int) } -> { "Assigning" :: Maybe (Int), "Booting" :: Maybe (Int), "ConnectionLost" :: Maybe (Int), "Deregistering" :: Maybe (Int), "Online" :: Maybe (Int), "Pending" :: Maybe (Int), "Rebooting" :: Maybe (Int), "Registered" :: Maybe (Int), "Registering" :: Maybe (Int), "Requested" :: Maybe (Int), "RunningSetup" :: Maybe (Int), "SetupFailed" :: Maybe (Int), "ShuttingDown" :: Maybe (Int), "StartFailed" :: Maybe (Int), "StopFailed" :: Maybe (Int), "Stopped" :: Maybe (Int), "Stopping" :: Maybe (Int), "Terminated" :: Maybe (Int), "Terminating" :: Maybe (Int), "Unassigning" :: Maybe (Int) }) -> InstancesCount
 ```
 
 Constructs InstancesCount's fields from required parameters
@@ -3558,7 +3558,7 @@ Constructs InstancesCount's fields from required parameters
 
 ``` purescript
 newtype Layer
-  = Layer { "Arn" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "LayerId" :: NullOrUndefined (String), "Type" :: NullOrUndefined (LayerType), "Name" :: NullOrUndefined (String), "Shortname" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (LayerAttributes), "CloudWatchLogsConfiguration" :: NullOrUndefined (CloudWatchLogsConfiguration), "CustomInstanceProfileArn" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "CustomSecurityGroupIds" :: NullOrUndefined (Strings), "DefaultSecurityGroupNames" :: NullOrUndefined (Strings), "Packages" :: NullOrUndefined (Strings), "VolumeConfigurations" :: NullOrUndefined (VolumeConfigurations), "EnableAutoHealing" :: NullOrUndefined (Boolean), "AutoAssignElasticIps" :: NullOrUndefined (Boolean), "AutoAssignPublicIps" :: NullOrUndefined (Boolean), "DefaultRecipes" :: NullOrUndefined (Recipes), "CustomRecipes" :: NullOrUndefined (Recipes), "CreatedAt" :: NullOrUndefined (DateTime), "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean), "UseEbsOptimizedInstances" :: NullOrUndefined (Boolean), "LifecycleEventConfiguration" :: NullOrUndefined (LifecycleEventConfiguration) }
+  = Layer { "Arn" :: Maybe (String), "StackId" :: Maybe (String), "LayerId" :: Maybe (String), "Type" :: Maybe (LayerType), "Name" :: Maybe (String), "Shortname" :: Maybe (String), "Attributes" :: Maybe (LayerAttributes), "CloudWatchLogsConfiguration" :: Maybe (CloudWatchLogsConfiguration), "CustomInstanceProfileArn" :: Maybe (String), "CustomJson" :: Maybe (String), "CustomSecurityGroupIds" :: Maybe (Strings), "DefaultSecurityGroupNames" :: Maybe (Strings), "Packages" :: Maybe (Strings), "VolumeConfigurations" :: Maybe (VolumeConfigurations), "EnableAutoHealing" :: Maybe (Boolean), "AutoAssignElasticIps" :: Maybe (Boolean), "AutoAssignPublicIps" :: Maybe (Boolean), "DefaultRecipes" :: Maybe (Recipes), "CustomRecipes" :: Maybe (Recipes), "CreatedAt" :: Maybe (DateTime), "InstallUpdatesOnBoot" :: Maybe (Boolean), "UseEbsOptimizedInstances" :: Maybe (Boolean), "LifecycleEventConfiguration" :: Maybe (LifecycleEventConfiguration) }
 ```
 
 <p>Describes a layer.</p>
@@ -3583,7 +3583,7 @@ Constructs Layer from required parameters
 #### `newLayer'`
 
 ``` purescript
-newLayer' :: ({ "Arn" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "LayerId" :: NullOrUndefined (String), "Type" :: NullOrUndefined (LayerType), "Name" :: NullOrUndefined (String), "Shortname" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (LayerAttributes), "CloudWatchLogsConfiguration" :: NullOrUndefined (CloudWatchLogsConfiguration), "CustomInstanceProfileArn" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "CustomSecurityGroupIds" :: NullOrUndefined (Strings), "DefaultSecurityGroupNames" :: NullOrUndefined (Strings), "Packages" :: NullOrUndefined (Strings), "VolumeConfigurations" :: NullOrUndefined (VolumeConfigurations), "EnableAutoHealing" :: NullOrUndefined (Boolean), "AutoAssignElasticIps" :: NullOrUndefined (Boolean), "AutoAssignPublicIps" :: NullOrUndefined (Boolean), "DefaultRecipes" :: NullOrUndefined (Recipes), "CustomRecipes" :: NullOrUndefined (Recipes), "CreatedAt" :: NullOrUndefined (DateTime), "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean), "UseEbsOptimizedInstances" :: NullOrUndefined (Boolean), "LifecycleEventConfiguration" :: NullOrUndefined (LifecycleEventConfiguration) } -> { "Arn" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "LayerId" :: NullOrUndefined (String), "Type" :: NullOrUndefined (LayerType), "Name" :: NullOrUndefined (String), "Shortname" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (LayerAttributes), "CloudWatchLogsConfiguration" :: NullOrUndefined (CloudWatchLogsConfiguration), "CustomInstanceProfileArn" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "CustomSecurityGroupIds" :: NullOrUndefined (Strings), "DefaultSecurityGroupNames" :: NullOrUndefined (Strings), "Packages" :: NullOrUndefined (Strings), "VolumeConfigurations" :: NullOrUndefined (VolumeConfigurations), "EnableAutoHealing" :: NullOrUndefined (Boolean), "AutoAssignElasticIps" :: NullOrUndefined (Boolean), "AutoAssignPublicIps" :: NullOrUndefined (Boolean), "DefaultRecipes" :: NullOrUndefined (Recipes), "CustomRecipes" :: NullOrUndefined (Recipes), "CreatedAt" :: NullOrUndefined (DateTime), "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean), "UseEbsOptimizedInstances" :: NullOrUndefined (Boolean), "LifecycleEventConfiguration" :: NullOrUndefined (LifecycleEventConfiguration) }) -> Layer
+newLayer' :: ({ "Arn" :: Maybe (String), "StackId" :: Maybe (String), "LayerId" :: Maybe (String), "Type" :: Maybe (LayerType), "Name" :: Maybe (String), "Shortname" :: Maybe (String), "Attributes" :: Maybe (LayerAttributes), "CloudWatchLogsConfiguration" :: Maybe (CloudWatchLogsConfiguration), "CustomInstanceProfileArn" :: Maybe (String), "CustomJson" :: Maybe (String), "CustomSecurityGroupIds" :: Maybe (Strings), "DefaultSecurityGroupNames" :: Maybe (Strings), "Packages" :: Maybe (Strings), "VolumeConfigurations" :: Maybe (VolumeConfigurations), "EnableAutoHealing" :: Maybe (Boolean), "AutoAssignElasticIps" :: Maybe (Boolean), "AutoAssignPublicIps" :: Maybe (Boolean), "DefaultRecipes" :: Maybe (Recipes), "CustomRecipes" :: Maybe (Recipes), "CreatedAt" :: Maybe (DateTime), "InstallUpdatesOnBoot" :: Maybe (Boolean), "UseEbsOptimizedInstances" :: Maybe (Boolean), "LifecycleEventConfiguration" :: Maybe (LifecycleEventConfiguration) } -> { "Arn" :: Maybe (String), "StackId" :: Maybe (String), "LayerId" :: Maybe (String), "Type" :: Maybe (LayerType), "Name" :: Maybe (String), "Shortname" :: Maybe (String), "Attributes" :: Maybe (LayerAttributes), "CloudWatchLogsConfiguration" :: Maybe (CloudWatchLogsConfiguration), "CustomInstanceProfileArn" :: Maybe (String), "CustomJson" :: Maybe (String), "CustomSecurityGroupIds" :: Maybe (Strings), "DefaultSecurityGroupNames" :: Maybe (Strings), "Packages" :: Maybe (Strings), "VolumeConfigurations" :: Maybe (VolumeConfigurations), "EnableAutoHealing" :: Maybe (Boolean), "AutoAssignElasticIps" :: Maybe (Boolean), "AutoAssignPublicIps" :: Maybe (Boolean), "DefaultRecipes" :: Maybe (Recipes), "CustomRecipes" :: Maybe (Recipes), "CreatedAt" :: Maybe (DateTime), "InstallUpdatesOnBoot" :: Maybe (Boolean), "UseEbsOptimizedInstances" :: Maybe (Boolean), "LifecycleEventConfiguration" :: Maybe (LifecycleEventConfiguration) }) -> Layer
 ```
 
 Constructs Layer's fields from required parameters
@@ -3656,7 +3656,7 @@ Encode Layers
 
 ``` purescript
 newtype LifecycleEventConfiguration
-  = LifecycleEventConfiguration { "Shutdown" :: NullOrUndefined (ShutdownEventConfiguration) }
+  = LifecycleEventConfiguration { "Shutdown" :: Maybe (ShutdownEventConfiguration) }
 ```
 
 <p>Specifies the lifecycle event configuration</p>
@@ -3681,7 +3681,7 @@ Constructs LifecycleEventConfiguration from required parameters
 #### `newLifecycleEventConfiguration'`
 
 ``` purescript
-newLifecycleEventConfiguration' :: ({ "Shutdown" :: NullOrUndefined (ShutdownEventConfiguration) } -> { "Shutdown" :: NullOrUndefined (ShutdownEventConfiguration) }) -> LifecycleEventConfiguration
+newLifecycleEventConfiguration' :: ({ "Shutdown" :: Maybe (ShutdownEventConfiguration) } -> { "Shutdown" :: Maybe (ShutdownEventConfiguration) }) -> LifecycleEventConfiguration
 ```
 
 Constructs LifecycleEventConfiguration's fields from required parameters
@@ -3690,7 +3690,7 @@ Constructs LifecycleEventConfiguration's fields from required parameters
 
 ``` purescript
 newtype ListTagsRequest
-  = ListTagsRequest { "ResourceArn" :: ResourceArn, "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListTagsRequest { "ResourceArn" :: ResourceArn, "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -3713,7 +3713,7 @@ Constructs ListTagsRequest from required parameters
 #### `newListTagsRequest'`
 
 ``` purescript
-newListTagsRequest' :: ResourceArn -> ({ "ResourceArn" :: ResourceArn, "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "ResourceArn" :: ResourceArn, "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> ListTagsRequest
+newListTagsRequest' :: ResourceArn -> ({ "ResourceArn" :: ResourceArn, "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) } -> { "ResourceArn" :: ResourceArn, "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }) -> ListTagsRequest
 ```
 
 Constructs ListTagsRequest's fields from required parameters
@@ -3722,7 +3722,7 @@ Constructs ListTagsRequest's fields from required parameters
 
 ``` purescript
 newtype ListTagsResult
-  = ListTagsResult { "Tags" :: NullOrUndefined (Tags), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListTagsResult { "Tags" :: Maybe (Tags), "NextToken" :: Maybe (NextToken) }
 ```
 
 <p>Contains the response to a <code>ListTags</code> request.</p>
@@ -3747,7 +3747,7 @@ Constructs ListTagsResult from required parameters
 #### `newListTagsResult'`
 
 ``` purescript
-newListTagsResult' :: ({ "Tags" :: NullOrUndefined (Tags), "NextToken" :: NullOrUndefined (NextToken) } -> { "Tags" :: NullOrUndefined (Tags), "NextToken" :: NullOrUndefined (NextToken) }) -> ListTagsResult
+newListTagsResult' :: ({ "Tags" :: Maybe (Tags), "NextToken" :: Maybe (NextToken) } -> { "Tags" :: Maybe (Tags), "NextToken" :: Maybe (NextToken) }) -> ListTagsResult
 ```
 
 Constructs ListTagsResult's fields from required parameters
@@ -3756,7 +3756,7 @@ Constructs ListTagsResult's fields from required parameters
 
 ``` purescript
 newtype LoadBasedAutoScalingConfiguration
-  = LoadBasedAutoScalingConfiguration { "LayerId" :: NullOrUndefined (String), "Enable" :: NullOrUndefined (Boolean), "UpScaling" :: NullOrUndefined (AutoScalingThresholds), "DownScaling" :: NullOrUndefined (AutoScalingThresholds) }
+  = LoadBasedAutoScalingConfiguration { "LayerId" :: Maybe (String), "Enable" :: Maybe (Boolean), "UpScaling" :: Maybe (AutoScalingThresholds), "DownScaling" :: Maybe (AutoScalingThresholds) }
 ```
 
 <p>Describes a layer's load-based auto scaling configuration.</p>
@@ -3781,7 +3781,7 @@ Constructs LoadBasedAutoScalingConfiguration from required parameters
 #### `newLoadBasedAutoScalingConfiguration'`
 
 ``` purescript
-newLoadBasedAutoScalingConfiguration' :: ({ "LayerId" :: NullOrUndefined (String), "Enable" :: NullOrUndefined (Boolean), "UpScaling" :: NullOrUndefined (AutoScalingThresholds), "DownScaling" :: NullOrUndefined (AutoScalingThresholds) } -> { "LayerId" :: NullOrUndefined (String), "Enable" :: NullOrUndefined (Boolean), "UpScaling" :: NullOrUndefined (AutoScalingThresholds), "DownScaling" :: NullOrUndefined (AutoScalingThresholds) }) -> LoadBasedAutoScalingConfiguration
+newLoadBasedAutoScalingConfiguration' :: ({ "LayerId" :: Maybe (String), "Enable" :: Maybe (Boolean), "UpScaling" :: Maybe (AutoScalingThresholds), "DownScaling" :: Maybe (AutoScalingThresholds) } -> { "LayerId" :: Maybe (String), "Enable" :: Maybe (Boolean), "UpScaling" :: Maybe (AutoScalingThresholds), "DownScaling" :: Maybe (AutoScalingThresholds) }) -> LoadBasedAutoScalingConfiguration
 ```
 
 Constructs LoadBasedAutoScalingConfiguration's fields from required parameters
@@ -3854,7 +3854,7 @@ Encode NextToken
 
 ``` purescript
 newtype OperatingSystem
-  = OperatingSystem { "Name" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "Type" :: NullOrUndefined (String), "ConfigurationManagers" :: NullOrUndefined (OperatingSystemConfigurationManagers), "ReportedName" :: NullOrUndefined (String), "ReportedVersion" :: NullOrUndefined (String), "Supported" :: NullOrUndefined (Boolean) }
+  = OperatingSystem { "Name" :: Maybe (String), "Id" :: Maybe (String), "Type" :: Maybe (String), "ConfigurationManagers" :: Maybe (OperatingSystemConfigurationManagers), "ReportedName" :: Maybe (String), "ReportedVersion" :: Maybe (String), "Supported" :: Maybe (Boolean) }
 ```
 
 <p>Describes supported operating systems in AWS OpsWorks Stacks.</p>
@@ -3879,7 +3879,7 @@ Constructs OperatingSystem from required parameters
 #### `newOperatingSystem'`
 
 ``` purescript
-newOperatingSystem' :: ({ "Name" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "Type" :: NullOrUndefined (String), "ConfigurationManagers" :: NullOrUndefined (OperatingSystemConfigurationManagers), "ReportedName" :: NullOrUndefined (String), "ReportedVersion" :: NullOrUndefined (String), "Supported" :: NullOrUndefined (Boolean) } -> { "Name" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "Type" :: NullOrUndefined (String), "ConfigurationManagers" :: NullOrUndefined (OperatingSystemConfigurationManagers), "ReportedName" :: NullOrUndefined (String), "ReportedVersion" :: NullOrUndefined (String), "Supported" :: NullOrUndefined (Boolean) }) -> OperatingSystem
+newOperatingSystem' :: ({ "Name" :: Maybe (String), "Id" :: Maybe (String), "Type" :: Maybe (String), "ConfigurationManagers" :: Maybe (OperatingSystemConfigurationManagers), "ReportedName" :: Maybe (String), "ReportedVersion" :: Maybe (String), "Supported" :: Maybe (Boolean) } -> { "Name" :: Maybe (String), "Id" :: Maybe (String), "Type" :: Maybe (String), "ConfigurationManagers" :: Maybe (OperatingSystemConfigurationManagers), "ReportedName" :: Maybe (String), "ReportedVersion" :: Maybe (String), "Supported" :: Maybe (Boolean) }) -> OperatingSystem
 ```
 
 Constructs OperatingSystem's fields from required parameters
@@ -3888,7 +3888,7 @@ Constructs OperatingSystem's fields from required parameters
 
 ``` purescript
 newtype OperatingSystemConfigurationManager
-  = OperatingSystemConfigurationManager { "Name" :: NullOrUndefined (String), "Version" :: NullOrUndefined (String) }
+  = OperatingSystemConfigurationManager { "Name" :: Maybe (String), "Version" :: Maybe (String) }
 ```
 
 <p>A block that contains information about the configuration manager (Chef) and the versions of the configuration manager that are supported for an operating system.</p>
@@ -3913,7 +3913,7 @@ Constructs OperatingSystemConfigurationManager from required parameters
 #### `newOperatingSystemConfigurationManager'`
 
 ``` purescript
-newOperatingSystemConfigurationManager' :: ({ "Name" :: NullOrUndefined (String), "Version" :: NullOrUndefined (String) } -> { "Name" :: NullOrUndefined (String), "Version" :: NullOrUndefined (String) }) -> OperatingSystemConfigurationManager
+newOperatingSystemConfigurationManager' :: ({ "Name" :: Maybe (String), "Version" :: Maybe (String) } -> { "Name" :: Maybe (String), "Version" :: Maybe (String) }) -> OperatingSystemConfigurationManager
 ```
 
 Constructs OperatingSystemConfigurationManager's fields from required parameters
@@ -3970,7 +3970,7 @@ Encode Parameters
 
 ``` purescript
 newtype Permission
-  = Permission { "StackId" :: NullOrUndefined (String), "IamUserArn" :: NullOrUndefined (String), "AllowSsh" :: NullOrUndefined (Boolean), "AllowSudo" :: NullOrUndefined (Boolean), "Level" :: NullOrUndefined (String) }
+  = Permission { "StackId" :: Maybe (String), "IamUserArn" :: Maybe (String), "AllowSsh" :: Maybe (Boolean), "AllowSudo" :: Maybe (Boolean), "Level" :: Maybe (String) }
 ```
 
 <p>Describes stack or user permissions.</p>
@@ -3995,7 +3995,7 @@ Constructs Permission from required parameters
 #### `newPermission'`
 
 ``` purescript
-newPermission' :: ({ "StackId" :: NullOrUndefined (String), "IamUserArn" :: NullOrUndefined (String), "AllowSsh" :: NullOrUndefined (Boolean), "AllowSudo" :: NullOrUndefined (Boolean), "Level" :: NullOrUndefined (String) } -> { "StackId" :: NullOrUndefined (String), "IamUserArn" :: NullOrUndefined (String), "AllowSsh" :: NullOrUndefined (Boolean), "AllowSudo" :: NullOrUndefined (Boolean), "Level" :: NullOrUndefined (String) }) -> Permission
+newPermission' :: ({ "StackId" :: Maybe (String), "IamUserArn" :: Maybe (String), "AllowSsh" :: Maybe (Boolean), "AllowSudo" :: Maybe (Boolean), "Level" :: Maybe (String) } -> { "StackId" :: Maybe (String), "IamUserArn" :: Maybe (String), "AllowSsh" :: Maybe (Boolean), "AllowSudo" :: Maybe (Boolean), "Level" :: Maybe (String) }) -> Permission
 ```
 
 Constructs Permission's fields from required parameters
@@ -4020,7 +4020,7 @@ Encode Permissions
 
 ``` purescript
 newtype RaidArray
-  = RaidArray { "RaidArrayId" :: NullOrUndefined (String), "InstanceId" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "RaidLevel" :: NullOrUndefined (Int), "NumberOfDisks" :: NullOrUndefined (Int), "Size" :: NullOrUndefined (Int), "Device" :: NullOrUndefined (String), "MountPoint" :: NullOrUndefined (String), "AvailabilityZone" :: NullOrUndefined (String), "CreatedAt" :: NullOrUndefined (DateTime), "StackId" :: NullOrUndefined (String), "VolumeType" :: NullOrUndefined (String), "Iops" :: NullOrUndefined (Int) }
+  = RaidArray { "RaidArrayId" :: Maybe (String), "InstanceId" :: Maybe (String), "Name" :: Maybe (String), "RaidLevel" :: Maybe (Int), "NumberOfDisks" :: Maybe (Int), "Size" :: Maybe (Int), "Device" :: Maybe (String), "MountPoint" :: Maybe (String), "AvailabilityZone" :: Maybe (String), "CreatedAt" :: Maybe (DateTime), "StackId" :: Maybe (String), "VolumeType" :: Maybe (String), "Iops" :: Maybe (Int) }
 ```
 
 <p>Describes an instance's RAID array.</p>
@@ -4045,7 +4045,7 @@ Constructs RaidArray from required parameters
 #### `newRaidArray'`
 
 ``` purescript
-newRaidArray' :: ({ "RaidArrayId" :: NullOrUndefined (String), "InstanceId" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "RaidLevel" :: NullOrUndefined (Int), "NumberOfDisks" :: NullOrUndefined (Int), "Size" :: NullOrUndefined (Int), "Device" :: NullOrUndefined (String), "MountPoint" :: NullOrUndefined (String), "AvailabilityZone" :: NullOrUndefined (String), "CreatedAt" :: NullOrUndefined (DateTime), "StackId" :: NullOrUndefined (String), "VolumeType" :: NullOrUndefined (String), "Iops" :: NullOrUndefined (Int) } -> { "RaidArrayId" :: NullOrUndefined (String), "InstanceId" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "RaidLevel" :: NullOrUndefined (Int), "NumberOfDisks" :: NullOrUndefined (Int), "Size" :: NullOrUndefined (Int), "Device" :: NullOrUndefined (String), "MountPoint" :: NullOrUndefined (String), "AvailabilityZone" :: NullOrUndefined (String), "CreatedAt" :: NullOrUndefined (DateTime), "StackId" :: NullOrUndefined (String), "VolumeType" :: NullOrUndefined (String), "Iops" :: NullOrUndefined (Int) }) -> RaidArray
+newRaidArray' :: ({ "RaidArrayId" :: Maybe (String), "InstanceId" :: Maybe (String), "Name" :: Maybe (String), "RaidLevel" :: Maybe (Int), "NumberOfDisks" :: Maybe (Int), "Size" :: Maybe (Int), "Device" :: Maybe (String), "MountPoint" :: Maybe (String), "AvailabilityZone" :: Maybe (String), "CreatedAt" :: Maybe (DateTime), "StackId" :: Maybe (String), "VolumeType" :: Maybe (String), "Iops" :: Maybe (Int) } -> { "RaidArrayId" :: Maybe (String), "InstanceId" :: Maybe (String), "Name" :: Maybe (String), "RaidLevel" :: Maybe (Int), "NumberOfDisks" :: Maybe (Int), "Size" :: Maybe (Int), "Device" :: Maybe (String), "MountPoint" :: Maybe (String), "AvailabilityZone" :: Maybe (String), "CreatedAt" :: Maybe (DateTime), "StackId" :: Maybe (String), "VolumeType" :: Maybe (String), "Iops" :: Maybe (Int) }) -> RaidArray
 ```
 
 Constructs RaidArray's fields from required parameters
@@ -4070,7 +4070,7 @@ Encode RaidArrays
 
 ``` purescript
 newtype RdsDbInstance
-  = RdsDbInstance { "RdsDbInstanceArn" :: NullOrUndefined (String), "DbInstanceIdentifier" :: NullOrUndefined (String), "DbUser" :: NullOrUndefined (String), "DbPassword" :: NullOrUndefined (String), "Region" :: NullOrUndefined (String), "Address" :: NullOrUndefined (String), "Engine" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "MissingOnRds" :: NullOrUndefined (Boolean) }
+  = RdsDbInstance { "RdsDbInstanceArn" :: Maybe (String), "DbInstanceIdentifier" :: Maybe (String), "DbUser" :: Maybe (String), "DbPassword" :: Maybe (String), "Region" :: Maybe (String), "Address" :: Maybe (String), "Engine" :: Maybe (String), "StackId" :: Maybe (String), "MissingOnRds" :: Maybe (Boolean) }
 ```
 
 <p>Describes an Amazon RDS instance.</p>
@@ -4095,7 +4095,7 @@ Constructs RdsDbInstance from required parameters
 #### `newRdsDbInstance'`
 
 ``` purescript
-newRdsDbInstance' :: ({ "RdsDbInstanceArn" :: NullOrUndefined (String), "DbInstanceIdentifier" :: NullOrUndefined (String), "DbUser" :: NullOrUndefined (String), "DbPassword" :: NullOrUndefined (String), "Region" :: NullOrUndefined (String), "Address" :: NullOrUndefined (String), "Engine" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "MissingOnRds" :: NullOrUndefined (Boolean) } -> { "RdsDbInstanceArn" :: NullOrUndefined (String), "DbInstanceIdentifier" :: NullOrUndefined (String), "DbUser" :: NullOrUndefined (String), "DbPassword" :: NullOrUndefined (String), "Region" :: NullOrUndefined (String), "Address" :: NullOrUndefined (String), "Engine" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "MissingOnRds" :: NullOrUndefined (Boolean) }) -> RdsDbInstance
+newRdsDbInstance' :: ({ "RdsDbInstanceArn" :: Maybe (String), "DbInstanceIdentifier" :: Maybe (String), "DbUser" :: Maybe (String), "DbPassword" :: Maybe (String), "Region" :: Maybe (String), "Address" :: Maybe (String), "Engine" :: Maybe (String), "StackId" :: Maybe (String), "MissingOnRds" :: Maybe (Boolean) } -> { "RdsDbInstanceArn" :: Maybe (String), "DbInstanceIdentifier" :: Maybe (String), "DbUser" :: Maybe (String), "DbPassword" :: Maybe (String), "Region" :: Maybe (String), "Address" :: Maybe (String), "Engine" :: Maybe (String), "StackId" :: Maybe (String), "MissingOnRds" :: Maybe (Boolean) }) -> RdsDbInstance
 ```
 
 Constructs RdsDbInstance's fields from required parameters
@@ -4152,7 +4152,7 @@ Constructs RebootInstanceRequest's fields from required parameters
 
 ``` purescript
 newtype Recipes
-  = Recipes { "Setup" :: NullOrUndefined (Strings), "Configure" :: NullOrUndefined (Strings), "Deploy" :: NullOrUndefined (Strings), "Undeploy" :: NullOrUndefined (Strings), "Shutdown" :: NullOrUndefined (Strings) }
+  = Recipes { "Setup" :: Maybe (Strings), "Configure" :: Maybe (Strings), "Deploy" :: Maybe (Strings), "Undeploy" :: Maybe (Strings), "Shutdown" :: Maybe (Strings) }
 ```
 
 <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. In addition, you can provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events. </p> <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the .rb extension. For example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the repository's phpapp2 folder.</p>
@@ -4177,7 +4177,7 @@ Constructs Recipes from required parameters
 #### `newRecipes'`
 
 ``` purescript
-newRecipes' :: ({ "Setup" :: NullOrUndefined (Strings), "Configure" :: NullOrUndefined (Strings), "Deploy" :: NullOrUndefined (Strings), "Undeploy" :: NullOrUndefined (Strings), "Shutdown" :: NullOrUndefined (Strings) } -> { "Setup" :: NullOrUndefined (Strings), "Configure" :: NullOrUndefined (Strings), "Deploy" :: NullOrUndefined (Strings), "Undeploy" :: NullOrUndefined (Strings), "Shutdown" :: NullOrUndefined (Strings) }) -> Recipes
+newRecipes' :: ({ "Setup" :: Maybe (Strings), "Configure" :: Maybe (Strings), "Deploy" :: Maybe (Strings), "Undeploy" :: Maybe (Strings), "Shutdown" :: Maybe (Strings) } -> { "Setup" :: Maybe (Strings), "Configure" :: Maybe (Strings), "Deploy" :: Maybe (Strings), "Undeploy" :: Maybe (Strings), "Shutdown" :: Maybe (Strings) }) -> Recipes
 ```
 
 Constructs Recipes's fields from required parameters
@@ -4218,7 +4218,7 @@ Constructs RegisterEcsClusterRequest's fields from required parameters
 
 ``` purescript
 newtype RegisterEcsClusterResult
-  = RegisterEcsClusterResult { "EcsClusterArn" :: NullOrUndefined (String) }
+  = RegisterEcsClusterResult { "EcsClusterArn" :: Maybe (String) }
 ```
 
 <p>Contains the response to a <code>RegisterEcsCluster</code> request.</p>
@@ -4243,7 +4243,7 @@ Constructs RegisterEcsClusterResult from required parameters
 #### `newRegisterEcsClusterResult'`
 
 ``` purescript
-newRegisterEcsClusterResult' :: ({ "EcsClusterArn" :: NullOrUndefined (String) } -> { "EcsClusterArn" :: NullOrUndefined (String) }) -> RegisterEcsClusterResult
+newRegisterEcsClusterResult' :: ({ "EcsClusterArn" :: Maybe (String) } -> { "EcsClusterArn" :: Maybe (String) }) -> RegisterEcsClusterResult
 ```
 
 Constructs RegisterEcsClusterResult's fields from required parameters
@@ -4284,7 +4284,7 @@ Constructs RegisterElasticIpRequest's fields from required parameters
 
 ``` purescript
 newtype RegisterElasticIpResult
-  = RegisterElasticIpResult { "ElasticIp" :: NullOrUndefined (String) }
+  = RegisterElasticIpResult { "ElasticIp" :: Maybe (String) }
 ```
 
 <p>Contains the response to a <code>RegisterElasticIp</code> request.</p>
@@ -4309,7 +4309,7 @@ Constructs RegisterElasticIpResult from required parameters
 #### `newRegisterElasticIpResult'`
 
 ``` purescript
-newRegisterElasticIpResult' :: ({ "ElasticIp" :: NullOrUndefined (String) } -> { "ElasticIp" :: NullOrUndefined (String) }) -> RegisterElasticIpResult
+newRegisterElasticIpResult' :: ({ "ElasticIp" :: Maybe (String) } -> { "ElasticIp" :: Maybe (String) }) -> RegisterElasticIpResult
 ```
 
 Constructs RegisterElasticIpResult's fields from required parameters
@@ -4318,7 +4318,7 @@ Constructs RegisterElasticIpResult's fields from required parameters
 
 ``` purescript
 newtype RegisterInstanceRequest
-  = RegisterInstanceRequest { "StackId" :: String, "Hostname" :: NullOrUndefined (String), "PublicIp" :: NullOrUndefined (String), "PrivateIp" :: NullOrUndefined (String), "RsaPublicKey" :: NullOrUndefined (String), "RsaPublicKeyFingerprint" :: NullOrUndefined (String), "InstanceIdentity" :: NullOrUndefined (InstanceIdentity) }
+  = RegisterInstanceRequest { "StackId" :: String, "Hostname" :: Maybe (String), "PublicIp" :: Maybe (String), "PrivateIp" :: Maybe (String), "RsaPublicKey" :: Maybe (String), "RsaPublicKeyFingerprint" :: Maybe (String), "InstanceIdentity" :: Maybe (InstanceIdentity) }
 ```
 
 ##### Instances
@@ -4341,7 +4341,7 @@ Constructs RegisterInstanceRequest from required parameters
 #### `newRegisterInstanceRequest'`
 
 ``` purescript
-newRegisterInstanceRequest' :: String -> ({ "StackId" :: String, "Hostname" :: NullOrUndefined (String), "PublicIp" :: NullOrUndefined (String), "PrivateIp" :: NullOrUndefined (String), "RsaPublicKey" :: NullOrUndefined (String), "RsaPublicKeyFingerprint" :: NullOrUndefined (String), "InstanceIdentity" :: NullOrUndefined (InstanceIdentity) } -> { "StackId" :: String, "Hostname" :: NullOrUndefined (String), "PublicIp" :: NullOrUndefined (String), "PrivateIp" :: NullOrUndefined (String), "RsaPublicKey" :: NullOrUndefined (String), "RsaPublicKeyFingerprint" :: NullOrUndefined (String), "InstanceIdentity" :: NullOrUndefined (InstanceIdentity) }) -> RegisterInstanceRequest
+newRegisterInstanceRequest' :: String -> ({ "StackId" :: String, "Hostname" :: Maybe (String), "PublicIp" :: Maybe (String), "PrivateIp" :: Maybe (String), "RsaPublicKey" :: Maybe (String), "RsaPublicKeyFingerprint" :: Maybe (String), "InstanceIdentity" :: Maybe (InstanceIdentity) } -> { "StackId" :: String, "Hostname" :: Maybe (String), "PublicIp" :: Maybe (String), "PrivateIp" :: Maybe (String), "RsaPublicKey" :: Maybe (String), "RsaPublicKeyFingerprint" :: Maybe (String), "InstanceIdentity" :: Maybe (InstanceIdentity) }) -> RegisterInstanceRequest
 ```
 
 Constructs RegisterInstanceRequest's fields from required parameters
@@ -4350,7 +4350,7 @@ Constructs RegisterInstanceRequest's fields from required parameters
 
 ``` purescript
 newtype RegisterInstanceResult
-  = RegisterInstanceResult { "InstanceId" :: NullOrUndefined (String) }
+  = RegisterInstanceResult { "InstanceId" :: Maybe (String) }
 ```
 
 <p>Contains the response to a <code>RegisterInstanceResult</code> request.</p>
@@ -4375,7 +4375,7 @@ Constructs RegisterInstanceResult from required parameters
 #### `newRegisterInstanceResult'`
 
 ``` purescript
-newRegisterInstanceResult' :: ({ "InstanceId" :: NullOrUndefined (String) } -> { "InstanceId" :: NullOrUndefined (String) }) -> RegisterInstanceResult
+newRegisterInstanceResult' :: ({ "InstanceId" :: Maybe (String) } -> { "InstanceId" :: Maybe (String) }) -> RegisterInstanceResult
 ```
 
 Constructs RegisterInstanceResult's fields from required parameters
@@ -4416,7 +4416,7 @@ Constructs RegisterRdsDbInstanceRequest's fields from required parameters
 
 ``` purescript
 newtype RegisterVolumeRequest
-  = RegisterVolumeRequest { "Ec2VolumeId" :: NullOrUndefined (String), "StackId" :: String }
+  = RegisterVolumeRequest { "Ec2VolumeId" :: Maybe (String), "StackId" :: String }
 ```
 
 ##### Instances
@@ -4439,7 +4439,7 @@ Constructs RegisterVolumeRequest from required parameters
 #### `newRegisterVolumeRequest'`
 
 ``` purescript
-newRegisterVolumeRequest' :: String -> ({ "Ec2VolumeId" :: NullOrUndefined (String), "StackId" :: String } -> { "Ec2VolumeId" :: NullOrUndefined (String), "StackId" :: String }) -> RegisterVolumeRequest
+newRegisterVolumeRequest' :: String -> ({ "Ec2VolumeId" :: Maybe (String), "StackId" :: String } -> { "Ec2VolumeId" :: Maybe (String), "StackId" :: String }) -> RegisterVolumeRequest
 ```
 
 Constructs RegisterVolumeRequest's fields from required parameters
@@ -4448,7 +4448,7 @@ Constructs RegisterVolumeRequest's fields from required parameters
 
 ``` purescript
 newtype RegisterVolumeResult
-  = RegisterVolumeResult { "VolumeId" :: NullOrUndefined (String) }
+  = RegisterVolumeResult { "VolumeId" :: Maybe (String) }
 ```
 
 <p>Contains the response to a <code>RegisterVolume</code> request.</p>
@@ -4473,7 +4473,7 @@ Constructs RegisterVolumeResult from required parameters
 #### `newRegisterVolumeResult'`
 
 ``` purescript
-newRegisterVolumeResult' :: ({ "VolumeId" :: NullOrUndefined (String) } -> { "VolumeId" :: NullOrUndefined (String) }) -> RegisterVolumeResult
+newRegisterVolumeResult' :: ({ "VolumeId" :: Maybe (String) } -> { "VolumeId" :: Maybe (String) }) -> RegisterVolumeResult
 ```
 
 Constructs RegisterVolumeResult's fields from required parameters
@@ -4482,7 +4482,7 @@ Constructs RegisterVolumeResult's fields from required parameters
 
 ``` purescript
 newtype ReportedOs
-  = ReportedOs { "Family" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "Version" :: NullOrUndefined (String) }
+  = ReportedOs { "Family" :: Maybe (String), "Name" :: Maybe (String), "Version" :: Maybe (String) }
 ```
 
 <p>A registered instance's reported operating system.</p>
@@ -4507,7 +4507,7 @@ Constructs ReportedOs from required parameters
 #### `newReportedOs'`
 
 ``` purescript
-newReportedOs' :: ({ "Family" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "Version" :: NullOrUndefined (String) } -> { "Family" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "Version" :: NullOrUndefined (String) }) -> ReportedOs
+newReportedOs' :: ({ "Family" :: Maybe (String), "Name" :: Maybe (String), "Version" :: Maybe (String) } -> { "Family" :: Maybe (String), "Name" :: Maybe (String), "Version" :: Maybe (String) }) -> ReportedOs
 ```
 
 Constructs ReportedOs's fields from required parameters
@@ -4532,7 +4532,7 @@ Encode ResourceArn
 
 ``` purescript
 newtype ResourceNotFoundException
-  = ResourceNotFoundException { message :: NullOrUndefined (String) }
+  = ResourceNotFoundException { message :: Maybe (String) }
 ```
 
 <p>Indicates that a resource was not found.</p>
@@ -4557,7 +4557,7 @@ Constructs ResourceNotFoundException from required parameters
 #### `newResourceNotFoundException'`
 
 ``` purescript
-newResourceNotFoundException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> ResourceNotFoundException
+newResourceNotFoundException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> ResourceNotFoundException
 ```
 
 Constructs ResourceNotFoundException's fields from required parameters
@@ -4582,7 +4582,7 @@ Encode RootDeviceType
 
 ``` purescript
 newtype SelfUserProfile
-  = SelfUserProfile { "IamUserArn" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "SshUsername" :: NullOrUndefined (String), "SshPublicKey" :: NullOrUndefined (String) }
+  = SelfUserProfile { "IamUserArn" :: Maybe (String), "Name" :: Maybe (String), "SshUsername" :: Maybe (String), "SshPublicKey" :: Maybe (String) }
 ```
 
 <p>Describes a user's SSH information.</p>
@@ -4607,7 +4607,7 @@ Constructs SelfUserProfile from required parameters
 #### `newSelfUserProfile'`
 
 ``` purescript
-newSelfUserProfile' :: ({ "IamUserArn" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "SshUsername" :: NullOrUndefined (String), "SshPublicKey" :: NullOrUndefined (String) } -> { "IamUserArn" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "SshUsername" :: NullOrUndefined (String), "SshPublicKey" :: NullOrUndefined (String) }) -> SelfUserProfile
+newSelfUserProfile' :: ({ "IamUserArn" :: Maybe (String), "Name" :: Maybe (String), "SshUsername" :: Maybe (String), "SshPublicKey" :: Maybe (String) } -> { "IamUserArn" :: Maybe (String), "Name" :: Maybe (String), "SshUsername" :: Maybe (String), "SshPublicKey" :: Maybe (String) }) -> SelfUserProfile
 ```
 
 Constructs SelfUserProfile's fields from required parameters
@@ -4616,7 +4616,7 @@ Constructs SelfUserProfile's fields from required parameters
 
 ``` purescript
 newtype ServiceError
-  = ServiceError { "ServiceErrorId" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "InstanceId" :: NullOrUndefined (String), "Type" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String), "CreatedAt" :: NullOrUndefined (DateTime) }
+  = ServiceError { "ServiceErrorId" :: Maybe (String), "StackId" :: Maybe (String), "InstanceId" :: Maybe (String), "Type" :: Maybe (String), "Message" :: Maybe (String), "CreatedAt" :: Maybe (DateTime) }
 ```
 
 <p>Describes an AWS OpsWorks Stacks service error.</p>
@@ -4641,7 +4641,7 @@ Constructs ServiceError from required parameters
 #### `newServiceError'`
 
 ``` purescript
-newServiceError' :: ({ "ServiceErrorId" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "InstanceId" :: NullOrUndefined (String), "Type" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String), "CreatedAt" :: NullOrUndefined (DateTime) } -> { "ServiceErrorId" :: NullOrUndefined (String), "StackId" :: NullOrUndefined (String), "InstanceId" :: NullOrUndefined (String), "Type" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String), "CreatedAt" :: NullOrUndefined (DateTime) }) -> ServiceError
+newServiceError' :: ({ "ServiceErrorId" :: Maybe (String), "StackId" :: Maybe (String), "InstanceId" :: Maybe (String), "Type" :: Maybe (String), "Message" :: Maybe (String), "CreatedAt" :: Maybe (DateTime) } -> { "ServiceErrorId" :: Maybe (String), "StackId" :: Maybe (String), "InstanceId" :: Maybe (String), "Type" :: Maybe (String), "Message" :: Maybe (String), "CreatedAt" :: Maybe (DateTime) }) -> ServiceError
 ```
 
 Constructs ServiceError's fields from required parameters
@@ -4666,7 +4666,7 @@ Encode ServiceErrors
 
 ``` purescript
 newtype SetLoadBasedAutoScalingRequest
-  = SetLoadBasedAutoScalingRequest { "LayerId" :: String, "Enable" :: NullOrUndefined (Boolean), "UpScaling" :: NullOrUndefined (AutoScalingThresholds), "DownScaling" :: NullOrUndefined (AutoScalingThresholds) }
+  = SetLoadBasedAutoScalingRequest { "LayerId" :: String, "Enable" :: Maybe (Boolean), "UpScaling" :: Maybe (AutoScalingThresholds), "DownScaling" :: Maybe (AutoScalingThresholds) }
 ```
 
 ##### Instances
@@ -4689,7 +4689,7 @@ Constructs SetLoadBasedAutoScalingRequest from required parameters
 #### `newSetLoadBasedAutoScalingRequest'`
 
 ``` purescript
-newSetLoadBasedAutoScalingRequest' :: String -> ({ "LayerId" :: String, "Enable" :: NullOrUndefined (Boolean), "UpScaling" :: NullOrUndefined (AutoScalingThresholds), "DownScaling" :: NullOrUndefined (AutoScalingThresholds) } -> { "LayerId" :: String, "Enable" :: NullOrUndefined (Boolean), "UpScaling" :: NullOrUndefined (AutoScalingThresholds), "DownScaling" :: NullOrUndefined (AutoScalingThresholds) }) -> SetLoadBasedAutoScalingRequest
+newSetLoadBasedAutoScalingRequest' :: String -> ({ "LayerId" :: String, "Enable" :: Maybe (Boolean), "UpScaling" :: Maybe (AutoScalingThresholds), "DownScaling" :: Maybe (AutoScalingThresholds) } -> { "LayerId" :: String, "Enable" :: Maybe (Boolean), "UpScaling" :: Maybe (AutoScalingThresholds), "DownScaling" :: Maybe (AutoScalingThresholds) }) -> SetLoadBasedAutoScalingRequest
 ```
 
 Constructs SetLoadBasedAutoScalingRequest's fields from required parameters
@@ -4698,7 +4698,7 @@ Constructs SetLoadBasedAutoScalingRequest's fields from required parameters
 
 ``` purescript
 newtype SetPermissionRequest
-  = SetPermissionRequest { "StackId" :: String, "IamUserArn" :: String, "AllowSsh" :: NullOrUndefined (Boolean), "AllowSudo" :: NullOrUndefined (Boolean), "Level" :: NullOrUndefined (String) }
+  = SetPermissionRequest { "StackId" :: String, "IamUserArn" :: String, "AllowSsh" :: Maybe (Boolean), "AllowSudo" :: Maybe (Boolean), "Level" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -4721,7 +4721,7 @@ Constructs SetPermissionRequest from required parameters
 #### `newSetPermissionRequest'`
 
 ``` purescript
-newSetPermissionRequest' :: String -> String -> ({ "StackId" :: String, "IamUserArn" :: String, "AllowSsh" :: NullOrUndefined (Boolean), "AllowSudo" :: NullOrUndefined (Boolean), "Level" :: NullOrUndefined (String) } -> { "StackId" :: String, "IamUserArn" :: String, "AllowSsh" :: NullOrUndefined (Boolean), "AllowSudo" :: NullOrUndefined (Boolean), "Level" :: NullOrUndefined (String) }) -> SetPermissionRequest
+newSetPermissionRequest' :: String -> String -> ({ "StackId" :: String, "IamUserArn" :: String, "AllowSsh" :: Maybe (Boolean), "AllowSudo" :: Maybe (Boolean), "Level" :: Maybe (String) } -> { "StackId" :: String, "IamUserArn" :: String, "AllowSsh" :: Maybe (Boolean), "AllowSudo" :: Maybe (Boolean), "Level" :: Maybe (String) }) -> SetPermissionRequest
 ```
 
 Constructs SetPermissionRequest's fields from required parameters
@@ -4730,7 +4730,7 @@ Constructs SetPermissionRequest's fields from required parameters
 
 ``` purescript
 newtype SetTimeBasedAutoScalingRequest
-  = SetTimeBasedAutoScalingRequest { "InstanceId" :: String, "AutoScalingSchedule" :: NullOrUndefined (WeeklyAutoScalingSchedule) }
+  = SetTimeBasedAutoScalingRequest { "InstanceId" :: String, "AutoScalingSchedule" :: Maybe (WeeklyAutoScalingSchedule) }
 ```
 
 ##### Instances
@@ -4753,7 +4753,7 @@ Constructs SetTimeBasedAutoScalingRequest from required parameters
 #### `newSetTimeBasedAutoScalingRequest'`
 
 ``` purescript
-newSetTimeBasedAutoScalingRequest' :: String -> ({ "InstanceId" :: String, "AutoScalingSchedule" :: NullOrUndefined (WeeklyAutoScalingSchedule) } -> { "InstanceId" :: String, "AutoScalingSchedule" :: NullOrUndefined (WeeklyAutoScalingSchedule) }) -> SetTimeBasedAutoScalingRequest
+newSetTimeBasedAutoScalingRequest' :: String -> ({ "InstanceId" :: String, "AutoScalingSchedule" :: Maybe (WeeklyAutoScalingSchedule) } -> { "InstanceId" :: String, "AutoScalingSchedule" :: Maybe (WeeklyAutoScalingSchedule) }) -> SetTimeBasedAutoScalingRequest
 ```
 
 Constructs SetTimeBasedAutoScalingRequest's fields from required parameters
@@ -4762,7 +4762,7 @@ Constructs SetTimeBasedAutoScalingRequest's fields from required parameters
 
 ``` purescript
 newtype ShutdownEventConfiguration
-  = ShutdownEventConfiguration { "ExecutionTimeout" :: NullOrUndefined (Int), "DelayUntilElbConnectionsDrained" :: NullOrUndefined (Boolean) }
+  = ShutdownEventConfiguration { "ExecutionTimeout" :: Maybe (Int), "DelayUntilElbConnectionsDrained" :: Maybe (Boolean) }
 ```
 
 <p>The Shutdown event configuration.</p>
@@ -4787,7 +4787,7 @@ Constructs ShutdownEventConfiguration from required parameters
 #### `newShutdownEventConfiguration'`
 
 ``` purescript
-newShutdownEventConfiguration' :: ({ "ExecutionTimeout" :: NullOrUndefined (Int), "DelayUntilElbConnectionsDrained" :: NullOrUndefined (Boolean) } -> { "ExecutionTimeout" :: NullOrUndefined (Int), "DelayUntilElbConnectionsDrained" :: NullOrUndefined (Boolean) }) -> ShutdownEventConfiguration
+newShutdownEventConfiguration' :: ({ "ExecutionTimeout" :: Maybe (Int), "DelayUntilElbConnectionsDrained" :: Maybe (Boolean) } -> { "ExecutionTimeout" :: Maybe (Int), "DelayUntilElbConnectionsDrained" :: Maybe (Boolean) }) -> ShutdownEventConfiguration
 ```
 
 Constructs ShutdownEventConfiguration's fields from required parameters
@@ -4796,7 +4796,7 @@ Constructs ShutdownEventConfiguration's fields from required parameters
 
 ``` purescript
 newtype Source
-  = Source { "Type" :: NullOrUndefined (SourceType), "Url" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String), "Password" :: NullOrUndefined (String), "SshKey" :: NullOrUndefined (String), "Revision" :: NullOrUndefined (String) }
+  = Source { "Type" :: Maybe (SourceType), "Url" :: Maybe (String), "Username" :: Maybe (String), "Password" :: Maybe (String), "SshKey" :: Maybe (String), "Revision" :: Maybe (String) }
 ```
 
 <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a> or <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom Recipes and Cookbooks</a>.</p>
@@ -4821,7 +4821,7 @@ Constructs Source from required parameters
 #### `newSource'`
 
 ``` purescript
-newSource' :: ({ "Type" :: NullOrUndefined (SourceType), "Url" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String), "Password" :: NullOrUndefined (String), "SshKey" :: NullOrUndefined (String), "Revision" :: NullOrUndefined (String) } -> { "Type" :: NullOrUndefined (SourceType), "Url" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String), "Password" :: NullOrUndefined (String), "SshKey" :: NullOrUndefined (String), "Revision" :: NullOrUndefined (String) }) -> Source
+newSource' :: ({ "Type" :: Maybe (SourceType), "Url" :: Maybe (String), "Username" :: Maybe (String), "Password" :: Maybe (String), "SshKey" :: Maybe (String), "Revision" :: Maybe (String) } -> { "Type" :: Maybe (SourceType), "Url" :: Maybe (String), "Username" :: Maybe (String), "Password" :: Maybe (String), "SshKey" :: Maybe (String), "Revision" :: Maybe (String) }) -> Source
 ```
 
 Constructs Source's fields from required parameters
@@ -4846,7 +4846,7 @@ Encode SourceType
 
 ``` purescript
 newtype SslConfiguration
-  = SslConfiguration { "Certificate" :: String, "PrivateKey" :: String, "Chain" :: NullOrUndefined (String) }
+  = SslConfiguration { "Certificate" :: String, "PrivateKey" :: String, "Chain" :: Maybe (String) }
 ```
 
 <p>Describes an app's SSL configuration.</p>
@@ -4871,7 +4871,7 @@ Constructs SslConfiguration from required parameters
 #### `newSslConfiguration'`
 
 ``` purescript
-newSslConfiguration' :: String -> String -> ({ "Certificate" :: String, "PrivateKey" :: String, "Chain" :: NullOrUndefined (String) } -> { "Certificate" :: String, "PrivateKey" :: String, "Chain" :: NullOrUndefined (String) }) -> SslConfiguration
+newSslConfiguration' :: String -> String -> ({ "Certificate" :: String, "PrivateKey" :: String, "Chain" :: Maybe (String) } -> { "Certificate" :: String, "PrivateKey" :: String, "Chain" :: Maybe (String) }) -> SslConfiguration
 ```
 
 Constructs SslConfiguration's fields from required parameters
@@ -4880,7 +4880,7 @@ Constructs SslConfiguration's fields from required parameters
 
 ``` purescript
 newtype Stack
-  = Stack { "StackId" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "Arn" :: NullOrUndefined (String), "Region" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (StackAttributes), "ServiceRoleArn" :: NullOrUndefined (String), "DefaultInstanceProfileArn" :: NullOrUndefined (String), "DefaultOs" :: NullOrUndefined (String), "HostnameTheme" :: NullOrUndefined (String), "DefaultAvailabilityZone" :: NullOrUndefined (String), "DefaultSubnetId" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager), "ChefConfiguration" :: NullOrUndefined (ChefConfiguration), "UseCustomCookbooks" :: NullOrUndefined (Boolean), "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean), "CustomCookbooksSource" :: NullOrUndefined (Source), "DefaultSshKeyName" :: NullOrUndefined (String), "CreatedAt" :: NullOrUndefined (DateTime), "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType), "AgentVersion" :: NullOrUndefined (String) }
+  = Stack { "StackId" :: Maybe (String), "Name" :: Maybe (String), "Arn" :: Maybe (String), "Region" :: Maybe (String), "VpcId" :: Maybe (String), "Attributes" :: Maybe (StackAttributes), "ServiceRoleArn" :: Maybe (String), "DefaultInstanceProfileArn" :: Maybe (String), "DefaultOs" :: Maybe (String), "HostnameTheme" :: Maybe (String), "DefaultAvailabilityZone" :: Maybe (String), "DefaultSubnetId" :: Maybe (String), "CustomJson" :: Maybe (String), "ConfigurationManager" :: Maybe (StackConfigurationManager), "ChefConfiguration" :: Maybe (ChefConfiguration), "UseCustomCookbooks" :: Maybe (Boolean), "UseOpsworksSecurityGroups" :: Maybe (Boolean), "CustomCookbooksSource" :: Maybe (Source), "DefaultSshKeyName" :: Maybe (String), "CreatedAt" :: Maybe (DateTime), "DefaultRootDeviceType" :: Maybe (RootDeviceType), "AgentVersion" :: Maybe (String) }
 ```
 
 <p>Describes a stack.</p>
@@ -4905,7 +4905,7 @@ Constructs Stack from required parameters
 #### `newStack'`
 
 ``` purescript
-newStack' :: ({ "StackId" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "Arn" :: NullOrUndefined (String), "Region" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (StackAttributes), "ServiceRoleArn" :: NullOrUndefined (String), "DefaultInstanceProfileArn" :: NullOrUndefined (String), "DefaultOs" :: NullOrUndefined (String), "HostnameTheme" :: NullOrUndefined (String), "DefaultAvailabilityZone" :: NullOrUndefined (String), "DefaultSubnetId" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager), "ChefConfiguration" :: NullOrUndefined (ChefConfiguration), "UseCustomCookbooks" :: NullOrUndefined (Boolean), "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean), "CustomCookbooksSource" :: NullOrUndefined (Source), "DefaultSshKeyName" :: NullOrUndefined (String), "CreatedAt" :: NullOrUndefined (DateTime), "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType), "AgentVersion" :: NullOrUndefined (String) } -> { "StackId" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "Arn" :: NullOrUndefined (String), "Region" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (StackAttributes), "ServiceRoleArn" :: NullOrUndefined (String), "DefaultInstanceProfileArn" :: NullOrUndefined (String), "DefaultOs" :: NullOrUndefined (String), "HostnameTheme" :: NullOrUndefined (String), "DefaultAvailabilityZone" :: NullOrUndefined (String), "DefaultSubnetId" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager), "ChefConfiguration" :: NullOrUndefined (ChefConfiguration), "UseCustomCookbooks" :: NullOrUndefined (Boolean), "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean), "CustomCookbooksSource" :: NullOrUndefined (Source), "DefaultSshKeyName" :: NullOrUndefined (String), "CreatedAt" :: NullOrUndefined (DateTime), "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType), "AgentVersion" :: NullOrUndefined (String) }) -> Stack
+newStack' :: ({ "StackId" :: Maybe (String), "Name" :: Maybe (String), "Arn" :: Maybe (String), "Region" :: Maybe (String), "VpcId" :: Maybe (String), "Attributes" :: Maybe (StackAttributes), "ServiceRoleArn" :: Maybe (String), "DefaultInstanceProfileArn" :: Maybe (String), "DefaultOs" :: Maybe (String), "HostnameTheme" :: Maybe (String), "DefaultAvailabilityZone" :: Maybe (String), "DefaultSubnetId" :: Maybe (String), "CustomJson" :: Maybe (String), "ConfigurationManager" :: Maybe (StackConfigurationManager), "ChefConfiguration" :: Maybe (ChefConfiguration), "UseCustomCookbooks" :: Maybe (Boolean), "UseOpsworksSecurityGroups" :: Maybe (Boolean), "CustomCookbooksSource" :: Maybe (Source), "DefaultSshKeyName" :: Maybe (String), "CreatedAt" :: Maybe (DateTime), "DefaultRootDeviceType" :: Maybe (RootDeviceType), "AgentVersion" :: Maybe (String) } -> { "StackId" :: Maybe (String), "Name" :: Maybe (String), "Arn" :: Maybe (String), "Region" :: Maybe (String), "VpcId" :: Maybe (String), "Attributes" :: Maybe (StackAttributes), "ServiceRoleArn" :: Maybe (String), "DefaultInstanceProfileArn" :: Maybe (String), "DefaultOs" :: Maybe (String), "HostnameTheme" :: Maybe (String), "DefaultAvailabilityZone" :: Maybe (String), "DefaultSubnetId" :: Maybe (String), "CustomJson" :: Maybe (String), "ConfigurationManager" :: Maybe (StackConfigurationManager), "ChefConfiguration" :: Maybe (ChefConfiguration), "UseCustomCookbooks" :: Maybe (Boolean), "UseOpsworksSecurityGroups" :: Maybe (Boolean), "CustomCookbooksSource" :: Maybe (Source), "DefaultSshKeyName" :: Maybe (String), "CreatedAt" :: Maybe (DateTime), "DefaultRootDeviceType" :: Maybe (RootDeviceType), "AgentVersion" :: Maybe (String) }) -> Stack
 ```
 
 Constructs Stack's fields from required parameters
@@ -4946,7 +4946,7 @@ Encode StackAttributesKeys
 
 ``` purescript
 newtype StackConfigurationManager
-  = StackConfigurationManager { "Name" :: NullOrUndefined (String), "Version" :: NullOrUndefined (String) }
+  = StackConfigurationManager { "Name" :: Maybe (String), "Version" :: Maybe (String) }
 ```
 
 <p>Describes the configuration manager.</p>
@@ -4971,7 +4971,7 @@ Constructs StackConfigurationManager from required parameters
 #### `newStackConfigurationManager'`
 
 ``` purescript
-newStackConfigurationManager' :: ({ "Name" :: NullOrUndefined (String), "Version" :: NullOrUndefined (String) } -> { "Name" :: NullOrUndefined (String), "Version" :: NullOrUndefined (String) }) -> StackConfigurationManager
+newStackConfigurationManager' :: ({ "Name" :: Maybe (String), "Version" :: Maybe (String) } -> { "Name" :: Maybe (String), "Version" :: Maybe (String) }) -> StackConfigurationManager
 ```
 
 Constructs StackConfigurationManager's fields from required parameters
@@ -4980,7 +4980,7 @@ Constructs StackConfigurationManager's fields from required parameters
 
 ``` purescript
 newtype StackSummary
-  = StackSummary { "StackId" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "Arn" :: NullOrUndefined (String), "LayersCount" :: NullOrUndefined (Int), "AppsCount" :: NullOrUndefined (Int), "InstancesCount" :: NullOrUndefined (InstancesCount) }
+  = StackSummary { "StackId" :: Maybe (String), "Name" :: Maybe (String), "Arn" :: Maybe (String), "LayersCount" :: Maybe (Int), "AppsCount" :: Maybe (Int), "InstancesCount" :: Maybe (InstancesCount) }
 ```
 
 <p>Summarizes the number of layers, instances, and apps in a stack.</p>
@@ -5005,7 +5005,7 @@ Constructs StackSummary from required parameters
 #### `newStackSummary'`
 
 ``` purescript
-newStackSummary' :: ({ "StackId" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "Arn" :: NullOrUndefined (String), "LayersCount" :: NullOrUndefined (Int), "AppsCount" :: NullOrUndefined (Int), "InstancesCount" :: NullOrUndefined (InstancesCount) } -> { "StackId" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "Arn" :: NullOrUndefined (String), "LayersCount" :: NullOrUndefined (Int), "AppsCount" :: NullOrUndefined (Int), "InstancesCount" :: NullOrUndefined (InstancesCount) }) -> StackSummary
+newStackSummary' :: ({ "StackId" :: Maybe (String), "Name" :: Maybe (String), "Arn" :: Maybe (String), "LayersCount" :: Maybe (Int), "AppsCount" :: Maybe (Int), "InstancesCount" :: Maybe (InstancesCount) } -> { "StackId" :: Maybe (String), "Name" :: Maybe (String), "Arn" :: Maybe (String), "LayersCount" :: Maybe (Int), "AppsCount" :: Maybe (Int), "InstancesCount" :: Maybe (InstancesCount) }) -> StackSummary
 ```
 
 Constructs StackSummary's fields from required parameters
@@ -5094,7 +5094,7 @@ Constructs StartStackRequest's fields from required parameters
 
 ``` purescript
 newtype StopInstanceRequest
-  = StopInstanceRequest { "InstanceId" :: String, "Force" :: NullOrUndefined (Boolean) }
+  = StopInstanceRequest { "InstanceId" :: String, "Force" :: Maybe (Boolean) }
 ```
 
 ##### Instances
@@ -5117,7 +5117,7 @@ Constructs StopInstanceRequest from required parameters
 #### `newStopInstanceRequest'`
 
 ``` purescript
-newStopInstanceRequest' :: String -> ({ "InstanceId" :: String, "Force" :: NullOrUndefined (Boolean) } -> { "InstanceId" :: String, "Force" :: NullOrUndefined (Boolean) }) -> StopInstanceRequest
+newStopInstanceRequest' :: String -> ({ "InstanceId" :: String, "Force" :: Maybe (Boolean) } -> { "InstanceId" :: String, "Force" :: Maybe (Boolean) }) -> StopInstanceRequest
 ```
 
 Constructs StopInstanceRequest's fields from required parameters
@@ -5286,7 +5286,7 @@ Encode Tags
 
 ``` purescript
 newtype TemporaryCredential
-  = TemporaryCredential { "Username" :: NullOrUndefined (String), "Password" :: NullOrUndefined (String), "ValidForInMinutes" :: NullOrUndefined (Int), "InstanceId" :: NullOrUndefined (String) }
+  = TemporaryCredential { "Username" :: Maybe (String), "Password" :: Maybe (String), "ValidForInMinutes" :: Maybe (Int), "InstanceId" :: Maybe (String) }
 ```
 
 <p>Contains the data needed by RDP clients such as the Microsoft Remote Desktop Connection to log in to the instance.</p>
@@ -5311,7 +5311,7 @@ Constructs TemporaryCredential from required parameters
 #### `newTemporaryCredential'`
 
 ``` purescript
-newTemporaryCredential' :: ({ "Username" :: NullOrUndefined (String), "Password" :: NullOrUndefined (String), "ValidForInMinutes" :: NullOrUndefined (Int), "InstanceId" :: NullOrUndefined (String) } -> { "Username" :: NullOrUndefined (String), "Password" :: NullOrUndefined (String), "ValidForInMinutes" :: NullOrUndefined (Int), "InstanceId" :: NullOrUndefined (String) }) -> TemporaryCredential
+newTemporaryCredential' :: ({ "Username" :: Maybe (String), "Password" :: Maybe (String), "ValidForInMinutes" :: Maybe (Int), "InstanceId" :: Maybe (String) } -> { "Username" :: Maybe (String), "Password" :: Maybe (String), "ValidForInMinutes" :: Maybe (Int), "InstanceId" :: Maybe (String) }) -> TemporaryCredential
 ```
 
 Constructs TemporaryCredential's fields from required parameters
@@ -5320,7 +5320,7 @@ Constructs TemporaryCredential's fields from required parameters
 
 ``` purescript
 newtype TimeBasedAutoScalingConfiguration
-  = TimeBasedAutoScalingConfiguration { "InstanceId" :: NullOrUndefined (String), "AutoScalingSchedule" :: NullOrUndefined (WeeklyAutoScalingSchedule) }
+  = TimeBasedAutoScalingConfiguration { "InstanceId" :: Maybe (String), "AutoScalingSchedule" :: Maybe (WeeklyAutoScalingSchedule) }
 ```
 
 <p>Describes an instance's time-based auto scaling configuration.</p>
@@ -5345,7 +5345,7 @@ Constructs TimeBasedAutoScalingConfiguration from required parameters
 #### `newTimeBasedAutoScalingConfiguration'`
 
 ``` purescript
-newTimeBasedAutoScalingConfiguration' :: ({ "InstanceId" :: NullOrUndefined (String), "AutoScalingSchedule" :: NullOrUndefined (WeeklyAutoScalingSchedule) } -> { "InstanceId" :: NullOrUndefined (String), "AutoScalingSchedule" :: NullOrUndefined (WeeklyAutoScalingSchedule) }) -> TimeBasedAutoScalingConfiguration
+newTimeBasedAutoScalingConfiguration' :: ({ "InstanceId" :: Maybe (String), "AutoScalingSchedule" :: Maybe (WeeklyAutoScalingSchedule) } -> { "InstanceId" :: Maybe (String), "AutoScalingSchedule" :: Maybe (WeeklyAutoScalingSchedule) }) -> TimeBasedAutoScalingConfiguration
 ```
 
 Constructs TimeBasedAutoScalingConfiguration's fields from required parameters
@@ -5466,7 +5466,7 @@ Constructs UntagResourceRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateAppRequest
-  = UpdateAppRequest { "AppId" :: String, "Name" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "DataSources" :: NullOrUndefined (DataSources), "Type" :: NullOrUndefined (AppType), "AppSource" :: NullOrUndefined (Source), "Domains" :: NullOrUndefined (Strings), "EnableSsl" :: NullOrUndefined (Boolean), "SslConfiguration" :: NullOrUndefined (SslConfiguration), "Attributes" :: NullOrUndefined (AppAttributes), "Environment" :: NullOrUndefined (EnvironmentVariables) }
+  = UpdateAppRequest { "AppId" :: String, "Name" :: Maybe (String), "Description" :: Maybe (String), "DataSources" :: Maybe (DataSources), "Type" :: Maybe (AppType), "AppSource" :: Maybe (Source), "Domains" :: Maybe (Strings), "EnableSsl" :: Maybe (Boolean), "SslConfiguration" :: Maybe (SslConfiguration), "Attributes" :: Maybe (AppAttributes), "Environment" :: Maybe (EnvironmentVariables) }
 ```
 
 ##### Instances
@@ -5489,7 +5489,7 @@ Constructs UpdateAppRequest from required parameters
 #### `newUpdateAppRequest'`
 
 ``` purescript
-newUpdateAppRequest' :: String -> ({ "AppId" :: String, "Name" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "DataSources" :: NullOrUndefined (DataSources), "Type" :: NullOrUndefined (AppType), "AppSource" :: NullOrUndefined (Source), "Domains" :: NullOrUndefined (Strings), "EnableSsl" :: NullOrUndefined (Boolean), "SslConfiguration" :: NullOrUndefined (SslConfiguration), "Attributes" :: NullOrUndefined (AppAttributes), "Environment" :: NullOrUndefined (EnvironmentVariables) } -> { "AppId" :: String, "Name" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "DataSources" :: NullOrUndefined (DataSources), "Type" :: NullOrUndefined (AppType), "AppSource" :: NullOrUndefined (Source), "Domains" :: NullOrUndefined (Strings), "EnableSsl" :: NullOrUndefined (Boolean), "SslConfiguration" :: NullOrUndefined (SslConfiguration), "Attributes" :: NullOrUndefined (AppAttributes), "Environment" :: NullOrUndefined (EnvironmentVariables) }) -> UpdateAppRequest
+newUpdateAppRequest' :: String -> ({ "AppId" :: String, "Name" :: Maybe (String), "Description" :: Maybe (String), "DataSources" :: Maybe (DataSources), "Type" :: Maybe (AppType), "AppSource" :: Maybe (Source), "Domains" :: Maybe (Strings), "EnableSsl" :: Maybe (Boolean), "SslConfiguration" :: Maybe (SslConfiguration), "Attributes" :: Maybe (AppAttributes), "Environment" :: Maybe (EnvironmentVariables) } -> { "AppId" :: String, "Name" :: Maybe (String), "Description" :: Maybe (String), "DataSources" :: Maybe (DataSources), "Type" :: Maybe (AppType), "AppSource" :: Maybe (Source), "Domains" :: Maybe (Strings), "EnableSsl" :: Maybe (Boolean), "SslConfiguration" :: Maybe (SslConfiguration), "Attributes" :: Maybe (AppAttributes), "Environment" :: Maybe (EnvironmentVariables) }) -> UpdateAppRequest
 ```
 
 Constructs UpdateAppRequest's fields from required parameters
@@ -5498,7 +5498,7 @@ Constructs UpdateAppRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateElasticIpRequest
-  = UpdateElasticIpRequest { "ElasticIp" :: String, "Name" :: NullOrUndefined (String) }
+  = UpdateElasticIpRequest { "ElasticIp" :: String, "Name" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -5521,7 +5521,7 @@ Constructs UpdateElasticIpRequest from required parameters
 #### `newUpdateElasticIpRequest'`
 
 ``` purescript
-newUpdateElasticIpRequest' :: String -> ({ "ElasticIp" :: String, "Name" :: NullOrUndefined (String) } -> { "ElasticIp" :: String, "Name" :: NullOrUndefined (String) }) -> UpdateElasticIpRequest
+newUpdateElasticIpRequest' :: String -> ({ "ElasticIp" :: String, "Name" :: Maybe (String) } -> { "ElasticIp" :: String, "Name" :: Maybe (String) }) -> UpdateElasticIpRequest
 ```
 
 Constructs UpdateElasticIpRequest's fields from required parameters
@@ -5530,7 +5530,7 @@ Constructs UpdateElasticIpRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateInstanceRequest
-  = UpdateInstanceRequest { "InstanceId" :: String, "LayerIds" :: NullOrUndefined (Strings), "InstanceType" :: NullOrUndefined (String), "AutoScalingType" :: NullOrUndefined (AutoScalingType), "Hostname" :: NullOrUndefined (String), "Os" :: NullOrUndefined (String), "AmiId" :: NullOrUndefined (String), "SshKeyName" :: NullOrUndefined (String), "Architecture" :: NullOrUndefined (Architecture), "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean), "EbsOptimized" :: NullOrUndefined (Boolean), "AgentVersion" :: NullOrUndefined (String) }
+  = UpdateInstanceRequest { "InstanceId" :: String, "LayerIds" :: Maybe (Strings), "InstanceType" :: Maybe (String), "AutoScalingType" :: Maybe (AutoScalingType), "Hostname" :: Maybe (String), "Os" :: Maybe (String), "AmiId" :: Maybe (String), "SshKeyName" :: Maybe (String), "Architecture" :: Maybe (Architecture), "InstallUpdatesOnBoot" :: Maybe (Boolean), "EbsOptimized" :: Maybe (Boolean), "AgentVersion" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -5553,7 +5553,7 @@ Constructs UpdateInstanceRequest from required parameters
 #### `newUpdateInstanceRequest'`
 
 ``` purescript
-newUpdateInstanceRequest' :: String -> ({ "InstanceId" :: String, "LayerIds" :: NullOrUndefined (Strings), "InstanceType" :: NullOrUndefined (String), "AutoScalingType" :: NullOrUndefined (AutoScalingType), "Hostname" :: NullOrUndefined (String), "Os" :: NullOrUndefined (String), "AmiId" :: NullOrUndefined (String), "SshKeyName" :: NullOrUndefined (String), "Architecture" :: NullOrUndefined (Architecture), "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean), "EbsOptimized" :: NullOrUndefined (Boolean), "AgentVersion" :: NullOrUndefined (String) } -> { "InstanceId" :: String, "LayerIds" :: NullOrUndefined (Strings), "InstanceType" :: NullOrUndefined (String), "AutoScalingType" :: NullOrUndefined (AutoScalingType), "Hostname" :: NullOrUndefined (String), "Os" :: NullOrUndefined (String), "AmiId" :: NullOrUndefined (String), "SshKeyName" :: NullOrUndefined (String), "Architecture" :: NullOrUndefined (Architecture), "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean), "EbsOptimized" :: NullOrUndefined (Boolean), "AgentVersion" :: NullOrUndefined (String) }) -> UpdateInstanceRequest
+newUpdateInstanceRequest' :: String -> ({ "InstanceId" :: String, "LayerIds" :: Maybe (Strings), "InstanceType" :: Maybe (String), "AutoScalingType" :: Maybe (AutoScalingType), "Hostname" :: Maybe (String), "Os" :: Maybe (String), "AmiId" :: Maybe (String), "SshKeyName" :: Maybe (String), "Architecture" :: Maybe (Architecture), "InstallUpdatesOnBoot" :: Maybe (Boolean), "EbsOptimized" :: Maybe (Boolean), "AgentVersion" :: Maybe (String) } -> { "InstanceId" :: String, "LayerIds" :: Maybe (Strings), "InstanceType" :: Maybe (String), "AutoScalingType" :: Maybe (AutoScalingType), "Hostname" :: Maybe (String), "Os" :: Maybe (String), "AmiId" :: Maybe (String), "SshKeyName" :: Maybe (String), "Architecture" :: Maybe (Architecture), "InstallUpdatesOnBoot" :: Maybe (Boolean), "EbsOptimized" :: Maybe (Boolean), "AgentVersion" :: Maybe (String) }) -> UpdateInstanceRequest
 ```
 
 Constructs UpdateInstanceRequest's fields from required parameters
@@ -5562,7 +5562,7 @@ Constructs UpdateInstanceRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateLayerRequest
-  = UpdateLayerRequest { "LayerId" :: String, "Name" :: NullOrUndefined (String), "Shortname" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (LayerAttributes), "CloudWatchLogsConfiguration" :: NullOrUndefined (CloudWatchLogsConfiguration), "CustomInstanceProfileArn" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "CustomSecurityGroupIds" :: NullOrUndefined (Strings), "Packages" :: NullOrUndefined (Strings), "VolumeConfigurations" :: NullOrUndefined (VolumeConfigurations), "EnableAutoHealing" :: NullOrUndefined (Boolean), "AutoAssignElasticIps" :: NullOrUndefined (Boolean), "AutoAssignPublicIps" :: NullOrUndefined (Boolean), "CustomRecipes" :: NullOrUndefined (Recipes), "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean), "UseEbsOptimizedInstances" :: NullOrUndefined (Boolean), "LifecycleEventConfiguration" :: NullOrUndefined (LifecycleEventConfiguration) }
+  = UpdateLayerRequest { "LayerId" :: String, "Name" :: Maybe (String), "Shortname" :: Maybe (String), "Attributes" :: Maybe (LayerAttributes), "CloudWatchLogsConfiguration" :: Maybe (CloudWatchLogsConfiguration), "CustomInstanceProfileArn" :: Maybe (String), "CustomJson" :: Maybe (String), "CustomSecurityGroupIds" :: Maybe (Strings), "Packages" :: Maybe (Strings), "VolumeConfigurations" :: Maybe (VolumeConfigurations), "EnableAutoHealing" :: Maybe (Boolean), "AutoAssignElasticIps" :: Maybe (Boolean), "AutoAssignPublicIps" :: Maybe (Boolean), "CustomRecipes" :: Maybe (Recipes), "InstallUpdatesOnBoot" :: Maybe (Boolean), "UseEbsOptimizedInstances" :: Maybe (Boolean), "LifecycleEventConfiguration" :: Maybe (LifecycleEventConfiguration) }
 ```
 
 ##### Instances
@@ -5585,7 +5585,7 @@ Constructs UpdateLayerRequest from required parameters
 #### `newUpdateLayerRequest'`
 
 ``` purescript
-newUpdateLayerRequest' :: String -> ({ "LayerId" :: String, "Name" :: NullOrUndefined (String), "Shortname" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (LayerAttributes), "CloudWatchLogsConfiguration" :: NullOrUndefined (CloudWatchLogsConfiguration), "CustomInstanceProfileArn" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "CustomSecurityGroupIds" :: NullOrUndefined (Strings), "Packages" :: NullOrUndefined (Strings), "VolumeConfigurations" :: NullOrUndefined (VolumeConfigurations), "EnableAutoHealing" :: NullOrUndefined (Boolean), "AutoAssignElasticIps" :: NullOrUndefined (Boolean), "AutoAssignPublicIps" :: NullOrUndefined (Boolean), "CustomRecipes" :: NullOrUndefined (Recipes), "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean), "UseEbsOptimizedInstances" :: NullOrUndefined (Boolean), "LifecycleEventConfiguration" :: NullOrUndefined (LifecycleEventConfiguration) } -> { "LayerId" :: String, "Name" :: NullOrUndefined (String), "Shortname" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (LayerAttributes), "CloudWatchLogsConfiguration" :: NullOrUndefined (CloudWatchLogsConfiguration), "CustomInstanceProfileArn" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "CustomSecurityGroupIds" :: NullOrUndefined (Strings), "Packages" :: NullOrUndefined (Strings), "VolumeConfigurations" :: NullOrUndefined (VolumeConfigurations), "EnableAutoHealing" :: NullOrUndefined (Boolean), "AutoAssignElasticIps" :: NullOrUndefined (Boolean), "AutoAssignPublicIps" :: NullOrUndefined (Boolean), "CustomRecipes" :: NullOrUndefined (Recipes), "InstallUpdatesOnBoot" :: NullOrUndefined (Boolean), "UseEbsOptimizedInstances" :: NullOrUndefined (Boolean), "LifecycleEventConfiguration" :: NullOrUndefined (LifecycleEventConfiguration) }) -> UpdateLayerRequest
+newUpdateLayerRequest' :: String -> ({ "LayerId" :: String, "Name" :: Maybe (String), "Shortname" :: Maybe (String), "Attributes" :: Maybe (LayerAttributes), "CloudWatchLogsConfiguration" :: Maybe (CloudWatchLogsConfiguration), "CustomInstanceProfileArn" :: Maybe (String), "CustomJson" :: Maybe (String), "CustomSecurityGroupIds" :: Maybe (Strings), "Packages" :: Maybe (Strings), "VolumeConfigurations" :: Maybe (VolumeConfigurations), "EnableAutoHealing" :: Maybe (Boolean), "AutoAssignElasticIps" :: Maybe (Boolean), "AutoAssignPublicIps" :: Maybe (Boolean), "CustomRecipes" :: Maybe (Recipes), "InstallUpdatesOnBoot" :: Maybe (Boolean), "UseEbsOptimizedInstances" :: Maybe (Boolean), "LifecycleEventConfiguration" :: Maybe (LifecycleEventConfiguration) } -> { "LayerId" :: String, "Name" :: Maybe (String), "Shortname" :: Maybe (String), "Attributes" :: Maybe (LayerAttributes), "CloudWatchLogsConfiguration" :: Maybe (CloudWatchLogsConfiguration), "CustomInstanceProfileArn" :: Maybe (String), "CustomJson" :: Maybe (String), "CustomSecurityGroupIds" :: Maybe (Strings), "Packages" :: Maybe (Strings), "VolumeConfigurations" :: Maybe (VolumeConfigurations), "EnableAutoHealing" :: Maybe (Boolean), "AutoAssignElasticIps" :: Maybe (Boolean), "AutoAssignPublicIps" :: Maybe (Boolean), "CustomRecipes" :: Maybe (Recipes), "InstallUpdatesOnBoot" :: Maybe (Boolean), "UseEbsOptimizedInstances" :: Maybe (Boolean), "LifecycleEventConfiguration" :: Maybe (LifecycleEventConfiguration) }) -> UpdateLayerRequest
 ```
 
 Constructs UpdateLayerRequest's fields from required parameters
@@ -5594,7 +5594,7 @@ Constructs UpdateLayerRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateMyUserProfileRequest
-  = UpdateMyUserProfileRequest { "SshPublicKey" :: NullOrUndefined (String) }
+  = UpdateMyUserProfileRequest { "SshPublicKey" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -5617,7 +5617,7 @@ Constructs UpdateMyUserProfileRequest from required parameters
 #### `newUpdateMyUserProfileRequest'`
 
 ``` purescript
-newUpdateMyUserProfileRequest' :: ({ "SshPublicKey" :: NullOrUndefined (String) } -> { "SshPublicKey" :: NullOrUndefined (String) }) -> UpdateMyUserProfileRequest
+newUpdateMyUserProfileRequest' :: ({ "SshPublicKey" :: Maybe (String) } -> { "SshPublicKey" :: Maybe (String) }) -> UpdateMyUserProfileRequest
 ```
 
 Constructs UpdateMyUserProfileRequest's fields from required parameters
@@ -5626,7 +5626,7 @@ Constructs UpdateMyUserProfileRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateRdsDbInstanceRequest
-  = UpdateRdsDbInstanceRequest { "RdsDbInstanceArn" :: String, "DbUser" :: NullOrUndefined (String), "DbPassword" :: NullOrUndefined (String) }
+  = UpdateRdsDbInstanceRequest { "RdsDbInstanceArn" :: String, "DbUser" :: Maybe (String), "DbPassword" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -5649,7 +5649,7 @@ Constructs UpdateRdsDbInstanceRequest from required parameters
 #### `newUpdateRdsDbInstanceRequest'`
 
 ``` purescript
-newUpdateRdsDbInstanceRequest' :: String -> ({ "RdsDbInstanceArn" :: String, "DbUser" :: NullOrUndefined (String), "DbPassword" :: NullOrUndefined (String) } -> { "RdsDbInstanceArn" :: String, "DbUser" :: NullOrUndefined (String), "DbPassword" :: NullOrUndefined (String) }) -> UpdateRdsDbInstanceRequest
+newUpdateRdsDbInstanceRequest' :: String -> ({ "RdsDbInstanceArn" :: String, "DbUser" :: Maybe (String), "DbPassword" :: Maybe (String) } -> { "RdsDbInstanceArn" :: String, "DbUser" :: Maybe (String), "DbPassword" :: Maybe (String) }) -> UpdateRdsDbInstanceRequest
 ```
 
 Constructs UpdateRdsDbInstanceRequest's fields from required parameters
@@ -5658,7 +5658,7 @@ Constructs UpdateRdsDbInstanceRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateStackRequest
-  = UpdateStackRequest { "StackId" :: String, "Name" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (StackAttributes), "ServiceRoleArn" :: NullOrUndefined (String), "DefaultInstanceProfileArn" :: NullOrUndefined (String), "DefaultOs" :: NullOrUndefined (String), "HostnameTheme" :: NullOrUndefined (String), "DefaultAvailabilityZone" :: NullOrUndefined (String), "DefaultSubnetId" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager), "ChefConfiguration" :: NullOrUndefined (ChefConfiguration), "UseCustomCookbooks" :: NullOrUndefined (Boolean), "CustomCookbooksSource" :: NullOrUndefined (Source), "DefaultSshKeyName" :: NullOrUndefined (String), "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType), "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean), "AgentVersion" :: NullOrUndefined (String) }
+  = UpdateStackRequest { "StackId" :: String, "Name" :: Maybe (String), "Attributes" :: Maybe (StackAttributes), "ServiceRoleArn" :: Maybe (String), "DefaultInstanceProfileArn" :: Maybe (String), "DefaultOs" :: Maybe (String), "HostnameTheme" :: Maybe (String), "DefaultAvailabilityZone" :: Maybe (String), "DefaultSubnetId" :: Maybe (String), "CustomJson" :: Maybe (String), "ConfigurationManager" :: Maybe (StackConfigurationManager), "ChefConfiguration" :: Maybe (ChefConfiguration), "UseCustomCookbooks" :: Maybe (Boolean), "CustomCookbooksSource" :: Maybe (Source), "DefaultSshKeyName" :: Maybe (String), "DefaultRootDeviceType" :: Maybe (RootDeviceType), "UseOpsworksSecurityGroups" :: Maybe (Boolean), "AgentVersion" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -5681,7 +5681,7 @@ Constructs UpdateStackRequest from required parameters
 #### `newUpdateStackRequest'`
 
 ``` purescript
-newUpdateStackRequest' :: String -> ({ "StackId" :: String, "Name" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (StackAttributes), "ServiceRoleArn" :: NullOrUndefined (String), "DefaultInstanceProfileArn" :: NullOrUndefined (String), "DefaultOs" :: NullOrUndefined (String), "HostnameTheme" :: NullOrUndefined (String), "DefaultAvailabilityZone" :: NullOrUndefined (String), "DefaultSubnetId" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager), "ChefConfiguration" :: NullOrUndefined (ChefConfiguration), "UseCustomCookbooks" :: NullOrUndefined (Boolean), "CustomCookbooksSource" :: NullOrUndefined (Source), "DefaultSshKeyName" :: NullOrUndefined (String), "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType), "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean), "AgentVersion" :: NullOrUndefined (String) } -> { "StackId" :: String, "Name" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (StackAttributes), "ServiceRoleArn" :: NullOrUndefined (String), "DefaultInstanceProfileArn" :: NullOrUndefined (String), "DefaultOs" :: NullOrUndefined (String), "HostnameTheme" :: NullOrUndefined (String), "DefaultAvailabilityZone" :: NullOrUndefined (String), "DefaultSubnetId" :: NullOrUndefined (String), "CustomJson" :: NullOrUndefined (String), "ConfigurationManager" :: NullOrUndefined (StackConfigurationManager), "ChefConfiguration" :: NullOrUndefined (ChefConfiguration), "UseCustomCookbooks" :: NullOrUndefined (Boolean), "CustomCookbooksSource" :: NullOrUndefined (Source), "DefaultSshKeyName" :: NullOrUndefined (String), "DefaultRootDeviceType" :: NullOrUndefined (RootDeviceType), "UseOpsworksSecurityGroups" :: NullOrUndefined (Boolean), "AgentVersion" :: NullOrUndefined (String) }) -> UpdateStackRequest
+newUpdateStackRequest' :: String -> ({ "StackId" :: String, "Name" :: Maybe (String), "Attributes" :: Maybe (StackAttributes), "ServiceRoleArn" :: Maybe (String), "DefaultInstanceProfileArn" :: Maybe (String), "DefaultOs" :: Maybe (String), "HostnameTheme" :: Maybe (String), "DefaultAvailabilityZone" :: Maybe (String), "DefaultSubnetId" :: Maybe (String), "CustomJson" :: Maybe (String), "ConfigurationManager" :: Maybe (StackConfigurationManager), "ChefConfiguration" :: Maybe (ChefConfiguration), "UseCustomCookbooks" :: Maybe (Boolean), "CustomCookbooksSource" :: Maybe (Source), "DefaultSshKeyName" :: Maybe (String), "DefaultRootDeviceType" :: Maybe (RootDeviceType), "UseOpsworksSecurityGroups" :: Maybe (Boolean), "AgentVersion" :: Maybe (String) } -> { "StackId" :: String, "Name" :: Maybe (String), "Attributes" :: Maybe (StackAttributes), "ServiceRoleArn" :: Maybe (String), "DefaultInstanceProfileArn" :: Maybe (String), "DefaultOs" :: Maybe (String), "HostnameTheme" :: Maybe (String), "DefaultAvailabilityZone" :: Maybe (String), "DefaultSubnetId" :: Maybe (String), "CustomJson" :: Maybe (String), "ConfigurationManager" :: Maybe (StackConfigurationManager), "ChefConfiguration" :: Maybe (ChefConfiguration), "UseCustomCookbooks" :: Maybe (Boolean), "CustomCookbooksSource" :: Maybe (Source), "DefaultSshKeyName" :: Maybe (String), "DefaultRootDeviceType" :: Maybe (RootDeviceType), "UseOpsworksSecurityGroups" :: Maybe (Boolean), "AgentVersion" :: Maybe (String) }) -> UpdateStackRequest
 ```
 
 Constructs UpdateStackRequest's fields from required parameters
@@ -5690,7 +5690,7 @@ Constructs UpdateStackRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateUserProfileRequest
-  = UpdateUserProfileRequest { "IamUserArn" :: String, "SshUsername" :: NullOrUndefined (String), "SshPublicKey" :: NullOrUndefined (String), "AllowSelfManagement" :: NullOrUndefined (Boolean) }
+  = UpdateUserProfileRequest { "IamUserArn" :: String, "SshUsername" :: Maybe (String), "SshPublicKey" :: Maybe (String), "AllowSelfManagement" :: Maybe (Boolean) }
 ```
 
 ##### Instances
@@ -5713,7 +5713,7 @@ Constructs UpdateUserProfileRequest from required parameters
 #### `newUpdateUserProfileRequest'`
 
 ``` purescript
-newUpdateUserProfileRequest' :: String -> ({ "IamUserArn" :: String, "SshUsername" :: NullOrUndefined (String), "SshPublicKey" :: NullOrUndefined (String), "AllowSelfManagement" :: NullOrUndefined (Boolean) } -> { "IamUserArn" :: String, "SshUsername" :: NullOrUndefined (String), "SshPublicKey" :: NullOrUndefined (String), "AllowSelfManagement" :: NullOrUndefined (Boolean) }) -> UpdateUserProfileRequest
+newUpdateUserProfileRequest' :: String -> ({ "IamUserArn" :: String, "SshUsername" :: Maybe (String), "SshPublicKey" :: Maybe (String), "AllowSelfManagement" :: Maybe (Boolean) } -> { "IamUserArn" :: String, "SshUsername" :: Maybe (String), "SshPublicKey" :: Maybe (String), "AllowSelfManagement" :: Maybe (Boolean) }) -> UpdateUserProfileRequest
 ```
 
 Constructs UpdateUserProfileRequest's fields from required parameters
@@ -5722,7 +5722,7 @@ Constructs UpdateUserProfileRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateVolumeRequest
-  = UpdateVolumeRequest { "VolumeId" :: String, "Name" :: NullOrUndefined (String), "MountPoint" :: NullOrUndefined (String) }
+  = UpdateVolumeRequest { "VolumeId" :: String, "Name" :: Maybe (String), "MountPoint" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -5745,7 +5745,7 @@ Constructs UpdateVolumeRequest from required parameters
 #### `newUpdateVolumeRequest'`
 
 ``` purescript
-newUpdateVolumeRequest' :: String -> ({ "VolumeId" :: String, "Name" :: NullOrUndefined (String), "MountPoint" :: NullOrUndefined (String) } -> { "VolumeId" :: String, "Name" :: NullOrUndefined (String), "MountPoint" :: NullOrUndefined (String) }) -> UpdateVolumeRequest
+newUpdateVolumeRequest' :: String -> ({ "VolumeId" :: String, "Name" :: Maybe (String), "MountPoint" :: Maybe (String) } -> { "VolumeId" :: String, "Name" :: Maybe (String), "MountPoint" :: Maybe (String) }) -> UpdateVolumeRequest
 ```
 
 Constructs UpdateVolumeRequest's fields from required parameters
@@ -5754,7 +5754,7 @@ Constructs UpdateVolumeRequest's fields from required parameters
 
 ``` purescript
 newtype UserProfile
-  = UserProfile { "IamUserArn" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "SshUsername" :: NullOrUndefined (String), "SshPublicKey" :: NullOrUndefined (String), "AllowSelfManagement" :: NullOrUndefined (Boolean) }
+  = UserProfile { "IamUserArn" :: Maybe (String), "Name" :: Maybe (String), "SshUsername" :: Maybe (String), "SshPublicKey" :: Maybe (String), "AllowSelfManagement" :: Maybe (Boolean) }
 ```
 
 <p>Describes a user's SSH information.</p>
@@ -5779,7 +5779,7 @@ Constructs UserProfile from required parameters
 #### `newUserProfile'`
 
 ``` purescript
-newUserProfile' :: ({ "IamUserArn" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "SshUsername" :: NullOrUndefined (String), "SshPublicKey" :: NullOrUndefined (String), "AllowSelfManagement" :: NullOrUndefined (Boolean) } -> { "IamUserArn" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "SshUsername" :: NullOrUndefined (String), "SshPublicKey" :: NullOrUndefined (String), "AllowSelfManagement" :: NullOrUndefined (Boolean) }) -> UserProfile
+newUserProfile' :: ({ "IamUserArn" :: Maybe (String), "Name" :: Maybe (String), "SshUsername" :: Maybe (String), "SshPublicKey" :: Maybe (String), "AllowSelfManagement" :: Maybe (Boolean) } -> { "IamUserArn" :: Maybe (String), "Name" :: Maybe (String), "SshUsername" :: Maybe (String), "SshPublicKey" :: Maybe (String), "AllowSelfManagement" :: Maybe (Boolean) }) -> UserProfile
 ```
 
 Constructs UserProfile's fields from required parameters
@@ -5820,7 +5820,7 @@ Encode ValidForInMinutes
 
 ``` purescript
 newtype ValidationException
-  = ValidationException { message :: NullOrUndefined (String) }
+  = ValidationException { message :: Maybe (String) }
 ```
 
 <p>Indicates that a request was not valid.</p>
@@ -5845,7 +5845,7 @@ Constructs ValidationException from required parameters
 #### `newValidationException'`
 
 ``` purescript
-newValidationException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> ValidationException
+newValidationException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> ValidationException
 ```
 
 Constructs ValidationException's fields from required parameters
@@ -5870,7 +5870,7 @@ Encode VirtualizationType
 
 ``` purescript
 newtype Volume
-  = Volume { "VolumeId" :: NullOrUndefined (String), "Ec2VolumeId" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "RaidArrayId" :: NullOrUndefined (String), "InstanceId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "Size" :: NullOrUndefined (Int), "Device" :: NullOrUndefined (String), "MountPoint" :: NullOrUndefined (String), "Region" :: NullOrUndefined (String), "AvailabilityZone" :: NullOrUndefined (String), "VolumeType" :: NullOrUndefined (String), "Iops" :: NullOrUndefined (Int), "Encrypted" :: NullOrUndefined (Boolean) }
+  = Volume { "VolumeId" :: Maybe (String), "Ec2VolumeId" :: Maybe (String), "Name" :: Maybe (String), "RaidArrayId" :: Maybe (String), "InstanceId" :: Maybe (String), "Status" :: Maybe (String), "Size" :: Maybe (Int), "Device" :: Maybe (String), "MountPoint" :: Maybe (String), "Region" :: Maybe (String), "AvailabilityZone" :: Maybe (String), "VolumeType" :: Maybe (String), "Iops" :: Maybe (Int), "Encrypted" :: Maybe (Boolean) }
 ```
 
 <p>Describes an instance's Amazon EBS volume.</p>
@@ -5895,7 +5895,7 @@ Constructs Volume from required parameters
 #### `newVolume'`
 
 ``` purescript
-newVolume' :: ({ "VolumeId" :: NullOrUndefined (String), "Ec2VolumeId" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "RaidArrayId" :: NullOrUndefined (String), "InstanceId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "Size" :: NullOrUndefined (Int), "Device" :: NullOrUndefined (String), "MountPoint" :: NullOrUndefined (String), "Region" :: NullOrUndefined (String), "AvailabilityZone" :: NullOrUndefined (String), "VolumeType" :: NullOrUndefined (String), "Iops" :: NullOrUndefined (Int), "Encrypted" :: NullOrUndefined (Boolean) } -> { "VolumeId" :: NullOrUndefined (String), "Ec2VolumeId" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "RaidArrayId" :: NullOrUndefined (String), "InstanceId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "Size" :: NullOrUndefined (Int), "Device" :: NullOrUndefined (String), "MountPoint" :: NullOrUndefined (String), "Region" :: NullOrUndefined (String), "AvailabilityZone" :: NullOrUndefined (String), "VolumeType" :: NullOrUndefined (String), "Iops" :: NullOrUndefined (Int), "Encrypted" :: NullOrUndefined (Boolean) }) -> Volume
+newVolume' :: ({ "VolumeId" :: Maybe (String), "Ec2VolumeId" :: Maybe (String), "Name" :: Maybe (String), "RaidArrayId" :: Maybe (String), "InstanceId" :: Maybe (String), "Status" :: Maybe (String), "Size" :: Maybe (Int), "Device" :: Maybe (String), "MountPoint" :: Maybe (String), "Region" :: Maybe (String), "AvailabilityZone" :: Maybe (String), "VolumeType" :: Maybe (String), "Iops" :: Maybe (Int), "Encrypted" :: Maybe (Boolean) } -> { "VolumeId" :: Maybe (String), "Ec2VolumeId" :: Maybe (String), "Name" :: Maybe (String), "RaidArrayId" :: Maybe (String), "InstanceId" :: Maybe (String), "Status" :: Maybe (String), "Size" :: Maybe (Int), "Device" :: Maybe (String), "MountPoint" :: Maybe (String), "Region" :: Maybe (String), "AvailabilityZone" :: Maybe (String), "VolumeType" :: Maybe (String), "Iops" :: Maybe (Int), "Encrypted" :: Maybe (Boolean) }) -> Volume
 ```
 
 Constructs Volume's fields from required parameters
@@ -5904,7 +5904,7 @@ Constructs Volume's fields from required parameters
 
 ``` purescript
 newtype VolumeConfiguration
-  = VolumeConfiguration { "MountPoint" :: String, "RaidLevel" :: NullOrUndefined (Int), "NumberOfDisks" :: Int, "Size" :: Int, "VolumeType" :: NullOrUndefined (String), "Iops" :: NullOrUndefined (Int), "Encrypted" :: NullOrUndefined (Boolean) }
+  = VolumeConfiguration { "MountPoint" :: String, "RaidLevel" :: Maybe (Int), "NumberOfDisks" :: Int, "Size" :: Int, "VolumeType" :: Maybe (String), "Iops" :: Maybe (Int), "Encrypted" :: Maybe (Boolean) }
 ```
 
 <p>Describes an Amazon EBS volume configuration.</p>
@@ -5929,7 +5929,7 @@ Constructs VolumeConfiguration from required parameters
 #### `newVolumeConfiguration'`
 
 ``` purescript
-newVolumeConfiguration' :: String -> Int -> Int -> ({ "MountPoint" :: String, "RaidLevel" :: NullOrUndefined (Int), "NumberOfDisks" :: Int, "Size" :: Int, "VolumeType" :: NullOrUndefined (String), "Iops" :: NullOrUndefined (Int), "Encrypted" :: NullOrUndefined (Boolean) } -> { "MountPoint" :: String, "RaidLevel" :: NullOrUndefined (Int), "NumberOfDisks" :: Int, "Size" :: Int, "VolumeType" :: NullOrUndefined (String), "Iops" :: NullOrUndefined (Int), "Encrypted" :: NullOrUndefined (Boolean) }) -> VolumeConfiguration
+newVolumeConfiguration' :: String -> Int -> Int -> ({ "MountPoint" :: String, "RaidLevel" :: Maybe (Int), "NumberOfDisks" :: Int, "Size" :: Int, "VolumeType" :: Maybe (String), "Iops" :: Maybe (Int), "Encrypted" :: Maybe (Boolean) } -> { "MountPoint" :: String, "RaidLevel" :: Maybe (Int), "NumberOfDisks" :: Int, "Size" :: Int, "VolumeType" :: Maybe (String), "Iops" :: Maybe (Int), "Encrypted" :: Maybe (Boolean) }) -> VolumeConfiguration
 ```
 
 Constructs VolumeConfiguration's fields from required parameters
@@ -5986,7 +5986,7 @@ Encode Volumes
 
 ``` purescript
 newtype WeeklyAutoScalingSchedule
-  = WeeklyAutoScalingSchedule { "Monday" :: NullOrUndefined (DailyAutoScalingSchedule), "Tuesday" :: NullOrUndefined (DailyAutoScalingSchedule), "Wednesday" :: NullOrUndefined (DailyAutoScalingSchedule), "Thursday" :: NullOrUndefined (DailyAutoScalingSchedule), "Friday" :: NullOrUndefined (DailyAutoScalingSchedule), "Saturday" :: NullOrUndefined (DailyAutoScalingSchedule), "Sunday" :: NullOrUndefined (DailyAutoScalingSchedule) }
+  = WeeklyAutoScalingSchedule { "Monday" :: Maybe (DailyAutoScalingSchedule), "Tuesday" :: Maybe (DailyAutoScalingSchedule), "Wednesday" :: Maybe (DailyAutoScalingSchedule), "Thursday" :: Maybe (DailyAutoScalingSchedule), "Friday" :: Maybe (DailyAutoScalingSchedule), "Saturday" :: Maybe (DailyAutoScalingSchedule), "Sunday" :: Maybe (DailyAutoScalingSchedule) }
 ```
 
 <p>Describes a time-based instance's auto scaling schedule. The schedule consists of a set of key-value pairs.</p> <ul> <li> <p>The key is the time period (a UTC hour) and must be an integer from 0 - 23.</p> </li> <li> <p>The value indicates whether the instance should be online or offline for the specified period, and must be set to "on" or "off"</p> </li> </ul> <p>The default setting for all time periods is off, so you use the following parameters primarily to specify the online periods. You don't have to explicitly specify offline periods unless you want to change an online period to an offline period.</p> <p>The following example specifies that the instance should be online for four hours, from UTC 1200 - 1600. It will be off for the remainder of the day.</p> <p> <code> { "12":"on", "13":"on", "14":"on", "15":"on" } </code> </p>
@@ -6011,7 +6011,7 @@ Constructs WeeklyAutoScalingSchedule from required parameters
 #### `newWeeklyAutoScalingSchedule'`
 
 ``` purescript
-newWeeklyAutoScalingSchedule' :: ({ "Monday" :: NullOrUndefined (DailyAutoScalingSchedule), "Tuesday" :: NullOrUndefined (DailyAutoScalingSchedule), "Wednesday" :: NullOrUndefined (DailyAutoScalingSchedule), "Thursday" :: NullOrUndefined (DailyAutoScalingSchedule), "Friday" :: NullOrUndefined (DailyAutoScalingSchedule), "Saturday" :: NullOrUndefined (DailyAutoScalingSchedule), "Sunday" :: NullOrUndefined (DailyAutoScalingSchedule) } -> { "Monday" :: NullOrUndefined (DailyAutoScalingSchedule), "Tuesday" :: NullOrUndefined (DailyAutoScalingSchedule), "Wednesday" :: NullOrUndefined (DailyAutoScalingSchedule), "Thursday" :: NullOrUndefined (DailyAutoScalingSchedule), "Friday" :: NullOrUndefined (DailyAutoScalingSchedule), "Saturday" :: NullOrUndefined (DailyAutoScalingSchedule), "Sunday" :: NullOrUndefined (DailyAutoScalingSchedule) }) -> WeeklyAutoScalingSchedule
+newWeeklyAutoScalingSchedule' :: ({ "Monday" :: Maybe (DailyAutoScalingSchedule), "Tuesday" :: Maybe (DailyAutoScalingSchedule), "Wednesday" :: Maybe (DailyAutoScalingSchedule), "Thursday" :: Maybe (DailyAutoScalingSchedule), "Friday" :: Maybe (DailyAutoScalingSchedule), "Saturday" :: Maybe (DailyAutoScalingSchedule), "Sunday" :: Maybe (DailyAutoScalingSchedule) } -> { "Monday" :: Maybe (DailyAutoScalingSchedule), "Tuesday" :: Maybe (DailyAutoScalingSchedule), "Wednesday" :: Maybe (DailyAutoScalingSchedule), "Thursday" :: Maybe (DailyAutoScalingSchedule), "Friday" :: Maybe (DailyAutoScalingSchedule), "Saturday" :: Maybe (DailyAutoScalingSchedule), "Sunday" :: Maybe (DailyAutoScalingSchedule) }) -> WeeklyAutoScalingSchedule
 ```
 
 Constructs WeeklyAutoScalingSchedule's fields from required parameters
